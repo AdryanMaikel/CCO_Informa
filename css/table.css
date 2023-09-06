@@ -23,17 +23,22 @@ tbody tr{
   align-items: center;
   justify-content: space-evenly;
 }
-tbody tr td{
-  display: flex;
-}
 
+.select-informado{
+  display: flex;
+  background-color: #fff;
+  padding: 5px 15px 5px 10px;
+}
 
 label{
   cursor: pointer;
+  height: 100%;
+  width: 100%;
 }
 
 input#informado{
   position: relative;
+  width: 60px;
   visibility: hidden;
 }
 input#informado:checked ~ .icons #yes{
@@ -70,13 +75,13 @@ input#informado:checked ~ label{
 }
 
 .select-menu{
-  width: 140px;
+  width: 150px;
 }
 .select-menu .selecionar-informado{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
+  padding: 5px 10px;
   background-color: #fff;
   border-radius: 8px;
   cursor: pointer;
@@ -91,10 +96,7 @@ input#informado:checked ~ label{
 }
 .select-menu .list{
   position: absolute;
-  width: 140px;
-  transform: translateY(-140px);
-  margin-top: 10px;
-  transition: ;
+  width: 150px;
 }
 .list .option{
   display: flex;
@@ -104,19 +106,16 @@ input#informado:checked ~ label{
   cursor: pointer;
   background-color: #fff;
   transform-origin: top;
-  transform: scale(0) translateY(-65px);
-  margin-bottom: -40px;
-  transition: margin-bottom .1s ease-in-out;
-  transition-delay: calc(.1s * var(--i));
+  transform: scale(0) translateY(-40px);
+  margin-bottom: -45px;
+  opacity: 0;
+  transition: opacity 1s, transform .5s ease-in-out, margin-bottom .5s ease-in-out;
 }
 .select-menu .selecionar-informado.active ~ .list .option{
-  transition: transform .5s ease-in-out, margin-bottom .2s ease-in-out;
-  transform: scale(1) translateY(0);
   margin-bottom: 0;
-  transition-delay: calc(.1s * var(--i));
-}
-.select-menu .selecionar-informado.active ~ .list{
-  transform: translateY(0);
+  opacity: 1;
+  transform: scale(1) translateY(7px);
+  transition: opacity 1s, transform .5s ease-in-out, margin-bottom .2s ease-in-out;
 }
 .list .option:hover{
   background-color: #f2f2f2;
@@ -133,6 +132,6 @@ input#informado:checked ~ label{
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
-.select-menu .list .option{
+/* .select-menu .list .option{
 
-}
+} */

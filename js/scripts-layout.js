@@ -8,6 +8,7 @@ selecionarinformado.addEventListener("click", function() {
 
 for(options of option){
   options.onclick = function() {
-    text.innerHTML = this.textContent;
+    text.innerHTML = this.textContent
+    selecionarinformado.classList.remove("active")
   }
 }
