@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  background: #ccc;
+}
+header{
+  width: 100vw;
+  height: 70px;
+  display: flex;
+}
+header a{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #2565f5;
+  transition: color .5s;
+}
+header a:hover{
+  color: #2508ff;
+}
