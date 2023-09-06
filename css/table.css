@@ -32,8 +32,6 @@ tbody tr{
 
 label{
   cursor: pointer;
-  height: 100%;
-  width: 100%;
 }
 
 input#informado{
@@ -81,7 +79,7 @@ input#informado:checked ~ label{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 10px;
+  padding: 5px 3px 5px 6px;
   background-color: #fff;
   border-radius: 8px;
   cursor: pointer;
@@ -109,13 +107,13 @@ input#informado:checked ~ label{
   transform: scale(0) translateY(-40px);
   margin-bottom: -45px;
   opacity: 0;
-  transition: opacity 1s, transform .5s ease-in-out, margin-bottom .5s ease-in-out;
+  transition: opacity .3s, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), margin-bottom .2s ease-in-out
 }
 .select-menu .selecionar-informado.active ~ .list .option{
   margin-bottom: 0;
   opacity: 1;
   transform: scale(1) translateY(7px);
-  transition: opacity 1s, transform .5s ease-in-out, margin-bottom .2s ease-in-out;
+  transition: opacity .3s, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), margin-bottom .2s ease-in-out
 }
 .list .option:hover{
   background-color: #f2f2f2;
