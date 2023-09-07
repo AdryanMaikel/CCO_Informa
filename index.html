@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>cco informa</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/table.css">
+  <script src="js/scripts-layout.js" defer></script>
+  </head>
+<body>
+  <header>
+    <a href="#"><h1>Criar novo CCO-Informa</h1></a>
+  </header>
+
+  <section>
+    <form>
+      <div class="row">
+        <h2>*CCO-Informa*</h2>
+      </div>
+
+      <div class="row">
+        <div class="select-was-informed" id="box_was_informed">
+          <span id="informed">Foi informado?</span>
+          <div class="icons">
+            <ion-icon name="close-outline" class="icon" id="no"></ion-icon>
+            <ion-icon name="checkmark-outline" class="icon" id="yes"></ion-icon>
+          </div>
+        </div>
+
+        <div class="select-menu">
+          <div class="selecionar-informado" id="selecionar-informado">
+            <span id="text">Quem informou?</span>
+            <ion-icon name="chevron-down-outline" class="arrow-down"></ion-icon>
+          </div>
+          <ul class="list">
+            <li class="option">
+              <span class="option-text">Fiscal</span>
+            </li>
+            <li class="option">
+              <span class="option-text">Navegantes</span>
+            </li>
+            <li class="option">
+              <span class="option-text">Nortran</span>
+            </li>
+            <li class="option">
+              <span class="option-text">Sopal</span>
+            </li>
+          </ul>
+        </div>
+
+        <label for="fiscal">qual?</label>
+        <input type="text" name="fiscal" id="fiscal">
+      </div>
+    </form>
+  </section>
+
+  <aside>
+
+  </aside>
+
+  <footer>
+
+  </footer>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+

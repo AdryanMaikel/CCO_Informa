@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+form{
+  width: 550px;
+  display: flex;
+  flex-direction: column;
+}
+form .row{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 7px;
+  padding: 0 7px;
+}
+
+.select-was-informed{
+  width: 150px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 8px;
+  background-color: #fff;
+  cursor: pointer;
+}
+.icons{
+  position: relative;
+  top: -13px;
+  left: -18px;
+}
+.icon{
+  position: absolute;
+  font-size: 25px;
+  font-weight: bold;
+}
+.icon#no{
+  visibility: visible;
+  color: red;
+}
+.icon#yes{
+  visibility: hidden;
+  color: green;
+}
+.select-was-informed.active{
+  
+}
+.select-was-informed.active .icons .icon#no{
+  visibility: hidden;
+}
+.select-was-informed.active .icons .icon#yes{
+  visibility: visible;
+
+}
+.select-menu{
+  width: 150px;
+  height: 40px;
+}
+.select-menu .selecionar-informado{
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.select-menu .selecionar-informado #text{
+  margin-left: 5px;
+}
+.select-menu .selecionar-informado .arrow-down{
+  position: absolute;
+  margin-left: 125px;
+  font-size: 20px;
+  transition: rotate .5s;
+}
+.select-menu .selecionar-informado.active .arrow-down{
+  rotate: 180deg;
+  
+}
+.select-menu .list{
+  position: absolute;
+  width: 150px;
+}
+.list .option{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+  background-color: #fff;
+  transform-origin: top;
+  transform: scale(0) translateY(-40px);
+  margin-bottom: -45px;
+  opacity: 0;
+  transition: opacity .3s, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), margin-bottom .2s ease-in-out
+}
+.select-menu .selecionar-informado.active ~ .list .option{
+  margin-bottom: 0;
+  opacity: 1;
+  transform: scale(1) translateY(7px);
+  transition: opacity .3s, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), margin-bottom .2s ease-in-out
+}
+.list .option:hover{
+  background-color: #f2f2f2;
+  
+}
+.list .option .option-text{
+  padding: 0 16px;
+}
+.list .option:nth-child(1){
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.list .option:nth-child(4){
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+/* .select-menu .list .option{
+
+} */
