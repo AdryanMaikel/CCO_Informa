@@ -1,15 +1,24 @@
 const selecionarinformado = document.getElementById('selecionar-informado')
-const text = document.getElementById('text')
-const option = document.getElementsByClassName('option')
-
 selecionarinformado.addEventListener("click", function() {
   selecionarinformado.classList.toggle("active")
 })
 
+const who_informed = document.getElementById('who_informed')
+const option = document.getElementsByClassName('option')
 for(options of option){
   options.onclick = function() {
-    text.innerHTML = this.textContent
+    who_informed.innerHTML = this.textContent
     selecionarinformado.classList.remove("active")
+    activeFiscal(this.textContent)
+  }
+}
+
+const divfiscal = document.getElementById("divfiscal")
+function activeFiscal(option) {
+  if(option.trim() == "Fiscal"){
+    divfiscal.classList.add("active")
+  }else{
+    divfiscal.classList.remove("active")
   }
 }
 

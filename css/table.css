@@ -13,8 +13,10 @@ form .row{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  gap: 7px;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 3px;
+  margin-bottom: 5px;
   padding: 0 7px;
 }
 .select-was-informed{
@@ -56,15 +58,16 @@ form .row{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
   background-color: #fff;
   border-radius: 8px;
   cursor: pointer;
 }
-.select-menu .selecionar-informado #text{
+.select-menu .selecionar-informado #who_informed{
   margin-left: 20px;
 }
 .select-menu .selecionar-informado .arrow-down{
+  position: absolute;
+  margin-left: 110px;
   font-size: 20px;
   transition: rotate .5s;
 }
@@ -109,4 +112,61 @@ form .row{
 .list .option:nth-child(4){
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+}
+.fiscal{
+  width: 150px;
+  height: 40px;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  scale: 0;
+  transition:  scale .2s;
+}
+input#fiscal{
+  width: 100%;
+  height: 100%;
+  outline: none;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  margin: 0 15px;
+  font-size: 15px;
+  background: none;
+  
+}
+.fiscal.active{
+  scale: 1;
+  transition: scale .2s;
+}
+.table, .car{
+  padding-left: 8px;
+  padding-right: 8px;
+  height: 40px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+}
+.table{
+  width: 110px;
+}
+.car{
+  width: 80px;
+}
+#table, #car{
+  height: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 15px;
+}
+#table{
+  width: 90px;
+}
+#car{
+  width: 40px;
+}
+#icon_tb, #icon_bus{
+  font-size: 22px;
 }
