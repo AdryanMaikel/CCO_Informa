@@ -12,3 +12,8 @@ for(options of option){
     selecionarinformado.classList.remove("active")
   }
 }
+
+const box_was_informed = document.getElementById("box_was_informed")
+box_was_informed.addEventListener("click", function() {
+  box_was_informed.classList.toggle("active")
+})

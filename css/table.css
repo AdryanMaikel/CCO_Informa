@@ -1,69 +1,42 @@
 @charset "UTF-8";
 
-table{
-  width: 600px;
+form{
+  width: 550px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
-thead{
+form .row{
   width: 100%;
-}
-thead tr{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-tbody{
-  width: 100%;
-}
-tbody tr{
-  height: 50px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  gap: 7px;
+  padding: 0 7px;
 }
 
-.select-informado{
+.select-was-informed{
+  width: 150px;
+  height: 40px;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 8px;
   background-color: #fff;
-  padding: 5px 15px 5px 10px;
-}
-
-label{
   cursor: pointer;
 }
-
-input#informado{
-  position: relative;
-  width: 60px;
-  visibility: hidden;
-}
-input#informado:checked ~ .icons #yes{
-  visibility: visible;
-}
-input#informado:checked ~ .icons #não{
-  visibility: hidden;
-}
-input#informado ~ label{
-  position: relative;
-  left: -13px;
-  color: red;
-}
-input#informado:checked ~ label{
-  color: green;
-}
 .icons{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  top: -13px;
+  left: -18px;
 }
 .icon{
   position: absolute;
   font-size: 25px;
   font-weight: bold;
 }
-.icon#não{
+.icon#no{
   visibility: visible;
   color: red;
 }
@@ -71,20 +44,35 @@ input#informado:checked ~ label{
   visibility: hidden;
   color: green;
 }
+.select-was-informed.active{
+  
+}
+.select-was-informed.active .icons .icon#no{
+  visibility: hidden;
+}
+.select-was-informed.active .icons .icon#yes{
+  visibility: visible;
 
+}
 .select-menu{
   width: 150px;
+  height: 40px;
 }
 .select-menu .selecionar-informado{
+  height: 40px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
-  padding: 5px 3px 5px 6px;
   background-color: #fff;
   border-radius: 8px;
   cursor: pointer;
 }
+.select-menu .selecionar-informado #text{
+  margin-left: 5px;
+}
 .select-menu .selecionar-informado .arrow-down{
+  position: absolute;
+  margin-left: 125px;
   font-size: 20px;
   transition: rotate .5s;
 }

@@ -14,53 +14,45 @@
   </header>
 
   <section>
-    <table>
-      <thead>
-        <tr>
-          <td><h2>*CCO-Informa*</h2></td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <div class="select-informado">
-              <input type="checkbox" name="informado" id="informado">
-              <label for="informado">Foi informado</label>
-              <div class="icons">
-                <ion-icon name="close-outline" class="icon" id="não"></ion-icon>
-                <ion-icon name="checkmark-outline" class="icon" id="yes"></ion-icon>
-              </div>
-            </div>
-          </td>
-          <td>
-            <div class="select-menu">
-              <div class="selecionar-informado" id="selecionar-informado">
-                <span id="text">Quem informou?</span>
-                <ion-icon name="chevron-down-outline" class="arrow-down"></ion-icon>
-              </div>
-              <ul class="list">
-                <li class="option">
-                  <span class="option-text">Fiscal</span>
-                </li>
-                <li class="option">
-                  <span class="option-text">Navegantes</span>
-                </li>
-                <li class="option">
-                  <span class="option-text">Nortran</span>
-                </li>
-                <li class="option">
-                  <span class="option-text">Sopal</span>
-                </li>
-              </ul>
-            </div>
-          </td>
-          <td>
-            <label for="fiscal">qual?</label>
-            <input type="text" name="fiscal" id="fiscal">
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <form>
+      <div class="row">
+        <h2>*CCO-Informa*</h2>
+      </div>
+
+      <div class="row">
+        <div class="select-was-informed" id="box_was_informed">
+          <span id="informed">Foi informado?</span>
+          <div class="icons">
+            <ion-icon name="close-outline" class="icon" id="no"></ion-icon>
+            <ion-icon name="checkmark-outline" class="icon" id="yes"></ion-icon>
+          </div>
+        </div>
+
+        <div class="select-menu">
+          <div class="selecionar-informado" id="selecionar-informado">
+            <span id="text">Quem informou?</span>
+            <ion-icon name="chevron-down-outline" class="arrow-down"></ion-icon>
+          </div>
+          <ul class="list">
+            <li class="option">
+              <span class="option-text">Fiscal</span>
+            </li>
+            <li class="option">
+              <span class="option-text">Navegantes</span>
+            </li>
+            <li class="option">
+              <span class="option-text">Nortran</span>
+            </li>
+            <li class="option">
+              <span class="option-text">Sopal</span>
+            </li>
+          </ul>
+        </div>
+
+        <label for="fiscal">qual?</label>
+        <input type="text" name="fiscal" id="fiscal">
+      </div>
+    </form>
   </section>
 
   <aside>
