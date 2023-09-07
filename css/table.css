@@ -1,9 +1,12 @@
 @charset "UTF-8";
 
 form{
-  width: 550px;
+  width: 500px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ccc;
 }
 form .row{
   width: 100%;
@@ -14,7 +17,6 @@ form .row{
   gap: 7px;
   padding: 0 7px;
 }
-
 .select-was-informed{
   width: 150px;
   height: 40px;
@@ -25,34 +27,25 @@ form .row{
   border-radius: 8px;
   background-color: #fff;
   cursor: pointer;
+  color: red;
 }
 .icons{
   position: relative;
   top: -13px;
-  left: -18px;
+  left: -23px;
 }
 .icon{
   position: absolute;
   font-size: 25px;
-  font-weight: bold;
 }
-.icon#no{
+.select-was-informed.active .icons .icon#yes, .icon#no{
   visibility: visible;
-  color: red;
 }
-.icon#yes{
+.select-was-informed.active .icons .icon#no, .icon#yes{
   visibility: hidden;
-  color: green;
 }
 .select-was-informed.active{
-  
-}
-.select-was-informed.active .icons .icon#no{
-  visibility: hidden;
-}
-.select-was-informed.active .icons .icon#yes{
-  visibility: visible;
-
+  color: green;
 }
 .select-menu{
   width: 150px;
@@ -63,16 +56,15 @@ form .row{
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-around;
   background-color: #fff;
   border-radius: 8px;
   cursor: pointer;
 }
 .select-menu .selecionar-informado #text{
-  margin-left: 5px;
+  margin-left: 20px;
 }
 .select-menu .selecionar-informado .arrow-down{
-  position: absolute;
-  margin-left: 125px;
   font-size: 20px;
   transition: rotate .5s;
 }
@@ -118,6 +110,3 @@ form .row{
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
-/* .select-menu .list .option{
-
-} */
