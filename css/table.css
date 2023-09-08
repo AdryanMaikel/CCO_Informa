@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 form{
-  width: 500px;
+  width: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,6 +90,7 @@ form .row{
   height: 40px;
   cursor: pointer;
   background-color: #fff;
+  color: #000000bb;
   transform-origin: top;
   transform: scale(0) translateY(-40px);
   margin-bottom: -45px;
@@ -109,6 +110,7 @@ form .row{
 }
 .list .option:hover{
   background-color: #f2f2f2;
+  color: #000000;
   
 }
 .list .option .option-text{
