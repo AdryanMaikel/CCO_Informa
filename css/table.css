@@ -116,11 +116,13 @@ form .row{
 .list .option .option-text{
   padding: 0 16px;
 }
-.list .option:nth-child(1){
+.list .option:nth-child(1),
+.list-activities .options-activies:nth-child(1){
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
-.list .option:nth-child(4){
+.list .option:nth-child(4),
+.list-activities .options-activies:nth-child(13){
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
@@ -132,7 +134,7 @@ form .row{
   align-items: center;
   border-radius: 8px;
   scale: 0;
-  transition:  scale .2s;
+  transition: scale .2s;
 }
 input#fiscal{
   width: 100%;
@@ -215,7 +217,7 @@ input#fiscal{
   transform: scale(1);
   transition: transform .2s ease-in-out, left .5s;
 }
-.line, .time{
+.line, .time, .select-activity{
   width: 72px;
   display: flex;
   flex-direction: row;
@@ -231,4 +233,49 @@ input#fiscal{
 }
 .time{
   width: 70px;
+}
+.select-activity{
+  width: 76px;
+  cursor: pointer;
+}
+.list-activities{
+  position: absolute;
+  width: 94px;
+  background-color: #fff;
+  border-radius: 7px;
+  scale: 0;
+  opacity: 0;
+  transform-origin: top;
+  transform: translateY(-20px);
+  transition: scale .2s ease-in-out, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), opacity .3s;
+}
+
+.list-activities .options-activies{
+  height: 40px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  color: #000000bb;
+  cursor: pointer;
+}
+.list-activities .options-activies:hover{
+  color: #000000;
+  background-color: #f2f2f2;
+}
+#div_activity.active .list-activities{
+  margin-top: 7px;
+  margin-top: 5px;
+  box-shadow: 0px -2px 20px 3px #333;
+  scale: 1;
+  opacity: 1;
+  transform: translateY(0);
+  transition: scale .2s ease-in-out, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), opacity .3s;
+}
+.select-activity .arrow-down{
+  transition: rotate .5s;
+}
+#div_activity.active .select-activity .arrow-down{
+  rotate: 180deg;
+  transition: rotate .5s;
 }

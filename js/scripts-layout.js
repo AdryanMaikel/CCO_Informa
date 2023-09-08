@@ -38,3 +38,16 @@ time.addEventListener("blur", function() {
     time.value = time.value.slice(0, 2) + ":" + time.value.slice(2, 4)
   }
 })
+
+const activity = document.getElementById('div_activity')
+activity.addEventListener("click", function() {
+  activity.classList.toggle("active")
+})
+const direction = document.getElementById('direction')
+const options_activies = document.getElementsByClassName('options-activies')
+for(options of options_activies){
+  options.onclick = function() {
+    direction.innerHTML = this.textContent
+    selecionarinformado.classList.remove("active")
+  }
+}
