@@ -117,12 +117,14 @@ form .row{
   padding: 0 16px;
 }
 .list .option:nth-child(1),
-.list-activities .options-activies:nth-child(1){
+.list-activities .options-activies:nth-child(1),
+.list-event .options-events:nth-child(1){
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
 .list .option:nth-child(4),
-.list-activities .options-activies:nth-child(13){
+.list-activities .options-activies:nth-child(13),
+.list-event .options-events:nth-child(4){
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
@@ -180,7 +182,7 @@ input#fiscal{
 #car, #replace-car{
   width: 40px;
 }
-#icon_tb, #icon_bus, #icon_replace, #icon_line, #icon_time, #icon_activity{
+#icon_tb, #icon_bus, #icon_replace, #icon_line, #icon_time, #icon_activity, .arrow-down{
   font-size: 22px;
 }
 #replace{
@@ -245,12 +247,13 @@ input#fiscal{
   border-radius: 7px;
   scale: 0;
   opacity: 0;
+  z-index: 9;
   transform-origin: top;
   transform: translateY(-20px);
   transition: scale .2s ease-in-out, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), opacity .3s;
 }
-
 .list-activities .options-activies{
+  position: relative;
   height: 40px;
   list-style: none;
   display: flex;
@@ -258,6 +261,7 @@ input#fiscal{
   padding: 0 16px;
   color: #000000bb;
   cursor: pointer;
+  z-index: 10;
 }
 .list-activities .options-activies:hover{
   color: #000000;
@@ -272,10 +276,59 @@ input#fiscal{
   transform: translateY(0);
   transition: scale .2s ease-in-out, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), opacity .3s;
 }
-.select-activity .arrow-down{
+.select-activity .arrow-down, #div-event .arrow-down{
+  rotate: 360deg;
   transition: rotate .5s;
 }
-#div_activity.active .select-activity .arrow-down{
+#div_activity.active .select-activity .arrow-down, #div-event.active .arrow-down{
   rotate: 180deg;
   transition: rotate .5s;
+}
+#div-event{
+  width: 207px;
+  height: 40px;
+  padding-left: 10px;
+  background-color: #fff;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+#div-event .arrow-down{
+  display: inline-block;
+  position: absolute;
+  margin-left: 180px;
+  font-size: 22px;
+}
+.list-event{
+  width: 136px;
+  background-color: #fff;
+  box-shadow: 0px -2px 20px 3px #333;
+  position: absolute;
+  transform-origin: top;
+  scale: 0;
+  border-radius: 7px;
+  z-index: 0;
+  margin-top: 180px;
+  margin-left: 43px;
+  transition: scale .2s cubic-bezier(0.25, -0.41, 0.76, 0.89), margin-top .5s;
+}
+.list-event .options-events{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0 9px;
+  height: 40px;
+  color: #000000bb;
+  
+}
+.list-event .options-events:hover{
+  background-color: #f2f2f2;
+  color: #000000;
+}
+#div-event.active .list-event{
+  scale: 1;
+  z-index: 7;
+  margin-top: 210px;
+  transition: scale .2s cubic-bezier(0.54, 0.01, 0, 1.45), margin-top .5s;
 }
