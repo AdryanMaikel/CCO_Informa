@@ -2,6 +2,7 @@ const selecionarinformado = document.getElementById('selecionar-informado')
 selecionarinformado.addEventListener("click", function() {
   selecionarinformado.classList.toggle("active")
 })
+
 const who_informed = document.getElementById('who_informed')
 const option = document.getElementsByClassName('option')
 for(options of option){
@@ -60,6 +61,20 @@ const options_events = document.getElementsByClassName('options-events')
 for(options of options_events){
   options.onclick = function() {
     text_event.innerHTML = this.textContent
-    select_event.classList.remove("active")
+    div_event.classList.remove("active")
+    activeEvent(this.textContent)
+  }
+}
+function activeEvent(events) {
+  const div_delay = document.getElementById("div_delay")
+  const div_location = document.getElementById("div_location")
+  if(events.trim() == "atrasada"){
+    div_delay.style.display = "block"
+    div_location.style.display = "none"
+    
+  }
+  if(events.trim() == "interrompida"){
+    div_delay.style.display = "none"
+    div_location.style.display = "block"
   }
 }

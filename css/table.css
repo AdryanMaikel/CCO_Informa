@@ -237,11 +237,13 @@ input#fiscal{
   width: 70px;
 }
 .select-activity{
-  width: 76px;
+  width: 80px;
   cursor: pointer;
 }
 .list-activities{
   position: absolute;
+  left: 223px;
+  top: 262px;
   width: 94px;
   background-color: #fff;
   border-radius: 7px;
@@ -267,9 +269,7 @@ input#fiscal{
   color: #000000;
   background-color: #f2f2f2;
 }
-#div_activity.active .list-activities{
-  margin-top: 7px;
-  margin-top: 5px;
+#div_activity.active ~ .list-activities{
   box-shadow: 0px -2px 20px 3px #333;
   scale: 1;
   opacity: 1;
@@ -320,15 +320,23 @@ input#fiscal{
   padding: 0 9px;
   height: 40px;
   color: #000000bb;
+  cursor: pointer;
   
 }
 .list-event .options-events:hover{
   background-color: #f2f2f2;
   color: #000000;
 }
-#div-event.active .list-event{
+#div-event.active ~ .list-event{
   scale: 1;
   z-index: 7;
   margin-top: 210px;
   transition: scale .2s cubic-bezier(0.54, 0.01, 0, 1.45), margin-top .5s;
+}
+
+#div_location{
+  display: none;
+}
+#div_delay{
+  display: block;
 }
