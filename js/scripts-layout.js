@@ -31,3 +31,10 @@ const replace = document.getElementById("replace")
 replace.addEventListener("click", function() {
   replace.classList.toggle("active")
 })
+
+const time = document.getElementById("time")
+time.addEventListener("blur", function() {
+  if(time.value.length == 4){
+    time.value = time.value.slice(0, 2) + ":" + time.value.slice(2, 4)
+  }
+})

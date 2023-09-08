@@ -150,8 +150,8 @@ input#fiscal{
   transition: scale .2s;
 }
 .table, .car, .replace-car{
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
   height: 40px;
   background-color: #fff;
   display: flex;
@@ -160,12 +160,12 @@ input#fiscal{
   border-radius: 8px;
 }
 .table{
-  width: 120px;
+  width: 112px;
 }
 .car, .replace-car{
-  width: 80px;
+  width: 67px;
 }
-#table, #car, #replace-car{
+#table, #car, #replace-car, #line, #time{
   height: 100%;
   background: none;
   border: none;
@@ -173,12 +173,12 @@ input#fiscal{
   font-size: 15px;
 }
 #table{
-  width: 80px;
+  width: 76px;
 }
-#car{
+#car, #replace-car{
   width: 40px;
 }
-#icon_tb, #icon_bus, #icon_replace{
+#icon_tb, #icon_bus, #icon_replace, #icon_line, #icon_time, #icon_activity{
   font-size: 22px;
 }
 #replace{
@@ -194,9 +194,6 @@ input#fiscal{
 #icon_replace{
   font-size: 20px;
   transition: rotate 1s, color .5s;
-}
-#replace-car{
-  width: 40px;
 }
 .replace-car{
   position: relative;
@@ -217,4 +214,21 @@ input#fiscal{
   left: 0;
   transform: scale(1);
   transition: transform .2s ease-in-out, left .5s;
+}
+.line, .time{
+  width: 72px;
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px;
+  background: #fff;
+  height: 40px;
+  align-items: center;
+  gap: 6px;
+  border-radius: 8px;
+}
+.line #line, .time #time{
+  width: 42px;
+}
+.time{
+  width: 70px;
 }

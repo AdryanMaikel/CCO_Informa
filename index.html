@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/table.css">
   <script src="js/scripts-layout.js" defer></script>
   <script src="js/scripts.js" defer></script>
+  <script src="js/data.js" defer></script>
   </head>
 <body>
   <header>
@@ -53,6 +54,7 @@
           <input type="text" id="fiscal" placeholder="Qual?">
         </div>
       </div>
+
       <div class="row">
         <div class="table">
           <ion-icon name="clipboard-sharp" id="icon_tb"></ion-icon>
@@ -60,19 +62,39 @@
         </div>
         <div class="car">
           <ion-icon name="bus-sharp" id="icon_bus"></ion-icon>
-          <input type="text" id="car" placeholder="6640" maxlength="4" min="6199" max="6899">
+          <input type="number" id="car" placeholder="6640" maxlength="4" min="6199" max="6899">
         </div>
         <div id="replace">
           <ion-icon name="reload-sharp" id="icon_replace"></ion-icon>
         </div>
         <div class="replace-car">
           <ion-icon name="bus-sharp" id="icon_bus"></ion-icon>
-          <input type="text" id="replace-car" placeholder="6750" maxlength="4" min="6199" max="6899">
+          <input type="number" id="replace-car" placeholder="6750" maxlength="4" min="6199" max="6899">
         </div>
       </div>
       <div class="row">
-        
+        <div class="line">
+          <ion-icon name="map-outline" id="icon_line"></ion-icon>
+          <input type="text" name="line" id="line" placeholder="SD73">
+        </div>
+        <div class="time">
+          <ion-icon name="time-outline" id="icon_time"></ion-icon>
+          <input type="text" name="time" id="time" placeholder="14:22">
+        </div>
+        <div class="activity">
+          <ion-icon name="compass-outline" id="icon_activity"></ion-icon>
+          <div class="select-activity">
+            <span id="activity"></span>
+          </div>
+          <!-- <ul class="list-direction">
+            <li class="option">BC</li>
+            <li class="option">CB</li>
+            <li class="option">NS</li>
+            <li class="option">SN</li>
+          </ul> -->
+        </div>
       </div>
+
       <div class="row">
         <button id="gerar_cco_informa">Gerar</button>
       </div>
