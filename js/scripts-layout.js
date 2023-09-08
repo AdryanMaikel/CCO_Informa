@@ -26,3 +26,8 @@ const box_was_informed = document.getElementById("box_was_informed")
 box_was_informed.addEventListener("click", function() {
   box_was_informed.classList.toggle("active")
 })
+
+const replace = document.getElementById("replace")
+replace.addEventListener("click", function() {
+  replace.classList.toggle("active")
+})

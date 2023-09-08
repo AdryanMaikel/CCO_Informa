@@ -147,23 +147,23 @@ input#fiscal{
   scale: 1;
   transition: scale .2s;
 }
-.table, .car{
+.table, .car, .replace-car{
   padding-left: 8px;
   padding-right: 8px;
   height: 40px;
   background-color: #fff;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   border-radius: 8px;
 }
 .table{
   width: 120px;
 }
-.car{
+.car, .replace-car{
   width: 80px;
 }
-#table, #car{
+#table, #car, #replace-car{
   height: 100%;
   background: none;
   border: none;
@@ -176,7 +176,43 @@ input#fiscal{
 #car{
   width: 40px;
 }
-#icon_tb, #icon_bus{
+#icon_tb, #icon_bus, #icon_replace{
   font-size: 22px;
-  margin-right: 5px;
+}
+#replace{
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #fff;
+  border-radius: 8px;
+  z-index: 1;
+  color: red;
+}
+#icon_replace{
+  font-size: 20px;
+  transition: rotate 1s, color .5s;
+}
+#replace-car{
+  width: 40px;
+}
+.replace-car{
+  position: relative;
+  left: -80px;
+  visibility: hidden;
+  transform: scale(0);
+  transition:  transform .4s ease-in-out, left .5s, visibility .5s;
+}
+#replace.active{
+  color: green;
+}
+#replace.active #icon_replace{
+  rotate: 360deg;
+  transition: rotate 1s, color .5s;
+}
+#replace.active ~ .replace-car{
+  visibility: visible;
+  left: 0;
+  transform: scale(1);
+  transition: transform .2s ease-in-out, left .5s;
 }
