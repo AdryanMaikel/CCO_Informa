@@ -15,6 +15,7 @@ form{
     top: -1000px;
   }
   to{
+    top: 10px;
   }
 }
 form .row{
@@ -39,8 +40,9 @@ form .row{
 
 }
 .select-was-informed{
-  width: 150px;
+  width: 123px;
   height: 40px;
+  padding-left: 7px;
   border-radius: 8px;
   cursor: pointer;
   display: flex;
@@ -69,45 +71,42 @@ form .row{
   color: green;
 }
 .select-menu{
-  width: 150px;
+  width: 110px;
   height: 40px;
+  padding: 0 20px 0 0;
 }
 .select-menu .selecionar-informado{
-  height: 40px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
   cursor: pointer;
 }
-.select-menu .selecionar-informado #who_informed{
-  margin-left: 20px;
-}
 .select-menu .selecionar-informado .arrow-down{
-  position: absolute;
-  margin-left: 110px;
-  font-size: 23px;
-  transition: rotate .5s;
+  transition: rotate .5s; 
+  font-size: 23px; 
 }
 .select-menu .selecionar-informado.active .arrow-down{
   rotate: 180deg;
   
 }
 .select-menu .list{
-  position: absolute;
   width: 150px;
+  position: absolute;
   z-index: 10;
   border-radius: 8px;
   box-shadow: none;
-  transition: margin-top .5s cubic-bezier(0.65, 0.05, 0.36, 1), box-shadow .3s ease;
+  transition: transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), margin-top .5s cubic-bezier(0.65, 0.05, 0.36, 1), box-shadow .3s ease;
 }
 .list .option{
-  display: flex;
-  align-items: center;
   width: 100%;
   height: 40px;
+  display: flex;
+  align-items: center;
   cursor: pointer;
   background-color: #fff;
   color: #000000bb;
@@ -152,8 +151,6 @@ form .row{
   width: 150px;
   height: 40px;
   background-color: #fff;
-  justify-content: center;
-  align-items: center;
   border-radius: 8px;
   scale: 0;
   transition: scale .2s;
@@ -261,9 +258,9 @@ input#fiscal{
 }
 .list-activities{
   position: absolute;
-  left: 223px;
-  top: 262px;
-  width: 94px;
+  left: 243px;
+  top: 187px;
+  width: 55px;
   background-color: #fff;
   border-radius: 7px;
   scale: 0;

@@ -1,7 +1,8 @@
 @charset "UTF-8";
 /* class="dark" */
 body.dark,
-body.dark .list .option:hover{
+body.dark .list .option:hover,
+body.dark .list-activities .options-activies:hover{
   background-color:#000008;
 }
 body.dark header a,
@@ -9,30 +10,42 @@ body.dark .select-was-informed,
 body.dark .select-menu .selecionar-informado,
 body.dark .list .option,
 body.dark .fiscal,
-body.dark .table, .car, .replace-car,
-body.dark #replace
+body.dark .table,
+body.dark .car,
+body.dark .replace-car,
+body.dark #replace,
+body.dark .line,
+body.dark .time,
+body.dark .select-activity,
+body.dark .list-activities
 {
   background-color: #150225;
 }
-body.dark header a{
+body.dark #div_activity.active ~ .list-activities{
   box-shadow: 0px 7px 17px 7px #290342;
 }
 body.dark form input,
 body.dark header a:hover,
-body.dark .list .option:hover
+body.dark .list .option:hover,
+body.dark .list-activities .options-activies:hover,
+#active-dark:hover #moon
 {
   color: #fafafa;
+  transition: color .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 body.dark form{
   background-color: #290342;
   color: #f2f2f2;
 }
 body.dark header a,
-body.dark .list .option{
+body.dark .list .option,
+body.dark .list-activities .options-activies,
+#active-dark #moon{
   color: #fafafac4;
+  transition: color .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 body.dark .select-menu .selecionar-informado.active ~ .list{
-  box-shadow: 0px -2px 20px 3px #290342;
+  box-shadow: -1px -4px 20px 2px #290342;
 }
 
 
