@@ -67,14 +67,14 @@
         </div>
         <div class="car">
           <ion-icon name="bus-sharp" id="icon_bus"></ion-icon>
-          <input type="text" pattern="\d*" id="car" maxlength="4" min="6199" max="6899" placeholder="6640">
+          <input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="car" maxlength="4" min="6199" max="6899" placeholder="6640">
         </div>
         <div id="replace">
           <ion-icon name="sync-sharp" id="icon_replace"></ion-icon>
         </div>
         <div class="replace-car">
           <ion-icon name="bus-sharp" id="icon_bus"></ion-icon>
-          <input type="text" pattern="\d*" id="replace-car" maxlength="4" min="6199" max="6899"placeholder="6750">
+          <input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="replace-car" maxlength="4" min="6199" max="6899"placeholder="6750">
         </div>
       </div>
 
@@ -85,7 +85,7 @@
         </div>
         <div class="time">
           <ion-icon name="time-sharp" id="icon_time"></ion-icon>
-          <input type="text" pattern="\d*" maxlength="4" name="time" id="time" placeholder="14:22">
+          <input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="4" name="time" id="time" placeholder="14:22">
         </div>
         <div id="div_activity">
           <div class="select-activity"> 
