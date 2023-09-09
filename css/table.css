@@ -148,7 +148,7 @@ form .row{
   border-bottom-right-radius: 8px;
 }
 .fiscal{
-  width: 150px;
+  width: 122px;
   height: 40px;
   background-color: #fff;
   border-radius: 8px;
@@ -156,13 +156,12 @@ form .row{
   transition: scale .2s;
 }
 input#fiscal{
-  width: 100%;
+  width: 112px;
   height: 100%;
   outline: none;
-  border-radius: 8px;
   border: none;
-  margin: 0 15px;
   font-size: 15px;
+  padding-left: 10px;
   background: none;
 }
 .fiscal.active{
@@ -185,7 +184,7 @@ input#fiscal{
 .car, .replace-car{
   width: 67px;
 }
-#table, #car, #replace-car, #line, #time{
+#table, #car, #replace-car, #line, #time, #delay-event{
   height: 100%;
   background: none;
   border: none;
@@ -198,7 +197,7 @@ input#fiscal{
 #car, #replace-car{
   width: 40px;
 }
-#icon_tb, #icon_bus, #icon_replace, #icon_line, #icon_time, #icon_activity, .arrow-down{
+#icon_tb, #icon_bus, #icon_replace, #icon_line, #icon_time, #icon_activity, .arrow-down, #icon_delay{
   font-size: 22px;
 }
 #replace{
@@ -354,5 +353,23 @@ input#fiscal{
   display: none;
 }
 #div_delay{
-  display: block;
+  width: 60px;
+  height: 40px;
+  border-radius: 7px;
+  scale: 0;
+  transform: translateX(-100px);
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  transition: scale .2s cubic-bezier(0.54, 0.01, 0, 1.45), transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#delay-event{
+  width: 30px;
+}
+#div_delay.active{
+  scale: 1;
+  transform: translateX(0);
+  transition: scale .2s cubic-bezier(0.54, 0.01, 0, 1.45), transform .5s linear;
 }

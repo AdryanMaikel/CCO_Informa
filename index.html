@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>cco informa</title>
+  <link rel="shortcut icon" href="https://mob.srv.br/wp-content/themes/mob/img/logo_mob_azul.png" type="image/x-icon">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/table.css">
   <link rel="stylesheet" href="css/table-dark.css">
@@ -63,7 +64,7 @@
       <div class="row">
         <div class="table">
           <ion-icon name="clipboard-sharp" id="icon_tb"></ion-icon>
-          <input type="text" id="table" maxlength="9" placeholder="SD73/005">
+          <input type="text" oninput="this.value=this.value.toUpperCase()" id="table" maxlength="9" placeholder="SD73/005">
         </div>
         <div class="car">
           <ion-icon name="bus-sharp" id="icon_bus"></ion-icon>
@@ -81,7 +82,7 @@
       <div class="row">
         <div class="line">
           <ion-icon name="map-sharp" id="icon_line"></ion-icon>
-          <input type="text" name="line" id="line" maxlength="5" placeholder="SD73">
+          <input type="text" oninput="this.value=this.value.toUpperCase()" name="line" id="line" maxlength="5" placeholder="SD73">
         </div>
         <div class="time">
           <ion-icon name="time-sharp" id="icon_time"></ion-icon>
@@ -165,7 +166,7 @@
         </div>
         <div id="div_delay">
           <ion-icon name="hourglass-sharp" id="icon_delay"></ion-icon>
-          <input type="text" name="delay" id="delay-event">
+          <input type="text" name="delay" id="delay-event" placeholder="06">
         </div>
 
       </div>
