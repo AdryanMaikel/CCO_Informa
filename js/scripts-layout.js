@@ -69,12 +69,12 @@ function activeEvent(events) {
   const div_delay = document.getElementById("div_delay")
   const div_location = document.getElementById("div_location")
   if(events.trim() == "atrasada"){
-    div_delay.style.display = "block"
+    div_delay.style.display = "none"
     div_location.style.display = "none"
     
   }
   if(events.trim() == "interrompida"){
     div_delay.style.display = "none"
-    div_location.style.display = "block"
+    div_location.style.display = "none"
   }
 }

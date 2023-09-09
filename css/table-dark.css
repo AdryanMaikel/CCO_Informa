@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/* class="dark" */
+body.dark,
+body.dark .list .option:hover{
+  background-color:#000008;
+}
+body.dark header a,
+body.dark .select-was-informed,
+body.dark .select-menu .selecionar-informado,
+body.dark .list .option,
+body.dark .fiscal,
+body.dark .table, .car, .replace-car,
+body.dark #replace
+{
+  background-color: #150225;
+}
+body.dark header a{
+  box-shadow: 0px 7px 17px 7px #290342;
+}
+body.dark form input,
+body.dark header a:hover,
+body.dark .list .option:hover
+{
+  color: #fafafa;
+}
+body.dark form{
+  background-color: #290342;
+  color: #f2f2f2;
+}
+body.dark header a,
+body.dark .list .option{
+  color: #fafafac4;
+}
+body.dark .select-menu .selecionar-informado.active ~ .list{
+  box-shadow: 0px -2px 20px 3px #290342;
+}
+
+
+body.dark input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #150225 inset;
+  -webkit-text-fill-color: #f2f2f2;
+}

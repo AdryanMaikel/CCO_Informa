@@ -6,11 +6,12 @@
   <title>cco informa</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/table.css">
+  <link rel="stylesheet" href="css/table-dark.css">
   <script src="js/scripts-layout.js" defer></script>
   <script src="js/scripts.js" defer></script>
   <script src="js/data.js" defer></script>
   </head>
-<body>
+<body class="dark">
   <header>
     <a href="#"><h1>Criar novo CCO-Informa</h1></a>
   </header>
@@ -23,7 +24,7 @@
 
       <div class="row">
         <div class="select-was-informed" id="box_was_informed">
-          <span id="informed">Foi informado?</span>
+          <span id="informed">Foi informado</span>
           <div class="icons">
             <ion-icon name="close-sharp" class="icon" id="no"></ion-icon>
             <ion-icon name="checkmark-sharp" class="icon" id="yes"></ion-icon>
@@ -51,25 +52,25 @@
           </ul>
         </div>
         <div class="fiscal" id="divfiscal">
-          <input type="text" id="fiscal" placeholder="Qual?">
+          <input type="text" id="fiscal" maxlength="12" placeholder="Qual?">
         </div>
       </div>
 
       <div class="row">
         <div class="table">
           <ion-icon name="clipboard-sharp" id="icon_tb"></ion-icon>
-          <input type="text" id="table" placeholder="SD73/005">
+          <input type="text" id="table" maxlength="9" placeholder="SD73/005">
         </div>
         <div class="car">
           <ion-icon name="bus-sharp" id="icon_bus"></ion-icon>
-          <input type="number" id="car" placeholder="6640" maxlength="4" min="6199" max="6899">
+          <input type="number" id="car" maxlength="4" min="6199" max="6899" placeholder="6640">
         </div>
         <div id="replace">
           <ion-icon name="sync-sharp" id="icon_replace"></ion-icon>
         </div>
         <div class="replace-car">
           <ion-icon name="bus-sharp" id="icon_bus"></ion-icon>
-          <input type="number" id="replace-car" placeholder="6750" maxlength="4" min="6199" max="6899">
+          <input type="number" id="replace-car" maxlength="4" min="6199" max="6899"placeholder="6750">
         </div>
       </div>
 
@@ -80,7 +81,7 @@
         </div>
         <div class="time">
           <ion-icon name="time-sharp" id="icon_time"></ion-icon>
-          <input type="text" name="time" id="time" placeholder="14:22">
+          <input type="text" maxlength="4" name="time" id="time" placeholder="14:22">
         </div>
         <div id="div_activity">
           <div class="select-activity"> 
