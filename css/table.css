@@ -197,7 +197,7 @@ input#fiscal{
 #car, #replace-car{
   width: 40px;
 }
-#icon_tb, #icon_bus, #icon_replace, #icon_line, #icon_time, #icon_activity, .arrow-down, #icon_delay{
+#icon_tb, .icon_bus, #icon_replace, #icon_line, #icon_time, #icon_activity, .arrow-down, #icon_delay{
   font-size: 22px;
 }
 #replace{
@@ -245,7 +245,10 @@ input#fiscal{
   gap: 6px;
   border-radius: 8px;
 }
-.line #line, .time #time{
+.line #line{
+  width: 48px;
+}
+.time #time{
   width: 42px;
 }
 .time{

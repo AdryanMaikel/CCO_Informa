@@ -27,11 +27,8 @@ body.dark #div_activity.active ~ .list-activities{
 body.dark form input,
 body.dark header a:hover,
 body.dark .list .option:hover,
-body.dark .list-activities .options-activies:hover,
-#active-dark:hover #moon
-{
+body.dark .list-activities .options-activies:hover{
   color: #fafafa;
-  transition: color .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 body.dark form{
   background-color: #290342;
@@ -39,10 +36,8 @@ body.dark form{
 }
 body.dark header a,
 body.dark .list .option,
-body.dark .list-activities .options-activies,
-#active-dark #moon{
+body.dark .list-activities .options-activies{
   color: #fafafac4;
-  transition: color .5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 body.dark .select-menu .selecionar-informado.active ~ .list{
   box-shadow: -1px -4px 20px 2px #290342;

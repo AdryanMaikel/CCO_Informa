@@ -7,7 +7,6 @@ body{
   width: 100vw;
   height: 100vh;
   background: #007bad;
-  transition: background .2s;
 }
 header{
   width: 100%;
@@ -42,29 +41,21 @@ header a:hover{
   justify-content: center;
   cursor: pointer;
 }
-#moon,#sun{
+#moon, #sun{
   position: absolute;
   width: 50%;
   height: 50%;
-  transition: transform .5s;
+  transition: margin-top .5s ease-out;
 }
-#sun{
-  transform: translateY(-50px);
-  transition: transform .5s;
+body.dark #moon, #sun{
+  margin-top: -100px;
+  transition: margin-top .5s ease-out;
 }
-#moon{
-  transform: translateY(0);
-  transition: transform .5s;
-}
- body.dark ~ #moon{
-  transform: translateY(-50px);
-  transition: transform .5s;
+body.dark #sun, #moon{
+  margin-top: 0;
+  transition: margin-top .5s ease-out;
 }
 
- body.dark ~ #sun{
-  transform: translateY(0);
-  transition: transform .5s;
-}
 
 
 section{
@@ -76,13 +67,14 @@ input:-webkit-autofill {
   -webkit-text-fill-color: #000;
 }
 /*remover setinhas do input*/
-input[type=number]::-webkit-outer-spin-button,
+/* input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 input[type=number] {
+  appearance: initial;
   -moz-appearance: textfield;
-}
+} */
 @media only screen and (max-width: 450px) {
   header a{
     margin: 0;
