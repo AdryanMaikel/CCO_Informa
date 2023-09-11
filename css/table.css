@@ -1,3 +1,4 @@
+/* 
 @charset "UTF-8";
 form{
   width: 450px;
@@ -9,7 +10,7 @@ form{
   background-color: #65c3f9;
   border-radius: 8px;
   animation: surge 1s ease-out;
-}
+} 
 @keyframes surge {
   from{
     top: -1000px;
@@ -18,9 +19,9 @@ form{
     top: 10px;
   }
 }
-form .row{
+form .row{ 
   width: 100%;
-  display: flex;
+   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
@@ -29,15 +30,14 @@ form .row{
   margin-bottom: 5px;
   padding: 0 7px;
 }
-@media only screen and (max-width: 500px) {
+ @media only screen and (max-width: 500px) {
   form{
     width: 100%;
     padding: 0;
   }
   form .row{
     padding: 0;
-  }
-
+  } 
 }
 .select-was-informed{
   width: 123px;
@@ -53,7 +53,7 @@ form .row{
   color: red;
   transition: color .2s;
 }
- .icons{
+.icons{
   width: 25px;
   height: 25px;
   font-size: 22px;
@@ -70,12 +70,12 @@ form .row{
 .select-was-informed.active{
   color: green;
 }
-.select-menu{
+.div-informed{
   width: 110px;
   height: 40px;
   padding: 0 20px 0 0;
 }
-.select-menu .selecionar-informado{
+.div-informed .select-informed{
   width: 100%;
   height: 100%;
   padding: 0 10px;
@@ -86,14 +86,14 @@ form .row{
   background-color: #fff;
   cursor: pointer;
 }
-.select-menu .selecionar-informado .arrow-down{
+.div-informed .select-informed .arrow-down{
   transition: rotate .5s; 
   font-size: 22px; 
 }
-.select-menu .selecionar-informado.active .arrow-down{
+.div-informed .select-informed.active .arrow-down{
   rotate: 180deg;
 }
-.select-menu .list{
+.div-informed .list{
   width: 130px;
   position: absolute;
   z-index: 10;
@@ -114,12 +114,12 @@ form .row{
   opacity: 0;
   transition: color .5s ease-in-out, background .5s ease, opacity .3s, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), margin-bottom .2s ease-in-out;
 }
-.select-menu .selecionar-informado.active ~ .list{
+.div-informed .select-informed.active ~ .list{
   margin-top: 5px;
   box-shadow: 0px -2px 20px 3px #333;
   transition: margin-top .5s cubic-bezier(0.65, 0.05, 0.36, 1), box-shadow .3s ease;
 }
-.select-menu .selecionar-informado.active ~ .list .option{
+.div-informed .select-informed.active ~ .list .option{
   margin-bottom: 0;
   opacity: 1;
   transform: scale(1);
@@ -194,7 +194,7 @@ input#fiscal{
 }
 #car, #replace-car{
   width: 40px;
-}
+} 
 #icon_tb, .icon_bus, #icon_replace, #icon_line, #icon_time, #icon_activity, .arrow-down, #icon_delay{
   font-size: 22px;
 }
@@ -233,7 +233,6 @@ input#fiscal{
   transition: transform .2s ease-in-out, left .5s;
 }
 .line, .time, .select-activity{
-  width: 72px;
   display: flex;
   flex-direction: row;
   padding: 0 10px;
@@ -246,20 +245,16 @@ input#fiscal{
 .line #line{
   width: 48px;
 }
-.time #time{
-  width: 42px;
-}
 .time{
   width: 70px;
-}
+} 
 .select-activity{
   width: 80px;
   cursor: pointer;
 }
-.list-activities{
+*/
+/* .list-activities{
   position: absolute;
-  margin-left: 222px;
-  top: 187px;
   width: 55px;
   background-color: #fff;
   border-radius: 7px;
@@ -268,13 +263,13 @@ input#fiscal{
   z-index: 9;
   transform-origin: top;
   transform: translateY(-20px);
-  /* transition: scale .2s ease-in-out, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), opacity .3s; */
-}
-.select-menu .list, .list-activities
+  transition: scale .2s ease-in-out, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), opacity .3s;
+} */
+/* .div-informed .list, .list-activities
 { 
   transition: transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), margin-top .5s cubic-bezier(0.65, 0.05, 0.36, 1), box-shadow .3s ease;
-}
-.list-activities .options-activies{
+} */
+/* .list-activities .options-activies{
   position: relative;
   height: 40px;
   list-style: none;
@@ -284,24 +279,24 @@ input#fiscal{
   color: #000000bb;
   cursor: pointer;
   z-index: 10;
-}
-.list-activities .options-activies:hover{
+} */
+/* .list-activities .options-activies:hover{
   color: #000000;
   background-color: #f2f2f2;
-}
-#div_activity.active ~ .list-activities{
+} */
+/* #div_activity.active ~ .list-activities{
   box-shadow: 0px -2px 20px 3px #333;
   scale: 1;
   opacity: 1;
   transform: translateY(0);
-  /* transition: scale .2s ease-in-out, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), opacity .3s; */
-}
+  transition: scale .2s ease-in-out, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), opacity .3s;
+} */
 
-.select-menu .selecionar-informado.active ~ .list,
+/* .div-informed .select-informed.active ~ .list,
 #div_activity.active ~ .list-activities
 {
   transition: margin-top .5s cubic-bezier(0.65, 0.05, 0.36, 1), box-shadow .3s ease;
-}
+} */
 .select-activity .arrow-down, #div-event .arrow-down{
   rotate: 360deg;
   transition: rotate .5s;

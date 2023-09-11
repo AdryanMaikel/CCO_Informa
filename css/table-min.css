@@ -1,0 +1,231 @@
+@charset "UTF-8";
+:root{
+  --primary-background: #65c3f9;
+  --container-primary-bg: #ffffff;
+  --container-primary-bg-hover: #dbd9d9;
+  --primary-color: #0a0117;
+}
+section{
+  width: 500px;
+}
+form{
+  width: 92%;
+  margin: auto;
+  padding: 2% 2% 2% 2%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary-background);
+  color: var(--primary-color);
+  border-radius: 8px;
+  animation: surge 1s ease-out;
+}
+@keyframes surge{from{top: -1000px;}to{top: 10px;}}
+@media only screen and (max-width: 500px){form{width: 100%;padding: 0;}}
+.row,
+.select-was-informed{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 3px 0;
+}
+.row{
+  width: 100%;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.select-was-informed{
+  padding-left: 4px;
+  justify-content: center;
+  color: red;
+  transition: color .2s;
+}
+.icons{
+  width: 25px;
+  height: 25px;
+}
+.icon{position: absolute;}
+.select-was-informed.active .icons .icon#yes, .icon#no{visibility: visible;}
+.select-was-informed.active .icons .icon#no, .icon#yes{visibility: hidden;}
+.select-was-informed.active{color: #0eaa0e;}
+.div-informed{
+  width: 110px;
+  padding: 0 20px 0 0;
+}
+.div-informed .select-informed{
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.div-informed .select-informed .arrow-down{
+  transition: rotate .5s;font-size: 22px;
+}
+.div-informed .select-informed.active .arrow-down{
+  rotate: 180deg;
+}
+.fiscal{
+  width: 122px;
+}
+.select-was-informed,
+.div-informed,
+.list .option,
+.fiscal,
+.table,
+.car,
+.replace-car,
+#replace,
+.list-activities .options-activies{
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: var(--container-primary-bg);
+}
+.table, .car, .replace-car{
+  padding-left: 4px;
+  padding-right: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+input{
+  height: 100%;
+  font-size: 15px;
+  background: none;
+  border: none;
+  outline: none;
+}
+input#fiscal{
+  width: 112px;
+  padding-left: 7px;
+}
+input#table{
+  width: 76px;
+}
+input#car, input#replace-car, input#time{
+  width: 40px;
+}
+input#line{
+  width: 48px;
+}
+.icons, #icon_tb, .icon_bus, #icon_replace, #icon_line, #icon_time, #icon_activity, .arrow-down, #icon_delay{
+  font-size: 22px;
+}
+#replace{
+  width: 22px;
+  height: 22px;
+  padding: 5px;
+  z-index: 1;
+  color: red;
+}
+#icon_replace{
+  transition: rotate 1s, color .5s;
+}
+#replace.active #icon_replace{
+  rotate: 360deg;
+  transition: rotate 1s, color .5s;
+}
+.fiscal,.replace-car{
+  position: relative;
+  z-index: 1;
+  visibility: hidden;
+  left: -80px;
+  scale: 0;
+  transition: visibility .2s ease, scale .2s ease-in-out, left .5s, scale .5s;
+}
+#replace.active{
+  color: green;
+}
+.fiscal.active,
+#replace.active ~ .replace-car
+{
+  visibility: visible;
+  left: 0;
+  scale: 1;
+  transition: visibility .2s ease, scale .2s ease-in-out, left .5s, scale .5s;
+}
+.line, .time, .select-activity{
+  height: 40px;
+  padding: 0 6px;
+  gap: 5px;
+  border-radius: 8px;
+  background-color: var(--container-primary-bg);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.select-activity{
+  cursor: pointer;
+}
+.list, .list-activities{
+  position: absolute;
+  background-color: var(--container-primary-bg);
+  border-radius: 8px;
+  margin-top: 5px;
+  box-shadow: none;
+}
+.list{
+  width: 130px;
+  z-index: 10;
+}
+.list-activities{
+  width: 55px;
+  top: 187px;
+  left: 210px;
+  z-index: 9;
+}
+.list .option:nth-child(1),
+.list-activities .options-activies:nth-child(1),
+.list-event .options-events:nth-child(1){
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.list .option:nth-child(4),
+.list-activities .options-activies:nth-child(13),
+.list-event .options-events:nth-child(4){
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.list .option .option-text,
+.options-activies{
+  padding: 0 16px;
+}
+.list .option,
+.list-activities .options-activies{
+  display: flex;
+  border-radius: 0;
+  color: var(--primary-color);
+  background-color: transparent;
+  align-items: center;
+  transform-origin: top;
+  transform: scale(0) translateY(-40px);
+  margin-bottom: -45px;
+  opacity: 0;
+  transition: 
+  background .5s ease-out,
+  opacity .2s, 
+  transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), 
+  margin-bottom .2s ease-in-out;
+}
+.list .option:hover,
+.list-activities .options-activies:hover{
+  background-color: var(--container-primary-bg-hover);
+}
+.div-informed .select-informed.active ~ .list,
+#div_activity.active ~ .list-activities{
+  box-shadow: 0px 4px 20px 3px #333;
+}
+.div-informed .select-informed.active ~ .list .option,
+#div_activity.active ~ .list-activities .options-activies{
+  margin-bottom: 0;
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: 
+  background .5s ease-out,
+  opacity .2s, 
+  transform .2s cubic-bezier(0.65, 0.05, 0.36, 1), 
+  margin-bottom .2s ease-in-out;
+}

@@ -7,7 +7,7 @@ body.dark .list-activities .options-activies:hover{
 }
 body.dark header a,
 body.dark .select-was-informed,
-body.dark .select-menu .selecionar-informado,
+body.dark .div-informed .select-informed,
 body.dark .list .option,
 body.dark .fiscal,
 body.dark .table,
@@ -39,7 +39,7 @@ body.dark .list .option,
 body.dark .list-activities .options-activies{
   color: #fafafac4;
 }
-body.dark .select-menu .selecionar-informado.active ~ .list{
+body.dark .div-informed .select-informed.active ~ .list{
   box-shadow: -1px -4px 20px 2px #290342;
 }
 

@@ -3,7 +3,7 @@ active_dark.addEventListener("click", function () {
   document.querySelector("body").classList.toggle("dark")
 })
 
-const selecionarinformado = document.getElementById('selecionar-informado')
+const selecionarinformado = document.getElementById('select-informed')
 selecionarinformado.addEventListener("click", function() {
   selecionarinformado.classList.toggle("active")
 })
