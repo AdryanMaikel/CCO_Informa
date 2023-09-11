@@ -73,13 +73,22 @@ for(options of options_events){
 function activeEvent(events) {
   const div_delay = document.getElementById("div_delay")
   const div_location = document.getElementById("div_location")
-  if(events.trim() == "atrasada"){
-    div_delay.style.display = "none"
-    div_location.style.display = "none"
-    
-  }
-  if(events.trim() == "interrompida"){
-    div_delay.style.display = "none"
-    div_location.style.display = "none"
+  switch (events.trim()) {
+    case "atrasada":
+      div_delay.classList.add("active")
+      div_location.classList.remove("active")
+      break;
+    case "interrompida":
+      div_delay.classList.remove("active")
+      div_location.classList.add("active")
+      break;
+    case "perdida":
+      div_delay.classList.remove("active")
+      div_location.classList.add("active")
+      break;
+    case "realizada a frente":
+      div_delay.classList.remove("active")
+      div_location.classList.add("active")
+      break;
   }
 }

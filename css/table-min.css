@@ -97,7 +97,7 @@ transition: rotate 1s, color .5s;
   rotate: 180deg;
   transition: rotate 1s, color .5s;
 }
-.fiscal,.replace-car{
+.fiscal,.replace-car,#div_delay{
   position: relative;
   z-index: 1;
   visibility: hidden;
@@ -106,7 +106,8 @@ transition: rotate 1s, color .5s;
   transition: visibility .2s ease, scale .2s ease-in-out, left .5s, scale .5s;
 }
 .fiscal.active,
-#replace.active ~ .replace-car
+#replace.active ~ .replace-car,
+#div_delay.active
 {
   visibility: visible;
   left: 0;
@@ -114,7 +115,8 @@ transition: rotate 1s, color .5s;
   transition: visibility .2s ease, scale .2s ease-in-out, left .5s, scale .5s;
 }
 .table, .car, .replace-car,
-.line, .time, .select-activity{
+.line, .time, .select-activity,
+#div_delay{
   padding: 0 4px;
   display: flex;
   align-items: center;
@@ -238,21 +240,12 @@ transition: rotate 1s, color .5s;
 #div_location{
   display: none;
 }
+#div_location.active{
+  display: block;
+}
 #div_delay{
-  width: 60px;
-  scale: 0;
-  transform: translateX(-100px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 3px;
-  transition: scale .2s cubic-bezier(0.54, 0.01, 0, 1.45), transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 50px;
 }
 #delay-event{
   width: 30px;
-}
-#div_delay.active{
-  scale: 1;
-  transform: translateX(0);
-  transition: scale .2s cubic-bezier(0.54, 0.01, 0, 1.45), transform .5s linear;
 }
