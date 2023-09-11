@@ -252,8 +252,7 @@ input#fiscal{
   width: 80px;
   cursor: pointer;
 }
-*/
-/* .list-activities{
+.list-activities{
   position: absolute;
   width: 55px;
   background-color: #fff;
@@ -264,12 +263,12 @@ input#fiscal{
   transform-origin: top;
   transform: translateY(-20px);
   transition: scale .2s ease-in-out, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), opacity .3s;
-} */
-/* .div-informed .list, .list-activities
+}
+.div-informed .list, .list-activities
 { 
   transition: transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), margin-top .5s cubic-bezier(0.65, 0.05, 0.36, 1), box-shadow .3s ease;
-} */
-/* .list-activities .options-activies{
+}
+.list-activities .options-activies{
   position: relative;
   height: 40px;
   list-style: none;
@@ -279,24 +278,24 @@ input#fiscal{
   color: #000000bb;
   cursor: pointer;
   z-index: 10;
-} */
-/* .list-activities .options-activies:hover{
+}
+.list-activities .options-activies:hover{
   color: #000000;
   background-color: #f2f2f2;
-} */
-/* #div_activity.active ~ .list-activities{
+}
+#div_activity.active ~ .list-activities{
   box-shadow: 0px -2px 20px 3px #333;
   scale: 1;
   opacity: 1;
   transform: translateY(0);
   transition: scale .2s ease-in-out, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), opacity .3s;
-} */
+}
 
-/* .div-informed .select-informed.active ~ .list,
+.div-informed .select-informed.active ~ .list,
 #div_activity.active ~ .list-activities
 {
   transition: margin-top .5s cubic-bezier(0.65, 0.05, 0.36, 1), box-shadow .3s ease;
-} */
+}
 .select-activity .arrow-down, #div-event .arrow-down{
   rotate: 360deg;
   transition: rotate .5s;
@@ -346,7 +345,6 @@ input#fiscal{
   height: 40px;
   color: #000000bb;
   cursor: pointer;
-  
 }
 .list-event .options-events:hover{
   background-color: #f2f2f2;
@@ -358,7 +356,6 @@ input#fiscal{
   margin-top: 210px;
   transition: scale .2s cubic-bezier(0.54, 0.01, 0, 1.45), margin-top .5s;
 }
-
 #div_location{
   display: none;
 }
@@ -383,3 +380,4 @@ input#fiscal{
   transform: translateX(0);
   transition: scale .2s cubic-bezier(0.54, 0.01, 0, 1.45), transform .5s linear;
 }
+*/
