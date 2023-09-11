@@ -66,16 +66,7 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px #fff inset;
   -webkit-text-fill-color: #000;
 }
-/*remover setinhas do input*/
-/* input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-}
-input[type=number] {
-  appearance: initial;
-  -moz-appearance: textfield;
-} */
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 500px) {
   header a{
     margin: 0;
     font-size: 12px;

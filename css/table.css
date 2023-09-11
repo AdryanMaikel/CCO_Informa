@@ -29,7 +29,7 @@ form .row{
   margin-bottom: 5px;
   padding: 0 7px;
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 500px) {
   form{
     width: 100%;
     padding: 0;
@@ -88,19 +88,17 @@ form .row{
 }
 .select-menu .selecionar-informado .arrow-down{
   transition: rotate .5s; 
-  font-size: 23px; 
+  font-size: 22px; 
 }
 .select-menu .selecionar-informado.active .arrow-down{
   rotate: 180deg;
-  
 }
 .select-menu .list{
-  width: 150px;
+  width: 130px;
   position: absolute;
   z-index: 10;
   border-radius: 8px;
   box-shadow: none;
-  transition: transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), margin-top .5s cubic-bezier(0.65, 0.05, 0.36, 1), box-shadow .3s ease;
 }
 .list .option{
   width: 100%;
@@ -260,7 +258,7 @@ input#fiscal{
 }
 .list-activities{
   position: absolute;
-  left: 243px;
+  margin-left: 222px;
   top: 187px;
   width: 55px;
   background-color: #fff;
@@ -270,7 +268,11 @@ input#fiscal{
   z-index: 9;
   transform-origin: top;
   transform: translateY(-20px);
-  transition: scale .2s ease-in-out, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), opacity .3s;
+  /* transition: scale .2s ease-in-out, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), opacity .3s; */
+}
+.select-menu .list, .list-activities
+{ 
+  transition: transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), margin-top .5s cubic-bezier(0.65, 0.05, 0.36, 1), box-shadow .3s ease;
 }
 .list-activities .options-activies{
   position: relative;
@@ -292,7 +294,13 @@ input#fiscal{
   scale: 1;
   opacity: 1;
   transform: translateY(0);
-  transition: scale .2s ease-in-out, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), opacity .3s;
+  /* transition: scale .2s ease-in-out, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), opacity .3s; */
+}
+
+.select-menu .selecionar-informado.active ~ .list,
+#div_activity.active ~ .list-activities
+{
+  transition: margin-top .5s cubic-bezier(0.65, 0.05, 0.36, 1), box-shadow .3s ease;
 }
 .select-activity .arrow-down, #div-event .arrow-down{
   rotate: 360deg;
@@ -309,8 +317,12 @@ input#fiscal{
   background-color: #fff;
   border-radius: 7px;
   display: flex;
-  align-items: center;
   cursor: pointer;
+}
+.select-event{
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }
 #div-event .arrow-down{
   display: inline-block;

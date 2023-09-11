@@ -1,0 +1,25 @@
+@charset "UTF-8";
+:root{
+  --primary-background: #65c3f9;
+  --primary-color: #0a0117;
+}
+form{
+  width: 450px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--primary-background);
+  color: var(--primary-color);
+  border-radius: 8px;
+  animation: surge 1s ease-out;
+}
+@keyframes surge {
+  from{
+    top: -1000px;
+  }
+  to{
+    top: 10px;
+  }
+}
