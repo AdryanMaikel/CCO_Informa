@@ -84,43 +84,51 @@ input#car, input#replace-car, input#time{
 input#line{
   width: 48px;
 }
-.icons, #icon_tb, .icon_bus, #icon_replace, #icon_line, #icon_time, #icon_activity, .arrow-down, #icon_delay{
+input#location-event{
+  width: 200px;
+}
+input#delay-event{
+  width: 30px;
+}
+.icons, #icon_tb, .icon_bus, #icon_replace, #icon_line, #icon_time,
+#icon_activity, .arrow-down, #icon_location, #icon_delay{
   font-size: 22px;
 }
 #icon_replace,
 .arrow-down{
 rotate: 0deg;
-transition: rotate 1s, color .5s;
+transition: rotate 1s;
 }
 #replace.active #icon_replace,
 .active .arrow-down{
   rotate: 180deg;
-  transition: rotate 1s, color .5s;
+  transition: rotate 1s;
 }
-.fiscal,.replace-car,#div_delay{
+.fiscal,.replace-car,#div_location,#div_delay{
   position: relative;
   z-index: 1;
   visibility: hidden;
   left: -80px;
   scale: 0;
-  transition: visibility .2s ease, scale .2s ease-in-out, left .5s, scale .5s;
+  transition: visibility .2s ease, left .5s, scale .5s;
 }
 .fiscal.active,
 #replace.active ~ .replace-car,
+#div_location.active,
 #div_delay.active
 {
   visibility: visible;
   left: 0;
   scale: 1;
-  transition: visibility .2s ease, scale .2s ease-in-out, left .5s, scale .5s;
+  transition: visibility .2s ease, left .5s, scale .5s;
 }
 .table, .car, .replace-car,
 .line, .time, .select-activity,
-#div_delay{
+#div_location.active,
+#div_delay.active{
   padding: 0 4px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
 }
 .select-was-informed,
 .div-informed,
@@ -136,6 +144,7 @@ transition: rotate 1s, color .5s;
 .select-activity,
 #div-event,
 .options-events,
+#div_location,
 #div_delay{
   height: 40px;
   border-radius: 8px;
@@ -206,7 +215,7 @@ transition: rotate 1s, color .5s;
   transform: scale(0) translateY(-40px);
   margin-bottom: -45px;
   opacity: 0;
-  transition: background .5s ease-out, opacity .2s, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), margin-bottom .2s ease-in-out;
+  transition: opacity .2s, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), margin-bottom .2s ease-in-out;
 }
 .list .option:hover,
 .list-activities .options-activies:hover,
@@ -224,10 +233,11 @@ transition: rotate 1s, color .5s;
   margin-bottom: 0;
   opacity: 1;
   transform: scale(1) translateY(0);
-  transition: background .5s ease-out, opacity .2s, transform .2s cubic-bezier(0.65, 0.05, 0.36, 1), margin-bottom .2s ease-in-out;
+  transition: opacity .2s, transform .2s cubic-bezier(0.65, 0.05, 0.36, 1), margin-bottom .2s ease-in-out;
 }
 #div-event{
   width: 210px;
+  z-index: 2;
 }
 .select-event{
   height: 100%;
@@ -245,13 +255,17 @@ transition: rotate 1s, color .5s;
   .list{width: 110px;}
   #div-event{width: 176px;}
 }
-#div_location{
-  display: none;
+.location_delay{
+  height: 40px;
 }
-#div_location.active{
-  display: block;
+#div_location{
+  left: -100px;
+}
+#div_delay,
+#div_delay.active{
+  top: -40px;
 }
 #div_delay{
   width: 50px;
-  display: none;
+  z-index: 1;
 }
