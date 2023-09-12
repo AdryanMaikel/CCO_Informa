@@ -1,137 +1,183 @@
-/* 
 @charset "UTF-8";
+:root{
+  --primary-background: #65c3f9;
+  --container-primary-bg: #ffffff;
+  --container-primary-bg-hover: #dbd9d9;
+  --primary-color: #0a0117;
+}
+section{
+  width: 500px;
+}
 form{
-  width: 450px;
+  width: 92%;
+  margin: auto;
+  padding: 2% 2% 2% 2%;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #65c3f9;
+  background-color: var(--primary-background);
+  color: var(--primary-color);
   border-radius: 8px;
   animation: surge 1s ease-out;
-} 
-@keyframes surge {
-  from{
-    top: -1000px;
-  }
-  to{
-    top: 10px;
-  }
 }
-form .row{ 
-  width: 100%;
-   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  margin-top: 3px;
-  margin-bottom: 5px;
-  padding: 0 7px;
-}
- @media only screen and (max-width: 500px) {
-  form{
-    width: 100%;
-    padding: 0;
-  }
-  form .row{
-    padding: 0;
-  } 
-}
+@keyframes surge{from{top: -1000px;}to{top: 10px;}}
+@media only screen and (max-width: 500px){form{width: 100%;padding: 0;}}
+.row,
 .select-was-informed{
-  width: 123px;
-  height: 40px;
-  padding-left: 7px;
-  border-radius: 8px;
-  cursor: pointer;
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin: 3px 0;
+}
+.row{
+  width: 100%;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.select-was-informed{
+  padding-left: 4px;
   justify-content: center;
-  background-color: #fff;
   color: red;
   transition: color .2s;
 }
 .icons{
   width: 25px;
   height: 25px;
-  font-size: 22px;
 }
-.icon{
-  position: absolute;
-}
-.select-was-informed.active .icons .icon#yes, .icon#no{
-  visibility: visible;
-}
-.select-was-informed.active .icons .icon#no, .icon#yes{
-  visibility: hidden;
-}
-.select-was-informed.active{
-  color: green;
-}
+.icon{position: absolute;}
+.select-was-informed.active .icons .icon#yes, .icon#no{visibility: visible;}
+.select-was-informed.active .icons .icon#no, .icon#yes{visibility: hidden;}
+.select-was-informed.active, #replace.active{color: #0eaa0e;}
 .div-informed{
   width: 110px;
-  height: 40px;
   padding: 0 20px 0 0;
 }
 .div-informed .select-informed{
   width: 100%;
   height: 100%;
   padding: 0 10px;
-  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #fff;
-  cursor: pointer;
 }
-.div-informed .select-informed .arrow-down{
-  transition: rotate .5s; 
-  font-size: 22px; 
+.fiscal{
+  width: 122px;
 }
-.div-informed .select-informed.active .arrow-down{
+input{
+  height: 100%;
+  font-size: 15px;
+  background: none;
+  border: none;
+  outline: none;
+}
+input#fiscal{
+  width: 112px;
+  padding-left: 7px;
+}
+input#table{
+  width: 76px;
+}
+input#car, input#replace-car, input#time{
+  width: 40px;
+}
+input#line{
+  width: 48px;
+}
+.icons, #icon_tb, .icon_bus, #icon_replace, #icon_line, #icon_time, #icon_activity, .arrow-down, #icon_delay{
+  font-size: 22px;
+}
+#icon_replace,
+.arrow-down{
+rotate: 0deg;
+transition: rotate 1s, color .5s;
+}
+#replace.active #icon_replace,
+.active .arrow-down{
   rotate: 180deg;
+  transition: rotate 1s, color .5s;
 }
-.div-informed .list{
-  width: 130px;
-  position: absolute;
-  z-index: 10;
-  border-radius: 8px;
-  box-shadow: none;
+.fiscal,.replace-car,#div_delay{
+  position: relative;
+  z-index: 1;
+  visibility: hidden;
+  left: -80px;
+  scale: 0;
+  transition: visibility .2s ease, scale .2s ease-in-out, left .5s, scale .5s;
 }
-.list .option{
-  width: 100%;
-  height: 40px;
+.fiscal.active,
+#replace.active ~ .replace-car,
+#div_delay.active
+{
+  visibility: visible;
+  left: 0;
+  scale: 1;
+  transition: visibility .2s ease, scale .2s ease-in-out, left .5s, scale .5s;
+}
+.table, .car, .replace-car,
+.line, .time, .select-activity,
+#div_delay{
+  padding: 0 4px;
   display: flex;
   align-items: center;
+  justify-content: space-around;
+}
+.select-was-informed,
+.div-informed,
+.list .option,
+.fiscal,
+.table,
+.car,
+.replace-car,
+#replace,
+.options-activies,
+.line,
+.time,
+.select-activity,
+#div-event,
+.options-events,
+#div_delay{
+  height: 40px;
+  border-radius: 8px;
   cursor: pointer;
-  background-color: #fff;
-  color: #000000bb;
-  transform-origin: top;
-  transform: scale(0) translateY(-40px);
-  margin-bottom: -45px;
-  opacity: 0;
-  transition: color .5s ease-in-out, background .5s ease, opacity .3s, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), margin-bottom .2s ease-in-out;
+  background-color: var(--container-primary-bg);
 }
-.div-informed .select-informed.active ~ .list{
+#replace{
+  width: 22px;
+  height: 22px;
+  padding: 5px;
+  z-index: 1;
+  color: red;
+}
+.line, .time, .select-activity{
+  flex-direction: row;
+  gap: 3px;
+}
+.select-activity{
+  cursor: pointer;
+}
+.list, .list-activities, .list-event{
+  position: absolute;
+  background-color: var(--container-primary-bg);
+  border-radius: 8px;
   margin-top: 5px;
-  box-shadow: 0px -2px 20px 3px #333;
-  transition: margin-top .5s cubic-bezier(0.65, 0.05, 0.36, 1), box-shadow .3s ease;
+  box-shadow: none;
 }
-.div-informed .select-informed.active ~ .list .option{
-  margin-bottom: 0;
-  opacity: 1;
-  transform: scale(1);
-  transition: opacity .3s, transform .2s ease-in-out;
-  transition: color .5s ease, background-color .3s ease;
+.list{
+  width: 130px;
+  z-index: 10;
 }
-.list .option:hover{
-  background-color: #f2f2f2;
-  color: #000000;
+.list-activities{
+  width: 55px;
+  top: 187px;
+  left: 198px;
+  z-index: 9;
 }
-.list .option .option-text{
-  padding: 0 16px;
+.list-event{
+  width: 150px;
+  top: 230px;
+  left: 50px;
+  z-index: 8;
 }
 .list .option:nth-child(1),
 .list-activities .options-activies:nth-child(1),
@@ -145,239 +191,67 @@ form .row{
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
-.fiscal{
-  width: 122px;
-  height: 40px;
-  background-color: #fff;
-  border-radius: 8px;
-  scale: 0;
-  transition: scale .2s;
-}
-input#fiscal{
-  width: 112px;
-  height: 100%;
-  outline: none;
-  border: none;
-  font-size: 15px;
-  padding-left: 10px;
-  background: none;
-}
-.fiscal.active{
-  scale: 1;
-  transition: scale .2s;
-}
-.table, .car, .replace-car{
-  padding-left: 4px;
-  padding-right: 4px;
-  height: 40px;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-radius: 8px;
-}
-.table{
-  width: 112px;
-}
-.car, .replace-car{
-  width: 67px;
-}
-#table, #car, #replace-car, #line, #time, #delay-event{
-  height: 100%;
-  background: none;
-  border: none;
-  outline: none;
-  font-size: 15px;
-}
-#table{
-  width: 76px;
-}
-#car, #replace-car{
-  width: 40px;
-} 
-#icon_tb, .icon_bus, #icon_replace, #icon_line, #icon_time, #icon_activity, .arrow-down, #icon_delay{
-  font-size: 22px;
-}
-#replace{
-  width: 20px;
-  height: 20px;
-  padding: 5px;
-  cursor: pointer;
-  background-color: #fff;
-  border-radius: 8px;
-  z-index: 1;
-  color: red;
-}
-#icon_replace{
-  font-size: 20px;
-  transition: rotate 1s, color .5s;
-}
-.replace-car{
-  position: relative;
-  left: -80px;
-  visibility: hidden;
-  transform: scale(0);
-  transition:  transform .4s ease-in-out, left .5s, visibility .5s;
-}
-#replace.active{
-  color: green;
-}
-#replace.active #icon_replace{
-  rotate: 360deg;
-  transition: rotate 1s, color .5s;
-}
-#replace.active ~ .replace-car{
-  visibility: visible;
-  left: 0;
-  transform: scale(1);
-  transition: transform .2s ease-in-out, left .5s;
-}
-.line, .time, .select-activity{
-  display: flex;
-  flex-direction: row;
-  padding: 0 10px;
-  background: #fff;
-  height: 40px;
-  align-items: center;
-  gap: 6px;
-  border-radius: 8px;
-}
-.line #line{
-  width: 48px;
-}
-.time{
-  width: 70px;
-} 
-.select-activity{
-  width: 80px;
-  cursor: pointer;
-}
-.list-activities{
-  position: absolute;
-  width: 55px;
-  background-color: #fff;
-  border-radius: 7px;
-  scale: 0;
-  opacity: 0;
-  z-index: 9;
-  transform-origin: top;
-  transform: translateY(-20px);
-  transition: scale .2s ease-in-out, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), opacity .3s;
-}
-.div-informed .list, .list-activities
-{ 
-  transition: transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), margin-top .5s cubic-bezier(0.65, 0.05, 0.36, 1), box-shadow .3s ease;
-}
-.list-activities .options-activies{
-  position: relative;
-  height: 40px;
-  list-style: none;
-  display: flex;
-  align-items: center;
+.list .option .option-text, .options-activies, .options-events{
   padding: 0 16px;
-  color: #000000bb;
-  cursor: pointer;
-  z-index: 10;
 }
-.list-activities .options-activies:hover{
-  color: #000000;
-  background-color: #f2f2f2;
+.list .option,
+.list-activities .options-activies,
+.list-event .options-events{
+  display: flex;
+  border-radius: 0;
+  color: var(--primary-color);
+  background-color: transparent;
+  align-items: center;
+  transform-origin: top;
+  transform: scale(0) translateY(-40px);
+  margin-bottom: -45px;
+  opacity: 0;
+  transition: background .5s ease-out, opacity .2s, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), margin-bottom .2s ease-in-out;
 }
-#div_activity.active ~ .list-activities{
-  box-shadow: 0px -2px 20px 3px #333;
-  scale: 1;
-  opacity: 1;
-  transform: translateY(0);
-  transition: scale .2s ease-in-out, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), opacity .3s;
+.list .option:hover,
+.list-activities .options-activies:hover,
+.list-event .options-events:hover{
+  background-color: var(--container-primary-bg-hover);
 }
-
 .div-informed .select-informed.active ~ .list,
-#div_activity.active ~ .list-activities
-{
-  transition: margin-top .5s cubic-bezier(0.65, 0.05, 0.36, 1), box-shadow .3s ease;
+#div_activity.active ~ .list-activities,
+#div-event.active ~ .list-event{
+  box-shadow: 0px 4px 20px 3px #333;
 }
-.select-activity .arrow-down, #div-event .arrow-down{
-  rotate: 360deg;
-  transition: rotate .5s;
-}
-#div_activity.active .select-activity .arrow-down, #div-event.active .arrow-down{
-  rotate: 180deg;
-  transition: rotate .5s;
+.div-informed .select-informed.active ~ .list .option,
+#div_activity.active ~ .list-activities .options-activies,
+#div-event.active ~ .list-event .options-events{
+  margin-bottom: 0;
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: background .5s ease-out, opacity .2s, transform .2s cubic-bezier(0.65, 0.05, 0.36, 1), margin-bottom .2s ease-in-out;
 }
 #div-event{
-  width: 207px;
-  height: 40px;
-  padding-left: 10px;
-  background-color: #fff;
-  border-radius: 7px;
-  display: flex;
-  cursor: pointer;
+  width: 210px;
 }
 .select-event{
-  display: flex;
-  align-items: center;
+  height: 100%;
   gap: 3px;
-}
-#div-event .arrow-down{
-  display: inline-block;
-  position: absolute;
-  margin-left: 180px;
-  font-size: 22px;
-}
-.list-event{
-  width: 136px;
-  background-color: #fff;
-  box-shadow: 0px -2px 20px 3px #333;
-  position: absolute;
-  transform-origin: top;
-  scale: 0;
-  border-radius: 7px;
-  z-index: 0;
-  margin-top: 180px;
-  margin-left: 43px;
-  transition: scale .2s cubic-bezier(0.25, -0.41, 0.76, 0.89), margin-top .5s;
-}
-.list-event .options-events{
-  list-style: none;
+  padding: 0 4px;
   display: flex;
-  align-items: center;
-  padding: 0 9px;
-  height: 40px;
-  color: #000000bb;
-  cursor: pointer;
+  align-content: space-between;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
-.list-event .options-events:hover{
-  background-color: #f2f2f2;
-  color: #000000;
-}
-#div-event.active ~ .list-event{
-  scale: 1;
-  z-index: 7;
-  margin-top: 210px;
-  transition: scale .2s cubic-bezier(0.54, 0.01, 0, 1.45), margin-top .5s;
+@media only screen and (max-width: 500px){
+  form{width: 100%;padding: 0;}
+  .div-informed{width: 90px;}
+  .list{width: 110px;}
+  #div-event{width: 176px;}
 }
 #div_location{
   display: none;
 }
+#div_location.active{
+  display: block;
+}
 #div_delay{
-  width: 60px;
-  height: 40px;
-  border-radius: 7px;
-  scale: 0;
-  transform: translateX(-100px);
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 3px;
-  transition: scale .2s cubic-bezier(0.54, 0.01, 0, 1.45), transform .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 50px;
+  display: none;
 }
-#delay-event{
-  width: 30px;
-}
-#div_delay.active{
-  scale: 1;
-  transform: translateX(0);
-  transition: scale .2s cubic-bezier(0.54, 0.01, 0, 1.45), transform .5s linear;
-}
-*/
