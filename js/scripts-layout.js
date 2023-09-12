@@ -45,17 +45,26 @@ time.addEventListener("blur", function() {
 })
 
 const activity = document.getElementById('div_activity')
+const direction = document.getElementById('direction')
 activity.addEventListener("click", function() {
   activity.classList.toggle("active")
-})
-const direction = document.getElementById('direction')
-const options_activies = document.getElementsByClassName('options_activies')
-for(options of options_activies){
-  options.onclick = function() {
-    direction.innerHTML = this.textContent
-    activity.classList.remove("active")
+  const activies = ["BC", "CB", "TT", "BB", "CC", "BT", "TB", "SG", "RC", "NS", "SN", "NL", "LN"]
+  const list_activities = document.querySelector('.list_activities')
+  list_activities.innerHTML = `
+  ${activies.map((value) => {
+    return `
+    <li class="options_activies">
+      <span class="text_activies">${value}</span>
+    </li>`
+  }).join('')}`
+  const options_activies = document.getElementsByClassName('options_activies')
+  for(options of options_activies){
+    options.onclick = function() {
+      direction.innerHTML = this.textContent
+      activity.classList.remove("active")
+    }
   }
-}
+})
 
 const div_event = document.getElementById('div_event')
 div_event.addEventListener("click", function() {
@@ -78,7 +87,7 @@ function activeEvent(events) {
       div_delay.classList.remove("active")
       div_location.classList.add("active")
       continuedjourney.classList.add("open")
-      row_continued.style.height = "40px"
+      row_continued.style.height = "46px"
     } else {
       continuedjourney.classList.remove("active")
       row_continued.style.height = 0

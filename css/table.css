@@ -24,12 +24,15 @@ form{
 @keyframes surge{from{top: -1000px;}to{top: 10px;}}
 @media only screen and (max-width: 500px){form{width: 100%;padding: 0;}}
 .row,
-.select_was_informed,
 .continued_journey{
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 3px 0;
+}
+.select_was_informed{
+  display: flex;
+  align-items: center;
 }
 .row{
   width: 100%;
@@ -48,8 +51,8 @@ form{
   height: 25px;
 }
 .icon{position: absolute;}
-.select_was_informed.active .yes, .select_was_informed .no,
-.continued_journey.active .yes, .continued_journey .no
+.select_was_informed.active .yes,.select_was_informed .no,
+.continued_journey.active .yes,.continued_journey .no
 {visibility: visible;}
 .select_was_informed.active .no, .select_was_informed .yes,
 .continued_journey.active .no, .continued_journey .yes
@@ -96,6 +99,10 @@ input#location_event{
 input#delay_event{
   width: 30px;
 }
+input#motive{
+  width: 200px;
+  padding-left: 7px;
+}
 .icons, #icon_tb, .icon_bus, #icon_replace, #icon_line, #icon_time,
 #icon_activity, .arrow_down, .icon_location, #icon_delay{
   font-size: 22px;
@@ -106,7 +113,8 @@ rotate: 0deg;
 transition: rotate 1s;
 }
 #replace.active #icon_replace,
-.active .arrow_down{
+.active .arrow_down,
+input#motive:focus ~ .arrow_down{
   rotate: 180deg;
   transition: rotate 1s;
 }
@@ -155,7 +163,8 @@ transition: rotate 1s;
 #div_location,
 #div_delay,
 .continued_journey,
-#div_location_continued{
+#div_location_continued,
+#div_motives{
   height: 40px;
   border-radius: 8px;
   cursor: pointer;
@@ -291,6 +300,8 @@ transition: rotate 1s;
 }
 #row_continued{
   height: 0;
+  margin: 0;
+  transition: height .5s;
 }
 .continued_journey{
   position: relative;
@@ -305,4 +316,15 @@ transition: rotate 1s;
 .continued_journey,
 .continued_journey.open{
   transition: top .5s, scale .5s;
+}
+#div_motives{
+  display: flex;
+  align-items: center;
+}
+#div_motives .arrow_down{
+  padding: 0 4px;
+}
+.list_motives{
+  position: absolute;
+  transform: translate(10px, 70px);
 }

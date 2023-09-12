@@ -22,7 +22,7 @@
   </header>
 
   <section>
-    <form>
+    <form autocomplete="off">
       <div class="row">
         <h2>*CCO-Informa*</h2>
       </div>
@@ -95,6 +95,7 @@
           </div> 
         </div>
         <ul class="list_activities">
+          <!-- 
           <li class="options_activies">
             <span class="text_activies">BC</span>
           </li>
@@ -133,7 +134,7 @@
           </li>
           <li class="options_activies">
             <span class="text_activies">LN</span>
-        </ul>
+        </ul> -->
       </div>
 
       <div class="row">
@@ -187,10 +188,20 @@
       </div>
 
       <div class="row">
+        <!-- testes
         <input type="text" class="campo" placeholder="to aqui">
         <ul class="sugestoes">
-
-        </ul>
+        </ul> -->
+        <div id="div_motives">
+          <input type="text" oninput="this.value=this.value.replace(/[^A-Za-z]/g,'');" name="motive" id="motive" placeholder="Motivo:">
+          <ion-icon name="chevron-down-sharp" class="arrow_down"></ion-icon>
+          <ul class="list_motives">
+            <li class="option-motive">Quebra</li>
+            <li class="option-motive">Problema com passageiro</li>
+            <li class="option-motive">Validador</li>
+            <li class="option-motive">Sei la</li>
+          </ul>
+        </div>
       </div>
 
       <div class="row">
