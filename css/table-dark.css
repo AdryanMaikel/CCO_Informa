@@ -2,13 +2,16 @@
 /* class="dark" */
 body.dark,
 body.dark .list .option:hover,
-body.dark .list-activities .options-activies:hover{
+body.dark .list-activities .options-activies:hover,
+body.dark .list-event .options-events:hover{
   background-color:#000008;
 }
 body.dark header a,
 body.dark .select-was-informed,
-body.dark .div-informed .select-informed,
-body.dark .list .option,
+body.dark .div-informed,
+body.dark .select-informed,
+body.dark .list,
+body.dark .option,
 body.dark .fiscal,
 body.dark .table,
 body.dark .car,
@@ -17,17 +20,24 @@ body.dark #replace,
 body.dark .line,
 body.dark .time,
 body.dark .select-activity,
-body.dark .list-activities
+body.dark .list-activities,
+body.dark #div-event,
+body.dark .list-event,
+body.dark #div_location,
+body.dark #div_delay
 {
   background-color: #150225;
 }
-body.dark #div_activity.active ~ .list-activities{
-  box-shadow: 0px 7px 17px 7px #290342;
+body.dark #div_activity.active ~ .list-activities,
+body.dark .div-informed .select-informed.active ~ .list,
+body.dark #div-event.active ~ .list-event{
+  box-shadow: 0px -4px 17px 0px #000008;
 }
 body.dark form input,
 body.dark header a:hover,
 body.dark .list .option:hover,
-body.dark .list-activities .options-activies:hover{
+body.dark .list-activities .options-activies:hover,
+body.dark .list-event .options-events:hover{
   color: #fafafa;
 }
 body.dark form{
@@ -36,14 +46,13 @@ body.dark form{
 }
 body.dark header a,
 body.dark .list .option,
-body.dark .list-activities .options-activies{
+body.dark .list-activities .options-activies,
+body.dark .list-event .options-events{
   color: #fafafac4;
 }
-body.dark .div-informed .select-informed.active ~ .list{
-  box-shadow: -1px -4px 20px 2px #290342;
+body.dark .div-informed{
+  border-radius: 8px;
 }
-
-
 body.dark input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px #150225 inset;
   -webkit-text-fill-color: #f2f2f2;

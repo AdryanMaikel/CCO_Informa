@@ -55,7 +55,6 @@ form{
 }
 .div-informed .select-informed{
   width: 100%;
-  height: 100%;
   padding: 0 10px;
   display: flex;
   align-items: center;
@@ -87,6 +86,7 @@ input#line{
 input#location-event{
   width: 200px;
 }
+@media only screen and (max-width: 500px){input#location-event{width: 170px;}}
 input#delay-event{
   width: 30px;
 }
@@ -132,6 +132,7 @@ transition: rotate 1s;
 }
 .select-was-informed,
 .div-informed,
+.select-informed,
 .list .option,
 .fiscal,
 .table,
@@ -253,16 +254,25 @@ transition: rotate 1s;
   form{width: 100%;padding: 0;}
   .div-informed{width: 90px;}
   .list{width: 110px;}
+  .list-activities{
+    top: 172px;
+    left: 184px;
+  }
+  .list-event{
+    top: 218px;
+    left: 24px;
+  }
   #div-event{width: 176px;}
 }
 .location_delay{
   height: 40px;
 }
 #div_location{
-  left: -100px;
+  left: -200px;
 }
 #div_delay,
 #div_delay.active{
+  display: flex;
   top: -40px;
 }
 #div_delay{

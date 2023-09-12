@@ -84,7 +84,7 @@ function activeEvent(events) {
       break;
     case "perdida":
       div_delay.classList.remove("active")
-      div_location.classList.add("active")
+      div_location.classList.remove("active")
       break;
     case "realizada a frente":
       div_delay.classList.remove("active")
