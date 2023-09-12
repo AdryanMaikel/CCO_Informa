@@ -1,9 +1,9 @@
-const active_dark = document.getElementById("active-dark")
+const active_dark = document.getElementById("active_dark")
 active_dark.addEventListener("click", function () {
   document.querySelector("body").classList.toggle("dark")
 })
 
-const selecionarinformado = document.getElementById('select-informed')
+const selecionarinformado = document.getElementById('select_informed')
 selecionarinformado.addEventListener("click", function() {
   selecionarinformado.classList.toggle("active")
 })
@@ -49,7 +49,7 @@ activity.addEventListener("click", function() {
   activity.classList.toggle("active")
 })
 const direction = document.getElementById('direction')
-const options_activies = document.getElementsByClassName('options-activies')
+const options_activies = document.getElementsByClassName('options_activies')
 for(options of options_activies){
   options.onclick = function() {
     direction.innerHTML = this.textContent
@@ -57,12 +57,12 @@ for(options of options_activies){
   }
 }
 
-const div_event = document.getElementById('div-event')
+const div_event = document.getElementById('div_event')
 div_event.addEventListener("click", function() {
   div_event.classList.toggle("active")
 })
-const text_event = document.getElementById('text-event')
-const options_events = document.getElementsByClassName('options-events')
+const text_event = document.getElementById('text_event')
+const options_events = document.getElementsByClassName('options_events')
 for(options of options_events){
   options.onclick = function() {
     text_event.innerHTML = this.textContent
@@ -70,25 +70,36 @@ for(options of options_events){
     activeEvent(this.textContent)
   }
 }
+const continuedjourney = document.getElementById('continued_journey')
 function activeEvent(events) {
   const div_delay = document.getElementById("div_delay")
   const div_location = document.getElementById("div_location")
-  switch (events.trim()) {
-    case "atrasada":
-      div_delay.classList.add("active")
-      div_location.classList.remove("active")
-      break;
-    case "interrompida":
+  if(events.trim() == "interrompida"){
       div_delay.classList.remove("active")
       div_location.classList.add("active")
+      continuedjourney.classList.add("open")
+      row_continued.style.height = "40px"
+    } else {
+      row_continued.style.height = 0
+      switch (events.trim()) {
+      case "atrasada":
+        div_delay.classList.add("active")
+        div_location.classList.remove("active")
+        continuedjourney.classList.remove("open")
       break;
-    case "perdida":
-      div_delay.classList.remove("active")
-      div_location.classList.remove("active")
+      case "perdida":
+        div_delay.classList.remove("active")
+        div_location.classList.remove("active")
+        continuedjourney.classList.remove("open")
       break;
-    case "realizada a frente":
-      div_delay.classList.remove("active")
-      div_location.classList.add("active")
+      case "realizada a frente":
+        div_delay.classList.remove("active")
+        div_location.classList.add("active")
+        continuedjourney.classList.remove("open")
       break;
+    }
   }
 }
+continuedjourney.addEventListener("click", function() {
+  continuedjourney.classList.toggle("active")
+})

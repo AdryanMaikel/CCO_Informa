@@ -29,7 +29,7 @@ header a:hover{
   box-shadow: none;
   transition: color .5s;
 }
-#active-dark{
+#active_dark{
   position: absolute;
   z-index: 10;
   top: 10px;

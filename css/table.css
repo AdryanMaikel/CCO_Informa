@@ -24,7 +24,8 @@ form{
 @keyframes surge{from{top: -1000px;}to{top: 10px;}}
 @media only screen and (max-width: 500px){form{width: 100%;padding: 0;}}
 .row,
-.select-was-informed{
+.select_was_informed,
+.continued_journey{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -35,7 +36,8 @@ form{
   justify-content: flex-start;
   gap: 10px;
 }
-.select-was-informed{
+.select_was_informed,
+.continued_journey{
   padding-left: 4px;
   justify-content: center;
   color: red;
@@ -46,14 +48,18 @@ form{
   height: 25px;
 }
 .icon{position: absolute;}
-.select-was-informed.active .icons .icon#yes, .icon#no{visibility: visible;}
-.select-was-informed.active .icons .icon#no, .icon#yes{visibility: hidden;}
-.select-was-informed.active, #replace.active{color: #0eaa0e;}
-.div-informed{
+.select_was_informed.active .yes, .select_was_informed .no,
+.continued_journey.active .yes, .continued_journey .no
+{visibility: visible;}
+.select_was_informed.active .no, .select_was_informed .yes,
+.continued_journey.active .no, .continued_journey .yes
+{visibility: hidden;}
+.select_was_informed.active, #replace.active, .continued_journey.active{color: #0eaa0e;}
+.div_informed{
   width: 110px;
   padding: 0 20px 0 0;
 }
-.div-informed .select-informed{
+.div_informed .select_informed{
   width: 100%;
   padding: 0 10px;
   display: flex;
@@ -83,24 +89,24 @@ input#car, input#replace-car, input#time{
 input#line{
   width: 48px;
 }
-input#location-event{
+input#location_event{
   width: 200px;
 }
-@media only screen and (max-width: 500px){input#location-event{width: 170px;}}
-input#delay-event{
+@media only screen and (max-width: 500px){input#location_event{width: 170px;}}
+input#delay_event{
   width: 30px;
 }
 .icons, #icon_tb, .icon_bus, #icon_replace, #icon_line, #icon_time,
-#icon_activity, .arrow-down, #icon_location, #icon_delay{
+#icon_activity, .arrow_down, #icon_location, #icon_delay{
   font-size: 22px;
 }
 #icon_replace,
-.arrow-down{
+.arrow_down{
 rotate: 0deg;
 transition: rotate 1s;
 }
 #replace.active #icon_replace,
-.active .arrow-down{
+.active .arrow_down{
   rotate: 180deg;
   transition: rotate 1s;
 }
@@ -130,23 +136,24 @@ transition: rotate 1s;
   display: flex;
   align-items: center;
 }
-.select-was-informed,
-.div-informed,
-.select-informed,
+.select_was_informed,
+.div_informed,
+.select_informed,
 .list .option,
 .fiscal,
 .table,
 .car,
 .replace-car,
 #replace,
-.options-activies,
+.options_activies,
 .line,
 .time,
 .select-activity,
-#div-event,
-.options-events,
+#div_event,
+.options_events,
 #div_location,
-#div_delay{
+#div_delay,
+.continued_journey{
   height: 40px;
   border-radius: 8px;
   cursor: pointer;
@@ -166,7 +173,7 @@ transition: rotate 1s;
 .select-activity{
   cursor: pointer;
 }
-.list, .list-activities, .list-event{
+.list, .list_activities, .list_event{
   position: absolute;
   background-color: var(--container-primary-bg);
   border-radius: 8px;
@@ -177,36 +184,36 @@ transition: rotate 1s;
   width: 130px;
   z-index: 10;
 }
-.list-activities{
+.list_activities{
   width: 55px;
   top: 187px;
   left: 198px;
   z-index: 9;
 }
-.list-event{
+.list_event{
   width: 150px;
   top: 230px;
   left: 50px;
   z-index: 8;
 }
 .list .option:nth-child(1),
-.list-activities .options-activies:nth-child(1),
-.list-event .options-events:nth-child(1){
+.list_activities .options_activies:nth-child(1),
+.list_event .options_events:nth-child(1){
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
 .list .option:nth-child(4),
-.list-activities .options-activies:nth-child(13),
-.list-event .options-events:nth-child(4){
+.list_activities .options_activies:nth-child(13),
+.list_event .options_events:nth-child(4){
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
-.list .option .option-text, .options-activies, .options-events{
+.list .option .option_text, .options_activies, .options_events{
   padding: 0 16px;
 }
 .list .option,
-.list-activities .options-activies,
-.list-event .options-events{
+.list_activities .options_activies,
+.list_event .options_events{
   display: flex;
   border-radius: 0;
   color: var(--primary-color);
@@ -219,28 +226,28 @@ transition: rotate 1s;
   transition: opacity .2s, transform .5s cubic-bezier(0.65, 0.05, 0.36, 1), margin-bottom .2s ease-in-out;
 }
 .list .option:hover,
-.list-activities .options-activies:hover,
-.list-event .options-events:hover{
+.list_activities .options_activies:hover,
+.list_event .options_events:hover{
   background-color: var(--container-primary-bg-hover);
 }
-.div-informed .select-informed.active ~ .list,
-#div_activity.active ~ .list-activities,
-#div-event.active ~ .list-event{
+.div_informed .select_informed.active ~ .list,
+#div_activity.active ~ .list_activities,
+#div_event.active ~ .list_event{
   box-shadow: 0px 4px 20px 3px #333;
 }
-.div-informed .select-informed.active ~ .list .option,
-#div_activity.active ~ .list-activities .options-activies,
-#div-event.active ~ .list-event .options-events{
+.div_informed .select_informed.active ~ .list .option,
+#div_activity.active ~ .list_activities .options_activies,
+#div_event.active ~ .list_event .options_events{
   margin-bottom: 0;
   opacity: 1;
   transform: scale(1) translateY(0);
   transition: opacity .2s, transform .2s cubic-bezier(0.65, 0.05, 0.36, 1), margin-bottom .2s ease-in-out;
 }
-#div-event{
+#div_event{
   width: 210px;
   z-index: 2;
 }
-.select-event{
+.select_event{
   height: 100%;
   gap: 3px;
   padding: 0 4px;
@@ -252,19 +259,19 @@ transition: rotate 1s;
 }
 @media only screen and (max-width: 500px){
   form{width: 100%;padding: 0;}
-  .div-informed{width: 90px;}
+  .div_informed{width: 90px;}
   .list{width: 110px;}
-  .list-activities{
+  .list_activities{
     top: 172px;
     left: 184px;
   }
-  .list-event{
+  .list_event{
     top: 218px;
     left: 24px;
   }
-  #div-event{width: 176px;}
+  #div_event{width: 176px;}
 }
-.location_delay{
+.location_and_delay{
   height: 40px;
 }
 #div_location{
@@ -278,4 +285,20 @@ transition: rotate 1s;
 #div_delay{
   width: 50px;
   z-index: 1;
+}
+#row_continued{
+  height: 0;
+}
+.continued_journey{
+  position: relative;
+  top: -40px;
+  scale: 0;
+}
+.continued_journey.open{
+  top: 0;
+  scale: 1;
+}
+.continued_journey,
+.continued_journey.open{
+  transition: top .5s, scale .5s;
 }
