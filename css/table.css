@@ -97,7 +97,7 @@ input#delay_event{
   width: 30px;
 }
 .icons, #icon_tb, .icon_bus, #icon_replace, #icon_line, #icon_time,
-#icon_activity, .arrow_down, #icon_location, #icon_delay{
+#icon_activity, .arrow_down, .icon_location, #icon_delay{
   font-size: 22px;
 }
 #icon_replace,
@@ -110,7 +110,7 @@ transition: rotate 1s;
   rotate: 180deg;
   transition: rotate 1s;
 }
-.fiscal,.replace-car,#div_location,#div_delay{
+.fiscal,.replace-car,#div_location,#div_delay,#div_location_continued{
   position: relative;
   z-index: 1;
   visibility: hidden;
@@ -121,8 +121,8 @@ transition: rotate 1s;
 .fiscal.active,
 #replace.active ~ .replace-car,
 #div_location.active,
-#div_delay.active
-{
+#div_delay.active,
+.active ~ #div_location_continued{
   visibility: visible;
   left: 0;
   scale: 1;
@@ -131,7 +131,8 @@ transition: rotate 1s;
 .table, .car, .replace-car,
 .line, .time, .select-activity,
 #div_location.active,
-#div_delay.active{
+#div_delay.active,
+.active ~ #div_location_continued{
   padding: 0 4px;
   display: flex;
   align-items: center;
@@ -153,7 +154,8 @@ transition: rotate 1s;
 .options_events,
 #div_location,
 #div_delay,
-.continued_journey{
+.continued_journey,
+#div_location_continued{
   height: 40px;
   border-radius: 8px;
   cursor: pointer;
@@ -245,7 +247,7 @@ transition: rotate 1s;
 }
 #div_event{
   width: 210px;
-  z-index: 2;
+  z-index: 5;
 }
 .select_event{
   height: 100%;
@@ -274,7 +276,8 @@ transition: rotate 1s;
 .location_and_delay{
   height: 40px;
 }
-#div_location{
+#div_location,
+#div_location_continued{
   left: -200px;
 }
 #div_delay,
@@ -293,6 +296,7 @@ transition: rotate 1s;
   position: relative;
   top: -40px;
   scale: 0;
+  z-index: 3;
 }
 .continued_journey.open{
   top: 0;

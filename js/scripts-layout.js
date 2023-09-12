@@ -80,6 +80,7 @@ function activeEvent(events) {
       continuedjourney.classList.add("open")
       row_continued.style.height = "40px"
     } else {
+      continuedjourney.classList.remove("active")
       row_continued.style.height = 0
       switch (events.trim()) {
       case "atrasada":

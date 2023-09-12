@@ -25,7 +25,8 @@ body.dark #div_event,
 body.dark .list_event,
 body.dark #div_location,
 body.dark #div_delay,
-body.dark .continued_journey
+body.dark .continued_journey,
+body.dark #div_location_continued
 {
   background-color: #150225;
 }
