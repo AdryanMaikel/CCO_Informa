@@ -51,6 +51,15 @@ div_motives.addEventListener("click", function(){
     }
   })
 })
+
+function check_motive(motive) {
+  if(motive == "Falta de Tripulação"){
+    div_motives.classList.add("tripulation")
+  }else{
+    div_motives.classList.remove("tripulation")
+  }
+}
+
 const motive = document.getElementById('motive')
 const options_motive = document.getElementsByClassName('option_motive')
 div_motives.addEventListener("focusout", function(){
@@ -58,6 +67,7 @@ div_motives.addEventListener("focusout", function(){
     options.onclick = function() {
       motive.value = this.textContent.trim()
       div_motives.classList.remove("active")
+      check_motive(this.textContent.trim());
     }
   }
 })

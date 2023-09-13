@@ -209,7 +209,7 @@ transition: rotate 1s;
   z-index: 8;
 }
 #list_motives{
-  width: 177px;
+  width: 190px;
   max-height: 300px;
   top: 272px;
   left: 30px;
@@ -317,6 +317,12 @@ transition: rotate 1s;
     left: 24px;
   }
   #div_event{width: 176px;}
+  #list_motives{
+    transform: translateY(-15px);
+  }
+  input{
+    font-size: 14px;
+  }
 }
 .location_and_delay{
   height: 40px;

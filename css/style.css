@@ -71,7 +71,7 @@ input:-webkit-autofill {
 @media only screen and (max-width: 500px) {
   header a{
     margin: 0;
-    font-size: 12px;
+    font-size: 14px;
   }
   section{
     width: 100% !important;
