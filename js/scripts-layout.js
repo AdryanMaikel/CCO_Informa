@@ -48,15 +48,6 @@ const activity = document.getElementById('div_activity')
 const direction = document.getElementById('direction')
 activity.addEventListener("click", function() {
   activity.classList.toggle("active")
-  const activies = ["BC", "CB", "TT", "BB", "CC", "BT", "TB", "SG", "RC", "NS", "SN", "NL", "LN"]
-  const list_activities = document.querySelector('.list_activities')
-  list_activities.innerHTML = `
-  ${activies.map((value) => {
-    return `
-    <li class="options_activies">
-      <span class="text_activies">${value}</span>
-    </li>`
-  }).join('')}`
   const options_activies = document.getElementsByClassName('options_activies')
   for(options of options_activies){
     options.onclick = function() {

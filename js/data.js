@@ -1,5 +1,8 @@
-// const activies = ["BC", "CB", "TT", "BB", "CC", "BT", "TB", "SG", "RC", "NS", "SN", "NL", "LN"]
+const activies = ["BC", "CB", "TT", "BB", "CC", "BT", "TB", "SG", "RC", "NS", "SN", "NL", "LN"]
+const motivies = []
+const problems = []
 
+export{ activies, motivies, problems }
 // function autocomplete(activity) {
 //   return activies.filter((value)=>{
 //     const valueLowerCase = value.toLowerCase()
