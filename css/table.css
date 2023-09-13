@@ -143,9 +143,6 @@ transition: rotate 1s;
 .congestion_location{
   left: -300px;
 }
-.congestion ~ .congestion_location{
-  left: -126px;
-}
 .table, .car, .replace-car,
 .line, .time, .select-activity,
 #div_location.active,
@@ -251,6 +248,8 @@ transition: rotate 1s;
 }
 .option_tripulation{
   border-radius: 0;
+  padding: 0 8px;
+  z-index: 4;
 }
 .list .option:nth-child(1),
 .list_activities .options_activies:nth-child(1),
@@ -323,41 +322,6 @@ transition: rotate 1s;
   flex-direction: column;
   flex-wrap: wrap;
 }
-@media only screen and (max-width: 500px){
-  form{width: 100%;padding: 0;}
-  .div_informed{width: 90px;}
-  .list{width: 110px;}
-  .list_activities{
-    top: 172px;
-    left: 184px;
-  }
-  .list_event{
-    top: 218px;
-    left: 24px;
-  }
-  #div_event{width: 176px;}
-  #list_motives{
-    transform: translateY(-15px);
-  }
-  input{
-    font-size: 13px;
-  }
-  #div_motivies{
-    width: 189px;
-  }
-  input#motive{
-    width: 152px;
-  }
-  #list_motives{
-    width: 160px;
-  }
-  .congestion ~ .congestion_location{
-    left: -100px;
-  }
-}
-.location_and_delay{
-  height: 40px;
-}
 
 #div_location,
 #div_location_continued{
@@ -410,5 +374,47 @@ transition: rotate 1s;
   z-index: 5;
 }
 #who_missing{
-  width: 53px;
+  width: 68px;
+  padding-left: 4px;
 }
+.congestion ~ .congestion_location{
+  left: -133px;
+}
+  @media only screen and (max-width: 500px){
+    form{width: 100%;padding: 0;}
+    .div_informed{width: 90px;}
+    .list{width: 110px;}
+    .list_activities{
+      top: 172px;
+      left: 184px;
+    }
+    .list_event{
+      top: 218px;
+      left: 24px;
+    }
+    #div_event{width: 176px;}
+    #list_motives{
+      transform: translateY(-15px);
+    }
+    input{
+      font-size: 13px;
+    }
+    #div_motivies{
+      width: 189px;
+    }
+    input#motive{
+      width: 152px;
+    }
+    #list_motives{
+      width: 160px;
+    }
+    .congestion ~ .congestion_location{
+      width: 163px;
+    }
+    #congestion_location{
+      width: 139px;
+    }
+  }
+  .location_and_delay{
+    height: 40px;
+  }

@@ -28,7 +28,11 @@ body.dark #div_delay,
 body.dark .continued_journey,
 body.dark #div_location_continued,
 body.dark #div_motives,
-body.dark #list_motives
+body.dark #list_motives,
+body.dark #tripulation,
+body.dark .list_tripulation,
+body.dark .option_tripulation,
+body.dark .congestion_location
 {
   background-color: #150225;
 }
@@ -45,7 +49,8 @@ body.dark header a:hover,
 body.dark .list .option:hover,
 body.dark .list_activities .options_activies:hover,
 body.dark .list_event .options_events:hover,
-body.dark #list_motives .option_motive:hover{
+body.dark #list_motives .option_motive:hover,
+body.dark .option_tripulation:hover{
   color: #fafafa;
 }
 body.dark form{
@@ -56,10 +61,12 @@ body.dark header a,
 body.dark .list .option,
 body.dark .list_activities .options_activies,
 body.dark .list_event .options_events,
-body.dark #list_motives .option_motive{
+body.dark #list_motives .option_motive,
+body.dark .option_tripulation{
   color: #fafafac4;
 }
-body.dark #list_motives .option_motive:hover{
+body.dark #list_motives .option_motive:hover,
+body.dark .option_tripulation:hover{
   background-color: #000008;
   box-shadow: 0 0 10px 0 #000008;
 }
