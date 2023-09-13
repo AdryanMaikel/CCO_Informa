@@ -1,4 +1,4 @@
-import { activies , motivies } from "./data.js"
+import { activies , motivies , problems } from "./data.js"
 const list_activities = document.querySelector('.list_activities')
 list_activities.innerHTML = `
 ${activies.map((value) => {
@@ -74,3 +74,12 @@ div_motives.addEventListener("focusout", function(){
     }
   }
 })
+
+const list_problems = document.querySelector('#list_problems')
+list_problems.innerHTML = `
+${problems.map((value) => {
+  return `
+  <li class="option_problem">
+    <span class="text_problem">${value}</span>
+  </li>`
+}).join('')}`

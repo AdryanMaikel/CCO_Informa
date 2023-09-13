@@ -30,7 +30,32 @@ const motivies = [
   "Vandalismo",
   "Vistoria EPTC"
 ]
-const problems = []
+const problems = [
+  "Carroceria - Ar Condicionado",
+  "Carroceria - Elevador APD",
+  "Carroceria - Itens de segurança",
+  "Carroceria - Limpador / Espelho",
+  "Carroceria - Outros",
+  "Carroceria - Portas",
+  "Elétrica - Alternador",
+  "Elétrica - Iluminação interna",
+  "Elétrica - Letreiro",
+  "Elétrica - Pane elétrica",
+  "Elétrica - Sem arranque",
+  "Motor - Aquecimento Motor",
+  "Motor - Correias",
+  "Motor - Sem Força",
+  "Motor - Vazamento de água",
+  "Motor - Vazamento de óleo Diesel",
+  "Motor - Vazamento de óleo motor",
+  "Quebra na viagem anterior",
+  "Suspenção - Freio",
+  "Suspensão - Carro atravessado",
+  "Suspensão - Embreagem / Caixa",
+  "Suspensão - Mola / Amortecedor",
+  "Suspensão - Roda",
+  "Suspensão - Vazamento de ar"
+]
 
 export{ activies, motivies, problems }
 
