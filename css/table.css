@@ -119,7 +119,7 @@ transition: rotate 1s;
   transition: rotate 1s;
 }
 .fiscal,.replace-car,#div_location,#div_delay,#div_location_continued,
-#tripulation, .list_tripulation{
+#tripulation, .list_tripulation,.congestion_location{
   position: relative;
   z-index: 1;
   visibility: hidden;
@@ -133,11 +133,18 @@ transition: rotate 1s;
 #div_delay.active,
 .active ~ #div_location_continued,
 .tripulation ~ #tripulation,
-.active .list_tripulation{
+.active .list_tripulation,
+.congestion ~ .congestion_location{
   visibility: visible;
   left: 0;
   scale: 1;
   transition: visibility .2s ease, left .5s, scale .5s;
+}
+.congestion_location{
+  left: -300px;
+}
+.congestion ~ .congestion_location{
+  left: -126px;
 }
 .table, .car, .replace-car,
 .line, .time, .select-activity,
@@ -145,7 +152,8 @@ transition: rotate 1s;
 #div_delay.active,
 .active ~ #div_location_continued,
 #tripulation,
-.option_tripulation{
+.option_tripulation,
+.congestion ~ .congestion_location{
   padding: 0 4px;
   display: flex;
   align-items: center;
@@ -172,7 +180,8 @@ transition: rotate 1s;
 #div_motives,
 #list_motives .option_motive,
 #tripulation,
-.option_tripulation{
+.option_tripulation,
+.congestion_location{
   height: 40px;
   border-radius: 8px;
   cursor: pointer;
@@ -216,14 +225,14 @@ transition: rotate 1s;
   width: 190px;
   max-height: 300px;
   top: 272px;
-  left: 30px;
+  left: 12px;
   padding: 0;
   z-index: 4;
   overflow: overlay;
 }
 .active ~ #list_motives{
   padding: 4px;
-  transition: visibility .2s ease, left .5s, scale .5s, top .5s, padding .5s;
+  transition: visibility .2s ease, left .5s, scale .5s, top .5s, padding 0s;
 }
 #list_motives::-webkit-scrollbar{
   width: 6px;
@@ -240,15 +249,20 @@ transition: rotate 1s;
 #list_motives .option_motive{
   padding-left: 4px;
 }
+.option_tripulation{
+  border-radius: 0;
+}
 .list .option:nth-child(1),
 .list_activities .options_activies:nth-child(1),
-.list_event .options_events:nth-child(1){
+.list_event .options_events:nth-child(1),
+.option_tripulation:nth-child(1){
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
 .list .option:nth-child(4),
 .list_activities .options_activies:nth-child(13),
-.list_event .options_events:nth-child(4){
+.list_event .options_events:nth-child(4),
+.option_tripulation:nth-child(2){
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
 }
@@ -273,7 +287,8 @@ transition: rotate 1s;
 .list .option:hover,
 .list_activities .options_activies:hover,
 .list_event .options_events:hover,
-#list_motives .option_motive:hover{
+#list_motives .option_motive:hover,
+.option_tripulation:hover{
   background-color: var(--container-primary-bg-hover);
 }
 #list_motives .option_motive:hover{
@@ -325,12 +340,25 @@ transition: rotate 1s;
     transform: translateY(-15px);
   }
   input{
-    font-size: 14px;
+    font-size: 13px;
+  }
+  #div_motivies{
+    width: 189px;
+  }
+  input#motive{
+    width: 152px;
+  }
+  #list_motives{
+    width: 160px;
+  }
+  .congestion ~ .congestion_location{
+    left: -100px;
   }
 }
 .location_and_delay{
   height: 40px;
 }
+
 #div_location,
 #div_location_continued{
   left: -200px;
@@ -380,4 +408,7 @@ transition: rotate 1s;
   left: 0;
   transform: translate(15px, 60px);
   z-index: 5;
+}
+#who_missing{
+  width: 53px;
 }

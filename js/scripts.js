@@ -56,6 +56,11 @@ function check_motive(motive) {
   }else{
     div_motives.classList.remove("tripulation")
   }
+  if(motive == "Congestionamento"){
+    div_motives.classList.add("congestion")
+  }else{
+    div_motives.classList.remove("congestion")
+  }
 }
 
 const motive = document.getElementById('motive')
