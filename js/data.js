@@ -1,8 +1,64 @@
-const activies = ["BC", "CB", "TT", "BB", "CC", "BT", "TB", "SG", "RC", "NS", "SN", "NL", "LN"]
-const motivies = []
+const activies = [
+  "BC",
+  "CB",
+  "TT",
+  "BB",
+  "CC",
+  "BT",
+  "TB",
+  "SG",
+  "RC",
+  "NS",
+  "SN",
+  "NL",
+  "LN"
+]
+const motivies = [
+  "Acidente",
+  "Assalto",
+  "Atrasado",
+  "Avaria",
+  "Congestionamento",
+  "Falta de Carro",
+  "Falta de Tripulação",
+  "Pneu Furado",
+  "Problema com passageiro",
+  "Problemas mecânicos",
+  "Roleta",
+  "Tempo insuficiente",
+  "Validador",
+  "Vandalismo",
+  "Vistoria EPTC"
+]
 const problems = []
 
 export{ activies, motivies, problems }
+
+// function autocomplete(motivies) {
+//   return motivies.filter((value)=>{
+//     const valueLowerCase = value.toLowerCase()
+//     const motiviesLowerCase = motivies.toLowerCase()
+//     return valueLowerCase.includes(motiviesLowerCase)
+//   })
+// }
+// motive.addEventListener('input', ({ target }) => {
+//   const dadosDoCampo = target.value
+//   if(dadosDoCampo.length) {
+//     const autoCompleteValores = autocomplete(dadosDoCampo)
+//     sugestoes.innerHTML = `
+//     ${autoCompleteValores.map((value) => {
+//       return `<li>${value}</li>`
+//     }).join('')}`
+//   }else{
+//     sugestoes.innerHTML = `
+//     ${motivies.map((value) => {
+//       return `
+//       <li class="option_motive">
+//         <span class="text_motive">${value}</span>
+//       </li>`
+//     }).join('')}`
+//   }
+// })
 // function autocomplete(activity) {
 //   return activies.filter((value)=>{
 //     const valueLowerCase = value.toLowerCase()

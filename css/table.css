@@ -114,7 +114,7 @@ transition: rotate 1s;
 }
 #replace.active #icon_replace,
 .active .arrow_down,
-input#motive:focus ~ .arrow_down{
+.active ~ .arrow_down{
   rotate: 180deg;
   transition: rotate 1s;
 }
@@ -164,7 +164,8 @@ input#motive:focus ~ .arrow_down{
 #div_delay,
 .continued_journey,
 #div_location_continued,
-#div_motives{
+#div_motives,
+#list_motives .option_motive{
   height: 40px;
   border-radius: 8px;
   cursor: pointer;
@@ -174,7 +175,7 @@ input#motive:focus ~ .arrow_down{
   width: 22px;
   height: 22px;
   padding: 5px;
-  z-index: 1;
+  z-index: 3;
   color: red;
 }
 .line, .time, .select-activity{
@@ -184,12 +185,12 @@ input#motive:focus ~ .arrow_down{
 .select-activity{
   cursor: pointer;
 }
-.list, .list_activities, .list_event{
+.list, .list_activities, .list_event, #list_motives{
   position: absolute;
   background-color: var(--container-primary-bg);
   border-radius: 8px;
   margin-top: 5px;
-  box-shadow: none;
+  list-style: none;
 }
 .list{
   width: 130px;
@@ -197,15 +198,25 @@ input#motive:focus ~ .arrow_down{
 }
 .list_activities{
   width: 55px;
-  top: 187px;
+  top: 181px;
   left: 198px;
   z-index: 9;
 }
 .list_event{
   width: 150px;
-  top: 230px;
+  top: 227px;
   left: 50px;
   z-index: 8;
+}
+#list_motives{
+  width: 177px;
+  max-height: 300px;
+  top: 272px;
+  left: 30px;
+  padding: 0 4px;
+  z-index: 8;
+  overflow: overlay;
+
 }
 .list .option:nth-child(1),
 .list_activities .options_activies:nth-child(1),
@@ -224,7 +235,8 @@ input#motive:focus ~ .arrow_down{
 }
 .list .option,
 .list_activities .options_activies,
-.list_event .options_events{
+.list_event .options_events,
+#list_motives .option_motive{
   display: flex;
   border-radius: 0;
   color: var(--primary-color);
@@ -238,7 +250,8 @@ input#motive:focus ~ .arrow_down{
 }
 .list .option:hover,
 .list_activities .options_activies:hover,
-.list_event .options_events:hover{
+.list_event .options_events:hover,
+#list_motives .option_motive:hover{
   background-color: var(--container-primary-bg-hover);
 }
 .div_informed .select_informed.active ~ .list,
@@ -248,7 +261,9 @@ input#motive:focus ~ .arrow_down{
 }
 .div_informed .select_informed.active ~ .list .option,
 #div_activity.active ~ .list_activities .options_activies,
-#div_event.active ~ .list_event .options_events{
+#div_event.active ~ .list_event .options_events,
+#div_motives.active ~ #list_motives .option_motive
+{
   margin-bottom: 0;
   opacity: 1;
   transform: scale(1) translateY(0);
@@ -323,8 +338,4 @@ input#motive:focus ~ .arrow_down{
 }
 #div_motives .arrow_down{
   padding: 0 4px;
-}
-.list_motives{
-  position: absolute;
-  transform: translate(10px, 70px);
 }

@@ -101,6 +101,7 @@ function activeEvent(events) {
     }
   }
 }
-continuedjourney.addEventListener("click", function() {
+continuedjourney.addEventListener("click", function(){
   continuedjourney.classList.toggle("active")
 })
+
