@@ -222,7 +222,8 @@
           <input type="text" name="location" id="congestion_location" placeholder="Av. Assis Brasil">
         </div>
       </div>
-      <div class="row">
+
+      <div id="row_problems" class="row">
         <div id="div_problems" class="">
           <input type="text" oninput="this.value=this.value.replace(/[^A-Za-z]/g,'');" name="problem" id="problem" placeholder="Problema:">
           <ion-icon name="chevron-down-sharp" class="arrow_down"></ion-icon>
@@ -230,8 +231,6 @@
         <ul id="list_problems">
         </ul>
       </div>
-      
-      
 
       <div class="row">
         <button id="gerar_cco_informa">Gerar</button>

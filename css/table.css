@@ -178,7 +178,8 @@ transition: rotate 1s;
 #list_motives .option_motive,
 #tripulation,
 .option_tripulation,
-.congestion_location{
+.congestion_location,
+#div_problems{
   height: 40px;
   border-radius: 8px;
   cursor: pointer;

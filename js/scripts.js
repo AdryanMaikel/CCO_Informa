@@ -61,6 +61,11 @@ function check_motive(motive) {
   }else{
     div_motives.classList.remove("congestion")
   }
+  if(motive == "Problemas mecânicos"){
+    row_problems.classList.add("active")
+  }else{
+    row_problems.classList.remove("active")
+  }
 }
 
 const motive = document.getElementById('motive')
