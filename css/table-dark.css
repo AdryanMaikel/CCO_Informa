@@ -26,9 +26,14 @@ body.dark .list_event,
 body.dark #div_location,
 body.dark #div_delay,
 body.dark .continued_journey,
-body.dark #div_location_continued
+body.dark #div_location_continued,
+body.dark #div_motives,
+body.dark #list_motives
 {
   background-color: #150225;
+}
+body.dark #list_motives{
+  box-shadow: inset none;
 }
 body.dark #div_activity.active ~ .list_activities,
 body.dark .div_informed .select_informed.active ~ .list,
@@ -39,7 +44,8 @@ body.dark form input,
 body.dark header a:hover,
 body.dark .list .option:hover,
 body.dark .list_activities .options_activies:hover,
-body.dark .list_event .options_events:hover{
+body.dark .list_event .options_events:hover,
+body.dark #list_motives .option_motive:hover{
   color: #fafafa;
 }
 body.dark form{
@@ -49,8 +55,13 @@ body.dark form{
 body.dark header a,
 body.dark .list .option,
 body.dark .list_activities .options_activies,
-body.dark .list_event .options_events{
+body.dark .list_event .options_events,
+body.dark #list_motives .option_motive{
   color: #fafafac4;
+}
+body.dark #list_motives .option_motive:hover{
+  background-color: #000008;
+  box-shadow: 0 0 10px 0 #000008;
 }
 body.dark .div_informed{
   border-radius: 8px;

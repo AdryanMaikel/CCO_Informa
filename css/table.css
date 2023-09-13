@@ -213,10 +213,28 @@ transition: rotate 1s;
   max-height: 300px;
   top: 272px;
   left: 30px;
-  padding: 0 4px;
-  z-index: 8;
+  padding: 0;
+  z-index: 4;
   overflow: overlay;
-
+}
+.active ~ #list_motives{
+  padding: 4px;
+  transition: visibility .2s ease, left .5s, scale .5s, top .5s, padding .5s;
+}
+#list_motives::-webkit-scrollbar{
+  width: 6px;
+  background: transparent;
+  border-radius: 50px;
+}
+#list_motives::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+#list_motives::-webkit-scrollbar-thumb {
+  background: #dad7d7;
+  border-radius: 50px;
+}
+#list_motives .option_motive{
+  padding-left: 4px;
 }
 .list .option:nth-child(1),
 .list_activities .options_activies:nth-child(1),
@@ -253,6 +271,9 @@ transition: rotate 1s;
 .list_event .options_events:hover,
 #list_motives .option_motive:hover{
   background-color: var(--container-primary-bg-hover);
+}
+#list_motives .option_motive:hover{
+  box-shadow: 0 0 10px 0 #a6a6a6;
 }
 .div_informed .select_informed.active ~ .list,
 #div_activity.active ~ .list_activities,

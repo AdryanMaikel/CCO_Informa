@@ -79,8 +79,10 @@ function activeEvent(events) {
       div_location.classList.add("active")
       continuedjourney.classList.add("open")
       row_continued.style.height = "46px"
+      list_motives.style.top = "319px"
     } else {
       continuedjourney.classList.remove("active")
+      list_motives.style.top = "272px"
       row_continued.style.height = 0
       switch (events.trim()) {
       case "atrasada":
