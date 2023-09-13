@@ -107,3 +107,9 @@ continuedjourney.addEventListener("click", function(){
   continuedjourney.classList.toggle("active")
 })
 
+tripulation.addEventListener("click", function(){
+  tripulation.classList.toggle("active")
+})
+function set_tripulation(tripulation){
+  who_missing.innerHTML = tripulation
+}

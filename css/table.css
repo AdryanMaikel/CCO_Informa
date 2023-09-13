@@ -100,11 +100,11 @@ input#delay_event{
   width: 30px;
 }
 input#motive{
-  width: 200px;
+  width: 175px;
   padding-left: 7px;
 }
 .icons, #icon_tb, .icon_bus, #icon_replace, #icon_line, #icon_time,
-#icon_activity, .arrow_down, .icon_location, #icon_delay{
+#icon_activity, .arrow_down, .icon_location, #icon_delay, .icon_user{
   font-size: 22px;
 }
 #icon_replace,
@@ -118,7 +118,8 @@ transition: rotate 1s;
   rotate: 180deg;
   transition: rotate 1s;
 }
-.fiscal,.replace-car,#div_location,#div_delay,#div_location_continued{
+.fiscal,.replace-car,#div_location,#div_delay,#div_location_continued,
+#tripulation, .list_tripulation{
   position: relative;
   z-index: 1;
   visibility: hidden;
@@ -130,7 +131,9 @@ transition: rotate 1s;
 #replace.active ~ .replace-car,
 #div_location.active,
 #div_delay.active,
-.active ~ #div_location_continued{
+.active ~ #div_location_continued,
+.tripulation ~ #tripulation,
+.active .list_tripulation{
   visibility: visible;
   left: 0;
   scale: 1;
@@ -140,7 +143,9 @@ transition: rotate 1s;
 .line, .time, .select-activity,
 #div_location.active,
 #div_delay.active,
-.active ~ #div_location_continued{
+.active ~ #div_location_continued,
+#tripulation,
+.option_tripulation{
   padding: 0 4px;
   display: flex;
   align-items: center;
@@ -165,7 +170,9 @@ transition: rotate 1s;
 .continued_journey,
 #div_location_continued,
 #div_motives,
-#list_motives .option_motive{
+#list_motives .option_motive,
+#tripulation,
+.option_tripulation{
   height: 40px;
   border-radius: 8px;
   cursor: pointer;
@@ -182,10 +189,7 @@ transition: rotate 1s;
   flex-direction: row;
   gap: 3px;
 }
-.select-activity{
-  cursor: pointer;
-}
-.list, .list_activities, .list_event, #list_motives{
+.list, .list_activities, .list_event, #list_motives,.list_tripulation{
   position: absolute;
   background-color: var(--container-primary-bg);
   border-radius: 8px;
@@ -226,10 +230,10 @@ transition: rotate 1s;
   background: transparent;
   border-radius: 50px;
 }
-#list_motives::-webkit-scrollbar-track {
+#list_motives::-webkit-scrollbar-track{
   background-color: transparent;
 }
-#list_motives::-webkit-scrollbar-thumb {
+#list_motives::-webkit-scrollbar-thumb{
   background: #dad7d7;
   border-radius: 50px;
 }
@@ -360,9 +364,20 @@ transition: rotate 1s;
   transition: top .5s, scale .5s;
 }
 #div_motives{
+  width: 212px;
   display: flex;
   align-items: center;
+  z-index: 7;
+
 }
 #div_motives .arrow_down{
   padding: 0 4px;
+}
+#tripulation{
+  z-index: 6;
+}
+.list_tripulation{
+  left: 0;
+  transform: translate(15px, 60px);
+  z-index: 5;
 }

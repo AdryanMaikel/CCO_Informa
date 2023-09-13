@@ -208,6 +208,19 @@
           </li> 
         -->
         </ul>
+        <div id="tripulation">
+          <ion-icon name="person-sharp" class="icon_user"></ion-icon>
+          <span id="who_missing">Quem?</span>
+          <ion-icon name="chevron-down-sharp" class="arrow_down"></ion-icon>
+          <ul class="list_tripulation">
+            <li class="option_tripulation" onclick="set_tripulation('Motorista')">Motorista</li>
+            <li class="option_tripulation" onclick="set_tripulation('Cobrador')">Cobrador</li>
+          </ul>
+        </div>
+        <div class="congestion_location">
+          <ion-icon name="location-sharp" class="icon_location"></ion-icon>
+          <input type="text" name="location" id="location_event" placeholder="Av. Assis Brasil">
+        </div>
       </div>
 
       <div class="row">

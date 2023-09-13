@@ -1,5 +1,4 @@
 import { activies , motivies } from "./data.js"
-console.log(activies)
 const list_activities = document.querySelector('.list_activities')
 list_activities.innerHTML = `
 ${activies.map((value) => {
@@ -9,7 +8,6 @@ ${activies.map((value) => {
   </li>`
 }).join('')}`
 
-/**/
 const list_motives = document.querySelector('#list_motives')
 list_motives.innerHTML = `
 ${motivies.map((value) => {
