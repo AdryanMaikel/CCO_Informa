@@ -9,6 +9,7 @@ section{
   width: 500px;
 }
 form{
+  font-family: serif;
   width: 92%;
   margin: auto;
   padding: 2% 2% 2% 2%;
@@ -226,7 +227,7 @@ transition: rotate 1s;
   z-index: 9;
 }
 .list_event{
-  width: 150px;
+  width: 170px;
   top: 227px;
   left: 50px;
   z-index: 8;
@@ -453,4 +454,37 @@ transition: rotate 1s;
   height: 40px;
   opacity: 1;
   transition: height .5s, opacity .5s;
+}
+div#buttons{
+  height: 70px;
+  display: flex;
+}
+#moon{
+  color: #eead2d;
+}
+#sun{
+  color: #ff6c1c;
+}
+button#gerar_cco_informa{
+  width: 50%;
+  height: 50px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  background: #290342;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: transform .5s;
+}
+button#gerar_cco_informa:hover{
+  transform: translateY(-2px);
+  background: #150225;
+  transition: background .5s, transform .5s;
+
+}
+button#gerar_cco_informa:active{
+  transform: translateY(2px);
+  transition: transform .2s;
 }

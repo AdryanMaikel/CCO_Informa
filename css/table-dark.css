@@ -85,3 +85,9 @@ body.dark input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px #150225 inset;
   -webkit-text-fill-color: #f2f2f2;
 }
+body.dark button#gerar_cco_informa{
+  background: #65c3f9;
+}
+body.dark button#gerar_cco_informa:hover{
+  background: #198dc0;
+}
