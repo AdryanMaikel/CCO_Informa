@@ -75,13 +75,21 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px #fff inset;
   -webkit-text-fill-color: #000;
 }
-@media only screen and (max-width: 500px) {
-  header a{
-    margin: 0;
-    font-size: 14px;
-  }
-  section{
-    width: 100% !important;
-    font-size: 14px;
-  }
+aside{
+  font-family: Arial;
+  font-size: 13px;
+  position: relative;
+  left: 20px;
+  top: -1000px;
+  z-index: 2;
+  width: 292px;
+  height: 292px;
+  padding: 4px;
+  background-color: #fff;
+  transition: top .5s ease-out;
+}
+aside.active{
+  top: 0px;
+  transition: top .5s ease-out;
+
 }

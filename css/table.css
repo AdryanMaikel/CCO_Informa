@@ -1,6 +1,6 @@
 @charset "UTF-8";
 :root{
-  --primary-background: #65c3f9;
+  --primary-background: #45bbff;
   --container-primary-bg: #ffffff;
   --container-primary-bg-hover: #dbd9d9;
   --primary-color: #0a0117;
@@ -20,6 +20,7 @@ form{
   background-color: var(--primary-background);
   color: var(--primary-color);
   border-radius: 8px;
+  z-index: 3;
   animation: surge 1s ease-out;
 }
 @keyframes surge{from{top: -1000px;}to{top: 10px;}}
@@ -420,6 +421,8 @@ transition: rotate 1s;
   left: -130px;
 }
 @media only screen and (max-width: 500px){
+  header a{margin: 0;font-size: 14px;}
+  section{width: 100% !important;font-size: 14px;}
   #active_dark{right: 0;}
   form{width: calc(100% - 4px);padding: 8px 0px 8px 4px;}
   .row{gap: 6px;}
