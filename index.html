@@ -1,180 +1,257 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CCO-Informa</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="scripts.js" defer></script>
+  <title>CCO INFORMA</title>
+  <link rel="shortcut icon" href="img/mob.png" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/table.css">
+  <link rel="stylesheet" href="css/table-dark.css">
+  <script type="module" src="js/scripts-creatings-lists.js" defer></script>
+  <script src="js/scripts-generating-cco-informa.js" defer></script>
+  <script nomodule src="js/data.js" defer></script>
+  <script src="js/scripts-layout.js" defer></script>
 </head>
-<body>
+<body class="">
   <header>
-    <h1>CCO Informa</h1>
+    <a href="#"><h1>Criar novo CCO-Informa</h1></a>
+    <div id="active_dark">
+      <ion-icon name="moon-sharp" id="moon"></ion-icon>
+      <ion-icon name="sunny-sharp" id="sun"></ion-icon>
+    </div>
   </header>
-  <section id="form">
-    <div class="row">
-      <label for="informado">Foi informado?</label>
-      <input type="checkbox" name="informado" id="informado">
-      <div class="quem">
-        <label for="quem">Quem informou?</label>
-        <select name="informado" id="quem" onchange="aparecer_fiscal(value)">
-          <option value="fiscal">Fiscal</option>
-          <option value="1">Sopal</option>
-          <option value="3">Nortran</option>
-          <option value="4">Navegantes</option>
-        </select>
-        <div class="fiscal">
-          <label for="fiscal">Qual fiscal:</label>
-          <input type="text" name="fiscal" id="fiscal">
+
+  <section>
+    <form id="form_inputs" autocomplete="off">
+      <div class="row">
+        <h2>*CCO-Informa*</h2>
+      </div>
+
+      <div class="row">
+        <div class="select_was_informed" id="box_was_informed">
+          <span id="informed">Foi informado</span>
+          <div class="icons">
+            <ion-icon name="close-sharp" class="icon no"></ion-icon>
+            <ion-icon name="checkmark-sharp" class="icon yes"></ion-icon>
+          </div>
+        </div>
+        <div class="div_informed">
+          <div class="select_informed" id="select_informed">
+            <span id="who_informed">Quem?</span>
+            <ion-icon name="chevron-down-outline" class="arrow_down"></ion-icon>
+          </div>
+          <ul class="list">
+            <li class="option">
+              <span class="option_text">Fiscal</span>
+            </li>
+            <li class="option">
+              <span class="option_text">Navegantes</span>
+            </li>
+            <li class="option">
+              <span class="option_text">Nortran</span>
+            </li>
+            <li class="option">
+              <span class="option_text">Sopal</span>
+            </li>
+          </ul>
+        </div>
+        <div class="fiscal" id="divfiscal">
+          <input type="text" id="fiscal" maxlength="12" placeholder="Qual?">
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div>
-        <label for="tabela">Tabela: </label>
-        <input type="text" name="tabela" id="tabela">
-      </div>
-      <div>
-        <label for="carro">Carro:</label>
-        <input type="number" min="6100" max="6899" name="carro" id="carro">
-      </div>
-    </div>
-    <div class="row">
-      <div>
-        <label for="linha">Linha: </label>
-        <input type="text" name="linha" id="linha">
-      </div>
-      <div>
-        <label for="hora">Hora: </label>
-        <input type="time" name="hora" id="hora">
-      </div>
-      <div>
-        <label for="sentido">Sentido: </label>
-        <select name="sentido" id="sentido">
-          <option value="BC">1</option>
-          <option value="CB">2</option>
-          <option value="TT">TT</option>
-          <option value="BB">BB</option>
-          <option value="CC">CC</option>
-          <option value="BT">BT</option>
-          <option value="TB">TB</option>
-          <option value="SG">SG</option>
-          <option value="RC">RC</option>
-          <option value="NS">NS</option>
-          <option value="SN">SN</option>
-          <option value="NL">NL</option>
-          <option value="LN">LN</option>
-        </select>
-      </div>
-    </div>
-    <div style="display: flex;flex-direction: row;">
-      <label for="interrompida">Viagem foi?</label>
-      <select name="interrompida" id="interrompida" onchange="estado_da_viagem(value)">
-        <option value="interrompida">interrompida</option>
-        <option value="realizadaafrente">realizada a frente</option>
-        <option value="perdida">perdida</option>
-        <option value="atrasada">atrasada</option>
-      </select>
-      <div class="onde">
-        <label for="onde">Onde:</label>
-        <input type="text" name="onde" id="onde">
-      </div>
-      <div class="min">
-        <label for="min">Minutos:</label>
-        <input type="number" name="min" id="min">
-      </div>
-    </div>
-    <div class="row continuou">
-      <div>
-        <label for="continuou">Continuou puxando viagem?</label>
-        <input type="checkbox" name="continuou" id="continuou" onclick="continou_puxando_viagem()">
-      </div>
-      <div class="apartir">
-        <label for="apartir">a partir?</label>
-        <input type="text" name="apartir" id="apartir">
-      </div>
-    </div>
-    <div class="row">
-      <div>
-        <label for="motivo">Motivo:</label>
-        <select name="motivo" id="motivo" onchange="selecionar_motivo(value)">
-          <option value="nulo"></option>
-          <option value="Acidente">Acidente</option>
-          <option value="Assalto">Assalto</option>
-          <option value="Atrasado">Atrasado</option>
-          <option value="Avaria">Avaria</option>
-          <option value="Congestionamento">Congestionamento</option>
-          <option value="Falta de Carro">Falta de Carro</option>
-          <option value="Falta de Tripulação">Falta de Tripulação</option>
-          <option value="Pneu Furado">Pneu Furado</option>
-          <option value="Problema com passageiro">Problema com passageiro</option>
-          <option value="Problemas mecânicos">Problemas mecânicos</option>
-          <option value="Roleta">Roleta</option>
-          <option value="Tempo insuficiente">Tempo insuficiente</option>
-          <option value="Validador">Validador</option>
-          <option value="Vandalismo">Vandalismo</option>
-          <option value="Vistoria EPTC">Vistoria EPTC</option>
-        </select>
-      </div>
-      <div class="localcongestionamento">
-        <label for="localcongestionamento">Onde? </label>
-        <input type="text" name="localcongestionamento" id="localcongestionamento">
 
+      <div class="row">
+        <div class="table" title="Tabela">
+          <ion-icon name="clipboard-sharp" id="icon_tb"></ion-icon>
+          <input type="text" oninput="this.value=this.value.toUpperCase()" id="table" maxlength="9" placeholder="SD73/005">
+        </div>
+        <div class="car" title="Carro">
+          <ion-icon name="bus-sharp" class="icon_bus"></ion-icon>
+          <input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="4" id="car" placeholder="6640">
+        </div>
+        <div id="replace">
+          <ion-icon name="sync-sharp" id="icon_replace"></ion-icon>
+        </div>
+        <div class="replace-car" title="Outro carro">
+          <ion-icon name="bus-sharp" class="icon_bus"></ion-icon>
+          <input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="4" id="replace-car" placeholder="6750">
+        </div>
       </div>
-      <div class="problema">
-        <label for="Problema">Problema: </label>
-        <select name="Problema" id="Problema">
-          <option value="Carroceria - Ar Condicionado">Carroceria - Ar Condicionado</option>
-          <option value="Carroceria - Elevador APD">Carroceria - Elevador APD</option>
-          <option value="Carroceria - Itens de segurança">Carroceria - Itens de segurança</option>
-          <option value="Carroceria - Limpador / Espelho">Carroceria - Limpador / Espelho</option>
-          <option value="Carroceria - Outros">Carroceria - Outros</option>
-          <option value="Carroceria - Portas">Carroceria - Portas</option>
-          <option value="Elétrica - Alternador">Elétrica - Alternador</option>
-          <option value="Elétrica - Iluminação interna">Elétrica - Iluminação interna</option>
-          <option value="Elétrica - Letreiro">Elétrica - Letreiro</option>
-          <option value="Elétrica - Pane elétrica">Elétrica - Pane elétrica</option>
-          <option value="Elétrica - Sem arranque">Elétrica - Sem arranque</option>
-          <option value="Motor - Aquecimento Motor">Motor - Aquecimento Motor</option>
-          <option value="Motor - Correias">Motor - Correias</option>
-          <option value="Motor - Sem Força">Motor - Sem Força</option>
-          <option value="Motor - Vazamento de água">Motor - Vazamento de água</option>
-          <option value="Motor - Vazamento de óleo Diesel">Motor - Vazamento de óleo Diesel</option>
-          <option value="Motor - Vazamento de óleo motor">Motor - Vazamento de óleo motor</option>
-          <option value="Quebra na viagem anterior">Quebra na viagem anterior</option>
-          <option value="Suspenção - Freio">Suspenção - Freio</option>
-          <option value="Suspensão - Carro atravessado">Suspensão - Carro atravessado</option>
-          <option value="Suspensão - Embreagem / Caixa">Suspensão - Embreagem / Caixa</option>
-          <option value="Suspensão - Mola / Amortecedor">Suspensão - Mola / Amortecedor</option>
-          <option value="Suspensão - Roda">Suspensão - Roda</option>
-          <option value="Suspensão - Vazamento de ar">Suspensão - Vazamento de ar</option>
-        </select>
+
+      <div class="row">
+        <div class="line" title="Linha">
+          <ion-icon name="map-sharp" id="icon_line"></ion-icon>
+          <input type="text" oninput="this.value=this.value.toUpperCase()" name="line" id="line" maxlength="5" placeholder="SD73">
+        </div>
+        <div class="time"  title="Hora">
+          <ion-icon name="time-sharp" id="icon_time"></ion-icon>
+          <input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="4" name="time" id="time" placeholder="14:22">
+        </div>
+        <div id="div_activity" title="Sentido">
+          <div class="select-activity"> 
+            <ion-icon name="compass-sharp" id="icon_activity"></ion-icon>
+            <span id="direction">BC</span>
+            <ion-icon name="chevron-down-sharp" class="arrow_down"></ion-icon>
+          </div> 
+        </div>
+        <ul class="list_activities">
+          <!-- 
+          <li class="options_activies">
+            <span class="text_activies">BC</span>
+          </li>
+          <li class="options_activies">
+            <span class="text_activies">CB</span>
+          </li>
+          <li class="options_activies">
+            <span class="text_activies">TT</span>
+          </li>
+          <li class="options_activies">
+            <span class="text_activies">BB</span>
+          </li>
+          <li class="options_activies">
+            <span class="text_activies">CC</span>
+          </li>
+          <li class="options_activies">
+            <span class="text_activies">BT</span>
+          </li>
+          <li class="options_activies">
+            <span class="text_activies">TB</span>
+          </li>
+          <li class="options_activies">
+            <span class="text_activies">SG</span>
+          </li>
+          <li class="options_activies">
+            <span class="text_activies">RC</span>
+          </li>
+          <li class="options_activies">
+            <span class="text_activies">NS</span>
+          </li>
+          <li class="options_activies">
+            <span class="text_activies">SN</span>
+          </li>
+          <li class="options_activies">
+            <span class="text_activies">NL</span>
+          </li>
+          <li class="options_activies">
+            <span class="text_activies">LN</span>
+        </ul> -->
       </div>
-      <div class="tripulação">
-        <label for="tripulação">Quem?</label>
-        <select name="tripulação" id="tripulação">
-          <option value="motorista">Motorista</option>
-          <option value="cobrador">Cobrador</option>
-          <option value="ambos">Ambos</option>
-        </select>
+
+      <div class="row">
+        <div id="div_event">
+          <div class="select_event">
+            <div>
+              <span>Viagem </span>
+              <span id="text_event">foi</span>
+            </div>
+            <ion-icon name="chevron-down-outline" class="arrow_down"></ion-icon>
+          </div>
+        </div>
+        <ul class="list_event">
+          <li class="options_events">
+            <span class="text_event">atrasada</span>
+          </li>
+          <li class="options_events">
+            <span class="text_event">interrompida</span>
+          </li>
+          <li class="options_events">
+            <span class="text_event">perdida</span>
+          </li>
+          <li class="options_events">
+            <span class="text_event">realizada a frente</span>
+          </li>
+        </ul>
+        <div class="location_and_delay">
+          <div id="div_location">
+            <ion-icon name="location-sharp" class="icon_location"></ion-icon>
+            <input type="text" name="location" id="location_event" placeholder="Av. Assis Brasil">
+          </div>
+          <div id="div_delay">
+            <ion-icon name="hourglass-sharp" id="icon_delay"></ion-icon>
+            <input type="text" name="delay" id="delay_event" maxlength="2" placeholder="06">
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div>
-        <label for="trocado">Trocado?</label>
-        <input type="checkbox" name="trocado" id="trocado" onclick="novo_carro()">
+
+      <div id="row_continued" class="row">
+        <div class="continued_journey" id="continued_journey">
+          <span>Continuou puxando?</span>
+          <div class="icons">
+            <ion-icon name="close-sharp" class="icon no"></ion-icon>
+            <ion-icon name="checkmark-sharp" class="icon yes"></ion-icon>
+          </div>
+        </div>
+        <div id="div_location_continued">
+          <ion-icon name="location-sharp" class="icon_location"></ion-icon>
+          <input type="text" name="location_continued" id="location_continued" placeholder="BR 290">
+        </div>
       </div>
-      <div class="trocado">
-        <label for="carrosubstituto">pelo carro: </label>
-        <input type="number" min="6100" max="6899" name="carrosubstituto" id="carrosubstituto">
+
+      <div class="row">
+        <div id="div_motives" class="">
+          <input type="text" oninput="this.value=this.value.replace(/[^A-Za-z]/g,'');" name="motive" id="motive" placeholder="Motivo:">
+          <ion-icon name="chevron-down-sharp" class="arrow_down"></ion-icon>
+        </div>
+        <ul id="list_motives">
+          <!-- Teste
+          <li class="option_motive">
+            <span class="text_motive">Quebra</span>
+          </li>
+          <li class="option_motive">
+            <span class="text_motive">Problema com passageiro</span>
+          </li>
+          <li class="option_motive">
+            <span class="text_motive">Validador</span>
+          </li>
+          <li class="option_motive">
+            <span class="text_motive">Sei la</span>
+          </li> 
+        -->
+        </ul>
+        <div id="tripulation">
+          <ion-icon name="person-sharp" class="icon_user"></ion-icon>
+          <span id="who_missing">Quem?</span>
+          <ion-icon name="chevron-down-sharp" class="arrow_down"></ion-icon>
+          <ul class="list_tripulation">
+            <li class="option_tripulation" onclick="set_tripulation('Motorista')">Motorista</li>
+            <li class="option_tripulation" onclick="set_tripulation('Cobrador')">Cobrador</li>
+          </ul>
+        </div>
+        <div class="congestion_location" id="congestion_location">
+          <ion-icon name="location-sharp" class="icon_location"></ion-icon>
+          <input type="text" name="location" id="input_congestion_location" placeholder="Av. Assis Brasil">
+        </div>
       </div>
-    </div>
-    <div>
-      <button type="button" id="gerar_cco_informa" onclick="gerar_cco_informa()">Gerar CCO-Informa</button>
-    </div>
+
+      <div id="row_problems" class="row">
+        <div id="div_problems" class="">
+          <input type="text" name="problem" id="problem" placeholder="Problema:">
+          <ion-icon name="chevron-down-sharp" class="arrow_down"></ion-icon>
+        </div>
+        <ul id="list_problems">
+        <!-- 
+          <li class="option_problem">
+            <span class="text_problem">Carroceria - Outros</span>
+          </li>
+        -->
+        </ul>
+      </div>
+
+      <div class="row" id="buttons">
+        <button id="gerar_cco_informa">Gerar cco-informa</button>
+      </div>
+    </form>
   </section>
-  <section id="resultado">
-    <p id="result"></p>
-  </section>
+  <aside id="div_cco_informa">
+    <span id="text_cco_informa"></span>
+  </aside>
+
+  <footer>
+
+  </footer>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
+

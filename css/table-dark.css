@@ -1,0 +1,91 @@
+@charset "UTF-8";
+/* class="dark" */
+body.dark,
+body.dark .list .option:hover,
+body.dark .list_activities .options_activies:hover,
+body.dark .list_event .options_events:hover,
+body.dark button#gerar_cco_informa{
+  background-color:#000008;
+}
+body.dark header a,
+body.dark .select_was_informed,
+body.dark .div_informed,
+body.dark .select_informed,
+body.dark .list,
+body.dark .option,
+body.dark .fiscal,
+body.dark .table,
+body.dark .car,
+body.dark .replace-car,
+body.dark #replace,
+body.dark .line,
+body.dark .time,
+body.dark .select-activity,
+body.dark .list_activities,
+body.dark #div_event,
+body.dark .list_event,
+body.dark #div_location,
+body.dark #div_delay,
+body.dark .continued_journey,
+body.dark #div_location_continued,
+body.dark #div_motives,
+body.dark #list_motives,
+body.dark #tripulation,
+body.dark .list_tripulation,
+body.dark .option_tripulation,
+body.dark .congestion_location,
+body.dark #div_problems,
+body.dark #list_problems .option_problem,
+body.dark #list_problems,
+body.dark button#gerar_cco_informa:hover
+{
+  background-color: #150225;
+}
+body.dark #list_motives{
+  box-shadow: inset none;
+}
+body.dark #div_activity.active ~ .list_activities,
+body.dark .div_informed .select_informed.active ~ .list,
+body.dark #div_event.active ~ .list_event,
+body.dark #list_problems,
+body.dark #list_motives{
+  box-shadow: 0px -4px 17px 0px #000008;
+}
+body.dark form input,
+body.dark header a:hover,
+body.dark .list .option:hover,
+body.dark .list_activities .options_activies:hover,
+body.dark .list_event .options_events:hover,
+body.dark #list_motives .option_motive:hover,
+body.dark .option_tripulation:hover,
+body.dark #list_problems .option_problem:hover,
+body.dark button#gerar_cco_informa:hover{
+  color: #fafafa;
+}
+body.dark form{
+  background-color: #290342;
+  color: #f2f2f2;
+}
+body.dark header a,
+body.dark .list .option,
+body.dark .list_activities .options_activies,
+body.dark .list_event .options_events,
+body.dark #list_motives .option_motive,
+body.dark .option_tripulation,
+body.dark #list_problems .option_problem,
+body.dark button#gerar_cco_informa{
+  color: #fafafac4;
+}
+body.dark #list_motives .option_motive:hover,
+body.dark .option_tripulation:hover,
+body.dark #list_problems .option_problem:hover{
+  background-color: #000008;
+  box-shadow: 0 0 10px 0 #000008;
+}
+body.dark .div_informed{
+  border-radius: 8px;
+}
+body.dark input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #150225 inset;
+  -webkit-text-fill-color: #f2f2f2;
+}
