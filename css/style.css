@@ -46,12 +46,6 @@ header a:hover{
   justify-content: center;
   cursor: pointer;
 }
-#moon, #sun{
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  transition: margin-top .5s ease-out;
-}
 body.dark #moon, #sun{
   margin-top: -100px;
   transition: margin-top .5s ease-out;
@@ -60,8 +54,18 @@ body.dark #sun, #moon{
   margin-top: 0;
   transition: margin-top .5s ease-out;
 }
-
-
+#moon, #sun{
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  transition: margin-top .5s ease-out;
+}
+#moon{
+  color: #eead2d;
+}
+#sun{
+  color: #ff6c1c;
+}
 
 section{
   width: 100vw;

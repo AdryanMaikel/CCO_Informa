@@ -417,11 +417,12 @@ transition: rotate 1s;
   padding-left: 4px;
 }
 .congestion ~ .congestion_location{
-  left: -133px;
+  left: -130px;
 }
 @media only screen and (max-width: 500px){
-  form{width: 100%;padding: 0;}
-  
+  #active_dark{right: 0;}
+  form{width: calc(100% - 4px);padding: 8px 0px 8px 4px;}
+  .row{gap: 6px;}
   .div_informed{width: 90px;}
   .list{width: 110px;}
   .list_activities{
@@ -437,10 +438,12 @@ transition: rotate 1s;
     width: 160px;
     transform: translateY(-15px);
   }
+  .select_event{width: 168px;}
   input{font-size: 13px;}
   #div_motivies{width: 189px;}
   input#motive{width: 152px;}
-  input#location_event{width: 170px;}
+  input#input_congestion_location,
+  input#location_event{width: 140px;}
 }
 .location_and_delay{height: 40px;}
 #row_problems{
@@ -455,36 +458,33 @@ transition: rotate 1s;
   opacity: 1;
   transition: height .5s, opacity .5s;
 }
+#row_problems.open ~ div#buttons{
+  margin-top: 4px;
+}
 div#buttons{
-  height: 70px;
+  margin-top: -4px;
   display: flex;
 }
-#moon{
-  color: #eead2d;
-}
-#sun{
-  color: #ff6c1c;
-}
 button#gerar_cco_informa{
-  width: 50%;
-  height: 50px;
+  width: 180px;
+  height: 45px;
   border-radius: 12px;
   cursor: pointer;
   border: none;
-  background: #290342;
-  color: #fff;
-  text-shadow: 1px 1px 2px #000;
+  background: #fafafa;
+  color: #000222;
+  text-shadow: 1px 1px 2px #1b08c5;
   text-transform: uppercase;
   font-weight: bold;
   transition: transform .5s;
 }
 button#gerar_cco_informa:hover{
   transform: translateY(-2px);
-  background: #150225;
+  background: #fafafac4;
   transition: background .5s, transform .5s;
 
 }
 button#gerar_cco_informa:active{
   transform: translateY(2px);
-  transition: transform .2s;
+  transition: background .5s, transform .2s;
 }

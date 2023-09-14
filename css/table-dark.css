@@ -3,7 +3,8 @@
 body.dark,
 body.dark .list .option:hover,
 body.dark .list_activities .options_activies:hover,
-body.dark .list_event .options_events:hover{
+body.dark .list_event .options_events:hover,
+body.dark button#gerar_cco_informa{
   background-color:#000008;
 }
 body.dark header a,
@@ -35,7 +36,8 @@ body.dark .option_tripulation,
 body.dark .congestion_location,
 body.dark #div_problems,
 body.dark #list_problems .option_problem,
-body.dark #list_problems
+body.dark #list_problems,
+body.dark button#gerar_cco_informa:hover
 {
   background-color: #150225;
 }
@@ -56,7 +58,8 @@ body.dark .list_activities .options_activies:hover,
 body.dark .list_event .options_events:hover,
 body.dark #list_motives .option_motive:hover,
 body.dark .option_tripulation:hover,
-body.dark #list_problems .option_problem:hover{
+body.dark #list_problems .option_problem:hover,
+body.dark button#gerar_cco_informa:hover{
   color: #fafafa;
 }
 body.dark form{
@@ -69,7 +72,8 @@ body.dark .list_activities .options_activies,
 body.dark .list_event .options_events,
 body.dark #list_motives .option_motive,
 body.dark .option_tripulation,
-body.dark #list_problems .option_problem{
+body.dark #list_problems .option_problem,
+body.dark button#gerar_cco_informa{
   color: #fafafac4;
 }
 body.dark #list_motives .option_motive:hover,
@@ -84,10 +88,4 @@ body.dark .div_informed{
 body.dark input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px #150225 inset;
   -webkit-text-fill-color: #f2f2f2;
-}
-body.dark button#gerar_cco_informa{
-  background: #65c3f9;
-}
-body.dark button#gerar_cco_informa:hover{
-  background: #198dc0;
 }
