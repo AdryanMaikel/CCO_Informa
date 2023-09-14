@@ -62,33 +62,33 @@
       </div>
 
       <div class="row">
-        <div class="table">
+        <div class="table" title="Tabela">
           <ion-icon name="clipboard-sharp" id="icon_tb"></ion-icon>
           <input type="text" oninput="this.value=this.value.toUpperCase()" id="table" maxlength="9" placeholder="SD73/005">
         </div>
-        <div class="car">
+        <div class="car" title="Carro">
           <ion-icon name="bus-sharp" class="icon_bus"></ion-icon>
           <input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="4" id="car" placeholder="6640">
         </div>
         <div id="replace">
           <ion-icon name="sync-sharp" id="icon_replace"></ion-icon>
         </div>
-        <div class="replace-car">
+        <div class="replace-car" title="Outro carro">
           <ion-icon name="bus-sharp" class="icon_bus"></ion-icon>
           <input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="4" id="replace-car" placeholder="6750">
         </div>
       </div>
 
       <div class="row">
-        <div class="line">
+        <div class="line" title="Linha">
           <ion-icon name="map-sharp" id="icon_line"></ion-icon>
           <input type="text" oninput="this.value=this.value.toUpperCase()" name="line" id="line" maxlength="5" placeholder="SD73">
         </div>
-        <div class="time">
+        <div class="time"  title="Hora">
           <ion-icon name="time-sharp" id="icon_time"></ion-icon>
           <input type="text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" maxlength="4" name="time" id="time" placeholder="14:22">
         </div>
-        <div id="div_activity">
+        <div id="div_activity" title="Sentido">
           <div class="select-activity"> 
             <ion-icon name="compass-sharp" id="icon_activity"></ion-icon>
             <span id="direction">BC</span>
