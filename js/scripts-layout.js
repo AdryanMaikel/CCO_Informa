@@ -1,3 +1,8 @@
+const form_inputs = document.getElementById("form_inputs")
+form_inputs.addEventListener("submit", function(event){
+  event.preventDefault()
+})
+
 const active_dark = document.getElementById("active_dark")
 active_dark.addEventListener("click", function () {
   document.querySelector("body").classList.toggle("dark")
@@ -15,6 +20,7 @@ for(options of option){
     who_informed.innerHTML = this.textContent
     selecionarinformado.classList.remove("active")
     activeFiscal(this.textContent)
+    
   }
 }
 
@@ -22,8 +28,12 @@ const divfiscal = document.getElementById("divfiscal")
 function activeFiscal(option) {
   if(option.trim() == "Fiscal"){
     divfiscal.classList.add("active")
+    setTimeout(function(){
+      document.getElementById("fiscal").focus()
+    }, 600)
   }else{
     divfiscal.classList.remove("active")
+    document.getElementById("table").focus()
   }
 }
 
@@ -35,6 +45,13 @@ box_was_informed.addEventListener("click", function() {
 const replace = document.getElementById("replace")
 replace.addEventListener("click", function() {
   replace.classList.toggle("active")
+  if(replace.classList.contains("active")){
+    setTimeout(function(){
+      document.getElementById("replace-car").focus()
+    }, 600)
+  }else{
+    document.getElementById("line").focus()
+  }
 })
 
 const time = document.getElementById("time")
@@ -80,6 +97,9 @@ function activeEvent(events) {
       continuedjourney.classList.add("open")
       row_continued.style.height = "46px"
       list_motives.style.top = "319px"
+      setTimeout(function(){
+        document.getElementById("location_event").focus()
+      }, 600)
     } else {
       continuedjourney.classList.remove("active")
       list_motives.style.top = "272px"
@@ -89,22 +109,36 @@ function activeEvent(events) {
         div_delay.classList.add("active")
         div_location.classList.remove("active")
         continuedjourney.classList.remove("open")
-      break;
-      case "perdida":
-        div_delay.classList.remove("active")
-        div_location.classList.remove("active")
-        continuedjourney.classList.remove("open")
+        
+        setTimeout(function(){
+          document.getElementById("delay_event").focus()
+        }, 600)
+        break;
+        case "perdida":
+          div_delay.classList.remove("active")
+          div_location.classList.remove("active")
+          continuedjourney.classList.remove("open")
+          document.getElementById("motive").focus()
+          setTimeout(function(){
+            document.getElementById("div_motives").classList.add("active")
+          },600)
       break;
       case "realizada a frente":
         div_delay.classList.remove("active")
         div_location.classList.add("active")
         continuedjourney.classList.remove("open")
+        setTimeout(function(){
+          document.getElementById("location_event").focus()
+        }, 600)
       break;
     }
   }
 }
 continuedjourney.addEventListener("click", function(){
   continuedjourney.classList.toggle("active")
+  setTimeout(function(){
+    document.getElementById("location_continued").focus()
+  }, 600)
 })
 
 tripulation.addEventListener("click", function(){

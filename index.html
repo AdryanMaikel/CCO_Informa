@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/table.css">
   <link rel="stylesheet" href="css/table-dark.css">
-  <script type="module" src="js/scripts.js" defer></script>
+  <script type="module" src="js/scripts-creatings-lists.js" defer></script>
   <script nomodule src="js/data.js" defer></script>
   <script src="js/scripts-layout.js" defer></script>
 </head>
@@ -22,7 +22,7 @@
   </header>
 
   <section>
-    <form autocomplete="off">
+    <form id="form_inputs" autocomplete="off">
       <div class="row">
         <h2>*CCO-Informa*</h2>
       </div>
@@ -173,7 +173,7 @@
         </div>
       </div>
 
-      <div class="row" id="row_continued">
+      <div id="row_continued" class="row">
         <div class="continued_journey" id="continued_journey">
           <span>Continuou puxando?</span>
           <div class="icons">
@@ -217,9 +217,9 @@
             <li class="option_tripulation" onclick="set_tripulation('Cobrador')">Cobrador</li>
           </ul>
         </div>
-        <div class="congestion_location">
+        <div class="congestion_location" id="congestion_location">
           <ion-icon name="location-sharp" class="icon_location"></ion-icon>
-          <input type="text" name="location" id="congestion_location" placeholder="Av. Assis Brasil">
+          <input type="text" name="location" id="input_congestion_location" placeholder="Av. Assis Brasil">
         </div>
       </div>
 

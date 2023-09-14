@@ -29,7 +29,10 @@ form{
   align-items: center;
   margin: 3px 0;
 }
-.select_was_informed{
+.select_was_informed,
+#div_location,
+#div_location_continued,
+.congestion_location{
   display: flex;
   align-items: center;
 }
@@ -156,7 +159,8 @@ transition: rotate 1s;
 #tripulation,
 .option_tripulation,
 .congestion ~ .congestion_location,
-.option_problem{
+.option_problem,
+#div_delay{
   padding: 0 4px;
   display: flex;
   align-items: center;
@@ -241,7 +245,7 @@ transition: rotate 1s;
 }
 #list_problems{
   width: 255px;
-  top: 40px;
+  top: 43px;
   left: 5px;
   z-index: 3;
   padding: 0;
@@ -436,8 +440,6 @@ transition: rotate 1s;
   #div_motivies{width: 189px;}
   input#motive{width: 152px;}
   input#location_event{width: 170px;}
-  .congestion ~ .congestion_location{width: 163px;}
-  #congestion_location{width: 139px;}
 }
 .location_and_delay{height: 40px;}
 #row_problems{

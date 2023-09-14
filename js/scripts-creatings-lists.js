@@ -58,11 +58,18 @@ function check_motive(motive) {
   }
   if(motive == "Congestionamento"){
     div_motives.classList.add("congestion")
+    setTimeout(function(){
+      document.getElementById("input_congestion_location").focus()
+    }, 600)
   }else{
     div_motives.classList.remove("congestion")
   }
   if(motive == "Problemas mecânicos"){
     row_problems.classList.add("open")
+    setTimeout(function(){
+      document.getElementById("problem").focus()
+      div_problems.classList.add("active")
+    }, 600)
   }else{
     row_problems.classList.remove("open")
   }
