@@ -418,7 +418,7 @@ transition: rotate 1s;
   padding-left: 4px;
 }
 .congestion ~ .congestion_location{
-  left: -130px;
+  left: -133px;
 }
 @media only screen and (max-width: 500px){
   header a{margin: 0;font-size: 14px;}
@@ -447,6 +447,9 @@ transition: rotate 1s;
   input#motive{width: 152px;}
   input#input_congestion_location,
   input#location_event{width: 140px;}
+  .congestion ~ .congestion_location{
+    left: -130px;
+  }
 }
 .location_and_delay{height: 40px;}
 #row_problems{

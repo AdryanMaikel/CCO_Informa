@@ -71,7 +71,11 @@ gerar_cco_informa.addEventListener("click", function(){
       cco_informa += "Carro ter sofrido avaria"
     break;
     case "Congestionamento":
-      
+      if(input_congestion_location.value.length > 0){
+        cco_informa += `Congestionamento na ${input_congestion_location.value}`
+      }else{
+        return input_congestion_location.focus()
+      }
     break;
     case "Falta de Carro":
       cco_informa += "Falta de carro"
