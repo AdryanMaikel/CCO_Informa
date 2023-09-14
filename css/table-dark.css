@@ -32,7 +32,10 @@ body.dark #list_motives,
 body.dark #tripulation,
 body.dark .list_tripulation,
 body.dark .option_tripulation,
-body.dark .congestion_location
+body.dark .congestion_location,
+body.dark #div_problems,
+body.dark #list_problems .option_problem,
+body.dark #list_problems
 {
   background-color: #150225;
 }
@@ -41,7 +44,9 @@ body.dark #list_motives{
 }
 body.dark #div_activity.active ~ .list_activities,
 body.dark .div_informed .select_informed.active ~ .list,
-body.dark #div_event.active ~ .list_event{
+body.dark #div_event.active ~ .list_event,
+body.dark #list_problems,
+body.dark #list_motives{
   box-shadow: 0px -4px 17px 0px #000008;
 }
 body.dark form input,
@@ -50,7 +55,8 @@ body.dark .list .option:hover,
 body.dark .list_activities .options_activies:hover,
 body.dark .list_event .options_events:hover,
 body.dark #list_motives .option_motive:hover,
-body.dark .option_tripulation:hover{
+body.dark .option_tripulation:hover,
+body.dark #list_problems .option_problem:hover{
   color: #fafafa;
 }
 body.dark form{
@@ -62,11 +68,13 @@ body.dark .list .option,
 body.dark .list_activities .options_activies,
 body.dark .list_event .options_events,
 body.dark #list_motives .option_motive,
-body.dark .option_tripulation{
+body.dark .option_tripulation,
+body.dark #list_problems .option_problem{
   color: #fafafac4;
 }
 body.dark #list_motives .option_motive:hover,
-body.dark .option_tripulation:hover{
+body.dark .option_tripulation:hover,
+body.dark #list_problems .option_problem:hover{
   background-color: #000008;
   box-shadow: 0 0 10px 0 #000008;
 }

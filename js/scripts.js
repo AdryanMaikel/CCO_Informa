@@ -35,7 +35,7 @@ div_motives.addEventListener("click", function(){
       ${autoCompleteValores.map((value) => {
         return `
         <li class="option_motive">
-          <span class="text_motive">${value}</span>
+        <span class="text_motive">${value}</span>
         </li>`
       }).join('')}`
     }else{
@@ -44,8 +44,8 @@ div_motives.addEventListener("click", function(){
         return `
         <li class="option_motive">
           <span class="text_motive">${value}</span>
-        </li>`
-      }).join('')}`
+          </li>`
+        }).join('')}`
     }
   })
 })
@@ -62,9 +62,9 @@ function check_motive(motive) {
     div_motives.classList.remove("congestion")
   }
   if(motive == "Problemas mecânicos"){
-    row_problems.classList.add("active")
+    row_problems.classList.add("open")
   }else{
-    row_problems.classList.remove("active")
+    row_problems.classList.remove("open")
   }
 }
 
@@ -75,7 +75,7 @@ div_motives.addEventListener("focusout", function(){
     options.onclick = function() {
       motive.value = this.textContent.trim()
       div_motives.classList.remove("active")
-      check_motive(this.textContent.trim());
+      check_motive(this.textContent.trim())
     }
   }
 })
@@ -88,3 +88,47 @@ ${problems.map((value) => {
     <span class="text_problem">${value}</span>
   </li>`
 }).join('')}`
+
+const div_problems = document.getElementById("div_problems")
+div_problems.addEventListener("click", function(){
+  div_problems.classList.toggle("active")
+  function autocomplete(input) {
+    return problems.filter((value)=>{
+      const valueLowerCase = value.toLowerCase()
+      const problemsLowerCase = input.toLowerCase()
+      return valueLowerCase.includes(problemsLowerCase)
+    })
+  }
+  problem.addEventListener('input', ({ target }) => {
+    const dadosDoCampo = target.value
+    if(dadosDoCampo.length) {
+      const autoCompleteValores = autocomplete(dadosDoCampo)
+      list_problems.innerHTML = `
+      ${autoCompleteValores.map((value) => {
+        return `
+        <li class="option_problem">
+          <span class="text_problem">${value}</span>
+        </li>`
+      }).join('')}`
+    }else{
+      list_problems.innerHTML = `
+      ${problems.map((value) => {
+        return `
+        <li class="option_problem">
+          <span class="text_problem">${value}</span>
+        </li>`
+      }).join('')}`
+    }
+  })
+})
+
+const problem = document.getElementById('problem')
+const option_problem = document.getElementsByClassName('option_problem')
+div_problems.addEventListener("focusout", function(){
+  for(options of option_problem){
+    options.onclick = function() {
+      problem.value = this.textContent.trim()
+      div_problems.classList.remove("active")
+    }
+  }
+})

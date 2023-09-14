@@ -22,7 +22,6 @@ form{
   animation: surge 1s ease-out;
 }
 @keyframes surge{from{top: -1000px;}to{top: 10px;}}
-@media only screen and (max-width: 500px){form{width: 100%;padding: 0;}}
 .row,
 .continued_journey{
   display: flex;
@@ -95,13 +94,19 @@ input#line{
 input#location_event{
   width: 200px;
 }
-@media only screen and (max-width: 500px){input#location_event{width: 170px;}}
 input#delay_event{
   width: 30px;
 }
 input#motive{
   width: 175px;
   padding-left: 7px;
+}
+#div_problems{
+  width: 270px;
+}
+input#problem{
+  width: 230px;
+  padding: 0 7px;
 }
 .icons, #icon_tb, .icon_bus, #icon_replace, #icon_line, #icon_time,
 #icon_activity, .arrow_down, .icon_location, #icon_delay, .icon_user{
@@ -150,7 +155,8 @@ transition: rotate 1s;
 .active ~ #div_location_continued,
 #tripulation,
 .option_tripulation,
-.congestion ~ .congestion_location{
+.congestion ~ .congestion_location,
+.option_problem{
   padding: 0 4px;
   display: flex;
   align-items: center;
@@ -179,7 +185,8 @@ transition: rotate 1s;
 #tripulation,
 .option_tripulation,
 .congestion_location,
-#div_problems{
+#div_problems,
+#list_problems .option_problem{
   height: 40px;
   border-radius: 8px;
   cursor: pointer;
@@ -196,7 +203,8 @@ transition: rotate 1s;
   flex-direction: row;
   gap: 3px;
 }
-.list, .list_activities, .list_event, #list_motives,.list_tripulation{
+.list, .list_activities, .list_event,
+ #list_motives, .list_tripulation, #list_problems{
   position: absolute;
   background-color: var(--container-primary-bg);
   border-radius: 8px;
@@ -219,32 +227,47 @@ transition: rotate 1s;
   left: 50px;
   z-index: 8;
 }
+#list_motives,
+#list_problems{
+  max-height: 300px;
+  padding: 0;
+  overflow: overlay;
+  left: 12px;
+}
 #list_motives{
   width: 190px;
-  max-height: 300px;
   top: 272px;
-  left: 12px;
-  padding: 0;
   z-index: 4;
-  overflow: overlay;
 }
-.active ~ #list_motives{
+#list_problems{
+  width: 255px;
+  top: 40px;
+  left: 5px;
+  z-index: 3;
+  padding: 0;
+}
+.active ~ #list_motives,
+.active ~ #list_problems{
   padding: 4px;
   transition: visibility .2s ease, left .5s, scale .5s, top .5s, padding 0s;
 }
-#list_motives::-webkit-scrollbar{
+#list_motives::-webkit-scrollbar,
+#list_problems::-webkit-scrollbar{
   width: 6px;
   background: transparent;
   border-radius: 50px;
 }
-#list_motives::-webkit-scrollbar-track{
+#list_motives::-webkit-scrollbar-track,
+#list_problems::-webkit-scrollbar-track{
   background-color: transparent;
 }
-#list_motives::-webkit-scrollbar-thumb{
+#list_motives::-webkit-scrollbar-thumb,
+#list_problems::-webkit-scrollbar-thumb{
   background: #dad7d7;
   border-radius: 50px;
 }
-#list_motives .option_motive{
+#list_motives .option_motive,
+#list_problems .option_problem{
   padding-left: 4px;
 }
 .option_tripulation{
@@ -272,7 +295,8 @@ transition: rotate 1s;
 .list .option,
 .list_activities .options_activies,
 .list_event .options_events,
-#list_motives .option_motive{
+#list_motives .option_motive,
+#list_problems .option_problem{
   display: flex;
   border-radius: 0;
   color: var(--primary-color);
@@ -288,21 +312,27 @@ transition: rotate 1s;
 .list_activities .options_activies:hover,
 .list_event .options_events:hover,
 #list_motives .option_motive:hover,
-.option_tripulation:hover{
+.option_tripulation:hover,
+#list_problems .option_problem:hover{
   background-color: var(--container-primary-bg-hover);
 }
-#list_motives .option_motive:hover{
+#list_motives .option_motive:hover,
+#list_problems .option_problem:hover{
   box-shadow: 0 0 10px 0 #a6a6a6;
 }
 .div_informed .select_informed.active ~ .list,
 #div_activity.active ~ .list_activities,
-#div_event.active ~ .list_event{
+#div_event.active ~ .list_event,
+.active ~ #list_motives,
+.active ~ #list_problems
+{
   box-shadow: 0px 4px 20px 3px #333;
 }
 .div_informed .select_informed.active ~ .list .option,
 #div_activity.active ~ .list_activities .options_activies,
 #div_event.active ~ .list_event .options_events,
-#div_motives.active ~ #list_motives .option_motive
+#div_motives.active ~ #list_motives .option_motive,
+.active ~ #list_problems .option_problem
 {
   margin-bottom: 0;
   opacity: 1;
@@ -358,10 +388,13 @@ transition: rotate 1s;
 }
 #div_motives{
   width: 212px;
+  z-index: 7;
+}
+#div_motives,
+#div_problems{
   display: flex;
   align-items: center;
-  z-index: 7;
-
+  z-index: 4;
 }
 #div_motives .arrow_down{
   padding: 0 4px;
@@ -381,41 +414,41 @@ transition: rotate 1s;
 .congestion ~ .congestion_location{
   left: -133px;
 }
-  @media only screen and (max-width: 500px){
-    form{width: 100%;padding: 0;}
-    .div_informed{width: 90px;}
-    .list{width: 110px;}
-    .list_activities{
-      top: 172px;
-      left: 184px;
-    }
-    .list_event{
-      top: 218px;
-      left: 24px;
-    }
-    #div_event{width: 176px;}
-    #list_motives{
-      transform: translateY(-15px);
-    }
-    input{
-      font-size: 13px;
-    }
-    #div_motivies{
-      width: 189px;
-    }
-    input#motive{
-      width: 152px;
-    }
-    #list_motives{
-      width: 160px;
-    }
-    .congestion ~ .congestion_location{
-      width: 163px;
-    }
-    #congestion_location{
-      width: 139px;
-    }
+@media only screen and (max-width: 500px){
+  form{width: 100%;padding: 0;}
+  
+  .div_informed{width: 90px;}
+  .list{width: 110px;}
+  .list_activities{
+    top: 172px;
+    left: 184px;
   }
-  .location_and_delay{
-    height: 40px;
+  .list_event{
+    top: 218px;
+    left: 24px;
   }
+  #div_event{width: 176px;}
+  #list_motives{
+    width: 160px;
+    transform: translateY(-15px);
+  }
+  input{font-size: 13px;}
+  #div_motivies{width: 189px;}
+  input#motive{width: 152px;}
+  input#location_event{width: 170px;}
+  .congestion ~ .congestion_location{width: 163px;}
+  #congestion_location{width: 139px;}
+}
+.location_and_delay{height: 40px;}
+#row_problems{
+  scale: 0;
+  height: 0px;
+  opacity: 0;
+  transition: height .5s, opacity .5s;
+}
+#row_problems.open{
+  scale: 1;
+  height: 40px;
+  opacity: 1;
+  transition: height .5s, opacity .5s;
+}
