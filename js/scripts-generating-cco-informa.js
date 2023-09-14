@@ -59,16 +59,16 @@ gerar_cco_informa.addEventListener("click", function(){
 
   switch (motive.value) {
     case "Acidente":
-      cco_informa += "Carro ter se envolvido em um acidente"
+      cco_informa += "Carro "+car.value+" ter se envolvido em um acidente"
     break;
     case "Assalto":
-      cco_informa += "Carro ter sido assaltado"
+      cco_informa += "Carro "+car.value+" ter sido assaltado"
     break;
     case "Atrasado":
       cco_informa += "Atraso"
     break;
     case "Avaria":
-      cco_informa += "Carro ter sofrido avaria"
+      cco_informa += "Carro "+car.value+" ter sofrido avaria"
     break;
     case "Congestionamento":
       if(input_congestion_location.value.length > 0){
@@ -181,9 +181,19 @@ gerar_cco_informa.addEventListener("click", function(){
       }
     break;
   }
+  if(replace.classList.contains("active")){
+    const replace_car = document.getElementById("replace-car").value
+    cco_informa += `, trocado pelo carro ${replace_car}`
+  }
+  if(text_event.innerText == "interrompida" && continued_journey.classList.contains("active")){
+    if(location_continued.value.length > 0){
+      cco_informa += `, que continuou puxando viagem a partir da ${location_continued.value}`
+    }else{
+      return location_continued.focus()
+    }
+  }
 
-
-
+  cco_informa += "\n"
 
   const text_cco_informa = document.getElementById("text_cco_informa")
   text_cco_informa.innerText = cco_informa
@@ -191,6 +201,7 @@ gerar_cco_informa.addEventListener("click", function(){
   const div_cco_informa = document.getElementById("div_cco_informa")
   div_cco_informa.classList.add("active")
 })
+// MOLDE
 /*
 *CCO INFORMA:*
 Conforme informado ao CCO pelo largador da Nortran
