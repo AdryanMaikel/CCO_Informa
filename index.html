@@ -7,8 +7,9 @@
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="css/cco-informa.css">
 
-  <script src="https://kit.fontawesome.com/f9a0d51bc2.js" crossorigin="anonymous" defer></script>
+  <script nomodule src="js/data.js" defer></script>
   <script src="js/cco-informa.js" defer></script>
+  <script src="https://kit.fontawesome.com/f9a0d51bc2.js" crossorigin="anonymous" defer></script>
   <style>
   </style>
 </head>
@@ -29,15 +30,30 @@
     </div>
     <div class="row">
       <div id="informed" class="box">
-        <span>Foi informado</span>
+        <span class="text_decoration">Foi informado</span>
         <div class="icons">
-          <i class="fa-solid fa-check fa-bounce icon" id="x"></i>
-          <i class="fa-solid fa-xmark icon" id="v"></i>
+          <i class="fa-solid fa-check icon text_decoration" id="yes"></i>
+          <i class="fa-solid fa-xmark icon text_decoration" id="not"></i>
         </div>
       </div>
       <div id="who_informed" class="box">
-
+        <span id="text_informed">Fiscal</span>
+        <div class="icons">
+          <i class="fa-solid fa-chevron-down icon"></i>
+        </div>
       </div>
+      <ul class="list">
+        <li class="option informed">Fiscal</li>
+        <li class="option informed">Navegantes</li>
+        <li class="option informed">Nortran</li>
+        <li class="option informed">Sopal</li>
+      </ul>
+      <label id="box_supervisor" class="box supervision surge active" for="supervision">
+        <div class="icons">
+          <i class="fa-solid fa-user icon"></i>
+        </div>
+        <input type="text" name="supervision" id="supervision" placeholder="Qual?">
+      </label>
     </div>
     <div class="row"></div>
     <div class="row"></div>
@@ -47,7 +63,6 @@
     <div class="row"></div>
   </section>
   <aside>
-
   </aside>
   <footer>
 

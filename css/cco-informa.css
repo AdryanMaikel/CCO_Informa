@@ -1,27 +1,21 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap');
 :root{
   --primary: #fffdff;
-  --secondy: #e1dfe1;
-  --third: #c3c0c3;
-  --four: #a4a2a4;
-  --five: #868486;
+  --secondy: #f0f0f0;
+  --third: #ebebeb;
+  --four: #eee;
+  --five: #aaa;
   --blue: #2d2d6b;
 }
-*{
-  padding: 0;
-  margin: 0;
+*{padding: 0; margin: 0;}
+body{
+  width: 100vw; height: 100vh;
+  background: var(--primary);
   font-family: 'Poppins', sans-serif;
 }
-body{
-  width: 100vw;
-  height: 100vh;
-  background: var(--primary);
-}
-body.dark{
-  background: var(--blue);
-
-}
+body.dark{background: var(--blue);}
 header{
   width: 100%;
   padding: 10px 0;
@@ -30,24 +24,22 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background: var(--secondy);
+  background: var(--primary);
+  box-shadow: 0 0 14px 2px #858383;
+  transition: box-shadow .5s ease;
 }
-figure{
-  height: 45px;
+header:hover{
+  box-shadow: 0 0 4px 0px #000000;
+  transition: box-shadow .5s ease;
 }
-img{
-  height: 100%;
-}
-h1{
-  color: var(--blue);
-}
+figure{height: 45px;}
+img{height: 100%;}
+h1{color: var(--blue);}
 h1:hover{
   font-style: italic;
   cursor: pointer;
 }
-#dark.icons{
-  width: 50px;
-}
+#dark.icons{width: 50px;}
 .icons{
   width: 20px;
   height: 20px;
@@ -56,39 +48,124 @@ h1:hover{
   justify-content: center;
   cursor: pointer;
 }
-.icon{
-  font-size: 20px;
-  position: absolute;
-}
-.icon-header{
-  font-size: 30px;
-}
-#sun,.dark #moon{
+.icon{font-size: 18px; position: absolute;}
+.icon-header{font-size: 30px;}
+#sun,.dark #moon,
+.active #not, #yes{
   scale: 0;
-  transition: scale .5s ease-out;
+  opacity: 0;
+  transition: scale .5s ease-out, opacity .5s;
 }
-.dark #sun,#moon{
+.dark #sun,#moon,
+.active #yes, #not{
   scale: 1;
-  transition: scale .5s ease-out;
+  opacity: 1;
+  transition: scale .5s ease-out, opacity .5s;
+}
+.active .text_decoration{
+  color: #007c00;
+}
+.text_decoration{
+  color: #ff2424;
+}
+.fa-chevron-down{
+  rotate: 0;
+  transition: rotate .7s ease-in-out;
+}
+.open .fa-chevron-down{
+  rotate: 180deg;
+  transition: rotate .7s ease-in-out;
 }
 section#form{
   width: 330px;
-  padding: 10px;
+  padding: 5px;
   background: var(--third);
   font-size: 13px;
+  font-family: 'Lora', serif;
 }
 div.row{
   width: 100%;
   display: flex;
+  flex-direction: row;
+  gap: 4px;
+  margin: 2px 0;
 }
 .box{
   width: auto;
-  height: 40px;
+  justify-content: space-between;
+  border-radius: 8px;
+}
+.box, li.option{
+  cursor: pointer;
   background: var(--primary);
+  padding: 4px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border-radius: 8px;
+  height: 30px;
+}
+#who_informed{
+  min-width: 103px;
+}
+input{
+  outline: none;
+  border: none;
+  background: transparent;
+  height: 100%;
+}
+input#supervision{
+  max-width: 68px;
+}
+ul.list{
   padding: 4px;
+  border-radius: 8px;
+  list-style: none;
+  position: absolute;
+  background-color: var(--primary);
+}
+#who_informed ~ ul.list{
+  top: 130px;
+  left: 130px;
+  transition: top .5s;
+  z-index: 9;
+}
+#who_informed.open ~ ul.list{
+  top: 145px;
+  transition: top .5s;
+}
+ul.list li.option{
+  transform-origin: top;
+  transform: scale(0) translateY(-50px);
+  margin-bottom: -45px;
+  opacity: 0;
+  transition:
+    opacity .2s,
+    transform .5s cubic-bezier(0.65, 0.05, 0.36, 1),
+    margin-bottom .2s ease-in-out;
+}
+.open ~ ul.list li.option{
+  margin-bottom: 0;
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: 
+    opacity .2s,
+    transform .2s cubic-bezier(0.65, 0.05, 0.36, 1),
+    margin-bottom .2s ease-in-out;
+}
+ul.list li.option:hover{
+  background: var(--secondy);
+  border-radius: 8px;
+}
+.surge{
+  scale: 0;
+  opacity: 0;
+  transform: translateX(-120px);
+  transition: 
+    opacity .2s, scale .5s, transform .5s
+}
+.surge.active{
+  scale: 1;
+  opacity: 1;
+  transform: translateX(0);
+  transition: 
+    opacity .2s, scale .3s, transform .3s
 }
