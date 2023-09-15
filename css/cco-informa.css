@@ -9,13 +9,13 @@
   --five: #aaa;
   --blue: #2d2d6b;
 }
-*{padding: 0; margin: 0;}
+*{padding: 0; margin: 0}
 body{
   width: 100vw; height: 100vh;
   background: var(--primary);
   font-family: 'Poppins', sans-serif;
 }
-body.dark{background: var(--blue);}
+body.dark{background: var(--blue)}
 header{
   width: 100%;
   padding: 10px 0;
@@ -32,14 +32,14 @@ header:hover{
   box-shadow: 0 0 4px 0px #000000;
   transition: box-shadow .5s ease;
 }
-figure{height: 45px;}
-img{height: 100%;}
-h1{color: var(--blue);}
+figure{height: 45px}
+img{height: 100%}
+h1{color: var(--blue)}
 h1:hover{
   font-style: italic;
   cursor: pointer;
 }
-#dark.icons{width: 50px;}
+#dark.icons{width: 50px}
 .icons{
   width: 20px;
   height: 20px;
@@ -48,8 +48,8 @@ h1:hover{
   justify-content: center;
   cursor: pointer;
 }
-.icon{font-size: 18px; position: absolute;}
-.icon-header{font-size: 30px;}
+.icon{font-size: 18px; position: absolute}
+.icon-header{font-size: 30px}
 #sun,.dark #moon,
 .active #not, #yes{
   scale: 0;
@@ -62,17 +62,12 @@ h1:hover{
   opacity: 1;
   transition: scale .5s ease-out, opacity .5s;
 }
-.active .text_decoration{
-  color: #007c00;
+.active .text_decoration{color: #007c00}
+.text_decoration{color: #ff2424}
+.fa-chevron-down, .fa-arrows-rotate{
+  rotate: 0; transition: rotate .7s ease-in-out;
 }
-.text_decoration{
-  color: #ff2424;
-}
-.fa-chevron-down{
-  rotate: 0;
-  transition: rotate .7s ease-in-out;
-}
-.open .fa-chevron-down{
+.open .fa-chevron-down, div#replace.active .fa-arrows-rotate{
   rotate: 180deg;
   transition: rotate .7s ease-in-out;
 }
@@ -88,7 +83,7 @@ div.row{
   display: flex;
   flex-direction: row;
   gap: 4px;
-  margin: 2px 0;
+  margin: 4px 0;
 }
 .box{
   width: auto;
@@ -103,18 +98,16 @@ div.row{
   align-items: center;
   height: 30px;
 }
-#who_informed{
-  min-width: 103px;
-}
+#who_informed{min-width: 103px; z-index: 9}
 input{
   outline: none;
   border: none;
   background: transparent;
   height: 100%;
 }
-input#supervision{
-  max-width: 68px;
-}
+input#supervision{max-width: 68px}
+input#table{max-width: 75px}
+input.car{max-width: 34px}
 ul.list{
   padding: 4px;
   border-radius: 8px;
@@ -126,7 +119,7 @@ ul.list{
   top: 130px;
   left: 130px;
   transition: top .5s;
-  z-index: 9;
+  z-index: 8;
 }
 #who_informed.open ~ ul.list{
   top: 145px;
@@ -168,4 +161,12 @@ ul.list li.option:hover{
   transform: translateX(0);
   transition: 
     opacity .2s, scale .3s, transform .3s
+}
+div#replace{
+  margin-top: 4px;
+  height: 22px;
+  z-index: 7;
+}
+label#box_car_two{
+  z-index: 6;
 }

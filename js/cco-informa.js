@@ -19,9 +19,16 @@ for(option of options_informed){
     text_informed.innerHTML = this.textContent
     who_informed.classList.remove("open")
     if(this.textContent == "Fiscal"){
-      return box_supervisor.classList.add("active")
-    }else{
-      return box_supervisor.classList.remove("active")
+      box_supervisor.classList.add("active")
+      return supervision.focus()
     }
+    box_supervisor.classList.remove("active")
   }
 }
+
+const replace = document.getElementById("replace")
+replace.addEventListener("click", function(){
+  replace.classList.toggle("active")
+  box_car_two.classList.toggle("active")
+})
+
