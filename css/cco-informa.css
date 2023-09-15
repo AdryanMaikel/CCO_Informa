@@ -1,0 +1,94 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+:root{
+  --primary: #fffdff;
+  --secondy: #e1dfe1;
+  --third: #c3c0c3;
+  --four: #a4a2a4;
+  --five: #868486;
+  --blue: #2d2d6b;
+}
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  background: var(--primary);
+}
+body.dark{
+  background: var(--blue);
+
+}
+header{
+  width: 100%;
+  padding: 10px 0;
+  z-index: 10;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: var(--secondy);
+}
+figure{
+  height: 45px;
+}
+img{
+  height: 100%;
+}
+h1{
+  color: var(--blue);
+}
+h1:hover{
+  font-style: italic;
+  cursor: pointer;
+}
+#dark.icons{
+  width: 50px;
+}
+.icons{
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.icon{
+  font-size: 20px;
+  position: absolute;
+}
+.icon-header{
+  font-size: 30px;
+}
+#sun,.dark #moon{
+  scale: 0;
+  transition: scale .5s ease-out;
+}
+.dark #sun,#moon{
+  scale: 1;
+  transition: scale .5s ease-out;
+}
+section#form{
+  width: 330px;
+  padding: 10px;
+  background: var(--third);
+  font-size: 13px;
+}
+div.row{
+  width: 100%;
+  display: flex;
+}
+.box{
+  width: auto;
+  height: 40px;
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 4px;
+}
