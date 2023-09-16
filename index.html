@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/cco-informa.css">
 
   <script nomodule src="js/data.js" defer></script>
+  <script type="module" src="js/creating-lists.js" defer></script>
   <script src="js/cco-informa.js" defer></script>
   <script src="https://kit.fontawesome.com/f9a0d51bc2.js" crossorigin="anonymous" defer></script>
   <style>
@@ -25,73 +26,93 @@
       </div>
   </header>
   <section id="form">
-    <div class="row">
-      <h2>*CCO-Informa*</h2>
-    </div>
-    <div class="row">
-      <div id="informed" class="box">
-        <span class="text_decoration">Foi informado</span>
-        <div class="icons">
-          <i class="fa-solid fa-check icon text_decoration" id="yes"></i>
-          <i class="fa-solid fa-xmark icon text_decoration" id="not"></i>
-        </div>
+    <form id="form_cco_informa" autocomplete="off">
+      <div class="row">
+        <h2>*CCO-Informa*</h2>
       </div>
-      <div id="who_informed" class="box">
-        <span id="text_informed">Fiscal</span>
-        <div class="icons">
-          <i class="fa-solid fa-chevron-down icon"></i>
+      <div class="row">
+        <div id="informed" class="box">
+          <span class="text_decoration">Foi informado</span>
+          <div class="icons">
+            <i class="fa-solid fa-check icon text_decoration" id="yes"></i>
+            <i class="fa-solid fa-xmark icon text_decoration" id="not"></i>
+          </div>
         </div>
+        <div id="who_informed" class="box">
+          <span id="text_informed">Fiscal</span>
+          <div class="icons">
+            <i class="fa-solid fa-chevron-down icon"></i>
+          </div>
+        </div>
+        <ul class="list">
+          <li class="option informed">Fiscal</li>
+          <li class="option informed">Navegantes</li>
+          <li class="option informed">Nortran</li>
+          <li class="option informed">Sopal</li>
+        </ul>
+        <label id="box_supervisor" class="box supervision surge active" for="supervision">
+          <div class="icons">
+            <i class="fa-solid fa-user icon"></i>
+          </div>
+          <input type="text" name="supervision" id="supervision" placeholder="Qual?">
+        </label>
       </div>
-      <ul class="list">
-        <li class="option informed">Fiscal</li>
-        <li class="option informed">Navegantes</li>
-        <li class="option informed">Nortran</li>
-        <li class="option informed">Sopal</li>
-      </ul>
-      <label id="box_supervisor" class="box supervision surge active" for="supervision">
-        <div class="icons">
-          <i class="fa-solid fa-user icon"></i>
+      <div class="row">
+        <label id="box_table" class="box" for="table">
+          <div class="icons">
+            <i class="fa-solid fa-clipboard icon"></i>
+          </div>
+          <input type="text" name="table" id="table" placeholder="Tabela" maxlength="9">
+        </label>
+        <label id="box_car" class="box" for="car">
+          <div class="icons">
+            <i class="fa-solid fa-bus icon"></i>
+          </div>
+          <input type="text" class="car" name="car" id="car" placeholder="Carro" maxlength="4">
+        </label>
+        <div id="replace" class="box">
+          <div class="icons">
+            <i class="fa-solid fa-arrows-rotate icon text_decoration"></i>
+          </div>
         </div>
-        <input type="text" name="supervision" id="supervision" placeholder="Qual?">
-      </label>
-    </div>
-    <div class="row">
-      <label id="box_table" class="box" for="table">
-        <div class="icons">
-          <i class="fa-solid fa-clipboard icon"></i>
-        </div>
-        <input type="text" name="table" id="table" placeholder="Tabela" maxlength="9">
-      </label>
-      <label id="box_car" class="box" for="car">
-        <div class="icons">
-          <i class="fa-solid fa-bus icon"></i>
-        </div>
-        <input type="text" class="car" name="car" id="car" placeholder="Carro" maxlength="4">
-      </label>
-      <div id="replace" class="box">
-        <div class="icons">
-          <i class="fa-solid fa-arrows-rotate icon text_decoration"></i>
-        </div>
+        <label id="box_car_two" class="box surge" for="car_two">
+          <div class="icons">
+            <i class="fa-solid fa-bus icon"></i>
+          </div>
+          <input type="text" class="car" name="car_two" id="car_two" placeholder="Carro" maxlength="4">
+        </label>
       </div>
-      <label id="box_car_two" class="box surge" for="car_two">
-        <div class="icons">
-          <i class="fa-solid fa-bus icon"></i>
-        </div>
-        <input type="text" class="car" name="car_two" id="car_two" placeholder="Carro" maxlength="4">
-      </label>
-    </div>
-    <div class="row">
-      <label for="line" class="box">
-        <div class="icons">
-          <i class="fa-solid fa-id-card-clip icon"></i>
-        </div>
-        <input type="text" name="line" id="line" placeholder="Linha" maxlength="5">
-      </label>
-    </div>
-    <div class="row"></div>
-    <div class="row"></div>
-    <div class="row"></div>
-    <div class="row"></div>
+      <div class="row">
+        <label for="line" class="box">
+          <div class="icons">
+            <i class="fa-solid fa-route icon"></i>
+          </div>
+          <input type="text" name="line" id="line" placeholder="Linha" maxlength="5">
+        </label>
+        <label for="hour" class="box">
+          <div class="icons">
+            <i class="fa-solid fa-clock icon"></i>
+          </div>
+          <input type="text" name="hour" id="hour" placeholder="Hora" maxlength="5">
+        </label>
+        <label id="box_direction" for="direction" class="box">
+          <div class="icons">
+            <i class="fa-solid fa-compass icon"></i>
+          </div>
+          <input type="text" name="direction" id="direction" placeholder="Std" maxlength="2">
+          <div class="icons">
+            <i class="fa-solid fa-chevron-down icon"></i>
+          </div>
+        </label>
+        <ul id="directions" class="list">
+
+        </ul>
+      </div>
+      <div class="row"></div>
+      <div class="row"></div>
+      <div class="row"></div>
+      <div class="row"></div>
+    </form>
   </section>
   <aside>
   </aside>
