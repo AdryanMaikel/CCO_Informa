@@ -58,6 +58,13 @@ const problems = [
   "Suspensão - Vazamento de ar"
 ]
 
+function create_options(array){
+  return `${array.map((index)=>{
+      return `<li class="option">${index}</li>`
+    }).join("")
+   }`
+}
+
 function autocomplete(input, array) {
   return array.filter((value)=>{
     const valueLowerCase = value.toLowerCase()
@@ -66,4 +73,4 @@ function autocomplete(input, array) {
   })
 }
 
-export{ activies, motivies, problems, autocomplete }
+export{ activies, motivies, problems, create_options, autocomplete }

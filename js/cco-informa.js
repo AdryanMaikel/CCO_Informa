@@ -33,12 +33,3 @@ replace.addEventListener("click", function(){
   box_car_two.classList.toggle("active")
 })
 
-direction.addEventListener("focusout", function(){
-  const options = document.querySelectorAll("#directions .option")
-  for(option of options){
-    option.onclick = function() {
-      direction.value = this.textContent
-      box_direction.classList.remove("open")
-    }
-  }
-})

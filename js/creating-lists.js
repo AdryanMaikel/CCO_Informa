@@ -1,9 +1,6 @@
-import { activies/* , motivies , problems*/, autocomplete } from "./data.js"
+import { activies/* , motivies , problems*/, create_options, autocomplete } from "./data.js"
 const directions = document.getElementById('directions')
-directions.innerHTML = `
-${activies.map((value) => {
-  return `<li class="option">${value}</li>`
-}).join('')}`
+directions.innerHTML = create_options(activies)
 
 const box_direction = document.getElementById("box_direction")
 const direction = document.getElementById("direction")
@@ -13,18 +10,13 @@ direction.addEventListener("focus", function(){
     this.value = this.value.toUpperCase()
     if(this.value.length) {
       const autocomplete_values = autocomplete(this.value, activies)
-      directions.innerHTML = `
-      ${autocomplete_values.map((value) => {
-        return `<li class="option">${value}</li>`
-      }).join('')}`
+      directions.innerHTML = create_options(autocomplete_values)
     }else{
-      directions.innerHTML = `
-      ${activies.map((value) => {
-        return `<li class="option">${value}</li>`
-      }).join('')}`
+      directions.innerHTML = create_options(activies)
     }
   })
 })
+
 direction.addEventListener("focusout", function(){
   const options = document.querySelectorAll("#directions .option")
   for(var option of options){
