@@ -58,4 +58,12 @@ const problems = [
   "Suspensão - Vazamento de ar"
 ]
 
-export{ activies, motivies, problems }
+function autocomplete(input, array) {
+  return array.filter((value)=>{
+    const valueLowerCase = value.toLowerCase()
+    const inputLowerCase = input.toLowerCase()
+    return valueLowerCase.includes(inputLowerCase)
+  })
+}
+
+export{ activies, motivies, problems, autocomplete }

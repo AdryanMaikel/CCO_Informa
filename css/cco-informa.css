@@ -98,7 +98,7 @@ div.row{
   align-items: center;
   height: 30px;
 }
-#who_informed{min-width: 93px; z-index: 9}
+#who_informed{min-width: 93px; z-index: 7}
 input{
   outline: none;
   border: none;
@@ -126,14 +126,14 @@ ul.list{
   background-color: var(--primary);
 }
 #who_informed ~ ul.list{
-  top: 130px;
+  top: 136px;
   left: 130px;
-  transition: top .5s;
-  z-index: 8;
+  z-index: 9;
 }
-#who_informed.open ~ ul.list{
-  top: 145px;
-  transition: top .5s;
+#box_direction ~ ul.list{
+  top: 220px;
+  left: 165px;
+  z-index: 8;
 }
 ul.list li.option{
   transform-origin: top;

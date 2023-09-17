@@ -44,8 +44,8 @@ div_motives.addEventListener("click", function(){
         return `
         <li class="option_motive">
           <span class="text_motive">${value}</span>
-          </li>`
-        }).join('')}`
+        </li>`
+      }).join('')}`
     }
   })
 })

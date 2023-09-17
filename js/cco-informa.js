@@ -23,6 +23,7 @@ for(option of options_informed){
       return supervision.focus()
     }
     box_supervisor.classList.remove("active")
+    return table.focus()
   }
 }
 
@@ -32,11 +33,12 @@ replace.addEventListener("click", function(){
   box_car_two.classList.toggle("active")
 })
 
-const box_direction = document.getElementById("box_direction")
-// box_direction.addEventListener("click", function(){
-//   box_direction.classList.toggle("open")
-// })
-const direction = document.getElementById("direction")
-direction.addEventListener("focus", function(){
-  box_direction.classList.add("open")
+direction.addEventListener("focusout", function(){
+  const options = document.querySelectorAll("#directions .option")
+  for(option of options){
+    option.onclick = function() {
+      direction.value = this.textContent
+      box_direction.classList.remove("open")
+    }
+  }
 })
