@@ -118,6 +118,8 @@ input.car{max-width: 34px}
 input#line{width: 44px}
 input#hour{width: 33px}
 input#direction{width: 20px}
+input#event{width: 105px}
+input#min{width: 22px}
 ul.list{
   padding: 4px;
   border-radius: 8px;
@@ -135,6 +137,12 @@ ul.list{
   left: 165px;
   z-index: 8;
 }
+#box_event ~ ul.list{
+  top: 262px;
+  left: 50px;
+  width: 117px;
+}
+
 ul.list li.option{
   transform-origin: top;
   transform: scale(0) translateY(-50px);
