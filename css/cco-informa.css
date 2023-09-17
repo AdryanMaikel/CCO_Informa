@@ -188,3 +188,12 @@ div#replace{
 label#box_car_two{
   z-index: 6;
 }
+#box_min{
+  position: absolute;
+}
+/* #input_local{
+  position: absolute;
+  transform: translate(-50px, 20px);
+} */
+#row_local{transition: height .5s}
+#box_input_local{gap:0}

@@ -38,18 +38,34 @@ event.addEventListener("focus", function(){
 })
 
 const box_min = document.getElementById("box_min")
+const min = document.getElementById("min")
+const row_local = document.getElementById("row_local")
+const box_local = document.getElementById("box_local")
+const interrupted_text = document.getElementById("interrupted_text")
 function check_event(event_is) {
+  box_min.classList.remove("active")
+  row_local.style.height = "0px"
+  box_local.classList.remove("active")
   switch (event_is) {
     case "atrasada":
-      box_event.classList.add("active")
       box_min.classList.add("active")
+      min.focus()
       break;
     case "interrompida":
+      box_local.classList.add("active")
+      row_local.style.height = "auto"
+      interrupted_text.textContent = "n"
       
       break;
-    default:
-      box_event.classList.remove("active")
-      box_min.classList.remove("active")
+      case "perdida":
+        
+        break;
+      case "realizada a frente":
+        box_local.classList.add("active")
+        row_local.style.height = "auto"
+    
+      break;
+      default:
       break;
   }
 }
@@ -60,7 +76,7 @@ event.addEventListener("focusout", function(){
     option.onclick = function(){
       event.value = this.textContent
       box_event.classList.remove("open")
-      return check_event(this.textContent.trim())
+      return check_event(this.textContent)
     }
   }
 })

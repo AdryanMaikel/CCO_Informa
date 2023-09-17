@@ -117,14 +117,28 @@
           </div>
         </label>
         <ul id="events" class="list"></ul>
-        <label id="box_min" for="min" class="box surge">
+        <div class="align">
+          <label id="box_min" for="min" class="box surge">
+            <div class="icons">
+              <i class="fa-regular fa-hourglass-half icon"></i>
+            </div>
+            <input type="text" name="min" id="min" maxlength="2" placeholder="min">
+          </label>
+          <label id="box_local" class="box surge">
+            <span>onde?</span>
+            <div class="icons"><i class="fa-solid fa-chevron-down icon"></i></div>
+          </label>
+        </div>
+      </div>
+      <div id="row_local" class="row">
+        <label id="box_input_local" class="box surge active">
           <div class="icons">
-            <i class="fa-regular fa-hourglass-half icon"></i>
+            <i class="fa-solid fa-location-dot icon"></i>
           </div>
-          <input type="text" name="min" id="min" maxlength="2" placeholder="min">
+          <span id="interrupted_text">A partir d</span>
+          <input type="text" name="local" id="local" maxlength="" placeholder="a Av. Assis Brasil">
         </label>
       </div>
-      <div class="row"></div>
       <div class="row"></div>
       <div class="row"></div>
     </form>
