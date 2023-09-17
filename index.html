@@ -34,8 +34,8 @@
         <div id="informed" class="box">
           <span class="text_decoration">Foi informado</span>
           <div class="icons">
-            <i class="fa-solid fa-check icon text_decoration" id="yes"></i>
-            <i class="fa-solid fa-xmark icon text_decoration" id="not"></i>
+            <i class="fa-solid fa-check icon text_decoration yes"></i>
+            <i class="fa-solid fa-xmark icon text_decoration not"></i>
           </div>
         </div>
         <div id="who_informed" class="box">
@@ -104,9 +104,7 @@
             <i class="fa-solid fa-chevron-down icon"></i>
           </div>
         </label>
-        <ul id="directions" class="list">
-          
-        </ul>
+        <ul id="directions" class="list"></ul>
       </div>
       <div class="row">
         <label for="event" id="box_event" class="box">
@@ -122,22 +120,27 @@
             <div class="icons">
               <i class="fa-regular fa-hourglass-half icon"></i>
             </div>
-            <input type="text" name="min" id="min" maxlength="2" placeholder="min">
+            <input type="text" name="min" id="min" maxlength="2" placeholder="Min">
           </label>
-          <label id="box_local" class="box surge">
+          <div id="box_local" class="box surge">
             <span>onde?</span>
             <div class="icons"><i class="fa-solid fa-chevron-down icon"></i></div>
-          </label>
+          </div>
         </div>
       </div>
       <div id="row_local" class="row">
-        <label id="box_input_local" class="box surge active">
+        <label id="box_input_local" class="box surge active" for="local">
           <div class="icons">
             <i class="fa-solid fa-location-dot icon"></i>
           </div>
           <span id="interrupted_text">A partir d</span>
           <input type="text" name="local" id="local" maxlength="" placeholder="a Av. Assis Brasil">
         </label>
+        <div id="continued" class="box surge">
+          <div class="icons">
+            <i class="fa-solid fa-arrows-rotate icon text_decoration"></i>
+          </div>
+        </div>
       </div>
       <div class="row"></div>
       <div class="row"></div>

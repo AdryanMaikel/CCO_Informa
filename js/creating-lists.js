@@ -39,13 +39,16 @@ event.addEventListener("focus", function(){
 
 const box_min = document.getElementById("box_min")
 const min = document.getElementById("min")
-const row_local = document.getElementById("row_local")
 const box_local = document.getElementById("box_local")
+const row_local = document.getElementById("row_local")
 const interrupted_text = document.getElementById("interrupted_text")
+const continued = document.getElementById("continued")
 function check_event(event_is) {
   box_min.classList.remove("active")
-  row_local.style.height = "0px"
   box_local.classList.remove("active")
+  box_local.classList.remove("open")
+  row_local.classList.remove("open")
+  continued.classList.remove("active")
   switch (event_is) {
     case "atrasada":
       box_min.classList.add("active")
@@ -53,19 +56,23 @@ function check_event(event_is) {
       break;
     case "interrompida":
       box_local.classList.add("active")
-      row_local.style.height = "auto"
       interrupted_text.textContent = "n"
+      box_local.classList.add("open")
+      row_local.classList.add("open")
+      continued.classList.add("active")
       
       break;
-      case "perdida":
-        
-        break;
-      case "realizada a frente":
-        box_local.classList.add("active")
-        row_local.style.height = "auto"
-    
+    case "perdida":
+      
       break;
-      default:
+    case "realizada a frente":
+      box_local.classList.add("active")
+      interrupted_text.textContent = "a partir d"
+      box_local.classList.add("open")
+      row_local.classList.add("open")
+  
+    break;
+    default:
       break;
   }
 }

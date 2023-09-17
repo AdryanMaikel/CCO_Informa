@@ -50,13 +50,13 @@ h1:hover{
 .icon{font-size: 18px; position: absolute}
 .icon-header{font-size: 30px}
 #sun,.dark #moon,
-.active #not, #yes{
+.active .not, .yes{
   scale: 0;
   opacity: 0;
   transition: scale .5s ease-out, opacity .5s;
 }
 .dark #sun,#moon,
-.active #yes, #not{
+.active .yes, .not{
   scale: 1;
   opacity: 1;
   transition: scale .5s ease-out, opacity .5s;
@@ -70,6 +70,7 @@ h1:hover{
   rotate: 180deg;
   transition: rotate .7s ease-in-out;
 }
+
 section#form{
   width: 330px;
   padding: 5px;
@@ -141,8 +142,8 @@ ul.list{
   top: 262px;
   left: 50px;
   width: 117px;
+  z-index: 7;
 }
-
 ul.list li.option{
   transform-origin: top;
   transform: scale(0) translateY(-50px);
@@ -180,7 +181,7 @@ ul.list li.option:hover{
   transition: 
     opacity .2s, scale .3s, transform .3s
 }
-div#replace{
+div#replace, div#continued{
   margin-top: 4px;
   height: 22px;
   z-index: 7;
@@ -188,12 +189,20 @@ div#replace{
 label#box_car_two{
   z-index: 6;
 }
-#box_min{
+#box_min,
+#continued_journey{
   position: absolute;
 }
-/* #input_local{
-  position: absolute;
-  transform: translate(-50px, 20px);
-} */
-#row_local{transition: height .5s}
-#box_input_local{gap:0}
+#box_input_local,#box_min{gap:0}
+#row_local{
+  height: 0;
+  margin: 0;
+  transition: height .5s;
+  overflow: hidden
+}
+#row_local.open{
+  height: 38px;
+  transition: height .5s;
+  margin: 4px 0
+}
+#continued_journey{}

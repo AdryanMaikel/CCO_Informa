@@ -32,4 +32,9 @@ replace.addEventListener("click", function(){
   replace.classList.toggle("active")
   box_car_two.classList.toggle("active")
 })
-
+const box_local = document.getElementById("box_local")
+const row_local = document.getElementById("row_local")
+box_local.addEventListener("click", function(){
+  box_local.classList.toggle("open")
+  row_local.classList.toggle("open")
+})
