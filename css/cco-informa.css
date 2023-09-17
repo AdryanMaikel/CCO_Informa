@@ -74,7 +74,7 @@ h1:hover{
 section#form{
   width: 330px;
   padding: 5px;
-  background: var(--third);
+  background: var(--secondy);
   font-size: 13px;
   font-family: 'Lora', serif;
 }
@@ -182,31 +182,28 @@ ul.list li.option:hover{
   transition: 
     opacity .2s, scale .3s, transform .3s
 }
+#continued{width: 50px}
+#continued.open{width: 90px}
 div#replace, div#continued{
   margin-top: 4px;
   height: 22px;
   z-index: 7;
 }
-div#continued{
-  z-index: 5;
-}
-label#box_car_two,#box_input_local{
-  z-index: 6;
-}
+label#box_car_two,#box_input_local{z-index: 6}
+div#continued{z-index: 5}
 #box_min,
 #continued_journey{
   position: absolute;
 }
-#box_input_local,#box_min{gap:0}
-#row_local{
+#box_input_local,#box_min,#box_input_continued{gap:0}
+.revel{
   height: 0;
   margin: 0;
   transition: height .5s;
   overflow: hidden
 }
-#row_local.open{
+.revel.open{
   height: 38px;
   transition: height .5s;
   margin: 4px 0
 }
-#continued_journey{}

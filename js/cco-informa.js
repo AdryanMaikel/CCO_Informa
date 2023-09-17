@@ -32,14 +32,19 @@ replace.addEventListener("click", function(){
   replace.classList.toggle("active")
   box_car_two.classList.toggle("active")
 })
+
 const box_local = document.getElementById("box_local")
 const row_local = document.getElementById("row_local")
+const continued = document.getElementById("continued")
+const box_continued = document.getElementById("box_continued")
 box_local.addEventListener("click", function(){
   box_local.classList.toggle("open")
   row_local.classList.toggle("open")
+  if(continued.classList.contains("active")){
+    box_continued.classList.toggle("open")
+  }
 })
-
-const continued = document.getElementById("continued")
 continued.addEventListener("click", function(){
   continued.classList.toggle("active")
+  box_continued.classList.toggle("open")
 })

@@ -43,25 +43,27 @@ const box_local = document.getElementById("box_local")
 const row_local = document.getElementById("row_local")
 const interrupted_text = document.getElementById("interrupted_text")
 const continued = document.getElementById("continued")
+const box_continued = document.getElementById("box_continued")
+const local = document.getElementById("local")
 function check_event(event_is) {
   box_min.classList.remove("active")
   box_local.classList.remove("active")
   box_local.classList.remove("open")
   row_local.classList.remove("open")
   continued.classList.remove("open")
+  continued.classList.remove("active")
+  box_continued.classList.remove("open")
   switch (event_is) {
     case "atrasada":
       box_min.classList.add("active")
-      min.focus()
-      break;
+      return min.focus()
     case "interrompida":
       box_local.classList.add("active")
       interrupted_text.textContent = "n"
       box_local.classList.add("open")
       row_local.classList.add("open")
       continued.classList.add("open")
-      
-      break;
+      return local.focus()
     case "perdida":
       
       break;
@@ -70,8 +72,7 @@ function check_event(event_is) {
       interrupted_text.textContent = "a partir d"
       box_local.classList.add("open")
       row_local.classList.add("open")
-  
-    break;
+      return local.focus()
     default:
       break;
   }
