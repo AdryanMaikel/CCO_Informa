@@ -48,7 +48,7 @@ function check_event(event_is) {
   box_local.classList.remove("active")
   box_local.classList.remove("open")
   row_local.classList.remove("open")
-  continued.classList.remove("active")
+  continued.classList.remove("open")
   switch (event_is) {
     case "atrasada":
       box_min.classList.add("active")
@@ -59,7 +59,7 @@ function check_event(event_is) {
       interrupted_text.textContent = "n"
       box_local.classList.add("open")
       row_local.classList.add("open")
-      continued.classList.add("active")
+      continued.classList.add("open")
       
       break;
     case "perdida":

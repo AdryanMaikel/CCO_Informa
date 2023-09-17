@@ -38,3 +38,8 @@ box_local.addEventListener("click", function(){
   box_local.classList.toggle("open")
   row_local.classList.toggle("open")
 })
+
+const continued = document.getElementById("continued")
+continued.addEventListener("click", function(){
+  continued.classList.toggle("active")
+})

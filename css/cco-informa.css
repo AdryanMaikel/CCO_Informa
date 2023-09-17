@@ -66,7 +66,7 @@ h1:hover{
 .fa-chevron-down, .fa-arrows-rotate{
   rotate: 0; transition: rotate .7s ease-in-out;
 }
-.open .fa-chevron-down, div#replace.active .fa-arrows-rotate{
+.open .fa-chevron-down, .active .fa-arrows-rotate{
   rotate: 180deg;
   transition: rotate .7s ease-in-out;
 }
@@ -174,7 +174,8 @@ ul.list li.option:hover{
   transition: 
     opacity .2s, scale .5s, transform .5s
 }
-.surge.active{
+.surge.active,
+#continued.open{
   scale: 1;
   opacity: 1;
   transform: translateX(0);
@@ -186,7 +187,10 @@ div#replace, div#continued{
   height: 22px;
   z-index: 7;
 }
-label#box_car_two{
+div#continued{
+  z-index: 5;
+}
+label#box_car_two,#box_input_local{
   z-index: 6;
 }
 #box_min,
