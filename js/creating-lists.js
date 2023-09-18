@@ -94,19 +94,23 @@ list_motives.innerHTML = create_options(motives)
 const box_motive = document.getElementById("box_motive")
 const motive = document.getElementById("motive")
 motive.addEventListener("focus", function(){
-  box_motive.classList.add("open")
+  box_motive.classList.toggle("open")
   motive.addEventListener("input", function(){
     this.value = this.value.replace(/[0-9]/g, "")
     list_motives.innerHTML = create_options(autocomplete(this.value, motives))
   })
 })
 
+const row_problems = document.getElementById("row_problems")
 const box_problems = document.getElementById("box_problems")
+const problem = document.getElementById("problem")
 function check_motive(input_motive) {
-  box_problems.classList.remove("active")
+  row_problems.classList.remove("open")
+  box_problems.classList.remove("open")
   switch (input_motive) {
     case "Problemas mecânicos":
-      box_problems.classList.add("active")
+      row_problems.classList.add("open")
+      problem.focus()
       break;
   
     default:
@@ -128,10 +132,8 @@ motive.addEventListener("focusout", function(){
 const list_problems = document.getElementById("list_problems")
 list_problems.innerHTML = create_options(problems)
 
-const div_problems = document.getElementById("div_problems")
-const problem = document.getElementById("problem")
 problem.addEventListener("focus", function(){
-  div_problems.classList.add("open")
+  box_problems.classList.toggle("open")
   problem.addEventListener("input", function(){
     this.value = this.value.replace(/[0-9]/g, "")
     list_problems.innerHTML = create_options(autocomplete(this.value, problems))
@@ -142,7 +144,7 @@ problem.addEventListener("focusout", function(){
   for(option of problems_options){
     option.onclick = function(){
       problem.value = this.textContent
-      div_problems.classList.remove("open")
+      box_problems.classList.remove("open")
     }
   }
 })

@@ -13,7 +13,7 @@
 body{
   width: 100vw; height: 100vh;
   background: var(--primary);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif
 }
 body.dark{background: var(--blue)}
 header{
@@ -26,19 +26,16 @@ header{
   justify-content: space-around;
   background: var(--primary);
   box-shadow: 0 0 14px 2px #858383;
-  transition: box-shadow .5s ease;
+  transition: box-shadow .5s ease
 }
 header:hover{
   box-shadow: 0 0 4px 0px #000000;
-  transition: box-shadow .5s ease;
+  transition: box-shadow .5s ease
 }
 figure{height: 45px}
 img{height: 100%}
 h1{color: var(--blue)}
-h1:hover{
-  font-style: italic;
-  cursor: pointer;
-}
+h1:hover{font-style: italic;cursor: pointer}
 #dark.icons{width: 50px;height: 100%;cursor: pointer}
 .icons{
   width: 18px;
@@ -53,30 +50,37 @@ h1:hover{
 .active .not, .yes{
   scale: 0;
   opacity: 0;
-  transition: scale .5s ease-out, opacity .5s;
+  transition: scale .5s ease-out, opacity .5s
 }
 .dark #sun,#moon,
 .active .yes, .not{
   scale: 1;
   opacity: 1;
-  transition: scale .5s ease-out, opacity .5s;
+  transition: scale .5s ease-out, opacity .5s
 }
 .active .text_decoration{color: #007c00}
 .text_decoration{color: #ff2424}
 .fa-chevron-down, .fa-arrows-rotate{
   rotate: 0; transition: rotate .7s ease-in-out;
 }
-.open .fa-chevron-down, .active .fa-arrows-rotate{
+.open .fa-chevron-down{
   rotate: 180deg;
-  transition: rotate .7s ease-in-out;
+  transition: rotate .7s ease-in-out
 }
+.fa-chevron-right{
+  rotate: 90deg; transition: rotate .7s ease-in-out
 
+}
+.open .open .fa-chevron-right{
+  rotate: 270deg; transition: rotate .7s ease-in-out
+
+}
 section#form{
   width: 330px;
   padding: 5px;
   background: var(--secondy);
   font-size: 13px;
-  font-family: 'Lora', serif;
+  font-family: 'Lora', serif
 }
 
 div.row{
@@ -84,22 +88,20 @@ div.row{
   display: flex;
   flex-direction: row;
   gap: 4px;
-  margin: 4px 0;
+  margin: 4px 0
 }
 @media only screen and (max-width: 500px){
   section#form{
     width: 99%;
-    padding: 0;
+    padding: 0
   }
-  div.row{
-    padding-left: 1%;
-  }
+  div.row{padding-left: 1%}
 }
 .box{
   width: auto;
   justify-content: space-between;
   border-radius: 8px;
-  gap: 3px;
+  gap: 3px
 }
 .box, li.option{
   cursor: pointer;
@@ -107,21 +109,18 @@ div.row{
   padding: 4px;
   display: flex;
   align-items: center;
-  height: 30px;
+  height: 30px
 }
 #who_informed{min-width: 93px; z-index: 7}
 input{
   outline: none;
   border: none;
   background: transparent;
-  height: 100%;
-}
-input::placeholder{
-  color: #00000060;
-}
+  height: 100%}
+input::placeholder{color: #00000060}
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px #fff inset;
-  -webkit-text-fill-color: #000;
+  -webkit-text-fill-color: #000
 }
 input#supervision{max-width: 74px}
 input#table{max-width: 75px}
@@ -139,59 +138,28 @@ ul.list{
   list-style: none;
   position: absolute;
   background-color: var(--primary);
-  box-shadow:
-    inset 0px 11px 8px -10px #aaa,
-    inset 0px -11px 8px -10px #aaa,
-    inset -11px 0px 8px -10px #aaa,
-    inset 11px 0px 8px -10px #aaa,
-    -11px 0px 8px -10px #000
+  box-shadow: none
 }
-#who_informed ~ ul.list{
-  left: 130px;
-  z-index: 9;
-}
-#box_direction ~ ul.list{
-  left: 165px;
-  z-index: 8;
-}
+#who_informed ~ ul.list{left: 130px;z-index: 9}
+#box_direction ~ ul.list{left: 177px;z-index: 8}
 #box_event ~ ul.list{
-  left: 50px;
+  left: 64px;
   width: 117px;
-  z-index: 7;
-}
+  z-index: 7}
 #box_motive ~ ul.list{
   min-width: 175px;
   transform: translate(35%, 30px);
-  z-index: 5
-}
-#div_problems ul.list{
-  transform: translate(-233px, 30px)
-}
-#list_problems{
-  min-width: 218px;
-}
-#box_motive ~ ul.list,
-#div_problems ul.list{
+  z-index: 5}
+#box_problems ~ ul.list{transform: translate(85px, 30px)}
+#list_problems{min-width: 218px}
+#box_motive ~ ul.list, #box_problems ~ ul.list{
   max-height: 300px;
-  overflow: overlay;
+  overflow: overlay
 }
-ul{
-  scrollbar-width: thin;
-  scrollbar-color: transparent;
-}
-
-ul::-webkit-scrollbar{
-  width: 3px;
-}
-
-ul::-webkit-scrollbar-track{
-  background: transparent;
-  padding: 2px;
-}
-
-ul::-webkit-scrollbar-thumb{
-  background-color: var(--blue);
-}
+ul{scrollbar-width: thin;scrollbar-color: transparent}
+ul::-webkit-scrollbar{width: 3px}
+ul::-webkit-scrollbar-track{background: transparent;padding: 2px}
+ul::-webkit-scrollbar-thumb{background-color: var(--blue)}
 ul.list li.option{
   transform-origin: top;
   transform: scale(0) translateY(-50px);
@@ -202,19 +170,26 @@ ul.list li.option{
     transform .5s cubic-bezier(0.65, 0.05, 0.36, 1),
     margin-bottom .2s ease-in-out;
 }
-.open ~ ul.list li.option,
-#div_problems.open ul.list li.option{
+.open ~ ul.list{
+  box-shadow:
+    inset 0px 11px 3px -10px #aaa,
+    inset 0px -11px 3px -10px #aaa,
+    inset -11px 0px 3px -10px #aaa,
+    inset 11px 0px 3px -10px #aaa,
+    0px 2px 5px 1px #000
+}
+.open ~ ul.list li.option{
   margin-bottom: 0;
   opacity: 1;
   transform: scale(1) translateY(0);
   transition: 
     opacity .2s,
     transform .2s cubic-bezier(0.65, 0.05, 0.36, 1),
-    margin-bottom .2s ease-in-out;
+    margin-bottom .2s ease-in-out
 }
 ul.list li.option:hover{
   background: var(--secondy);
-  border-radius: 8px;
+  border-radius: 8px
 }
 .surge{
   scale: 0;
@@ -222,14 +197,6 @@ ul.list li.option:hover{
   transform: translateX(-120px);
   transition: 
     opacity .2s, scale .5s, transform .5s
-}
-#box_problems.surge{
-  height: 0;
-  transition: height .5s
-}
-#box_problems.surge.active{
-  height: 38px;
-  transition: height .5s
 }
 .surge.active,
 #continued.open{
@@ -244,14 +211,11 @@ ul.list li.option:hover{
 div#replace, div#continued{
   margin-top: 4px;
   height: 22px;
-  z-index: 7;
+  z-index: 7
 }
 label#box_car_two,#box_input_local{z-index: 6}
 div#continued{z-index: 5}
-#box_min,
-#continued_journey{
-  position: absolute;
-}
+#box_min,#continued_journey{position: absolute}
 #box_input_local,#box_min,#box_input_continued{gap:0}
 div.row.revel{
   height: 0;
@@ -271,4 +235,3 @@ div.row.revel.open ~ div.row.revel ~ div.row#row_motive{
 div.row.revel.open ~ div.row.revel.open ~ div.row#row_motive{
   margin-top: 0;
 }
-#div_problems{width: 0;}
