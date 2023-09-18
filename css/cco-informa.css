@@ -148,14 +148,16 @@ ul.list{
   z-index: 7}
 #box_motive ~ ul.list{
   min-width: 175px;
-  transform: translate(35%, 30px);
-  z-index: 5}
+  transform: translate(35%, 30px)}
 #box_problems ~ ul.list{transform: translate(85px, 30px)}
 #list_problems{min-width: 218px}
 #box_motive ~ ul.list, #box_problems ~ ul.list{
+  z-index: 4;
   max-height: 300px;
   overflow: overlay
 }
+#box_motive.open ~ ul.list{z-index: 6}
+#box_problems.open ~ ul.list{z-index: 5}
 ul{scrollbar-width: thin;scrollbar-color: transparent}
 ul::-webkit-scrollbar{width: 3px}
 ul::-webkit-scrollbar-track{background: transparent;padding: 2px}
@@ -227,10 +229,10 @@ div.row.revel.open{
   transition: height .5s
 }
 div.row.revel ~ div.row.revel ~ div.row#row_motive{
-  margin-top: -8px;
+  margin-top: -8px
 }
 div.row.revel.open ~ div.row.revel ~ div.row#row_motive{
-  margin-top: -4px;
+  margin-top: -4px
 }
 div.row.revel.open ~ div.row.revel.open ~ div.row#row_motive{
   margin-top: 0;
