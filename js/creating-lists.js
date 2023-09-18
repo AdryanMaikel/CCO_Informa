@@ -1,4 +1,4 @@
-import { activies, events/* , motivies , problems*/, create_options, autocomplete } from "./data.js"
+import { activies, events, motives , problems, create_options, autocomplete } from "./data.js"
 const directions = document.getElementById('directions')
 directions.innerHTML = create_options(activies)
 
@@ -85,6 +85,64 @@ event.addEventListener("focusout", function(){
       event.value = this.textContent
       box_event.classList.remove("open")
       return check_event(this.textContent)
+    }
+  }
+})
+
+const list_motives = document.getElementById("list_motives")
+list_motives.innerHTML = create_options(motives)
+const box_motive = document.getElementById("box_motive")
+const motive = document.getElementById("motive")
+motive.addEventListener("focus", function(){
+  box_motive.classList.add("open")
+  motive.addEventListener("input", function(){
+    this.value = this.value.replace(/[0-9]/g, "")
+    list_motives.innerHTML = create_options(autocomplete(this.value, motives))
+  })
+})
+
+const box_problems = document.getElementById("box_problems")
+function check_motive(input_motive) {
+  box_problems.classList.remove("active")
+  switch (input_motive) {
+    case "Problemas mecânicos":
+      box_problems.classList.add("active")
+      break;
+  
+    default:
+      break;
+  }
+}
+
+motive.addEventListener("focusout", function(){
+  const motives_options = document.querySelectorAll("#list_motives .option")
+  for(option of motives_options){
+    option.onclick = function(){
+      motive.value = this.textContent
+      box_motive.classList.remove("open")
+      check_motive(this.textContent)
+    }
+  }
+})
+
+const list_problems = document.getElementById("list_problems")
+list_problems.innerHTML = create_options(problems)
+
+const div_problems = document.getElementById("div_problems")
+const problem = document.getElementById("problem")
+problem.addEventListener("focus", function(){
+  div_problems.classList.add("open")
+  problem.addEventListener("input", function(){
+    this.value = this.value.replace(/[0-9]/g, "")
+    list_problems.innerHTML = create_options(autocomplete(this.value, problems))
+  })
+})
+problem.addEventListener("focusout", function(){
+  const problems_options = document.querySelectorAll("#list_problems .option")
+  for(option of problems_options){
+    option.onclick = function(){
+      problem.value = this.textContent
+      div_problems.classList.remove("open")
     }
   }
 })

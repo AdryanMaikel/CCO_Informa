@@ -59,6 +59,7 @@
       </div>
       <div class="row">
         <label id="box_table" class="box" for="table">
+          <span>- </span>
           <div class="icons">
             <i class="fa-solid fa-clipboard icon"></i>
           </div>
@@ -84,6 +85,7 @@
       </div>
       <div class="row">
         <label for="line" class="box">
+          <span>- </span>
           <div class="icons">
             <i class="fa-solid fa-route icon"></i>
           </div>
@@ -108,7 +110,7 @@
       </div>
       <div class="row">
         <label for="event" id="box_event" class="box">
-          <span>Viagem </span>
+          <span>- Viagem </span>
           <input type="text" name="event" id="event"placeholder="foi...">
           <div class="icons">
             <i class="fa-solid fa-chevron-down icon"></i>
@@ -120,7 +122,8 @@
             <div class="icons">
               <i class="fa-regular fa-hourglass-half icon"></i>
             </div>
-            <input type="text" name="min" id="min" maxlength="2" placeholder="Min">
+            <input type="text" name="min" id="min" maxlength="2" placeholder="00">
+            <span>minutos</span>
           </label>
           <div id="box_local" class="box surge">
             <span>onde?</span>
@@ -152,7 +155,28 @@
           <input type="text" name="input_continued" id="input_continued" maxlength="" placeholder="o terminal Triângulo">
         </label>
       </div>
-      <div class="row"></div>
+      <div id="row_motive" class="row">
+        <label id="box_motive" class="box" for="motive">
+          <span>- Motivo:</span>
+          <input type="text" name="motive" id="motive">
+          <div class="icons">
+            <i class="fa-solid fa-chevron-down icon"></i>
+          </div>
+        </label>
+        <ul class="list" id="list_motives"></ul>
+      </div>
+      <div id="box_problems" class="row surge">
+        <label for="problem" class="box">
+          <span>Problemas de:</span>
+          <input type="text" name="problem" id="problem">
+          <div class="icons">
+            <i class="fa-solid fa-chevron-down icon"></i>
+          </div>
+        </label>
+        <div id="div_problems" class="">
+          <ul class="list" id="list_problems"></ul>
+        </div>
+      </div>
     </form>
   </section>
   <aside>

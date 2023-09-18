@@ -21,7 +21,7 @@ const events = [
   "realizada a frente"
 ]
 
-const motivies = [
+const motives = [
   "Acidente",
   "Assalto",
   "Atrasado",
@@ -81,4 +81,4 @@ function autocomplete(input, array) {
   })
 }
 
-export{ activies, events, motivies, problems, create_options, autocomplete }
+export{ activies, events, motives, problems, create_options, autocomplete }
