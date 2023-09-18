@@ -233,10 +233,12 @@ div.row.revel ~ div.row.revel ~ div.row#row_motive{
   margin-top: -8px
 }
 div.row.revel.open ~ div.row.revel ~ div.row#row_motive,
-div.row.revel ~ #row_congestion{
+div.row.revel ~ #row_congestion,
+div.row.revel ~ #row_tripulation{
   margin-top: -4px
 }
 div.row.revel.open ~ div.row.revel.open ~ div.row#row_motive,
-div.row.revel.open ~ #row_congestion{
+div.row.revel.open ~ #row_congestion,
+div.row.revel.open ~ #row_tripulation{
   margin-top: 0;
 }
