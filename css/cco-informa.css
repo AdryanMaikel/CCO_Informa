@@ -133,7 +133,7 @@ input#min{width: 22px}
 input#problem{width: 200px}
 ul.list{
   transform: translateY(30px);
-  padding: 4px;
+  padding: 0;
   border-radius: 8px;
   list-style: none;
   position: absolute;
@@ -173,6 +173,7 @@ ul.list li.option{
     margin-bottom .2s ease-in-out;
 }
 .open ~ ul.list{
+  padding: 4px;
   box-shadow:
     inset 0px 11px 3px -10px #aaa,
     inset 0px -11px 3px -10px #aaa,
@@ -218,7 +219,7 @@ div#replace, div#continued{
 label#box_car_two,#box_input_local{z-index: 6}
 div#continued{z-index: 5}
 #box_min,#continued_journey{position: absolute}
-#box_input_local,#box_min,#box_input_continued{gap:0}
+#box_input_local,#box_min,#box_input_continued,#box_congestion{gap:0}
 div.row.revel{
   height: 0;
   transition: height .5s;
@@ -231,9 +232,11 @@ div.row.revel.open{
 div.row.revel ~ div.row.revel ~ div.row#row_motive{
   margin-top: -8px
 }
-div.row.revel.open ~ div.row.revel ~ div.row#row_motive{
+div.row.revel.open ~ div.row.revel ~ div.row#row_motive,
+div.row.revel ~ #row_congestion{
   margin-top: -4px
 }
-div.row.revel.open ~ div.row.revel.open ~ div.row#row_motive{
+div.row.revel.open ~ div.row.revel.open ~ div.row#row_motive,
+div.row.revel.open ~ #row_congestion{
   margin-top: 0;
 }
