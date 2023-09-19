@@ -152,7 +152,7 @@ ul.list{
   box-shadow: none
 }
 #who_informed ~ ul.list{left: 130px;z-index: 9}
-#box_direction ~ ul.list{left: 177px;z-index: 8}
+#box_direction ~ ul.list{left: 177px;z-index: 8;min-width: 33px;max-height: 300px;overflow: overlay}
 #box_event ~ ul.list{
   left: 64px;
   width: 117px;

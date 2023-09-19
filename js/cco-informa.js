@@ -48,3 +48,27 @@ continued.addEventListener("click", function(){
   continued.classList.toggle("active")
   box_continued.classList.toggle("open")
 })
+
+supervision.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z]/,"")})
+
+table.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z0-9]/,"").toUpperCase()})
+table.addEventListener("focusout", function(){
+  if(this.value.indexOf("/")>=1 || this.value.length < 3){
+    return
+  }
+  result = this.value.split("").reverse().slice(0,3)
+  result = this.value.split("").reverse().slice(3,this.value.length+1).reverse().join("")+"/"+result.reverse().join("")
+  this.value = result
+})
+
+car.addEventListener("input", function(){this.value = this.value.replace(/[^0-9]/,"")})
+car_two.addEventListener("input", function(){this.value = this.value.replace(/[^0-9]/,"")})
+line.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z0-9]/,"").toUpperCase()})
+hour.addEventListener("input", function(){this.value = this.value.replace(/[^0-9:]/,"").toUpperCase()})
+hour.addEventListener("blur", function() {
+  if(hour.value.length == 4){
+    hour.value = hour.value.slice(0, 2) + ":" + hour.value.slice(2, 4)
+  }
+})
+const input_event = document.getElementById("event")
+input_event.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z ]/,"").toUpperCase()})
