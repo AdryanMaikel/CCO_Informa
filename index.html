@@ -10,6 +10,7 @@
   <script nomodule src="js/data.js" defer></script>
   <script type="module" src="js/creating-lists.js" defer></script>
   <script src="js/cco-informa.js" defer></script>
+  <script src="js/generate_cco_inform.js" defer></script>
   <script src="https://kit.fontawesome.com/f9a0d51bc2.js" crossorigin="anonymous" defer></script>
   <style>
   </style>
@@ -228,9 +229,40 @@
           </label>
         </div>
       </div>
+      <div id="row_button" class="row footer">
+        <label for="generate_cco_inform" class="box">
+          <span>GERAR *CCO INFORMA*</span>
+          <input type="submit" value="" id="generate_cco_inform">
+        </label>
+        <div id="generate_other" class="box">
+          <div class="icons"><i class="fa-solid fa-plus icon"></i></div>
+        </div>
+      </div>
     </form>
   </section>
   <aside>
+    <div class="cco_informa">
+      <span id="text_cco_informa">
+        *CCO INFORMA:*
+        <br>
+        Conforme informado ao CCO pelo largador da Nortran
+        <br>
+        - 659/011, carro 6427
+        <br>
+        - 659 das 15:00, BC
+        <br>
+        - Viagem interrompida na Av. Cascais
+        <br>
+        - Motivo: devido a problemas no limpador do para-brisa do carro 6427,
+        <br>
+        trocado pelo carro 6487, que continuou puxando viagem a partir da 
+        <br>
+        Av. Cascais em diante
+      </span>
+      <div class="icons">
+        <i class="fa-solid fa-copy icon"></i>
+      </div>
+    </div>
   </aside>
   <footer>
 

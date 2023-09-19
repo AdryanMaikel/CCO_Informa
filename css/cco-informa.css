@@ -75,9 +75,11 @@ h1:hover{font-style: italic;cursor: pointer}
   rotate: 270deg; transition: rotate .7s ease-in-out
 
 }
-section#form{
+section{
   width: 330px;
   padding: 5px;
+}
+section#form{
   background: var(--secondy);
   font-size: 13px;
   font-family: 'Lora', serif
@@ -91,7 +93,7 @@ div.row{
   margin: 4px 0
 }
 @media only screen and (max-width: 500px){
-  section#form{
+  section{
     width: 99%;
     padding: 0
   }
@@ -258,3 +260,40 @@ div.row.revel.open ~ #row_congestion{
   margin-top: 0;
 }
 
+div.row.footer{
+  height: 60px;
+  padding-bottom: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  justify-content: flex-start;
+}
+.row.footer .box{
+  font-weight: bold;
+  font-style: italic;
+  gap: 0;
+  color: var(--primary);
+  background-color: var(--blue);
+  transform: translateY(0);
+  transition: background .3s ease-in-out, transform .6s ease
+}
+.row.footer .box:hover{
+  background-color: #0007ff;
+  transform: translateY(-2px);
+  transition: background .3s ease-in-out, transform .6s ease
+}
+.row.footer .box:active{
+  background-color: #000242;
+  transform: translateY(3px);
+  transition: background .3s ease-in-out, transform .6s ease
+}
+.row.footer .box .icons .icon{color: var(--primary)}
+#generate_other{
+  margin-top: 5px;
+  width: 22px;
+  height: 22px;
+  justify-content: center;
+}
+#cco_informa{
+  
+}
