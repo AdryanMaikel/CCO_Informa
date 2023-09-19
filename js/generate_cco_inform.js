@@ -1,3 +1,8 @@
+CCO_INFORMA = {Data:"",	Tabela:"",	Linha:"",	Carro:"",	"Carro Substituto":"",	Hora:"",	Sentido:"",	Ocorrência:"",	Problema:"",	Observação:"",	Operador:""}
+
+const date = Date()
+console.log(date)
+
 function generate_cco_inform(){
   cco_informa = "*CCO INFORMA*\n"
   const informed = document.getElementById("informed")
@@ -13,6 +18,7 @@ function generate_cco_inform(){
       cco_informa += supervision.value[0].toUpperCase()+supervision.value.substring(1)
     }
   }else{
+    const who_informed = document.getElementById("who_informed")
     cco_informa += "largador da "+who_informed.innerText
   }
   cco_informa += "\n"
@@ -32,10 +38,10 @@ function generate_cco_inform(){
       cco_informa += `não realizada`
       break
     case "realizada a frente":
-      cco_informa += `realizada a partir da ${local.value}`
+      cco_informa += `realizada a partir d${local.value}`
       break
     case "interrompida":
-      cco_informa += `interrompida na ${local.value}`
+      cco_informa += `interrompida n${local.value}`
       break
   }
   cco_informa += "\n- Motivo: "
@@ -55,7 +61,7 @@ function generate_cco_inform(){
     break;
     case "Congestionamento":
       if(congestion_locale.value.length > 0){
-        cco_informa += `Congestionamento na ${congestion_locale.value}`
+        cco_informa += `Congestionamento n${congestion_locale.value}`
       }else{
         return congestion_locale.focus()
       }
@@ -180,7 +186,7 @@ function generate_cco_inform(){
   }
   if(continued.classList.contains("active")){
     if(input_continued.value.length > 0){
-      cco_informa += `, que continuou puxando viagem a partir da ${input_continued.value}`
+      cco_informa += `, que continuou puxando viagem a partir d${input_continued.value}`
     }else{
       input_continued.focus()
     }
