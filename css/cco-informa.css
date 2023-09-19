@@ -234,16 +234,23 @@ div.row.revel{
   transition: height .5s;
   overflow: hidden
 }
+#row_roullet_and_validator.open{
+  height: 42px;
+}
 div.row.revel.open{
   height: 38px;
   transition: height .5s
 }
+
+div.row.revel.open ~ div.row.revel ~ div.row#row_roullet_and_validator,
 div.row.revel ~ div.row.revel ~ div.row#row_motive{
   margin-top: -8px
 }
 div.row.revel.open ~ div.row.revel ~ div.row#row_motive,
+
 div.row.revel ~ #row_congestion,
-div.row.revel ~ #row_tripulation{
+div.row.revel ~ #row_tripulation,
+div.row.revel ~ #row_roullet_and_validator{
   margin-top: -4px
 }
 div.row.revel.open ~ div.row.revel.open ~ div.row#row_motive,

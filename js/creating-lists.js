@@ -107,11 +107,13 @@ const problem = document.getElementById("problem")
 const row_congestion = document.getElementById("row_congestion")
 const congestion_locale = document.getElementById("congestion_locale")
 const row_tripulation = document.getElementById("row_tripulation")
+const row_roullet_and_validator = document.getElementById("row_roullet_and_validator")
 function check_motive(input_motive) {
   row_problems.classList.remove("open")
   box_problems.classList.remove("open")
   row_congestion.classList.remove("open")
   row_tripulation.classList.remove("open")
+  row_roullet_and_validator.classList.remove("open")
   switch (input_motive) {
     case "Problemas mecânicos":
       row_problems.classList.add("open")
@@ -121,6 +123,8 @@ function check_motive(input_motive) {
       return congestion_locale.focus()
       case "Falta de Tripulação":
         return row_tripulation.classList.add("open")
+    case "Validador/ Roleta":
+      return row_roullet_and_validator.classList.add("open")
     default:
       break;
   }
