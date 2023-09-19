@@ -20,31 +20,24 @@ const generate_cco_inform = document.getElementById("generate_cco_inform").addEv
   
   cco_informa += `- ${table.value}, carro ${car.value}\n`
   cco_informa += `- ${line.value} das ${hour.value}, ${direction.value}\n`
+  cco_informa += "- Viagem "
   const event = document.getElementById("event")
   switch (event.value) {
     case "":
-      return event.focus()
+      // return event.focus()
+      break
     case "atrasada":
-      if(min.value.length > 0) cco_informa += `- Viagem realizada com ${min.value} minutos de atraso`
-      else return min.focus()
-    break
+      cco_informa += `realizada com ${min.value} minutos de atraso`
+      break
     case "perdida":
-      cco_informa += `- Viagem não realizada`
-    break
+      cco_informa += `não realizada`
+      break
     case "realizada a frente":
-      if(local.value.length > 0){
-        cco_informa += `- Viagem realizada a partir da ${local.value}`
-      }else{
-        return local.focus()
-      }
-    break
+      cco_informa += `realizada a partir da ${local.value}`
+      break
     case "interrompida":
-      if(local.value.length > 0){
-        cco_informa += `- Viagem interrompida na ${local.value}`
-      }else{
-        return local.focus()
-      }
-    break
+      cco_informa += `interrompida na ${local.value}`
+      break
   }
   cco_informa += "\n- Motivo: "
 
@@ -186,18 +179,18 @@ const generate_cco_inform = document.getElementById("generate_cco_inform").addEv
     const replace_car = document.getElementById("replace-car").value
     cco_informa += `, trocado pelo carro ${replace_car}`
   }
-  if(local.value == "interrompida" && box_input_continued.classList.contains("active")){
+  if(continued.classList.contains("active")){
     if(input_continued.value.length > 0){
       cco_informa += `, que continuou puxando viagem a partir da ${input_continued.value}`
     }else{
-      return input_continued.focus()
+      input_continued.focus()
     }
   }
 
-  cco_informa += "\n"
+  cco_informa += "\n\n"
 
   const text_cco_informa = document.getElementById("text_cco_informa")
-  text_cco_informa.innerText = cco_informa
+  text_cco_informa.value = cco_informa
   
   const box_cco_informa = document.getElementById("box_cco_informa")
   box_cco_informa.classList.add("active")

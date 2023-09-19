@@ -294,6 +294,17 @@ div.row.footer{
   height: 22px;
   justify-content: center;
 }
-#cco_informa{
-  
+#box_cco_informa{
+  font-size: 12px;
+  display: flex;
+}
+textarea{
+  border: none;
+  width: 300px;
+  height: 400px;
+  resize:none;
+  outline: none;
+}
+.fa-copy{
+  font-size: 23px;
 }
