@@ -106,10 +106,12 @@ const box_problems = document.getElementById("box_problems")
 const problem = document.getElementById("problem")
 const row_congestion = document.getElementById("row_congestion")
 const congestion_locale = document.getElementById("congestion_locale")
+const row_tripulation = document.getElementById("row_tripulation")
 function check_motive(input_motive) {
   row_problems.classList.remove("open")
   box_problems.classList.remove("open")
   row_congestion.classList.remove("open")
+  row_tripulation.classList.remove("open")
   switch (input_motive) {
     case "Problemas mecânicos":
       row_problems.classList.add("open")
@@ -117,6 +119,8 @@ function check_motive(input_motive) {
     case "Congestionamento":
       row_congestion.classList.add("open")
       return congestion_locale.focus()
+      case "Falta de Tripulação":
+        return row_tripulation.classList.add("open")
     default:
       break;
   }
