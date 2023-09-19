@@ -131,10 +131,7 @@ input#direction{width: 20px}
 input#event{width: 105px}
 input#min{width: 22px}
 input#problem{width: 200px}
-input[type=radio]{
-  scale: 0;
-  position: absolute;
-}
+input[type=radio]{scale: 0;position: absolute}
 input[type=radio] ~ .icons .fa-check{
   scale: 0; transition: scale .5s}
 input[type=radio]:checked ~ .icons .fa-check{
@@ -142,6 +139,9 @@ input[type=radio]:checked ~ .icons .fa-check{
 input[type=radio]:checked ~ span,
 input[type=radio]:checked ~ .icons .fa-check{
   color: #007c00;
+}
+input[type=radio]:checked ~ span{
+  text-decoration: underline;
 }
 ul.list{
   transform: translateY(30px);
@@ -250,8 +250,7 @@ div.row.revel ~ #row_tripulation{
   margin-top: -4px
 }
 div.row.revel.open ~ div.row.revel.open ~ div.row#row_motive,
-div.row.revel.open ~ #row_congestion,
-div.row.revel.open ~ #row_tripulation{
+div.row.revel.open ~ #row_congestion{
   margin-top: 0;
 }
 
