@@ -140,9 +140,6 @@ input[type=radio]:checked ~ span,
 input[type=radio]:checked ~ .icons .fa-check{
   color: #007c00;
 }
-input[type=radio]:checked ~ span{
-  text-decoration: underline;
-}
 ul.list{
   transform: translateY(30px);
   padding: 0;
