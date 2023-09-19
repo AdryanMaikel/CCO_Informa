@@ -1,5 +1,4 @@
-const form = document.getElementById("form").addEventListener("submit", function(event){event.preventDefault()})
-const generate_cco_inform = document.getElementById("generate_cco_inform").addEventListener("click", function(){
+function generate_cco_inform(){
   cco_informa = "*CCO INFORMA*\n"
   const informed = document.getElementById("informed")
   if(informed.classList.contains("active")){
@@ -176,8 +175,8 @@ const generate_cco_inform = document.getElementById("generate_cco_inform").addEv
     break;
   }
   if(replace.classList.contains("active")){
-    const replace_car = document.getElementById("replace-car").value
-    cco_informa += `, trocado pelo carro ${replace_car}`
+    const car_two = document.getElementById("car_two").value
+    cco_informa += `, trocado pelo carro ${car_two}`
   }
   if(continued.classList.contains("active")){
     if(input_continued.value.length > 0){
@@ -186,14 +185,20 @@ const generate_cco_inform = document.getElementById("generate_cco_inform").addEv
       input_continued.focus()
     }
   }
-
   cco_informa += "\n\n"
-
-  const text_cco_informa = document.getElementById("text_cco_informa")
-  text_cco_informa.value = cco_informa
-  
-  const box_cco_informa = document.getElementById("box_cco_informa")
-  box_cco_informa.classList.add("active")
+  return cco_informa
+}
+const text_cco_informa = document.getElementById("text_cco_informa")
+const form = document.getElementById("form").addEventListener("submit", function(event){event.preventDefault()})
+const generate_cco = document.getElementById("generate_cco_inform").addEventListener("click", function(){
+  text_cco_informa.value = generate_cco_inform()
+})
+const generate_other = document.getElementById("generate_other").addEventListener("click", function(){
+  text_cco_informa.value += generate_cco_inform()
+})
+const copy = document.getElementById("copy").addEventListener("click", function(){
+  text_cco_informa.select()
+  document.execCommand("copy")
 })
 // MOLDE
 /*
