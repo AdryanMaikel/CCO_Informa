@@ -1,59 +1,42 @@
-const gerar_cco_informa = document.getElementById("gerar_cco_informa")
-gerar_cco_informa.addEventListener("click", function(){
-  
+function generate_cco_inform(){
   cco_informa = "*CCO INFORMA*\n"
-
-  const box_informed = document.getElementById("box_was_informed")
-  if(box_informed.classList.contains("active")){
+  const informed = document.getElementById("informed")
+  if(informed.classList.contains("active")){
     cco_informa += "Conforme informado ao CCO pelo "
   }else{
     cco_informa += "Conforme contato feito pelo CCO ao "
   }
-  
-  if(who_informed.innerText == "Quem?"){
-    return select_informed.classList.add("active")
-  }else{
-    if(who_informed.innerText == "Fiscal"){
-      cco_informa += "fiscal "
-      if(fiscal.value.length > 0){
-        cco_informa += fiscal.value[0].toUpperCase()+fiscal.value.substring(1)
-      }
-    }else{
-      cco_informa += "largador da "+who_informed.innerText
+
+  if(text_informed.innerText == "Fiscal"){
+    cco_informa += "fiscal "
+    if(supervision.value.length > 0){
+      cco_informa += supervision.value[0].toUpperCase()+supervision.value.substring(1)
     }
+  }else{
+    cco_informa += "largador da "+who_informed.innerText
   }
   cco_informa += "\n"
   
   cco_informa += `- ${table.value}, carro ${car.value}\n`
-  cco_informa += `- ${line.value} das ${time.value}, ${direction.innerText}\n`
-  
-  switch (text_event.innerText) {
-    case "foi":
-      return div_event.classList.add("active")
+  cco_informa += `- ${line.value} das ${hour.value}, ${direction.value}\n`
+  cco_informa += "- Viagem "
+  const event = document.getElementById("event")
+  switch (event.value) {
+    case "":
+      // return event.focus()
+      break
     case "atrasada":
-      if(delay_event.value.length > 0) {
-        cco_informa += `- Viagem realizada com ${delay_event.value} minutos de atraso`
-      }else{
-        return delay_event.focus()
-      }
-    break
+      cco_informa += `realizada com ${min.value} minutos de atraso`
+      break
     case "perdida":
-      cco_informa += `- Viagem não realizada`
-    break
+      cco_informa += `não realizada`
+      break
     case "realizada a frente":
-      if(location_event.value.length > 0){
-        cco_informa += `- Viagem realizada a partir da ${location_event.value}`
-      }else{
-        return location_event.focus()
-      }
-    break
+      cco_informa += `realizada a partir da ${local.value}`
+      break
     case "interrompida":
-      if(location_event.value.length > 0){
-        cco_informa += `- Viagem interrompida na ${location_event.value}`
-      }else{
-        return location_event.focus()
-      }
-    break
+      cco_informa += `interrompida na ${local.value}`
+      break
   }
   cco_informa += "\n- Motivo: "
 
@@ -71,17 +54,22 @@ gerar_cco_informa.addEventListener("click", function(){
       cco_informa += "Carro "+car.value+" ter sofrido avaria"
     break;
     case "Congestionamento":
-      if(input_congestion_location.value.length > 0){
-        cco_informa += `Congestionamento na ${input_congestion_location.value}`
+      if(congestion_locale.value.length > 0){
+        cco_informa += `Congestionamento na ${congestion_locale.value}`
       }else{
-        return input_congestion_location.focus()
+        return congestion_locale.focus()
       }
     break;
     case "Falta de Carro":
       cco_informa += "Falta de carro"
     break;
     case "Falta de Tripulação":
-      cco_informa += "Falta de "+who_missing.innerText.toLowerCase()
+      cco_informa += "Falta de "
+      if(motorista.checked){
+        cco_informa += "motorista"
+      }else{
+        cco_informa += "cobrador"
+      }
     break;
     case "Pneu Furado":
       cco_informa += "Pneu furado do carro "+car.value
@@ -93,7 +81,12 @@ gerar_cco_informa.addEventListener("click", function(){
       cco_informa += "tempo insuficiente para realizar viagem"
     break;
     case "Validador/ Roleta":
-      cco_informa += `Problemas no validador/roleta do carro ${car.value}`
+      cco_informa += "Problemas " 
+      if(roullet.checked)
+        cco_informa += "na roleta "
+      else
+        cco_informa += "no validador "
+      cco_informa += `do carro ${car.value}`
     break;
     case "Vandalismo":
       cco_informa += "Carro "+car.value+" ter sofrido vandalismo"
@@ -182,24 +175,30 @@ gerar_cco_informa.addEventListener("click", function(){
     break;
   }
   if(replace.classList.contains("active")){
-    const replace_car = document.getElementById("replace-car").value
-    cco_informa += `, trocado pelo carro ${replace_car}`
+    const car_two = document.getElementById("car_two").value
+    cco_informa += `, trocado pelo carro ${car_two}`
   }
-  if(text_event.innerText == "interrompida" && continued_journey.classList.contains("active")){
-    if(location_continued.value.length > 0){
-      cco_informa += `, que continuou puxando viagem a partir da ${location_continued.value}`
+  if(continued.classList.contains("active")){
+    if(input_continued.value.length > 0){
+      cco_informa += `, que continuou puxando viagem a partir da ${input_continued.value}`
     }else{
-      return location_continued.focus()
+      input_continued.focus()
     }
   }
-
-  cco_informa += "\n"
-
-  const text_cco_informa = document.getElementById("text_cco_informa")
-  text_cco_informa.innerText = cco_informa
-  
-  const div_cco_informa = document.getElementById("div_cco_informa")
-  div_cco_informa.classList.add("active")
+  cco_informa += "\n\n"
+  return cco_informa
+}
+const text_cco_informa = document.getElementById("text_cco_informa")
+const form = document.getElementById("form").addEventListener("submit", function(event){event.preventDefault()})
+const generate_cco = document.getElementById("generate_cco_inform").addEventListener("click", function(){
+  text_cco_informa.value = generate_cco_inform()
+})
+const generate_other = document.getElementById("generate_other").addEventListener("click", function(){
+  text_cco_informa.value += generate_cco_inform()
+})
+const copy = document.getElementById("copy").addEventListener("click", function(){
+  text_cco_informa.select()
+  document.execCommand("copy")
 })
 // MOLDE
 /*

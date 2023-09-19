@@ -1,0 +1,310 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap');
+:root{
+  --primary: #ffffff;
+  --secondy: #2d2d6b11;
+  --third: #ebebeb;
+  --four: #eee;
+  --five: #aaa;
+  --blue: #3B3B8A;
+}
+*{padding: 0; margin: 0}
+body{
+  width: 100vw; height: 100vh;
+  background: var(--primary);
+  font-family: 'Poppins', sans-serif
+}
+body.dark{background: var(--blue)}
+header{
+  width: 100%;
+  padding: 10px 0;
+  z-index: 10;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: var(--primary);
+  box-shadow: 0 0 14px 2px #858383;
+  transition: box-shadow .5s ease
+}
+header:hover{
+  box-shadow: 0 0 4px 0px #000000;
+  transition: box-shadow .5s ease
+}
+figure{height: 45px}
+img{height: 100%}
+h1{color: var(--blue)}
+h1:hover{font-style: italic;cursor: pointer}
+#dark.icons{width: 50px;height: 100%;cursor: pointer}
+.icons{
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon{font-size: 18px; color: var(--blue); position: absolute}
+.icon-header{font-size: 30px}
+#sun,.dark #moon,
+.active .not, .yes{
+  scale: 0;
+  opacity: 0;
+  transition: scale .5s ease-out, opacity .5s
+}
+.dark #sun,#moon,
+.active .yes, .not{
+  scale: 1;
+  opacity: 1;
+  transition: scale .5s ease-out, opacity .5s
+}
+.active .text_decoration{color: #007c00}
+.text_decoration{color: #ff2424}
+.fa-chevron-down, .fa-arrows-rotate{
+  rotate: 0; transition: rotate .7s ease-in-out;
+}
+.open .fa-chevron-down{
+  rotate: 180deg;
+  transition: rotate .7s ease-in-out
+}
+.fa-chevron-right{
+  rotate: 90deg; transition: rotate .7s ease-in-out
+
+}
+.open .open .fa-chevron-right{
+  rotate: 270deg; transition: rotate .7s ease-in-out
+
+}
+section{
+  width: 330px;
+  padding: 5px;
+}
+section#form{
+  background: var(--secondy);
+  font-size: 13px;
+  font-family: 'Lora', serif
+}
+
+div.row{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  margin: 4px 0
+}
+@media only screen and (max-width: 500px){
+  section{
+    width: 99%;
+    padding: 0
+  }
+  div.row{padding-left: 1%}
+}
+.box{
+  width: auto;
+  justify-content: space-between;
+  border-radius: 8px;
+  gap: 3px
+}
+.box, li.option{
+  cursor: pointer;
+  background: var(--primary);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  height: 30px
+}
+#who_informed{min-width: 93px; z-index: 7}
+input{
+  outline: none;
+  border: none;
+  background: transparent;
+  height: 100%}
+input::placeholder{color: #00000060}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px #fff inset;
+  -webkit-text-fill-color: #000
+}
+input#supervision{max-width: 74px}
+input#table{max-width: 75px}
+input.car{max-width: 34px}
+input#line{width: 44px}
+input#hour{width: 33px}
+input#direction{width: 20px}
+input#event{width: 105px}
+input#min{width: 22px}
+input#problem{width: 200px}
+input[type=radio]{scale: 0;position: absolute}
+input[type=radio] ~ .icons .fa-check{
+  scale: 0; transition: scale .5s}
+input[type=radio]:checked ~ .icons .fa-check{
+  scale: 1; transition: scale .5s}
+input[type=radio]:checked ~ span,
+input[type=radio]:checked ~ .icons .fa-check{
+  color: #007c00;
+}
+ul.list{
+  transform: translateY(30px);
+  padding: 0;
+  border-radius: 8px;
+  list-style: none;
+  position: absolute;
+  background-color: var(--primary);
+  box-shadow: none
+}
+#who_informed ~ ul.list{left: 130px;z-index: 9}
+#box_direction ~ ul.list{left: 177px;z-index: 8;min-width: 33px;max-height: 300px;overflow: overlay}
+#box_event ~ ul.list{
+  left: 64px;
+  width: 117px;
+  z-index: 7}
+#box_motive ~ ul.list{
+  min-width: 175px;
+  transform: translate(35%, 30px)}
+#box_problems ~ ul.list{transform: translate(85px, 30px)}
+#list_problems{min-width: 218px}
+#box_motive ~ ul.list, #box_problems ~ ul.list{
+  z-index: 4;
+  max-height: 300px;
+  overflow: overlay
+}
+#box_motive.open ~ ul.list{z-index: 6}
+#box_problems.open ~ ul.list{z-index: 5}
+ul{scrollbar-width: thin;scrollbar-color: transparent}
+ul::-webkit-scrollbar{width: 3px}
+ul::-webkit-scrollbar-track{background: transparent;padding: 2px}
+ul::-webkit-scrollbar-thumb{background-color: var(--blue)}
+ul.list li.option{
+  transform-origin: top;
+  transform: scale(0) translateY(-50px);
+  margin-bottom: -45px;
+  opacity: 0;
+  transition:
+    opacity .2s,
+    transform .5s cubic-bezier(0.65, 0.05, 0.36, 1),
+    margin-bottom .2s ease-in-out;
+}
+.open ~ ul.list{
+  padding: 4px;
+  box-shadow:
+    inset 0px 11px 3px -10px #aaa,
+    inset 0px -11px 3px -10px #aaa,
+    inset -11px 0px 3px -10px #aaa,
+    inset 11px 0px 3px -10px #aaa,
+    0px 2px 5px 1px #000
+}
+.open ~ ul.list li.option{
+  margin-bottom: 0;
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: 
+    opacity .2s,
+    transform .2s cubic-bezier(0.65, 0.05, 0.36, 1),
+    margin-bottom .2s ease-in-out
+}
+ul.list li.option:hover{
+  background: var(--secondy);
+  border-radius: 8px
+}
+.surge{
+  scale: 0;
+  opacity: 0;
+  transform: translateX(-120px);
+  transition: 
+    opacity .2s, scale .5s, transform .5s
+}
+.surge.active,
+#continued.open{
+  scale: 1;
+  opacity: 1;
+  transform: translateX(0);
+  transition: 
+    opacity .2s, scale .3s, transform .3s
+}
+#continued{width: 50px}
+#continued.open{width: 90px}
+div#replace, div#continued{
+  margin-top: 4px;
+  height: 22px;
+  z-index: 7
+}
+label#box_car_two,#box_input_local{z-index: 6}
+div#continued{z-index: 5}
+#box_min,#continued_journey{position: absolute}
+#box_input_local,#box_min,#box_input_continued,#box_congestion{gap:0}
+div.row.revel{
+  height: 0;
+  transition: height .5s;
+  overflow: hidden
+}
+#row_roullet_and_validator.open{
+  height: 42px;
+}
+div.row.revel.open{
+  height: 38px;
+  transition: height .5s
+}
+
+div.row.revel.open ~ div.row.revel ~ div.row#row_roullet_and_validator,
+div.row.revel ~ div.row.revel ~ div.row#row_motive{
+  margin-top: -8px
+}
+div.row.revel.open ~ div.row.revel ~ div.row#row_motive,
+
+div.row.revel ~ #row_congestion,
+div.row.revel ~ #row_tripulation,
+div.row.revel ~ #row_roullet_and_validator{
+  margin-top: -4px
+}
+div.row.revel.open ~ div.row.revel.open ~ div.row#row_motive,
+div.row.revel.open ~ #row_congestion{
+  margin-top: 0;
+}
+
+div.row.footer{
+  height: 60px;
+  padding-bottom: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  justify-content: flex-start;
+}
+.row.footer .box{
+  font-weight: bold;
+  font-style: italic;
+  gap: 0;
+  color: var(--primary);
+  background-color: var(--blue);
+  transform: translateY(0);
+  transition: background .3s ease-in-out, transform .6s ease
+}
+.row.footer .box:hover{
+  background-color: #0007ff;
+  transform: translateY(-2px);
+  transition: background .3s ease-in-out, transform .6s ease
+}
+.row.footer .box:active{
+  background-color: #000242;
+  transform: translateY(3px);
+  transition: background .3s ease-in-out, transform .6s ease
+}
+.row.footer .box .icons .icon{color: var(--primary)}
+#generate_other{
+  margin-top: 5px;
+  width: 22px;
+  height: 22px;
+  justify-content: center;
+}
+#box_cco_informa{
+  font-size: 12px;
+  display: flex;
+}
+textarea{
+  border: none;
+  width: 300px;
+  height: 400px;
+  resize:none;
+  outline: none;
+}
+.fa-copy{
+  font-size: 23px;
+}

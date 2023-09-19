@@ -13,7 +13,15 @@ const activies = [
   "NL",
   "LN"
 ]
-const motivies = [
+
+const events = [
+  "atrasada",
+  "interrompida",
+  "perdida",
+  "realizada a frente"
+]
+
+const motives = [
   "Acidente",
   "Assalto",
   "Atrasado",
@@ -58,4 +66,19 @@ const problems = [
   "Suspensão - Vazamento de ar"
 ]
 
-export{ activies, motivies, problems }
+function create_options(array){
+  return `${array.map((index)=>{
+      return `<li class="option">${index}</li>`
+    }).join("")
+   }`
+}
+
+function autocomplete(input, array) {
+  return array.filter((value)=>{
+    const valueLowerCase = value.toLowerCase()
+    const inputLowerCase = input.toLowerCase()
+    return valueLowerCase.includes(inputLowerCase)
+  })
+}
+
+export{ activies, events, motives, problems, create_options, autocomplete }
