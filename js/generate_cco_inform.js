@@ -1,4 +1,9 @@
+const date = Date()
+console.log(date)
+
 function generate_cco_inform(){
+  CCO_SHEETS = {Data:"",	Tabela:"",	Linha:"",	Carro:"",	"Carro Substituto":"",	Hora:"",	Sentido:"",	Ocorrência:"",	Problema:"",	Observação:"",	Operador:""}
+
   cco_informa = "*CCO INFORMA*\n"
   const informed = document.getElementById("informed")
   if(informed.classList.contains("active")){
@@ -13,13 +18,24 @@ function generate_cco_inform(){
       cco_informa += supervision.value[0].toUpperCase()+supervision.value.substring(1)
     }
   }else{
+    const who_informed = document.getElementById("who_informed")
     cco_informa += "largador da "+who_informed.innerText
   }
   cco_informa += "\n"
+
+  CCO_SHEETS.Tabela = table.value
+  CCO_SHEETS.Linha = line.value
+  CCO_SHEETS.Carro = car.value
+  CCO_SHEETS.Hora = hour.value
+  CCO_SHEETS.Sentido = direction.value
   
+  console.log(CCO_SHEETS)
+
   cco_informa += `- ${table.value}, carro ${car.value}\n`
   cco_informa += `- ${line.value} das ${hour.value}, ${direction.value}\n`
   cco_informa += "- Viagem "
+
+  problem_CCO_SHEETS = ""
   const event = document.getElementById("event")
   switch (event.value) {
     case "":
@@ -27,15 +43,19 @@ function generate_cco_inform(){
       break
     case "atrasada":
       cco_informa += `realizada com ${min.value} minutos de atraso`
+      problem_CCO_SHEETS = "Problemas mecânicos - Atrasado"
       break
     case "perdida":
       cco_informa += `não realizada`
+      problem_CCO_SHEETS = "Problemas mecânicos - Viagem perdida"
       break
     case "realizada a frente":
-      cco_informa += `realizada a partir da ${local.value}`
+      cco_informa += `realizada a partir d${local.value}`
+      problem_CCO_SHEETS = "Problemas mecânicos - Viagem realizada a frente"
       break
     case "interrompida":
-      cco_informa += `interrompida na ${local.value}`
+      cco_informa += `interrompida n${local.value}`
+      problem_CCO_SHEETS = "Problemas mecânicos - Viagem interrompida"
       break
   }
   cco_informa += "\n- Motivo: "
@@ -55,7 +75,7 @@ function generate_cco_inform(){
     break;
     case "Congestionamento":
       if(congestion_locale.value.length > 0){
-        cco_informa += `Congestionamento na ${congestion_locale.value}`
+        cco_informa += `Congestionamento n${congestion_locale.value}`
       }else{
         return congestion_locale.focus()
       }
@@ -174,13 +194,21 @@ function generate_cco_inform(){
       }
     break;
   }
+
+  if(motive.value != "Problemas mecânicos"){
+    CCO_SHEETS.Ocorrência = motive.value
+  }else{
+    CCO_SHEETS.Ocorrência = problem_CCO_SHEETS
+  }
+
+
   if(replace.classList.contains("active")){
     const car_two = document.getElementById("car_two").value
     cco_informa += `, trocado pelo carro ${car_two}`
   }
   if(continued.classList.contains("active")){
     if(input_continued.value.length > 0){
-      cco_informa += `, que continuou puxando viagem a partir da ${input_continued.value}`
+      cco_informa += `, que continuou puxando viagem a partir d${input_continued.value}`
     }else{
       input_continued.focus()
     }
