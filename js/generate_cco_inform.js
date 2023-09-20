@@ -1,9 +1,14 @@
-const date = Date()
-console.log(date)
+CCO_SHEETS = {Data:"",	Tabela:"",	Linha:"",	Carro:"",	"Carro Substituto":"",	Hora:"",	Sentido:"",	Ocorrência:"",	Problema:"",	Observação:"",	Operador:""}
+
+const date = new Date()
+const day = String(date.getDate()).padStart(2, "0")
+const month = String(date.getMonth() + 1).padStart(2, "0")
+const year = date.getFullYear()
+const date_actual = `${day}/${month}/${year}`
+
+CCO_SHEETS.Data = date_actual
 
 function generate_cco_inform(){
-  CCO_SHEETS = {Data:"",	Tabela:"",	Linha:"",	Carro:"",	"Carro Substituto":"",	Hora:"",	Sentido:"",	Ocorrência:"",	Problema:"",	Observação:"",	Operador:""}
-
   cco_informa = "*CCO INFORMA*\n"
   const informed = document.getElementById("informed")
   if(informed.classList.contains("active")){
@@ -28,191 +33,202 @@ function generate_cco_inform(){
   CCO_SHEETS.Carro = car.value
   CCO_SHEETS.Hora = hour.value
   CCO_SHEETS.Sentido = direction.value
-  
-  console.log(CCO_SHEETS)
 
   cco_informa += `- ${table.value}, carro ${car.value}\n`
   cco_informa += `- ${line.value} das ${hour.value}, ${direction.value}\n`
   cco_informa += "- Viagem "
 
-  problem_CCO_SHEETS = ""
+  ocorrencia_CCO_SHEETS = ""
   const event = document.getElementById("event")
+  result_event = "Viagem "
+  result_motive = ""
   switch (event.value) {
     case "":
       // return event.focus()
       break
     case "atrasada":
-      cco_informa += `realizada com ${min.value} minutos de atraso`
-      problem_CCO_SHEETS = "Problemas mecânicos - Atrasado"
+      result_event += `realizada com ${min.value} minutos de atraso`
+      ocorrencia_CCO_SHEETS = "Problemas mecânicos - Atrasado"
       break
     case "perdida":
-      cco_informa += `não realizada`
-      problem_CCO_SHEETS = "Problemas mecânicos - Viagem perdida"
+      result_event += `não realizada`
+      ocorrencia_CCO_SHEETS = "Problemas mecânicos - Viagem perdida"
       break
     case "realizada a frente":
-      cco_informa += `realizada a partir d${local.value}`
-      problem_CCO_SHEETS = "Problemas mecânicos - Viagem realizada a frente"
+      result_event += `realizada a partir d${local.value}`
+      ocorrencia_CCO_SHEETS = "Problemas mecânicos - Viagem realizada a frente"
       break
     case "interrompida":
-      cco_informa += `interrompida n${local.value}`
-      problem_CCO_SHEETS = "Problemas mecânicos - Viagem interrompida"
+      result_event += `interrompida n${local.value}`
+      ocorrencia_CCO_SHEETS = "Problemas mecânicos - Viagem interrompida"
       break
   }
-  cco_informa += "\n- Motivo: "
-
+  cco_informa += result_event+"\n- Motivo: "
   switch (motive.value) {
     case "Acidente":
-      cco_informa += "Carro "+car.value+" ter se envolvido em um acidente"
+      result_motive += "Carro "+car.value+" ter se envolvido em um acidente"
     break;
     case "Assalto":
-      cco_informa += "Carro "+car.value+" ter sido assaltado"
+      result_motive += "Carro "+car.value+" ter sido assaltado"
     break;
     case "Atrasado":
-      cco_informa += "Atraso"
+      result_motive += "Atraso"
     break;
     case "Avaria":
-      cco_informa += "Carro "+car.value+" ter sofrido avaria"
+      result_motive += "Carro "+car.value+" ter sofrido avaria"
     break;
     case "Congestionamento":
       if(congestion_locale.value.length > 0){
-        cco_informa += `Congestionamento n${congestion_locale.value}`
+        result_motive += `Congestionamento n${congestion_locale.value}`
       }else{
         return congestion_locale.focus()
       }
     break;
     case "Falta de Carro":
-      cco_informa += "Falta de carro"
+      result_motive += "Falta de carro"
     break;
     case "Falta de Tripulação":
-      cco_informa += "Falta de "
+      result_motive += "Falta de "
       if(motorista.checked){
-        cco_informa += "motorista"
+        result_motive += "motorista"
       }else{
-        cco_informa += "cobrador"
+        result_motive += "cobrador"
       }
     break;
     case "Pneu Furado":
-      cco_informa += "Pneu furado do carro "+car.value
+      result_motive += "Pneu furado do carro "+car.value
     break;
     case "Problema com passageiro":
-      cco_informa += "problema com passageiro"
+      result_motive += "problema com passageiro"
     break;
     case "Tempo insuficiente":
-      cco_informa += "tempo insuficiente para realizar viagem"
+      result_motive += "tempo insuficiente para realizar viagem"
     break;
     case "Validador/ Roleta":
-      cco_informa += "Problemas " 
+      result_motive += "Problemas " 
       if(roullet.checked)
-        cco_informa += "na roleta "
+        result_motive += "na roleta "
       else
-        cco_informa += "no validador "
-      cco_informa += `do carro ${car.value}`
+        result_motive += "no validador "
+      result_motive += `do carro ${car.value}`
     break;
     case "Vandalismo":
-      cco_informa += "Carro "+car.value+" ter sofrido vandalismo"
+      result_motive += "Carro "+car.value+" ter sofrido vandalismo"
     break;
     case "Vistoria EPTC":
-      cco_informa += "Carro "+car.value+" ter sido recolhido pela EPTC"
+      result_motive += "Carro "+car.value+" ter sido recolhido pela EPTC"
     break;
     case "Problemas mecânicos":
       switch (problem.value) {
         case "Carroceria - Ar Condicionado":
-          cco_informa += "Problemas no ar-condicionado do carro "+car.value
+          result_motive += "Problemas no ar-condicionado do carro "+car.value
         break;
         case "Carroceria - Elevador APD":
-          cco_informa += "Problemas no elevador APD do carro "+car.value
+          result_motive += "Problemas no elevador APD do carro "+car.value
         break;
         case "Carroceria - Itens de segurança":
-          cco_informa += ""
+          result_motive += ""
         break;
         case "Carroceria - Limpador / Espelho":
-          cco_informa += "Problemas no limpador/espelho do carro "+car.value
+          result_motive += "Problemas no limpador/espelho do carro "+car.value
         break;
         case "Carroceria - Outros":
-          cco_informa += ""
+          result_motive += ""
         break;
         case "Carroceria - Portas":
-          cco_informa += "Problemas nas portas do carro "+car.value
+          result_motive += "Problemas nas portas do carro "+car.value
         break;
         case "Elétrica - Alternador":
-          cco_informa += "Problemas no alternador do carro "+car.value
+          result_motive += "Problemas no alternador do carro "+car.value
         break;
         case "Elétrica - Iluminação interna":
-          cco_informa += "Problemas de iluminação interna no carro "+car.value
+          result_motive += "Problemas de iluminação interna no carro "+car.value
         break;
         case "Elétrica - Letreiro":
-          cco_informa += "Problemas no letreiro do carro "+car.value
+          result_motive += "Problemas no letreiro do carro "+car.value
         break;
         case "Elétrica - Pane elétrica":
-          cco_informa += "Pane elétrica do carro "+car.value
+          result_motive += "Pane elétrica do carro "+car.value
         break;
         case "Elétrica - Sem arranque":
-          cco_informa += "Carro "+car.value+" não pegar"
+          result_motive += "Carro "+car.value+" não pegar"
         break;
         case "Motor - Cigarra/Aquecimento":
-          cco_informa += "Carro "+car.value+" ter super aquecido"
+          result_motive += "Carro "+car.value+" ter super aquecido"
         break;
         case "Motor - Cigarra/óleo motor":
-          cco_informa += "Carro "+car.value+" ter super aquecido"
+          result_motive += "Carro "+car.value+" ter super aquecido"
         break;
         case "Motor - Correias":
-          cco_informa += "Problemas nas correias do motor do carro "+car.value
+          result_motive += "Problemas nas correias do motor do carro "+car.value
         break;
         case "Motor - Sem Força":
-          cco_informa += "Carro "+car.value+" estar sem força"
+          result_motive += "Carro "+car.value+" estar sem força"
         break;
         case "Motor - Vazamento de água":
-          cco_informa += "Vazamento de água no carro "+car.value
+          result_motive += "Vazamento de água no carro "+car.value
         break;
         case "Motor - Vazamento de óleo Diesel":
-          cco_informa += "Vazamento de diesel no carro "+car.value
+          result_motive += "Vazamento de diesel no carro "+car.value
         break;
         case "Motor - Vazamento de óleo motor":
-          cco_informa += "Vazamento de óleo do motor no carro "+car.value
+          result_motive += "Vazamento de óleo do motor no carro "+car.value
         break;
         case "Problemas na viagem anterior":
-          cco_informa += ""
+          result_motive += ""
         break;
         case "Suspensão - Arriada":
-          cco_informa += "Problemas na suspenção do carro "+car.value
+          result_motive += "Problemas na suspenção do carro "+car.value
         break;
         case "Suspensão - Carro atravessado":
-          cco_informa += "Carro "+car.value+" estar atravessado"
+          result_motive += "Carro "+car.value+" estar atravessado"
         break;
         case "Suspensão - Embreagem / Caixa":
-          cco_informa += "Problemas na embreagem do carro "+car.value
+          result_motive += "Problemas na embreagem do carro "+car.value
         break;
         case "Suspenção - Freio":
-          cco_informa += "Problemas nos freios do carro "+car.value
+          result_motive += "Problemas nos freios do carro "+car.value
         break;
         case "Suspensão - Roda":
-          cco_informa += "Problemas nas rodas do carro "+car.value
+          result_motive += "Problemas nas rodas do carro "+car.value
         break;
         case "Suspensão - Vazamento de ar":
-          cco_informa += "Vazamento de ar no carro "+car.value
+          result_motive += "Vazamento de ar no carro "+car.value
         break;
       }
     break;
   }
 
+  CCO_SHEETS.Problema = problem.value
+
+  cco_informa += result_motive
+
   if(motive.value != "Problemas mecânicos"){
     CCO_SHEETS.Ocorrência = motive.value
   }else{
-    CCO_SHEETS.Ocorrência = problem_CCO_SHEETS
+    CCO_SHEETS.Ocorrência = ocorrencia_CCO_SHEETS
   }
 
-
+  replace_car = ""
   if(replace.classList.contains("active")){
     const car_two = document.getElementById("car_two").value
-    cco_informa += `, trocado pelo carro ${car_two}`
+    replace_car = `, trocado pelo carro ${car_two}`
+    cco_informa += replace_car
+    CCO_SHEETS["Carro Substituto"] = car_two
+  }else{
+    CCO_SHEETS["Carro Substituto"] = ""
   }
+  continued_journey_text = ""
   if(continued.classList.contains("active")){
     if(input_continued.value.length > 0){
-      cco_informa += `, que continuou puxando viagem a partir d${input_continued.value}`
+      continued_journey_text = `, que continuou puxando viagem a partir d${input_continued.value}`
+      cco_informa += continued_journey_text
     }else{
       input_continued.focus()
     }
   }
+  CCO_SHEETS.Observação = `${result_event} devido a ${result_motive.toLowerCase()}${replace_car}${continued_journey_text}.`
+  
   cco_informa += "\n\n"
   return cco_informa
 }
@@ -220,6 +236,9 @@ const text_cco_informa = document.getElementById("text_cco_informa")
 const form = document.getElementById("form").addEventListener("submit", function(event){event.preventDefault()})
 const generate_cco = document.getElementById("generate_cco_inform").addEventListener("click", function(){
   text_cco_informa.value = generate_cco_inform()
+})
+const send_sheets = document.getElementById("send_sheets").addEventListener("click", function(){
+  console.log(CCO_SHEETS)
 })
 const generate_other = document.getElementById("generate_other").addEventListener("click", function(){
   text_cco_informa.value += generate_cco_inform()
