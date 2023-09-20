@@ -241,7 +241,7 @@ const generate_cco = document.getElementById("generate_cco_inform").addEventList
 })
 const send_sheets = document.getElementById("send_sheets").addEventListener("click", function(){
   const send_sheets = document.getElementById("send_sheets")
-  send_sheets.classList.add("open")
+  // send_sheets.classList.add("open")
   console.log(CCO_SHEETS)
 })
 const generate_other = document.getElementById("generate_other").addEventListener("click", function(){

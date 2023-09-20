@@ -314,14 +314,17 @@ textarea{
 #container_send_sheets{
   position: absolute;
   top: 0;
-  left: 350px;
+  left: -350px;
   z-index: 11;
   width: 300px;
-  height: 400px;
   background-color: var(--blue);
+}
+#container_send_sheets.open{
+  left: 0px;
 }
 #container_send_sheets span{
   font-size: 14px;
+  color: var(--blue);
 }
 #container_send_sheets .fa-xmark{
   color: #ff2424;
@@ -341,4 +344,15 @@ input#Linha{width: 41px}
 #container_send_sheets input.car{width: 29px}
 input#Hora{width: 34px}
 input#Sentido{width: 22px}
+input#Operador{width: 100px}
 textarea#Ocorrência{width: 292px;}
+textarea#Problema{width: 292px; height: 16px;}
+#box_observação{height: 80px}
+textarea#Observação{width: 292px; height: 80px;}
+#Operador ~ .icons i{rotate: 0deg; transition: rotate .5s}
+#box_Operador.open #Operador ~ .icons i{rotate: 180deg; transition: rotate .5s}
+#list_operadores{left: 90px;min-width: 72px;font-size: 14px;}
+
+#row_buttons_sheets button{
+  border: none;
+}

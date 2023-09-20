@@ -255,7 +255,7 @@
     </div>
   </section>
   <section id="container_send_sheets" class="open">
-    <form action="#">
+    <form autocomplete="off">
       <div class="row">
         <label for="Data" class="box" id="box_data">
           <div class="icons"><i class="fa-solid fa-calendar-days icon"></i>
@@ -298,15 +298,49 @@
       </div>
       
       <div class="row">
-        <div class="box">
-          <span>Ocorrência:</span>
-        </div>
+        <div class="box"><span>Ocorrência:</span></div>
       </div>
-
       <div class="row">
         <label for="Ocorrência" class="box">
           <textarea name="Ocorrência" id="Ocorrência"></textarea>
         </label>
+      </div>
+
+      <div class="row">
+        <div class="box"><span>Problema:</span></div>
+      </div>
+      <div class="row">
+        <label for="Problema" class="box">
+          <textarea name="Problema" id="Problema"></textarea>
+        </label>
+      </div>
+
+      <div class="row">
+        <div class="box"><span>Observação:</span></div>
+      </div>
+      <div class="row">
+        <label for="Observação" class="box" id="box_observação">
+          <textarea name="Observação" id="Observação"></textarea>
+        </label>
+      </div>
+
+      <div class="row">
+        <label id="box_Operador" for="Operador" class="box">
+          <span>Operador:</span>
+          <input type="text" name="Operador" id="Operador" disabled>
+          <div class="icons">
+            <i class="fa-solid fa-chevron-down icon"></i>
+          </div>
+        </label>
+        <ul id="list_operadores" class="list"></ul>
+      </div>
+
+      <div id="row_buttons_sheets" class="row">
+        <div class="box buttons">
+          <button type="submit" class="box">
+            <div class="icons"><i class="fa-solid fa-paper-plane icon"></i></div>
+          </button>
+        </div>
       </div>
     </form>
   </section>

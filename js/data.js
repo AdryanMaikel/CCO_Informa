@@ -66,6 +66,14 @@ const problems = [
   "Suspensão - Vazamento de ar"
 ]
 
+const operators = [
+  "Adryan",
+  "Ana",
+  "Felipe",
+  "Hellen",
+  "Leandro"
+]
+
 function create_options(array){
   return `${array.map((index)=>{
       return `<li class="option">${index}</li>`
@@ -81,4 +89,4 @@ function autocomplete(input, array) {
   })
 }
 
-export{ activies, events, motives, problems, create_options, autocomplete }
+export{ activies, events, motives, problems, operators, create_options, autocomplete }
