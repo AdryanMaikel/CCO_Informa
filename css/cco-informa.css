@@ -300,11 +300,45 @@ div.row.footer{
 }
 textarea{
   border: none;
-  width: 300px;
-  height: 400px;
   resize:none;
   outline: none;
+}
+#text_cco_informa{
+  width: 300px;
+  height: 400px;
 }
 .fa-copy{
   font-size: 23px;
 }
+
+#container_send_sheets{
+  position: absolute;
+  top: 0;
+  left: 350px;
+  z-index: 11;
+  width: 300px;
+  height: 400px;
+  background-color: var(--blue);
+}
+#container_send_sheets span{
+  font-size: 14px;
+}
+#container_send_sheets .fa-xmark{
+  color: #ff2424;
+}
+.row.between{justify-content: space-between}
+#close{
+  margin-top: 5px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+input#Data{width: 67px}
+input#Tabela{width: 67px}
+input#Linha{width: 41px}
+#container_send_sheets input.car{width: 29px}
+input#Hora{width: 34px}
+input#Sentido{width: 22px}
+textarea#Ocorrência{width: 292px;}

@@ -65,11 +65,11 @@
           </div>
           <input type="text" name="table" id="table" placeholder="Tabela" maxlength="8">
         </label>
-        <label id="box_car" class="box" for="car">
+        <label id="box_car" class="box" for="input_car">
           <div class="icons">
             <i class="fa-solid fa-bus icon"></i>
           </div>
-          <input type="text" class="car" name="car" id="car" placeholder="Carro" maxlength="4">
+          <input type="text" class="car" name="input_car" id="input_car" placeholder="Carro" maxlength="4">
         </label>
         <div id="replace" class="box">
           <div class="icons">
@@ -253,6 +253,62 @@
         </div>
       </div>
     </div>
+  </section>
+  <section id="container_send_sheets" class="open">
+    <form action="#">
+      <div class="row">
+        <label for="Data" class="box" id="box_data">
+          <div class="icons"><i class="fa-solid fa-calendar-days icon"></i>
+          </div>
+          <input type="text" name="Data" id="Data" placeholder="25/05/2000">
+        </label>
+        <label for="Tabela" class="box">
+          <div class="icons"><i class="fa-solid fa-clipboard icon"></i></div>
+          <input type="text" name="Tabela" id="Tabela" placeholder="SD735/003">
+        </label>
+        <label for="Linha" class="box">
+          <div class="icons"><i class="fa-solid fa-route icon"></i></div>
+          <input type="text" name="Linha" id="Linha" placeholder="SD735">
+        </label>
+        <div id="close" class="box">
+          <div class="icons">
+            <i class="fa-solid fa-xmark icon"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="Carro" class="box">
+          <div class="icons"><i class="fa-solid fa-bus icon"></i></div>
+          <input type="text" class="car" name="Carro" id="Carro" placeholder="6630">
+        </label>
+        <label for="other_car" class="box">
+          <div class="icons"><i class="fa-solid fa-arrows-rotate fa-rotate-90 icon"></i></div>
+          <div class="icons"><i class="fa-solid fa-bus icon"></i></div>
+          <input type="text" class="car" name="Carro Substituto" id="other_car" placeholder="6631">
+        </label>
+        <label for="Hora" class="box">
+          <div class="icons"><i class="fa-solid fa-clock icon"></i></div>
+          <input type="text" name="Hora" id="Hora" placeholder="14:00">
+        </label>
+        <label for="Sentido" class="box">
+          <div class="icons"><i class="fa-solid fa-compass icon"></i></div>
+          <input type="text" name="Sentido" id="Sentido" placeholder="BC">
+        </label>
+      </div>
+      
+      <div class="row">
+        <div class="box">
+          <span>Ocorrência:</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="Ocorrência" class="box">
+          <textarea name="Ocorrência" id="Ocorrência"></textarea>
+        </label>
+      </div>
+    </form>
   </section>
   <footer>
 
