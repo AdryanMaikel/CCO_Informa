@@ -188,7 +188,7 @@ function generate_cco_inform(){
         case "Suspensão - Embreagem / Caixa":
           result_motive += "Problemas na embreagem do carro "+input_car
         break;
-        case "Suspenção - Freio":
+        case "Suspensão - Freio":
           result_motive += "Problemas nos freios do carro "+input_car
         break;
         case "Suspensão - Roda":
