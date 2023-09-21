@@ -7,6 +7,10 @@ const year = date.getFullYear()
 const date_actual = `${day}/${month}/${year}`
 
 CCO_SHEETS.Data = date_actual
+CCO_INFORMA = {Data:"",	Tabela:"",	Linha:"",	Carro:"",	"Carro Substituto":"",	Hora:"",	Sentido:"",	Ocorrência:"",	Problema:"",	Observação:"",	Operador:""}
+
+const date = Date()
+console.log(date)
 
 function generate_cco_inform(){
   cco_informa = "*CCO INFORMA*\n"
@@ -62,6 +66,10 @@ function generate_cco_inform(){
     case "interrompida":
       result_event += `interrompida n${local.value}`
       ocorrencia_CCO_SHEETS = "Problemas mecânicos - Viagem interrompida"
+      cco_informa += `realizada a partir d${local.value}`
+      break
+    case "interrompida":
+      cco_informa += `interrompida n${local.value}`
       break
   }
   CCO_SHEETS.Problema = problem.value
@@ -82,6 +90,7 @@ function generate_cco_inform(){
     case "Congestionamento":
       if(congestion_locale.value.length > 0){
         result_motive += `Congestionamento n${congestion_locale.value}`
+        cco_informa += `Congestionamento n${congestion_locale.value}`
       }else{
         return congestion_locale.focus()
       }
@@ -225,6 +234,7 @@ function generate_cco_inform(){
     if(input_continued.value.length > 0){
       continued_journey_text = `, que continuou puxando viagem a partir d${input_continued.value}`
       cco_informa += continued_journey_text
+      cco_informa += `, que continuou puxando viagem a partir d${input_continued.value}`
     }else{
       input_continued.focus()
     }
