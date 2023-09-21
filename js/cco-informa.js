@@ -61,7 +61,7 @@ table.addEventListener("focusout", function(){
   this.value = result
 })
 
-car.addEventListener("input", function(){this.value = this.value.replace(/[^0-9]/,"")})
+input_car.addEventListener("input", function(){this.value = this.value.replace(/[^0-9]/,"")})
 car_two.addEventListener("input", function(){this.value = this.value.replace(/[^0-9]/,"")})
 line.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z0-9]/,"").toUpperCase()})
 hour.addEventListener("input", function(){this.value = this.value.replace(/[^0-9:]/,"").toUpperCase()})
@@ -72,3 +72,8 @@ hour.addEventListener("blur", function() {
 })
 const input_event = document.getElementById("event")
 input_event.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z ]/,"").toUpperCase()})
+
+const box_Operador = document.getElementById("box_Operador")
+box_Operador.addEventListener("click", function(){
+  box_Operador.classList.add("open")
+})

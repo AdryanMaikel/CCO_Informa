@@ -1,4 +1,4 @@
-import { activies, events, motives , problems, create_options, autocomplete } from "./data.js"
+import { activies, events, motives , problems, operators, create_options, autocomplete } from "./data.js"
 const directions = document.getElementById('directions')
 directions.innerHTML = create_options(activies)
 
@@ -160,3 +160,16 @@ problem.addEventListener("focusout", function(){
     }
   }
 })
+
+const list_operadores = document.getElementById("list_operadores")
+list_operadores.innerHTML = create_options(operators)
+
+const box_Operador = document.getElementById("box_Operador")
+const options_operator = document.querySelectorAll("#list_operadores .option")
+const Operador = document.getElementById("Operador")
+for(var option of options_operator){
+  option.onclick = function(){
+    Operador.value = this.textContent
+    box_Operador.classList.toggle("open")
+  }
+}

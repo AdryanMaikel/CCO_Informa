@@ -7,10 +7,11 @@
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="css/cco-informa.css">
   <script nomodule src="js/data.js" defer></script>
+  <script src="https://kit.fontawesome.com/f9a0d51bc2.js" crossorigin="anonymous" defer></script>
   <script type="module" src="js/creating-lists.js" defer></script>
   <script src="js/cco-informa.js" defer></script>
   <script src="js/generate_cco_inform.js" defer></script>
-  <script src="https://kit.fontawesome.com/f9a0d51bc2.js" crossorigin="anonymous" defer></script>
+  <script src="js/send_sheet.js" defer></script>
   <style>
   </style>
 </head>
@@ -65,11 +66,11 @@
           </div>
           <input type="text" name="table" id="table" placeholder="Tabela" maxlength="8">
         </label>
-        <label id="box_car" class="box" for="car">
+        <label id="box_car" class="box" for="input_car">
           <div class="icons">
             <i class="fa-solid fa-bus icon"></i>
           </div>
-          <input type="text" class="car" name="car" id="car" placeholder="Carro" maxlength="4">
+          <input type="text" class="car" name="input_car" id="input_car" placeholder="Carro" maxlength="4">
         </label>
         <div id="replace" class="box">
           <div class="icons">
@@ -233,8 +234,13 @@
           <span>GERAR *CCO INFORMA*</span>
           <input type="submit" value="" id="generate_cco_inform">
         </label>
-        <div id="generate_other" class="box">
+        <div id="generate_other" class="box buttons">
           <div class="icons"><i class="fa-solid fa-plus icon"></i></div>
+        </div>
+        <div id="send_sheets" class="box buttons">
+          <div class="icons">
+            <i class="fa-solid fa-paper-plane icon"></i>
+          </div>
         </div>
       </div>
     </form>
@@ -251,6 +257,92 @@
         </div>
       </div>
     </div>
+  </section>
+  <section id="container_send_sheets" class="">
+    <form id="form_send_sheets" autocomplete="off">
+
+      <div class="row"><div class="box"style="background: transparent;"></div></div>
+      <div class="row"><div class="box"style="background: transparent;height:23px"></div></div>
+
+      <div class="row">
+        <label for="Data" class="box" id="box_data">
+          <div class="icons"><i class="fa-solid fa-calendar-days icon"></i>
+          </div>
+          <input type="text" name="Data" id="Data" placeholder="25/05/2000">
+        </label>
+        <label for="Tabela" class="box">
+          <div class="icons"><i class="fa-solid fa-clipboard icon"></i></div>
+          <input type="text" name="Tabela" id="Tabela" placeholder="SD735/003">
+        </label>
+        <label for="Linha" class="box">
+          <div class="icons"><i class="fa-solid fa-route icon"></i></div>
+          <input type="text" name="Linha" id="Linha" placeholder="SD735">
+        </label>
+      </div>
+
+      <div class="row">
+        <label for="Carro" class="box">
+          <div class="icons"><i class="fa-solid fa-bus icon"></i></div>
+          <input type="text" class="car" name="Carro" id="Carro" placeholder="6630">
+        </label>
+        <label for="other_car" class="box">
+          <div class="icons"><i class="fa-solid fa-arrows-rotate fa-rotate-90 icon"></i></div>
+          <div class="icons"><i class="fa-solid fa-bus icon"></i></div>
+          <input type="text" class="car" name="Carro Substituto" id="other_car" placeholder="6631">
+        </label>
+        <label for="Hora" class="box">
+          <div class="icons"><i class="fa-solid fa-clock icon"></i></div>
+          <input type="text" name="Hora" id="Hora" placeholder="14:00">
+        </label>
+        <label for="Sentido" class="box">
+          <div class="icons"><i class="fa-solid fa-compass icon"></i></div>
+          <input type="text" name="Sentido" id="Sentido" placeholder="BC">
+        </label>
+      </div>
+      
+      <div class="row">
+        <div class="box"><span>Ocorrência:</span></div>
+      </div>
+      <div class="row">
+        <label for="Ocorrência" class="box">
+          <textarea name="Ocorrência" id="Ocorrência"></textarea>
+        </label>
+      </div>
+
+      <div class="row">
+        <div class="box"><span>Problema:</span></div>
+      </div>
+      <div class="row">
+        <label for="Problema" class="box">
+          <textarea name="Problema" id="Problema"></textarea>
+        </label>
+      </div>
+
+      <div class="row">
+        <div class="box"><span>Observação:</span></div>
+      </div>
+      <div class="row">
+        <label for="Observação" class="box" id="box_observação">
+          <textarea name="Observação" id="Observação"></textarea>
+        </label>
+      </div>
+
+      <div class="row">
+        <label id="box_Operador" for="Operador" class="box">
+          <span>Operador:</span>
+          <input type="text" name="Operador" id="Operador">
+          <div class="icons">
+            <i class="fa-solid fa-chevron-down icon"></i>
+          </div>
+        </label>
+        <ul id="list_operadores" class="list"></ul>
+      </div>
+
+      <div id="row_buttons_sheets" class="row footer">
+        <button type="submit" class="box buttons"><div class="icons"><i class="fa-solid fa-paper-plane icon"></i></div></button>
+        <button type="reset" id="close" class="box buttons"><i class="fa-solid fa-xmark icon close"></i></button>
+      </div>
+    </form>
   </section>
   <footer>
 
