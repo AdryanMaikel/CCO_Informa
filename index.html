@@ -7,10 +7,11 @@
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="css/cco-informa.css">
   <script nomodule src="js/data.js" defer></script>
+  <script src="https://kit.fontawesome.com/f9a0d51bc2.js" crossorigin="anonymous" defer></script>
   <script type="module" src="js/creating-lists.js" defer></script>
   <script src="js/cco-informa.js" defer></script>
   <script src="js/generate_cco_inform.js" defer></script>
-  <script src="https://kit.fontawesome.com/f9a0d51bc2.js" crossorigin="anonymous" defer></script>
+  <script src="js/send_sheet.js" defer></script>
   <style>
   </style>
 </head>
@@ -255,7 +256,11 @@
     </div>
   </section>
   <section id="container_send_sheets" class="open">
-    <form autocomplete="off">
+    <form id="form_send_sheets" autocomplete="off">
+
+      <div class="row"><div class="box"style="background: transparent;"></div></div>
+      <div class="row"><div class="box"style="background: transparent;height:23px"></div></div>
+
       <div class="row">
         <label for="Data" class="box" id="box_data">
           <div class="icons"><i class="fa-solid fa-calendar-days icon"></i>
@@ -270,11 +275,6 @@
           <div class="icons"><i class="fa-solid fa-route icon"></i></div>
           <input type="text" name="Linha" id="Linha" placeholder="SD735">
         </label>
-        <div id="close" class="box">
-          <div class="icons">
-            <i class="fa-solid fa-xmark icon"></i>
-          </div>
-        </div>
       </div>
 
       <div class="row">
@@ -327,7 +327,7 @@
       <div class="row">
         <label id="box_Operador" for="Operador" class="box">
           <span>Operador:</span>
-          <input type="text" name="Operador" id="Operador" disabled>
+          <input type="text" name="Operador" id="Operador">
           <div class="icons">
             <i class="fa-solid fa-chevron-down icon"></i>
           </div>
@@ -335,12 +335,9 @@
         <ul id="list_operadores" class="list"></ul>
       </div>
 
-      <div id="row_buttons_sheets" class="row">
-        <div class="box buttons">
-          <button type="submit" class="box">
-            <div class="icons"><i class="fa-solid fa-paper-plane icon"></i></div>
-          </button>
-        </div>
+      <div id="row_buttons_sheets" class="row footer">
+        <button type="submit" class="box buttons"><div class="icons"><i class="fa-solid fa-paper-plane icon"></i></div></button>
+        <button type="reset" id="close" class="box buttons"><i class="fa-solid fa-xmark icon close"></i></button>
       </div>
     </form>
   </section>

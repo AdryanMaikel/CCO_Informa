@@ -1,4 +1,4 @@
-CCO_SHEETS = {Data:"",	Tabela:"",	Linha:"",	Carro:"",	"Carro Substituto":"",	Hora:"",	Sentido:"",	Ocorrência:"",	Problema:"",	Observação:"",	Operador:""}
+CCO_SHEETS = {Data:"",	Tabela:"",	Linha:"",	Carro:"",	Substituto:"",	Hora:"",	Sentido:"",	Ocorrência:"",	Problema:"",	Observação:"",	Operador:""}
 
 const date = new Date()
 const day = String(date.getDate()).padStart(2, "0")
@@ -216,9 +216,9 @@ function generate_cco_inform(){
     const car_two = document.getElementById("car_two").value
     replace_car = `, trocado pelo carro ${car_two}`
     cco_informa += replace_car
-    CCO_SHEETS["Carro Substituto"] = car_two
+    CCO_SHEETS.Substituto = car_two
   }else{
-    CCO_SHEETS["Carro Substituto"] = ""
+    CCO_SHEETS.Substituto = ""
   }
   continued_journey_text = ""
   if(continued.classList.contains("active")){
@@ -229,7 +229,7 @@ function generate_cco_inform(){
       input_continued.focus()
     }
   }
-  CCO_SHEETS.Observação = `${result_event} devido a ${result_motive.toLowerCase()}${replace_car}${continued_journey_text}.`
+  CCO_SHEETS.Observação = `${result_event}, devido a ${result_motive.toLowerCase()}${replace_car}${continued_journey_text}.`
   
   cco_informa += "\n\n"
   return cco_informa
@@ -240,9 +240,39 @@ const generate_cco = document.getElementById("generate_cco_inform").addEventList
   text_cco_informa.value = generate_cco_inform()
 })
 const send_sheets = document.getElementById("send_sheets").addEventListener("click", function(){
-  const send_sheets = document.getElementById("send_sheets")
-  // send_sheets.classList.add("open")
-  console.log(CCO_SHEETS)
+  const container_send_sheets = document.getElementById("container_send_sheets")
+  container_send_sheets.classList.add("open")
+
+  const Data = document.getElementById("Data")
+  const Tabela = document.getElementById("Tabela")
+  const Linha = document.getElementById("Linha")
+  const Carro = document.getElementById("Carro")
+  const Substituto = document.getElementById("other_car")
+  const Hora = document.getElementById("Hora")
+  const Sentido = document.getElementById("Sentido")
+  const Ocorrência = document.getElementById("Ocorrência")
+  const Problema = document.getElementById("Problema")
+  const Observação = document.getElementById("Observação")
+
+  Data.value = CCO_SHEETS.Data
+  Tabela.value = CCO_SHEETS.Tabela
+  Linha.value = CCO_SHEETS.Linha
+  Carro.value = CCO_SHEETS.Carro
+  Substituto.value = CCO_SHEETS.Substituto
+  
+  Hora.value = CCO_SHEETS.Hora
+  if(CCO_SHEETS.Sentido == "BC"){
+    Sentido.value = "1"
+  }else if(CCO_SHEETS.Sentido == "CB"){
+    Sentido.value = "2"
+  }else{
+    console.log(CCO_SHEETS.Sentido)
+    Sentido.value = CCO_SHEETS.Sentido
+  }
+  Ocorrência.value = CCO_SHEETS.Ocorrência
+  Problema.value = CCO_SHEETS.Problema
+  Observação.value = CCO_SHEETS.Observação
+
 })
 const generate_other = document.getElementById("generate_other").addEventListener("click", function(){
   text_cco_informa.value += generate_cco_inform()
