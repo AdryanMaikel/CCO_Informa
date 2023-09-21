@@ -35,8 +35,7 @@ const submit_form_send_sheets = (events) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(DATA)
-  })
-
+  }).then(()=>{ if(confirm("Enviado com Sucesso!")){window.open("https://docs.google.com/spreadsheets/d/1FhUsZgjpn_3HpqZ8YQnUEmkz1DFldsZkVw3vVW5fCCo")}})
 }
 const form_send_sheets = document.getElementById("form_send_sheets").addEventListener("submit", submit_form_send_sheets)
 
