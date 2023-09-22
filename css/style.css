@@ -1,0 +1,85 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@300&display=swap');
+*{margin:0;padding:0;font-family:'Roboto'}
+body{background-color:#f8f9fa;font-size:16px}
+header{width:100vw}
+header .top{background-color:#3B3B8A;justify-content:space-around;align-items:center}
+header .img{height: 60px}
+header .link{background-color:#00000000}
+.icon{font-size:20px;}
+a{
+  width: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: #f8f9fad5;
+  text-decoration: none;
+}
+input{
+  height: 100%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: 15px;
+  font-weight: 500;
+}
+input#operator{width: 100px}
+.box:hover a{color: #f8f9fa}
+.box{
+  height: 25px;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  color: #3B3B8A;
+  padding: 8px;
+  margin: 5px 0px 5px 5px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+}
+ul.list{
+  transform: translate(80px, 50px);
+  border-radius: 8px;
+  padding: 0;
+  position: absolute;
+  list-style: none;
+  box-shadow: none;
+  background-color: #f8f9fa;
+}
+.open ~ ul.list{
+  padding: 4px;
+  box-shadow:
+    inset 0px 11px 3px -10px #aaa,
+    inset 0px -11px 3px -10px #aaa,
+    inset -11px 0px 3px -10px #aaa,
+    inset 11px 0px 3px -10px #aaa,
+    0px 2px 5px 1px #000
+}
+ul.list li.option{
+  padding: 8px 4px;
+  transform-origin: top;
+  transform: scale(0) translateY(-50px);
+  margin-bottom: -45px;
+  opacity: 0;
+  transition:
+    opacity .2s,
+    transform .5s cubic-bezier(0.65, 0.05, 0.36, 1),
+    margin-bottom .2s ease-in-out
+}
+ul.list li.option:hover{
+  color: #3B3B8A;
+}
+.open ~ ul.list li.option{
+  margin-bottom: 0;
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: 
+    opacity .2s,
+    transform .2s cubic-bezier(0.65, 0.05, 0.36, 1),
+    margin-bottom .2s ease-in-out
+}
