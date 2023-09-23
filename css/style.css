@@ -1,85 +1,130 @@
 @charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@300&display=swap');
-*{margin:0;padding:0;font-family:'Roboto'}
-body{background-color:#f8f9fa;font-size:16px}
-header{width:100vw}
-header .top{background-color:#3B3B8A;justify-content:space-around;align-items:center}
-header .img{height: 60px}
-header .link{background-color:#00000000}
-.icon{font-size:20px;}
-a{
-  width: auto;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+:root{
+  --color-blue: #3B3B8A;
+  --color-white: #ddd;
+  --color-white-hover: #f8f8fa;
+  --background-white: #f8f9fa;
+}
+*{
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: 'Poppins';
+  list-style: none;
+  text-decoration: none
+}
+body{
+  background: var(--background-white)
+}
+header{
+  width: 100vw;
+  position: relative;
+  z-index: 11;
+}
+header div.row{
+  justify-content: space-around
+}
+header a{
+  font-size: 16px;
+  font-style: italic;
+  transition: color .5s ease;
+  color: var(--color-white)
+}
+header a:hover{
+  transition: color .5s ease;
+  color: var(--color-white-hover)
+}
+figure{
+  width: 110px;
+  height: 60px;
+}
+figure img{
+  width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  color: #f8f9fad5;
-  text-decoration: none;
 }
-input{
-  height: 100%;
-  outline: none;
-  border: none;
-  background-color: transparent;
-  font-size: 15px;
-  font-weight: 500;
-}
-input#operator{width: 100px}
-.box:hover a{color: #f8f9fa}
-.box{
-  height: 25px;
-  border-radius: 8px;
-  background-color: #f8f9fa;
-  color: #3B3B8A;
-  padding: 8px;
-  margin: 5px 0px 5px 5px;
-  display: flex;
-  gap: 4px;
-  align-items: center;
-  font-weight: bold;
-  cursor: pointer;
-}
-.row{
+div.row{
   display: flex;
   flex-direction: row;
+  align-items: center;
+  padding: 4px 0
 }
-ul.list{
-  transform: translate(80px, 50px);
-  border-radius: 8px;
-  padding: 0;
-  position: absolute;
-  list-style: none;
-  box-shadow: none;
-  background-color: #f8f9fa;
+.blue{
+  transition: color .5s ease;
+  background:var(--color-blue);
+  color: var(--color-white)
 }
-.open ~ ul.list{
-  padding: 4px;
-  box-shadow:
-    inset 0px 11px 3px -10px #aaa,
-    inset 0px -11px 3px -10px #aaa,
-    inset -11px 0px 3px -10px #aaa,
-    inset 11px 0px 3px -10px #aaa,
-    0px 2px 5px 1px #000
+.blue:hover{
+  transition: color .5s ease;
+  color: var(--color-white-hover)
 }
-ul.list li.option{
+.blue input{
+  color: var(--color-white)
+}
+.box{
+  display: flex;
+  align-items: center;
   padding: 8px 4px;
+  cursor: pointer;
+  border-radius: 7px;
+  gap: 4px;
+}
+
+ul.list{
+  max-height: 300px;
   transform-origin: top;
-  transform: scale(0) translateY(-50px);
-  margin-bottom: -45px;
-  opacity: 0;
-  transition:
-    opacity .2s,
-    transform .5s cubic-bezier(0.65, 0.05, 0.36, 1),
-    margin-bottom .2s ease-in-out
+  padding: 4px;
+  overflow: hidden;
+  position: absolute;
+  background-color: var(--color-white-hover);
+  color: var(--color-blue);
+  box-shadow: none;
+  box-shadow: inset 0px 0px 3px 1px #b5b5b5, 0px 0px 5px 1px #000;
+}
+ul#operators_list{
+  /* width: 70px; */
+  transform: translate(72px, 4px);
+  z-index: 11;
+}
+
+ul.list li.option{
+  height: 0;
+  cursor: pointer;
+  display: flex;
+  transform-origin: top;
+  align-items: center;
+  transition: height .5s ease-out, padding .5s, background .5s ease-out;
 }
 ul.list li.option:hover{
-  color: #3B3B8A;
+  background: var(--color-white);
+  transition: height .5s ease-out, padding .5s, background .5s ease-out;
 }
 .open ~ ul.list li.option{
-  margin-bottom: 0;
-  opacity: 1;
-  transform: scale(1) translateY(0);
-  transition: 
-    opacity .2s,
-    transform .2s cubic-bezier(0.65, 0.05, 0.36, 1),
-    margin-bottom .2s ease-in-out
+  padding: 15px;
+  transition: height .5s ease-out, padding .5s, background .5s ease-out;
+}
+i{
+  font-size: 19px;
+  scale: 1;
+  transition: scale .5s ease-in, rotate .5s;
+}
+i.fa-chevron-down{
+  rotate: 0;
+}
+.open i.fa-chevron-down{
+  rotate: 180deg;
+  transition: scale .5s ease-in, rotate .5s;
+}
+div:hover i{
+  scale: 1.1;
+  transition: scale .5s ease-in, rotate .5s;
+}
+input{
+  outline: none;
+  border: none;
+  background: transparent;
+  font-size: 15px
+}
+input#operator{
+  width: 80px;
 }
