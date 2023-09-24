@@ -7,7 +7,20 @@ const box_operator = document.getElementById("box_operator")
 const operator = document.getElementById("operator")
 operator.addEventListener("focus", function(){
   box_operator.classList.toggle("open")
+  operator.addEventListener("input", function(){
+    box_operator.classList.add("open")
+    create_options(operators_list, autocomplete(this.value, operators))
+    if(operators_list.childElementCount == 1){
+      this.value = operators_list.lastChild.textContent
+      return box_operator.classList.remove("open")
+    }
+  })
 })
+
+operator.addEventListener("focusout", function(){
+
+})
+
 
 const directions = document.getElementById('directions')
 create_options(directions, activies)

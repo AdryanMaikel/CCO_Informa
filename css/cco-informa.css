@@ -130,11 +130,11 @@ ul.list{
 #box_motive.open ~ ul.list{z-index: 6}
 #box_problems.open ~ ul.list{z-index: 5}
 #operators_list{
+  min-width: 70px;
   background-color: var(--blue);
   transform: translate(82px, -6px);}
 #operators_list .option{
-  background-color: var(--blue);
-}
+  background-color: var(--blue);}
 #operators_list .option:hover{
   background-color: var(--blue-dark);
 }
