@@ -1,6 +1,10 @@
 import { activies, events, motives , problems, operators, create_options, autocomplete } from "./data.js"
+
+const operators_list = document.getElementById("operators_list")
+create_options(operators_list, operators)
+
 const directions = document.getElementById('directions')
-directions.innerHTML = create_options(activies)
+create_options(directions, activies)
 
 const box_direction = document.getElementById("box_direction")
 const direction = document.getElementById("direction")
@@ -8,8 +12,7 @@ direction.addEventListener("focus", function(){
   box_direction.classList.toggle("open")
   direction.addEventListener('input', function(){
     this.value = this.value.toUpperCase()
-    const autocomplete_values = autocomplete(this.value, activies)
-    directions.innerHTML = create_options(autocomplete_values)
+    create_options(directions, autocomplete(this.value, activies))
   })
 })
 
@@ -24,7 +27,7 @@ direction.addEventListener("focusout", function(){
 })
 
 const list_events = document.getElementById("events")
-list_events.innerHTML = create_options(events)
+create_options(list_events, events)
 
 const box_event = document.getElementById("box_event")
 const event = document.getElementById("event")
@@ -32,8 +35,7 @@ event.addEventListener("focus", function(){
   box_event.classList.toggle("open")
   event.addEventListener("input", function(){
     this.value = this.value.toLowerCase()
-    const autocomplete_values = autocomplete(this.value, events)
-    list_events.innerHTML = create_options(autocomplete_values)
+    create_options(list_events, autocomplete(this.value, events))
   })
 })
 
@@ -90,14 +92,14 @@ event.addEventListener("focusout", function(){
 })
 
 const list_motives = document.getElementById("list_motives")
-list_motives.innerHTML = create_options(motives)
+create_options(list_motives, motives)
 const box_motive = document.getElementById("box_motive")
 const motive = document.getElementById("motive")
 motive.addEventListener("focus", function(){
   box_motive.classList.toggle("open")
   motive.addEventListener("input", function(){
     this.value = this.value.replace(/[0-9]/g, "")
-    list_motives.innerHTML = create_options(autocomplete(this.value, motives))
+    create_options(autocomplete(this.value, motiveslist_motives, ))
   })
 })
 
@@ -142,13 +144,13 @@ motive.addEventListener("focusout", function(){
 })
 
 const list_problems = document.getElementById("list_problems")
-list_problems.innerHTML = create_options(problems)
+create_options(list_problems, problems)
 
 problem.addEventListener("focus", function(){
   box_problems.classList.toggle("open")
   problem.addEventListener("input", function(){
     this.value = this.value.replace(/[0-9]/g, "")
-    list_problems.innerHTML = create_options(autocomplete(this.value, problems))
+    create_options(autocomplete(this.value, problemslist_problems, ))
   })
 })
 problem.addEventListener("focusout", function(){
@@ -162,7 +164,7 @@ problem.addEventListener("focusout", function(){
 })
 
 const list_operadores = document.getElementById("list_operadores")
-list_operadores.innerHTML = create_options(operators)
+create_options(list_operadores, operators)
 
 const box_Operador = document.getElementById("box_Operador")
 const options_operator = document.querySelectorAll("#list_operadores .option")

@@ -74,18 +74,15 @@ const operators = [
   "Leandro"
 ]
 
-function create_options(array){
-  return `${array.map((index)=>{
-      return `<li class="option">${index}</li>`
-    }).join("")
-   }`
+function create_options(list, array){
+  return list.innerHTML = `${array.map((index)=>{
+    return `<li class="option">${index}</li>`
+  }).join("")}`
 }
 
 function autocomplete(input, array) {
   return array.filter((value)=>{
-    const valueLowerCase = value.toLowerCase()
-    const inputLowerCase = input.toLowerCase()
-    return valueLowerCase.includes(inputLowerCase)
+    return value.toLowerCase().includes(input.toLowerCase())
   })
 }
 

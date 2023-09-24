@@ -17,21 +17,23 @@
 body{
   width: 100vw; height: 100vh;
   background: var(--primary);
-  font-family: 'Poppins', sans-serif}
+  font-family: 'Lora', sans-serif}
 /* body.dark{background: var(--blue)} */
 header{
-  width: 100%;
-  z-index: 10;
-  position: relative;
+  width: 100%; z-index: 10;
+  position: relative; font-size: 15px;
   background: var(--primary)}
 header .row{
   margin: 0 !important;
   padding: 4px 0;
   align-items: center;
   justify-content: space-around;
-  color: var(--primary);
-}
-figure{height: 45px}
+  color: var(--primary)}
+header a, header i.fa-link, header .fa-chevron-down{color: var(--third);transition: color .3s}
+header a:hover, header a:hover i.fa-link{color: var(--primary);transition: color .3s}
+header a .box{height: 20px;}
+header .row.header{padding: 10px 0}
+figure{height: 50px}
 img{height: 100%}
 h1{display: none}
 #dark.icons{width: 50px;height: 100%;cursor: pointer}
@@ -95,6 +97,7 @@ input#direction{width: 20px}
 input#event{width: 105px}
 input#min{width: 22px}
 input#problem{width: 200px}
+input#operator{color: var(--primary); font-size: 15px;width: 80px;}
 input[type=radio]{scale: 0;position: absolute}
 input[type=radio] ~ .icons .fa-check{scale: 0; transition: scale .5s}
 input[type=radio]:checked ~ .icons .fa-check{scale: 1; transition: scale .5s}

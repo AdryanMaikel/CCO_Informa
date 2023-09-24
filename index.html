@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>*CCO Informa*</title>
+  <title>*CCO INFORMA*</title>
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="css/cco-informa.css">
   <script nomodule src="js/data.js" defer></script>
@@ -12,25 +12,25 @@
   <script src="js/cco-informa.js" defer></script>
   <script src="js/generate_cco_inform.js" defer></script>
   <script src="js/send_sheet.js" defer></script>
-  <style>
-  </style>
 </head>
 <body>
   <header>
     <div class="row blue">
       <a href="https://docs.google.com/spreadsheets/d/1FhUsZgjpn_3HpqZ8YQnUEmkz1DFldsZkVw3vVW5fCCo" target="_blank">
-        Planilha <i class="fa-solid fa-link icon"></i>
+        <div class="box blue">    
+          <span>Planilha</span><div class="icons"><i class="fa-solid fa-link icon"></i></div>
+        </div>
       </a>
     </div>
-    <div class="row">
+    <div class="row header">
       <figure>
         <img src="img/mob.png" alt="Image contendo o logo da empresa que esta escrito em azul marinho MOB Mobilidade em Transporte">
       </figure>
       <div class="align">
-        <div id="box_operator" for="operator" class="box blue">
-          <span>Operador</span>
+        <div id="box_operator" for="operator" class="box blue open">
+          <span>Operador:</span>
           <input type="text" name="operator" id="operator" minlength="3" required>
-          <div class="icons"><i class="fa-solid fa-chevron-down"></i></div>
+          <div class="icons"><i class="fa-solid fa-chevron-down icon"></i></div>
         </div>
         <ul class="list" id="operators_list"></ul>
       </div>
@@ -40,7 +40,7 @@
   <section id="form">
     <form id="form_cco_informa" autocomplete="off">
       <div class="row">
-        <h2>*CCO-Informa*</h2>
+        <h2>*CCO-INFORMA*</h2>
       </div>
       <div class="row">
         <div id="informed" class="box">
