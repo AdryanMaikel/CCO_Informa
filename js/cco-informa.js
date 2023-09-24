@@ -1,8 +1,3 @@
-const dark = document.getElementById("dark")
-dark.addEventListener("click", function() {
-  document.querySelector("body").classList.toggle("dark")
-})
-
 const informed = document.getElementById("informed")
 informed.addEventListener("click", function(){
   informed.classList.toggle("active")
