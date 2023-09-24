@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/cco-informa.css">
   <script nomodule src="js/data.js" defer></script>
   <script src="https://kit.fontawesome.com/f9a0d51bc2.js" crossorigin="anonymous" defer></script>
-  <script type="module" src="js/creating-lists.js" defer></script>
+  <script type="module" src="js/creating-lists.js"></script>
   <script src="js/cco-informa.js" defer></script>
   <script src="js/generate_cco_inform.js" defer></script>
   <script src="js/send_sheet.js" defer></script>
@@ -27,11 +27,11 @@
         <img src="img/mob.png" alt="Image contendo o logo da empresa que esta escrito em azul marinho MOB Mobilidade em Transporte">
       </figure>
       <div class="align">
-        <div id="box_operator" for="operator" class="box blue open">
+        <label id="box_operator" for="operator" class="box blue">
           <span>Operador:</span>
           <input type="text" name="operator" id="operator" minlength="3" required>
-          <div class="icons"><i class="fa-solid fa-chevron-down icon"></i></div>
-        </div>
+          <i class="fa-solid fa-chevron-down icon"></i>
+        </label>
         <ul class="list" id="operators_list"></ul>
       </div>
     </div>
@@ -52,9 +52,9 @@
         </div>
         <div id="who_informed" class="box">
           <span id="text_informed">Fiscal</span>
-          <div class="icons">
-            <i class="fa-solid fa-chevron-down icon"></i>
-          </div>
+          <i class="fa-solid fa-chevron-down icon"></i>
+          <!-- <div class="icons">
+          </div> -->
         </div>
         <ul class="list">
           <li class="option informed">Fiscal</li>
@@ -63,117 +63,119 @@
           <li class="option informed">Sopal</li>
         </ul>
         <label id="box_supervisor" class="box supervision surge active" for="supervision">
-          <div class="icons">
-            <i class="fa-solid fa-user icon"></i>
-          </div>
+          <i class="fa-solid fa-user icon"></i>
+          <!-- <div class="icons">
+          </div> -->
           <input type="text" name="supervision" id="supervision" placeholder="Qual?">
         </label>
       </div>
       <div class="row">
         <label id="box_table" class="box" for="table">
           <span>- </span>
-          <div class="icons">
-            <i class="fa-solid fa-clipboard icon"></i>
-          </div>
+          <i class="fa-solid fa-clipboard icon"></i>
+          <!-- <div class="icons">
+          </div> -->
           <input type="text" name="table" id="table" placeholder="Tabela" maxlength="8">
         </label>
         <label id="box_car" class="box" for="input_car">
-          <div class="icons">
-            <i class="fa-solid fa-bus icon"></i>
-          </div>
+          <i class="fa-solid fa-bus icon"></i>
+          <!-- <div class="icons">
+          </div> -->
           <input type="text" class="car" name="input_car" id="input_car" placeholder="Carro" maxlength="4">
         </label>
         <div id="replace" class="box">
-          <div class="icons">
-            <i class="fa-solid fa-arrows-rotate icon text_decoration"></i>
-          </div>
+          <i class="fa-solid fa-arrows-rotate icon text_decoration"></i>
+          <!-- <div class="icons">
+          </div> -->
         </div>
         <label id="box_car_two" class="box surge" for="car_two">
-          <div class="icons">
-            <i class="fa-solid fa-bus icon"></i>
-          </div>
+          <i class="fa-solid fa-bus icon"></i>
+          <!-- <div class="icons">
+          </div> -->
           <input type="text" class="car" name="car_two" id="car_two" placeholder="Carro" maxlength="4">
         </label>
       </div>
       <div class="row">
         <label for="line" class="box">
           <span>- </span>
-          <div class="icons">
-            <i class="fa-solid fa-route icon"></i>
-          </div>
+          <i class="fa-solid fa-route icon"></i>
+          <!-- <div class="icons">
+          </div> -->
           <input type="text" name="line" id="line" placeholder="Linha" maxlength="5">
         </label>
         <label for="hour" class="box">
-          <div class="icons">
-            <i class="fa-solid fa-clock icon"></i>
-          </div>
+          <i class="fa-solid fa-clock icon"></i>
+          <!-- <div class="icons">
+          </div> -->
           <input type="text" name="hour" id="hour" placeholder="Hora" maxlength="5">
         </label>
         <label id="box_direction" for="direction" class="box">
-          <div class="icons">
-            <i class="fa-solid fa-compass icon"></i>
-          </div>
+          <i class="fa-solid fa-compass icon"></i>
+          <!-- <div class="icons">
+          </div> -->
           <input type="text" name="direction" id="direction" placeholder="Std" maxlength="2">
-          <div class="icons">
-            <i class="fa-solid fa-chevron-down icon"></i>
-          </div>
+          <i class="fa-solid fa-chevron-down icon"></i>
+          <!-- <div class="icons">
+          </div> -->
         </label>
         <ul id="directions" class="list"></ul>
       </div>
       <div class="row">
         <label for="event" id="box_event" class="box">
           <span>- Viagem </span>
-          <input type="text" name="event" id="event"placeholder="foi...">
-          <div class="icons">
-            <i class="fa-solid fa-chevron-down icon"></i>
-          </div>
+          <input type="text" name="event" id="event" placeholder="foi...">
+          <i class="fa-solid fa-chevron-down icon"></i>
+          <!-- <div class="icons">
+          </div> -->
         </label>
         <ul id="events" class="list"></ul>
         <div class="align">
           <label id="box_min" for="min" class="box surge">
-            <div class="icons">
-              <i class="fa-regular fa-hourglass-half icon"></i>
-            </div>
+            <i class="fa-regular fa-hourglass-half icon"></i>
+            <!-- <div class="icons">
+            </div> -->
             <input type="text" name="min" id="min" maxlength="2" placeholder="00">
             <span>minutos</span>
           </label>
           <div id="box_local" class="box surge">
             <span>onde?</span>
-            <div class="icons"><i class="fa-solid fa-chevron-down icon"></i></div>
+            <i class="fa-solid fa-chevron-down icon"></i>
+            <!-- <div class="icons">
+            </div> -->
           </div>
         </div>
       </div>
       <div id="row_local" class="row revel">
         <label id="box_input_local" class="box surge active" for="local">
-          <div class="icons">
-            <i class="fa-solid fa-location-dot icon"></i>
-          </div>
+          <i class="fa-solid fa-location-dot icon"></i>
+          <!-- <div class="icons">
+          </div> -->
           <span id="interrupted_text">A partir d</span>
-          <input type="text" name="local" id="local" maxlength="" placeholder="a Av. Assis Brasil">
+          <input type="text" name="local" id="local" maxlength="100" placeholder="a Av. Assis Brasil">
         </label>
         <div id="continued" class="box surge">
           <span class="text_decoration">continuou?</span>
-          <div class="icons">
-            <i class="fa-solid fa-arrows-rotate icon text_decoration"></i>
-          </div>
+          <i class="fa-solid fa-arrows-rotate icon text_decoration"></i>
+          <!-- <div class="icons">
+          </div> -->
         </div>
       </div>
       <div id="box_continued" class="row revel">
         <label id="box_input_continued" class="box surge active" for="input_continued">
-          <div class="icons">
-            <i class="fa-solid fa-location-dot icon"></i>
-          </div>
+          <i class="fa-solid fa-location-dot icon"></i>
+          <!-- <div class="icons">
+          </div> -->
           <span>a partir d</span>
-          <input type="text" name="input_continued" id="input_continued" maxlength="" placeholder="o terminal Triângulo">
+          <input type="text" name="input_continued" id="input_continued" placeholder="o terminal Triângulo">
         </label>
       </div>
       <div id="row_motive" class="row">
         <label id="box_motive" class="box" for="motive">
           <span>- Motivo:</span>
           <input type="text" name="motive" id="motive" placeholder="Quebra?">
-          <div class="icons">
-            <i class="fa-solid fa-chevron-down icon"></i>
-          </div>
+          <i class="fa-solid fa-chevron-down icon"></i>
+          <!-- <div class="icons">
+          </div> -->
         </label>
         <ul class="list" id="list_motives"></ul>
       </div>
@@ -181,17 +183,17 @@
         <label id="box_problems" for="problem" class="box surge active">
           <span>Problemas de:</span>
           <input type="text" name="problem" id="problem">
-          <div class="icons">
-            <i class="fa-solid fa-chevron-right icon"></i>
-          </div>
+          <i class="fa-solid fa-chevron-right icon"></i>
+          <!-- <div class="icons">
+          </div> -->
         </label>
         <ul class="list" id="list_problems"></ul>
       </div>
       <div id="row_congestion" class="row revel">
         <label id="box_congestion" for="congestion_locale" class="box surge active">
-          <div class="icons">
-            <i class="fa-solid fa-location-dot icon"></i>
-          </div>
+          <i class="fa-solid fa-location-dot icon"></i>
+          <!-- <div class="icons">
+          </div> -->
           <span>Onde? n</span>
           <input type="text" name="congestion_locale" id="congestion_locale" placeholder="a Av. Assis Brasil">
         </label>
@@ -200,24 +202,24 @@
         <div class="box">
           <span>Qual?</span>
           <label for="motorista" class="box surge active">
-            <div class="icons">
-              <i class="fa-solid fa-user icon"></i>
-            </div>
+            <i class="fa-solid fa-user icon"></i>
+            <!-- <div class="icons">
+            </div> -->
             <input type="radio" name="tripulation" id="motorista" checked>
             <span>Motorista</span>
-            <div class="icons">
-              <i class="fa-solid fa-check icon"></i>
-            </div>
+            <i class="fa-solid fa-check icon"></i>
+            <!-- <div class="icons">
+            </div> -->
           </label>
           <label for="cobrador" class="box surge active">
-            <div class="icons">
-              <i class="fa-solid fa-user icon"></i>
-            </div>
+            <i class="fa-solid fa-user icon"></i>
+            <!-- <div class="icons">
+            </div> -->
             <input type="radio" name="tripulation" id="cobrador">
             <span>Cobrador</span>
-            <div class="icons">
-              <i class="fa-solid fa-check icon"></i>
-            </div>
+            <i class="fa-solid fa-check icon"></i>
+            <!-- <div class="icons">
+            </div> -->
           </label>
         </div>
       </div>
@@ -227,16 +229,16 @@
           <label for="roullet" class="box surge active">
             <input type="radio" name="roullet_and_validator" id="roullet" checked>
             <span>Roleta</span>
-            <div class="icons">
-              <i class="fa-solid fa-check icon"></i>
-            </div>
+            <i class="fa-solid fa-check icon"></i>
+            <!-- <div class="icons">
+            </div> -->
           </label>
           <label for="validator" class="box surge active">
             <input type="radio" name="roullet_and_validator" id="validator">
             <span>Validador</span>
-            <div class="icons">
-              <i class="fa-solid fa-check icon"></i>
-            </div>
+            <i class="fa-solid fa-check icon"></i>
+            <!-- <div class="icons">
+            </div> -->
           </label>
         </div>
       </div>
@@ -258,52 +260,65 @@
   </section>
   <section>
     <div id="box_cco_informa">
-      <textarea id="text_cco_informa">*CCO-Informa*</textarea>
+      <h3 style="display: none;">cco-informa</h3>
+      <textarea id="text_cco_informa">*CCO-INFORMA*</textarea>
       <div id="copy" class="box">
-        <div class="icons">
-          <i class="fa-solid fa-copy icon"></i>
-        </div>
+        <i class="fa-solid fa-copy icon"></i>
+        <!-- <div class="icons">
+        </div> -->
       </div>
     </div>
   </section>
   <section id="container_send_sheets" class="">
     <form id="form_send_sheets" autocomplete="off">
 
-      <div class="row"><div class="box"style="background: transparent;"></div></div>
-      <div class="row"><div class="box"style="background: transparent;height:23px"></div></div>
+      <div class="row">
+        <h3>cco_informa</h3>
+      </div>
+      <div class="row"><div class="box" style="background: transparent;"></div></div>
+      <div class="row"><div class="box" style="background: transparent;height:23px"></div></div>
 
       <div class="row">
         <label for="Data" class="box" id="box_data">
-          <div class="icons"><i class="fa-solid fa-calendar-days icon"></i>
-          </div>
+          <i class="fa-solid fa-calendar-days icon"></i>
           <input type="text" name="Data" id="Data" placeholder="25/05/2000">
         </label>
         <label for="Tabela" class="box">
-          <div class="icons"><i class="fa-solid fa-clipboard icon"></i></div>
+          <i class="fa-solid fa-clipboard icon"></i>
           <input type="text" name="Tabela" id="Tabela" placeholder="SD735/003">
         </label>
         <label for="Linha" class="box">
-          <div class="icons"><i class="fa-solid fa-route icon"></i></div>
+          <i class="fa-solid fa-route icon"></i>
           <input type="text" name="Linha" id="Linha" placeholder="SD735">
         </label>
       </div>
 
       <div class="row">
         <label for="Carro" class="box">
-          <div class="icons"><i class="fa-solid fa-bus icon"></i></div>
+          <!-- <div class="icons">
+          </div> -->
+          <i class="fa-solid fa-bus icon"></i>
           <input type="text" class="car" name="Carro" id="Carro" placeholder="6630">
         </label>
         <label for="other_car" class="box">
-          <div class="icons"><i class="fa-solid fa-arrows-rotate fa-rotate-90 icon"></i></div>
-          <div class="icons"><i class="fa-solid fa-bus icon"></i></div>
+          <!-- <div class="icons">
+          </div> -->
+          <i class="fa-solid fa-arrows-rotate fa-rotate-90 icon"></i>
+          <!-- <div class="icons">
+          </div> -->
+          <i class="fa-solid fa-bus icon"></i>
           <input type="text" class="car" name="Carro Substituto" id="other_car" placeholder="6631">
         </label>
         <label for="Hora" class="box">
-          <div class="icons"><i class="fa-solid fa-clock icon"></i></div>
+          <!-- <div class="icons">
+          </div> -->
+          <i class="fa-solid fa-clock icon"></i>
           <input type="text" name="Hora" id="Hora" placeholder="14:00">
         </label>
         <label for="Sentido" class="box">
-          <div class="icons"><i class="fa-solid fa-compass icon"></i></div>
+          <!-- <div class="icons">
+          </div> -->
+          <i class="fa-solid fa-compass icon"></i>
           <input type="text" name="Sentido" id="Sentido" placeholder="BC">
         </label>
       </div>
@@ -339,15 +354,14 @@
         <label id="box_Operador" for="Operador" class="box">
           <span>Operador:</span>
           <input type="text" name="Operador" id="Operador">
-          <div class="icons">
-            <i class="fa-solid fa-chevron-down icon"></i>
-          </div>
+          <i class="fa-solid fa-chevron-down icon"></i>
+          
         </label>
         <ul id="list_operadores" class="list"></ul>
       </div>
 
       <div id="row_buttons_sheets" class="row footer">
-        <button type="submit" class="box buttons"><div class="icons"><i class="fa-solid fa-paper-plane icon"></i></div></button>
+        <button type="submit" class="box buttons"><i class="fa-solid fa-paper-plane icon"></i></button>
         <button type="reset" id="close" class="box buttons"><i class="fa-solid fa-xmark icon close"></i></button>
       </div>
     </form>

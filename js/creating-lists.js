@@ -3,6 +3,12 @@ import { activies, events, motives , problems, operators, create_options, autoco
 const operators_list = document.getElementById("operators_list")
 create_options(operators_list, operators)
 
+const box_operator = document.getElementById("box_operator")
+const operator = document.getElementById("operator")
+operator.addEventListener("focus", function(){
+  box_operator.classList.toggle("open")
+})
+
 const directions = document.getElementById('directions')
 create_options(directions, activies)
 
