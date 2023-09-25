@@ -54,6 +54,11 @@ header .fa-chevron-down,.fa-chevron-down, .fa-arrows-rotate, #Operador ~ i{rotat
 .open .fa-chevron-down, #box_Operador.open #Operador ~ i{rotate: 180deg;transition: rotate .7s ease-in-out}
 .fa-chevron-right{rotate: 90deg; transition: rotate .7s ease-in-out}
 .open .open .fa-chevron-right{rotate: 270deg; transition: rotate .7s ease-in-out}
+main{
+  width: 80%;
+  position: relative;
+  left: 40px;
+}
 section{width: 330px;padding: 5px}
 section#form{background: var(--secondy);font-size: 13px;font-family: 'Lora', serif}
 div.row{
@@ -65,6 +70,12 @@ div.row{
   section{width: 100%;padding: 0}
   #container_send_sheets.open{min-width:100%;margin:0;padding:0;}
   #container_send_sheets .row{margin: 4px 0; padding: 0;}
+  #form_cco_informa .row:first-child{margin: 0;}
+  main{
+    width: 100%;
+    position: relative;
+    left: 0;
+  }
 }
 .box{
   width: auto;
@@ -202,13 +213,11 @@ div.row.revel ~ #row_congestion,div.row.revel ~ #row_tripulation,
 div.row.revel ~ #row_roullet_and_validator{margin-top: -4px}
 div.row.revel.open ~ div.row.revel.open ~ div.row#row_motive,
 div.row.revel.open ~ #row_congestion{margin-top: 0}
+#form_cco_informa div.row.footer{height: 60px;padding:0}
 div.row.footer{
-  height: 60px;
-  padding-bottom: 8px;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-end;
-  justify-content: flex-start}
+  height: 25px;padding-bottom: 8px;color: var(--primary);
+  display: flex;gap: 10px;flex-wrap: wrap;
+  justify-content: flex-start;align-content: center}
 .row.footer .box{
   gap: 0;
   font-weight: bold;
@@ -227,15 +236,13 @@ div.row.footer{
   transition: background .3s ease-in-out, transform .6s ease}
 .row.footer .box .icons .icon{color: var(--primary)}
 .buttons{margin-top: 5px;width: 22px;height: 22px;justify-content: center}
-#box_cco_informa{font-size: 12px;display: flex}
+#box_cco_informa{font-size: 12px;display: flex;border: 2px solid var(--blue);border-radius: 5px}
 textarea{border: none;resize:none;outline: none}
 #text_cco_informa{width: 300px;height: 400px}
 .fa-copy{font-size: 23px}
 #container_send_sheets{
-  position: absolute;
-  top: 4px;left: -350px;
-  z-index: 9;width: 300px;
-  background-color: var(--blue);
+  position: absolute;top: 0px;left: -350px;
+  z-index: 9;width: 300px;background-color: var(--blue);
   transition: left .5s ease}
 #container_send_sheets.open{left: 0px;transition: left .5s ease}
 #container_send_sheets span{font-size: 14px;color: var(--blue)}
