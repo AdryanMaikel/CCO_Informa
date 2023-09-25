@@ -1,8 +1,3 @@
-const dark = document.getElementById("dark")
-dark.addEventListener("click", function() {
-  document.querySelector("body").classList.toggle("dark")
-})
-
 const informed = document.getElementById("informed")
 informed.addEventListener("click", function(){
   informed.classList.toggle("active")
@@ -73,7 +68,7 @@ hour.addEventListener("blur", function() {
 const input_event = document.getElementById("event")
 input_event.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z ]/,"").toUpperCase()})
 
-const box_Operador = document.getElementById("box_Operador")
-box_Operador.addEventListener("click", function(){
-  box_Operador.classList.add("open")
-})
+// const box_Operador = document.getElementById("box_Operador")
+// box_Operador.addEventListener("click", function(){
+//   box_Operador.classList.add("open")
+// })
