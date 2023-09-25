@@ -47,12 +47,11 @@ h1{display: none}
 .icon{font-size: 18px; color: var(--blue); position: relative}
 .icons .icon{position: absolute;}
 .icon-header{font-size: 30px}
-#sun,.dark #moon,
-.active .not, .yes{scale: 0;opacity: 0;transition: scale .5s ease-out, opacity .5s}
+#sun,.dark #moon, .active .not, .yes{scale: 0;opacity: 0;transition: scale .5s ease-out, opacity .5s}
 .dark #sun,#moon,.active .yes, .not{scale: 1;opacity: 1;transition: scale .5s ease-out, opacity .5s}
 .active .text_decoration{color: #007c00}.text_decoration{color: #ff2424}
-header .fa-chevron-down,.fa-chevron-down, .fa-arrows-rotate{rotate: 0; transition: rotate .7s ease-in-out}
-.open .fa-chevron-down{rotate: 180deg;transition: rotate .7s ease-in-out}
+header .fa-chevron-down,.fa-chevron-down, .fa-arrows-rotate, #Operador ~ i{rotate: 0deg; transition: rotate .7s ease-in-out}
+.open .fa-chevron-down, #box_Operador.open #Operador ~ i{rotate: 180deg;transition: rotate .7s ease-in-out}
 .fa-chevron-right{rotate: 90deg; transition: rotate .7s ease-in-out}
 .open .open .fa-chevron-right{rotate: 270deg; transition: rotate .7s ease-in-out}
 section{width: 330px;padding: 5px}
@@ -199,10 +198,8 @@ div.row.revel.open{
 div.row.revel.open ~ div.row.revel ~ div.row#row_roullet_and_validator,
 div.row.revel ~ div.row.revel ~ div.row#row_motive{margin-top: -8px}
 div.row.revel.open ~ div.row.revel ~ div.row#row_motive,
-div.row.revel ~ #row_congestion,
-div.row.revel ~ #row_tripulation,
-div.row.revel ~ #row_roullet_and_validator{
-  margin-top: -4px}
+div.row.revel ~ #row_congestion,div.row.revel ~ #row_tripulation,
+div.row.revel ~ #row_roullet_and_validator{margin-top: -4px}
 div.row.revel.open ~ div.row.revel.open ~ div.row#row_motive,
 div.row.revel.open ~ #row_congestion{margin-top: 0}
 div.row.footer{
@@ -236,7 +233,7 @@ textarea{border: none;resize:none;outline: none}
 .fa-copy{font-size: 23px}
 #container_send_sheets{
   position: absolute;
-  top: 0;left: -350px;
+  top: 4px;left: -350px;
   z-index: 9;width: 300px;
   background-color: var(--blue);
   transition: left .5s ease}
@@ -250,9 +247,7 @@ input#Hora{width: 34px}input#Sentido{width: 22px}input#Operador{width: 100px}
 textarea#Ocorrência{width: 292px}textarea#Problema{width: 292px; height: 16px}
 #box_observação{height: 80px}
 textarea#Observação{width: 292px; height: 80px}
-#Operador ~ .icons i{rotate: 0deg; transition: rotate .5s}
-#box_Operador.open #Operador ~ .icons i{rotate: 180deg; transition: rotate .5s}
-#list_operadores{left: 90px;min-width: 72px;font-size: 14px}
+/* #list_operadores{left: 90px;min-width: 72px;font-size: 14px} */
 #row_buttons_sheets button{border: none;scale: 1;transition: scale .5s ease-in-out}
 #row_buttons_sheets button:hover{background-color: transparent;scale: 1.3;transition: scale .5s ease-in-out}
 .close{font-size: 22px}

@@ -272,7 +272,7 @@ const send_sheets = document.getElementById("send_sheets").addEventListener("cli
   Ocorrência.value = CCO_SHEETS.Ocorrência
   Problema.value = CCO_SHEETS.Problema
   Observação.value = CCO_SHEETS.Observação
-
+  Operador.value = operator.value
 })
 const generate_other = document.getElementById("generate_other").addEventListener("click", function(){
   text_cco_informa.value += generate_cco_inform()

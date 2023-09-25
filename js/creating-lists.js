@@ -27,7 +27,6 @@ operator.addEventListener("focusout", function(){
   }
 })
 
-
 const directions = document.getElementById('directions')
 create_options(directions, activies)
 
@@ -38,6 +37,11 @@ direction.addEventListener("focus", function(){
   direction.addEventListener('input', function(){
     this.value = this.value.toUpperCase()
     create_options(directions, autocomplete(this.value, activies))
+    if(directions.childElementCount == 1){
+      this.value = directions.lastChild.textContent
+      box_direction.classList.remove("open")
+      return event.focus()
+    }
   })
 })
 
@@ -47,22 +51,12 @@ direction.addEventListener("focusout", function(){
     option.onclick = function() {
       direction.value = this.textContent
       box_direction.classList.remove("open")
+      return event.focus()
     }
   }
 })
 
-const list_events = document.getElementById("events")
-create_options(list_events, events)
 
-const box_event = document.getElementById("box_event")
-const event = document.getElementById("event")
-event.addEventListener("focus", function(){
-  box_event.classList.toggle("open")
-  event.addEventListener("input", function(){
-    this.value = this.value.toLowerCase()
-    create_options(list_events, autocomplete(this.value, events))
-  })
-})
 
 const box_min = document.getElementById("box_min")
 const min = document.getElementById("min")
@@ -105,6 +99,25 @@ function check_event(event_is) {
   }
 }
 
+const list_events = document.getElementById("events")
+create_options(list_events, events)
+
+const box_event = document.getElementById("box_event")
+const event = document.getElementById("event")
+event.addEventListener("focus", function(){
+  box_event.classList.toggle("open")
+  event.addEventListener("input", function(){
+    box_event.classList.add("open")
+    this.value = this.value.toLowerCase()
+    create_options(list_events, autocomplete(this.value, events))
+    if(list_events.childElementCount == 1){
+      this.value = list_events.firstChild.textContent
+      box_event.classList.remove("open")
+      return check_event(this.value)
+    }
+  })
+})
+
 event.addEventListener("focusout", function(){
   const events_options = document.querySelectorAll("#events .option")
   for(option of events_options){
@@ -116,17 +129,6 @@ event.addEventListener("focusout", function(){
   }
 })
 
-const list_motives = document.getElementById("list_motives")
-create_options(list_motives, motives)
-const box_motive = document.getElementById("box_motive")
-const motive = document.getElementById("motive")
-motive.addEventListener("focus", function(){
-  box_motive.classList.toggle("open")
-  motive.addEventListener("input", function(){
-    this.value = this.value.replace(/[0-9]/g, "")
-    create_options(autocomplete(this.value, motiveslist_motives, ))
-  })
-})
 
 const row_problems = document.getElementById("row_problems")
 const box_problems = document.getElementById("box_problems")
@@ -157,6 +159,24 @@ function check_motive(input_motive) {
   }
 }
 
+const list_motives = document.getElementById("list_motives")
+create_options(list_motives, motives)
+const box_motive = document.getElementById("box_motive")
+const motive = document.getElementById("motive")
+motive.addEventListener("focus", function(){
+  box_motive.classList.toggle("open")
+  motive.addEventListener("input", function(){
+    box_motive.classList.add("open")
+    this.value = this.value.replace(/[0-9]/g, "")
+    create_options(list_motives, autocomplete(this.value, motives))
+    if(list_motives.childElementCount == 1){
+      this.value = list_motives.lastChild.textContent
+      box_motive.classList.remove("open")
+      return check_motive(this.value)
+    }
+  })
+})
+
 motive.addEventListener("focusout", function(){
   const motives_options = document.querySelectorAll("#list_motives .option")
   for(option of motives_options){
@@ -174,8 +194,13 @@ create_options(list_problems, problems)
 problem.addEventListener("focus", function(){
   box_problems.classList.toggle("open")
   problem.addEventListener("input", function(){
+    box_problems.classList.add("open")
     this.value = this.value.replace(/[0-9]/g, "")
-    create_options(autocomplete(this.value, problemslist_problems, ))
+    create_options(list_problems, autocomplete(this.value, problems))
+    if(list_problems.childElementCount == 1){
+      this.value = list_problems.lastChild.textContent
+      box_problems.classList.remove("open")
+    }
   })
 })
 problem.addEventListener("focusout", function(){
