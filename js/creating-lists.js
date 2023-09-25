@@ -18,7 +18,13 @@ operator.addEventListener("focus", function(){
 })
 
 operator.addEventListener("focusout", function(){
-
+  const options = document.querySelectorAll("#operators_list .option")
+  for(var option of options){
+    option.onclick = function(){
+      operator.value = this.textContent
+      return box_operator.classList.remove("open")
+    }
+  }
 })
 
 
@@ -182,15 +188,15 @@ problem.addEventListener("focusout", function(){
   }
 })
 
-const list_operadores = document.getElementById("list_operadores")
-create_options(list_operadores, operators)
+// const list_operadores = document.getElementById("list_operadores")
+// create_options(list_operadores, operators)
 
-const box_Operador = document.getElementById("box_Operador")
-const options_operator = document.querySelectorAll("#list_operadores .option")
-const Operador = document.getElementById("Operador")
-for(var option of options_operator){
-  option.onclick = function(){
-    Operador.value = this.textContent
-    box_Operador.classList.toggle("open")
-  }
-}
+// const box_Operador = document.getElementById("box_Operador")
+// const options_operator = document.querySelectorAll("#list_operadores .option")
+// const Operador = document.getElementById("Operador")
+// for(var option of options_operator){
+//   option.onclick = function(){
+//     Operador.value = this.textContent
+//     box_Operador.classList.toggle("open")
+//   }
+// }
