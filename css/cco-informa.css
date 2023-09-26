@@ -18,7 +18,7 @@
 body{
   width: 100vw; height: 100vh;
   background: var(--primary);
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   font-family: 'Lora', sans-serif}
 /* body.dark{background: var(--blue)} */
 header{
