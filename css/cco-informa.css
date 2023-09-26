@@ -261,7 +261,4 @@ textarea#Observação{width: 292px; height: 80px}
 .close{font-size: 22px}
 .fa-paper-plane{color: var(--primary);}
 #form_send_sheets{color: #000000;}
-footer{
-  width: 100%;
-  height: 150px;
-}
+footer{width: 100%;/* height: 150px; */}

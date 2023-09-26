@@ -207,6 +207,7 @@ function generate_cco_inform(){
 
   if(motive.value != "Problemas mecânicos"){
     CCO_SHEETS.Ocorrência = motive.value
+    CCO_SHEETS.Problema = ""
   }else{
     CCO_SHEETS.Ocorrência = ocorrencia_CCO_SHEETS
   }
@@ -235,7 +236,7 @@ function generate_cco_inform(){
   return cco_informa
 }
 const text_cco_informa = document.getElementById("text_cco_informa")
-const form = document.getElementById("form").addEventListener("submit", function(event){event.preventDefault()})
+const form = document.getElementById("form").addEventListener("submit", function(events){events.preventDefault()})
 const generate_cco = document.getElementById("generate_cco_inform").addEventListener("click", function(){
   text_cco_informa.value = generate_cco_inform()
 })
