@@ -18,6 +18,7 @@
 body{
   width: 100vw; height: 100vh;
   background: var(--primary);
+  overflow-x: hidden;
   font-family: 'Lora', sans-serif}
 /* body.dark{background: var(--blue)} */
 header{
@@ -67,7 +68,7 @@ div.row{
   gap: 4px;margin: 4px 0}
 .blue{background: var(--blue) !important}
 @media only screen and (max-width: 500px){
-  section{width: 100%;padding: 0}
+  section{width: 96%;padding: 1%}
   #container_send_sheets.open{min-width:100%;margin:0;padding:0;}
   #container_send_sheets .row{margin: 4px 0; padding: 0;}
   #form_cco_informa .row:first-child{margin: 0;}
@@ -236,9 +237,9 @@ div.row.footer{
   transition: background .3s ease-in-out, transform .6s ease}
 .row.footer .box .icons .icon{color: var(--primary)}
 .buttons{margin-top: 5px;width: 22px;height: 22px;justify-content: center}
-#box_cco_informa{font-size: 12px;display: flex;border: 2px solid var(--blue);border-radius: 5px}
+#box_cco_informa{font-size: 12px;display: flex;border: 2px solid var(--blue);border-radius: 5px; max-height: 350px; overflow: hidden}
 textarea{border: none;resize:none;outline: none}
-#text_cco_informa{width: 300px;height: 400px}
+#text_cco_informa{width: 300px;height: 350px}
 .fa-copy{font-size: 23px}
 #container_send_sheets{
   position: absolute;top: 0px;left: -350px;
@@ -260,3 +261,7 @@ textarea#Observação{width: 292px; height: 80px}
 .close{font-size: 22px}
 .fa-paper-plane{color: var(--primary);}
 #form_send_sheets{color: #000000;}
+footer{
+  width: 100%;
+  height: 150px;
+}
