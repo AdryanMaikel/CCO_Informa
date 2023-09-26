@@ -35,7 +35,7 @@ const submit_form_send_sheets = (events) => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(DATA)
-  }).then(()=>{ if(confirm("Enviado com Sucesso!")){window.open("https://docs.google.com/spreadsheets/d/1FhUsZgjpn_3HpqZ8YQnUEmkz1DFldsZkVw3vVW5fCCo")}})
+  }).then(()=>{ if(confirm("Enviado com Sucesso! Deseja abrir a planilha?")){window.open("https://docs.google.com/spreadsheets/d/1voKCp0MJOelI0-qv9s_m3VF5GUvkS4lbKyArA6NbmTs/edit#gid=1247343348")}})
 }
 const form_send_sheets = document.getElementById("form_send_sheets").addEventListener("submit", submit_form_send_sheets)
 

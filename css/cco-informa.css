@@ -51,10 +51,10 @@ h1{display: none}
 #sun,.dark #moon, .active .not, .yes{scale: 0;opacity: 0;transition: scale .5s ease-out, opacity .5s}
 .dark #sun,#moon,.active .yes, .not{scale: 1;opacity: 1;transition: scale .5s ease-out, opacity .5s}
 .active .text_decoration{color: #007c00}.text_decoration{color: #ff2424}
-header .fa-chevron-down,.fa-chevron-down, .fa-arrows-rotate, #Operador ~ i{rotate: 0deg; transition: rotate .7s ease-in-out}
-.open .fa-chevron-down, #box_Operador.open #Operador ~ i{rotate: 180deg;transition: rotate .7s ease-in-out}
-.fa-chevron-right{rotate: 90deg; transition: rotate .7s ease-in-out}
-.open .open .fa-chevron-right{rotate: 270deg; transition: rotate .7s ease-in-out}
+header .fa-chevron-down,.fa-chevron-down, #box_problems .fa-chevron-down, .fa-arrows-rotate, #Operador ~ i{rotate: 0deg; transition: rotate .7s ease-in-out}
+.open .fa-chevron-down, #box_Operador.open #Operador ~ i,.open label#box_problems.open .icon{rotate: 180deg;transition: rotate .7s ease-in-out}
+/* #box_problems i{rotate: 0; transition: rotate .7s ease-in-out}
+#box_problems.open i{rotate: 180deg; transition: rotate .7s ease-in-out} */
 main{
   width: 80%;
   position: relative;
