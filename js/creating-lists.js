@@ -86,16 +86,13 @@ function check_event(event_is) {
       continued.classList.add("open")
       return local.focus()
     case "perdida":
-      
-      break;
+      return motive.focus()
     case "realizada a frente":
       box_local.classList.add("active")
       interrupted_text.textContent = "a partir d"
       box_local.classList.add("open")
       row_local.classList.add("open")
       return local.focus()
-    default:
-      break;
   }
 }
 
@@ -150,13 +147,16 @@ function check_motive(input_motive) {
     case "Congestionamento":
       row_congestion.classList.add("open")
       return congestion_locale.focus()
-      case "Falta de Tripulação":
-        return row_tripulation.classList.add("open")
+    case "Falta de Tripulação":
+      row_tripulation.classList.add("open")
+      return motorista.focus()
     case "Validador/ Roleta":
-      return row_roullet_and_validator.classList.add("open")
+      row_roullet_and_validator.classList.add("open")
+      return validator.focus()
     default:
       break;
   }
+  return text_cco_informa.focus()
 }
 
 const list_motives = document.getElementById("list_motives")

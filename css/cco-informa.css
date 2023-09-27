@@ -111,10 +111,11 @@ input#min{width: 22px}
 input#problem{width: 200px}
 input#operator{color: var(--primary); font-size: 15px;width: 80px;}
 input[type=radio]{scale: 0;position: absolute}
-input[type=radio] ~ .icons .fa-check{scale: 0; transition: scale .5s}
-input[type=radio]:checked ~ .icons .fa-check{scale: 1; transition: scale .5s}
+input[type=radio] ~ .fa-check{scale: 0; transition: scale .5s}
+input[type=radio]:checked ~ .fa-check{scale: 1; transition: scale .5s}
 input[type=radio]:checked ~ span,
-input[type=radio]:checked ~ .icons .fa-check{color: #007c00}
+input[type=radio]:checked ~ .fa-check{color: #007c00}
+
 ul.list{
   transform: translateY(30px);
   padding: 0;

@@ -32,6 +32,7 @@ const box_local = document.getElementById("box_local")
 const row_local = document.getElementById("row_local")
 const continued = document.getElementById("continued")
 const box_continued = document.getElementById("box_continued")
+const input_continued = document.getElementById("input_continued")
 box_local.addEventListener("click", function(){
   box_local.classList.toggle("open")
   row_local.classList.toggle("open")
@@ -42,6 +43,10 @@ box_local.addEventListener("click", function(){
 continued.addEventListener("click", function(){
   continued.classList.toggle("active")
   box_continued.classList.toggle("open")
+  if(!box_continued.classList.contains("open")){
+    return local.focus()
+  }
+  return input_continued.focus()
 })
 
 supervision.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z]/,"")})
