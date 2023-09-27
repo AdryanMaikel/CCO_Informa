@@ -1,31 +1,33 @@
 const informed = document.getElementById("informed")
+const supervision = document.getElementById("supervision")
 informed.addEventListener("click", function(){
   informed.classList.toggle("active")
+  supervision.focus()
 })
 
 const who_informed = document.getElementById("who_informed")
-who_informed.addEventListener("click", function(){
+supervision.addEventListener("focus", function(){
   who_informed.classList.toggle("open")
 })
 const options_informed = document.getElementsByClassName("informed")
 const box_supervisor = document.getElementById("box_supervisor")
 for(option of options_informed){
   option.onclick = function(){
-    text_informed.innerHTML = this.textContent
+    supervision.value = this.textContent
     who_informed.classList.remove("open")
-    if(this.textContent == "Fiscal"){
-      box_supervisor.classList.add("active")
-      return supervision.focus()
-    }
-    box_supervisor.classList.remove("active")
     return table.focus()
   }
 }
 
 const replace = document.getElementById("replace")
+const box_car_two = document.getElementById("box_car_two")
 replace.addEventListener("click", function(){
   replace.classList.toggle("active")
   box_car_two.classList.toggle("active")
+  if(box_car_two.classList.contains("active")){
+    return car_two.focus()
+  }
+  return line.focus()
 })
 
 const box_local = document.getElementById("box_local")
@@ -64,12 +66,15 @@ table.addEventListener("focusout", function(){
 input_car.addEventListener("input", function(){this.value = this.value.replace(/[^0-9]/,"")})
 car_two.addEventListener("input", function(){this.value = this.value.replace(/[^0-9]/,"")})
 line.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z0-9]/,"").toUpperCase()})
-hour.addEventListener("input", function(){this.value = this.value.replace(/[^0-9:]/,"").toUpperCase()})
-hour.addEventListener("blur", function() {
+hour.addEventListener("input", function(){
+  this.value = this.value.replace(/[^0-9:]/,"").toUpperCase()
   if(hour.value.length == 4){
     hour.value = hour.value.slice(0, 2) + ":" + hour.value.slice(2, 4)
+    return direction.focus()
   }
 })
+// hour.addEventListener("blur", function() {
+// })
 const input_event = document.getElementById("event")
 input_event.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z ]/,"").toUpperCase()})
 

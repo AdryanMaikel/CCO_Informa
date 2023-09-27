@@ -17,14 +17,15 @@ function generate_cco_inform(){
     cco_informa += "Conforme contato feito pelo CCO ao "
   }
 
-  if(text_informed.innerText == "Fiscal"){
+  if(supervision.value == "Navegantes"
+  || supervision.value == "Nortran"
+  || supervision.value == "Sopal"){
+    cco_informa += "largador da "+supervision.value
+  }else{
     cco_informa += "fiscal "
     if(supervision.value.length > 0){
       cco_informa += supervision.value[0].toUpperCase()+supervision.value.substring(1)
     }
-  }else{
-    const who_informed = document.getElementById("who_informed")
-    cco_informa += "largador da "+who_informed.innerText
   }
   cco_informa += "\n"
 
@@ -65,7 +66,7 @@ function generate_cco_inform(){
       break
   }
   CCO_SHEETS.Problema = problem.value
-  cco_informa +="-"+result_event+"\n- Motivo: "
+  cco_informa +="- "+result_event+"\n- Motivo: "
   switch (motive.value) {
     case "Acidente":
       result_motive += "Carro "+input_car+" ter se envolvido em um acidente"
