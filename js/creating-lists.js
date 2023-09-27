@@ -200,6 +200,11 @@ problem.addEventListener("focus", function(){
     if(list_problems.childElementCount == 1){
       this.value = list_problems.lastChild.textContent
       box_problems.classList.remove("open")
+      if(operator.value == ""){
+        return operator.focus()
+      }else{
+        return table.focus()
+      }
     }
   })
 })
