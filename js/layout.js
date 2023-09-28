@@ -76,7 +76,7 @@ continued.addEventListener("click", function(){
   return input_continued.focus()
 })
 
-supervision.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z]/,"")})
+supervision.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z] /,"")})
 
 table.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z0-9]/,"").toUpperCase()})
 table.addEventListener("focusout", function(){
