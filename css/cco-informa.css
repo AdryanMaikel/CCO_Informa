@@ -115,7 +115,6 @@ input[type=radio] ~ .fa-check{scale: 0; transition: scale .5s}
 input[type=radio]:checked ~ .fa-check{scale: 1; transition: scale .5s}
 input[type=radio]:checked ~ span,
 input[type=radio]:checked ~ .fa-check{color: #007c00}
-
 ul.list{
   transform: translateY(30px);
   padding: 0;
@@ -191,10 +190,11 @@ ul.list li.option:hover{background: var(--secondy);border-radius: 8px}
   transition:opacity .2s, scale .3s, transform .3s}
 #continued{width: 50px}
 #continued.open{width: 90px}
-div#replace, div#continued{
-  margin-top: 4px;
-  height: 22px;
-  z-index: 7}
+/* div#replace, div#continued */
+.icon_x {color: #ff2424;transition: scale .3s ease-out}
+.mini.x:hover .icon_x{scale: 1.1}
+.mini.x{z-index: initial;margin-left: -5px;padding: 3px}
+.mini{margin-top: 4px;height: 22px;z-index: 7}
 label#box_car_two,#box_input_local{z-index: 6}
 div#continued{z-index: 5}
 #box_min,#continued_journey{position: absolute}
@@ -203,18 +203,14 @@ div.row.revel{
   height: 0;
   transition: height .5s;
   overflow: hidden}
-#row_roullet_and_validator.open{
-  height: 42px}
-div.row.revel.open{
-  height: 38px;
-  transition: height .5s}
+#row_roullet_and_validator.open{height: 42px;transition: height .5s}
+div.row.revel.open{height: 38px;transition: height .5s}
 div.row.revel.open ~ div.row.revel ~ div.row#row_roullet_and_validator,
 div.row.revel ~ div.row.revel ~ div.row#row_motive{margin-top: -8px}
 div.row.revel.open ~ div.row.revel ~ div.row#row_motive,
 div.row.revel ~ #row_congestion,div.row.revel ~ #row_tripulation,
 div.row.revel ~ #row_roullet_and_validator{margin-top: -4px}
-div.row.revel.open ~ div.row.revel.open ~ div.row#row_motive,
-div.row.revel.open ~ #row_congestion{margin-top: 0}
+div.row.revel.open ~ div.row.revel.open ~ div.row#row_motive{margin-top: 0}
 #form_cco_informa div.row.footer{height: 60px;padding:0}
 div.row.footer{
   height: 25px;padding-bottom: 8px;color: var(--primary);

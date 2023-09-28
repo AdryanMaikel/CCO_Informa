@@ -56,8 +56,6 @@ direction.addEventListener("focusout", function(){
   }
 })
 
-
-
 const box_min = document.getElementById("box_min")
 const min = document.getElementById("min")
 const box_local = document.getElementById("box_local")
@@ -117,7 +115,7 @@ event.addEventListener("focus", function(){
 
 event.addEventListener("focusout", function(){
   const events_options = document.querySelectorAll("#events .option")
-  for(option of events_options){
+  for(var option of events_options){
     option.onclick = function(){
       event.value = this.textContent
       box_event.classList.remove("open")
@@ -179,7 +177,7 @@ motive.addEventListener("focus", function(){
 
 motive.addEventListener("focusout", function(){
   const motives_options = document.querySelectorAll("#list_motives .option")
-  for(option of motives_options){
+  for(var option of motives_options){
     option.onclick = function(){
       motive.value = this.textContent
       box_motive.classList.remove("open")
@@ -210,7 +208,7 @@ problem.addEventListener("focus", function(){
 })
 problem.addEventListener("focusout", function(){
   const problems_options = document.querySelectorAll("#list_problems .option")
-  for(option of problems_options){
+  for(var option of problems_options){
     option.onclick = function(){
       problem.value = this.textContent
       box_problems.classList.remove("open")

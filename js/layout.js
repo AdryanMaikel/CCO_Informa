@@ -5,19 +5,44 @@ informed.addEventListener("click", function(){
   supervision.focus()
 })
 
+const open_remove_x = (pai) => {
+  const open = document.querySelector(`#${pai} ~ .box.mini.x`)
+  const input = document.querySelector(`#${pai} input`)
+  if(input.value == ""){
+    return open.classList.remove("active")
+  }else{
+    open.classList.add("active")
+    open.addEventListener("click", function(){
+      input.value = ""
+      open.classList.remove("active")
+      return input.focus()
+    })
+  }
+}
 const who_informed = document.getElementById("who_informed")
-supervision.addEventListener("focus", function(){
+supervision.addEventListener("click", function(){
   who_informed.classList.toggle("open")
+})
+supervision.addEventListener("blur", function(){
+  for(var option of options_informed){
+    option.onclick = function(){
+      supervision.value = this.textContent
+      who_informed.classList.remove("open")
+      open_remove_x("who_informed")
+      return table.focus()
+    }
+  }
+  setTimeout(function(){
+    who_informed.classList.remove("open")
+  },100)
+})
+supervision.addEventListener("input", function(){
+  open_remove_x("who_informed")
 })
 const options_informed = document.getElementsByClassName("informed")
 const box_supervisor = document.getElementById("box_supervisor")
-for(option of options_informed){
-  option.onclick = function(){
-    supervision.value = this.textContent
-    who_informed.classList.remove("open")
-    return table.focus()
-  }
-}
+
+
 
 const replace = document.getElementById("replace")
 const box_car_two = document.getElementById("box_car_two")
