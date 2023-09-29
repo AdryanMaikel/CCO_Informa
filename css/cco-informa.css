@@ -78,6 +78,9 @@ div.row{
     left: 0;
   }
 }
+#box_event,#box_direction{
+  z-index: 2;
+}
 .box{
   width: auto;
   justify-content: space-between;

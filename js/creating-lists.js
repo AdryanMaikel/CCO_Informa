@@ -10,6 +10,7 @@ supervision.addEventListener("click", function(){
 })
 
 supervision.addEventListener("focusout", function(){
+  this.value = this.value.trim()
   for(var option of options_informed){
     option.onclick = function(){
       supervision.value = this.textContent

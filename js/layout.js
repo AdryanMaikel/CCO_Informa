@@ -65,11 +65,22 @@ for(var car of cars){
 }
 line.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z0-9]/,"").toUpperCase()})
 hour.addEventListener("input", function(){
-  this.value = this.value.replace(/[^0-9:]/,"").toUpperCase()
-  if(hour.value.length == 4){
-    hour.value = hour.value.slice(0, 2) + ":" + hour.value.slice(2, 4)
+  this.value = this.value.replace(/[^0-9:]/,"")
+  if(hour.value.length == 2)
+    return this.value += ":"
+  else if(hour.value.length == 5)
     return direction.focus()
-  }
+  
+  // if(!hour.value.split("").includes(":")) {
+  //   if(hour.value.length == 4){
+  //     hour.value = hour.value.slice(0, 2) + ":" + hour.value.slice(2, 4)
+  //     return direction.focus()
+  //   }
+  // }else{
+  //   if(hour.value.length == 5){
+  //     return direction.focus()
+  //   }
+  // }
 })
 // hour.addEventListener("blur", function() {
 // })
