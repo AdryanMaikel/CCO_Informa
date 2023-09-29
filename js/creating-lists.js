@@ -149,6 +149,7 @@ event.addEventListener("click", function(){
     return event.blur()
   }
   setTimeout(()=>{
+    create_options(list_events, events)
     box_event.classList.add("open")
   }, 100)
 })
