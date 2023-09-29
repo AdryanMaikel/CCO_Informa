@@ -191,9 +191,9 @@ ul.list li.option:hover{background: var(--secondy);border-radius: 8px}
 #continued{width: 50px}
 #continued.open{width: 90px}
 /* div#replace, div#continued */
-.icon_x {color: #ff2424;transition: scale .3s ease-out}
-.mini.x:hover .icon_x{scale: 1.1}
-.mini.x{z-index: initial;margin-left: -5px;padding: 3px}
+.fa-trash-can {color: #ff2424;transition: scale .3s ease-out}
+.mini.trash:hover .fa-trash-can{scale: 1.1}
+.mini.trash{z-index: initial;margin-left: -4px;padding: 4px;margin-top: 4px}
 .mini{margin-top: 4px;height: 22px;z-index: 7}
 label#box_car_two,#box_input_local{z-index: 6}
 div#continued{z-index: 5}

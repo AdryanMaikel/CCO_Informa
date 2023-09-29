@@ -53,7 +53,15 @@ table.addEventListener("focusout", function(){
 
 const cars = document.getElementsByClassName("car")
 for(var car of cars){
-  car.addEventListener("input", function(){this.value = this.value.replace(/[^0-9]/,"")})
+  car.addEventListener("input", function(){
+    this.value = this.value.replace(/[^0-9]/,"")
+    if(this.value.length == 4){
+      if(replace.classList.contains("active"))
+        return car_two.focus()
+      else
+        return line.focus()
+    }
+  })
 }
 line.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z0-9]/,"").toUpperCase()})
 hour.addEventListener("input", function(){

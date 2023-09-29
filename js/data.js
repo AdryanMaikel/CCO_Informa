@@ -86,9 +86,9 @@ const autocomplete = (input, array) => {
   })
 }
 
-const toggle_x = (pai) => {
-  const open = document.querySelector(`#${pai} ~ .box.mini.x`)
-  const input = document.querySelector(`#${pai} input`)
+const toggle_x = (father) => {
+  const open = document.querySelector(`#${father} ~ .box.mini.trash`)
+  const input = document.querySelector(`#${father} input`)
   if(input.value == ""){
     return open.classList.remove("active")
   }else{
