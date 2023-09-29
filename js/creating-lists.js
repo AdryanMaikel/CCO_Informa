@@ -146,7 +146,7 @@ event.addEventListener("focus", function(){
 event.addEventListener("input", function(){
   box_event.classList.add("open")
   toggle_x("box_event")
-  this.value = this.value.toLowerCase()
+  this.value = this.value.replace(/[^a-zA-Z ]/,"").toLowerCase()
   create_options(list_events, autocomplete(this.value, events))
   if(list_events.childElementCount == 1){
     this.value = list_events.firstChild.textContent

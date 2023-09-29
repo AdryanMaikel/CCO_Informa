@@ -73,9 +73,6 @@ hour.addEventListener("input", function(){
 })
 // hour.addEventListener("blur", function() {
 // })
-const input_event = document.getElementById("event")
-input_event.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z ]/,"").toUpperCase()})
-
 // const box_Operador = document.getElementById("box_Operador")
 // box_Operador.addEventListener("click", function(){
 //   box_Operador.classList.add("open")
