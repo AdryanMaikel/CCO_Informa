@@ -66,17 +66,19 @@ create_options(directions, activies)
 
 const box_direction = document.getElementById("box_direction")
 const direction = document.getElementById("direction")
-direction.addEventListener("focus", function(){
-  box_direction.classList.toggle("open")
-  direction.addEventListener('input', function(){
-    this.value = this.value.toUpperCase()
-    create_options(directions, autocomplete(this.value, activies))
-    if(directions.childElementCount == 1){
-      this.value = directions.lastChild.textContent
-      box_direction.classList.remove("open")
-      return event.focus()
-    }
-  })
+direction.addEventListener("click", function(){
+  box_direction.classList.add("open")
+  
+})
+
+direction.addEventListener('input', function(){
+  this.value = this.value.replace(/[^a-zA-Z]/, "").toUpperCase()
+  create_options(directions, autocomplete(this.value, activies))
+  if(directions.childElementCount == 1){
+    this.value = directions.lastChild.textContent
+    box_direction.classList.remove("open")
+    return event.focus()
+  }
 })
 
 direction.addEventListener("focusout", function(){
@@ -88,6 +90,9 @@ direction.addEventListener("focusout", function(){
       return event.focus()
     }
   }
+  setTimeout(function(){
+    box_direction.classList.remove("open")
+  },100)
 })
 
 const box_min = document.getElementById("box_min")
