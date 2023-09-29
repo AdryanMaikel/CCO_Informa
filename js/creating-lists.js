@@ -140,17 +140,19 @@ create_options(list_events, events)
 const box_event = document.getElementById("box_event")
 const event = document.getElementById("event")
 event.addEventListener("focus", function(){
-  box_event.classList.toggle("open")
-  event.addEventListener("input", function(){
-    box_event.classList.add("open")
-    this.value = this.value.toLowerCase()
-    create_options(list_events, autocomplete(this.value, events))
-    if(list_events.childElementCount == 1){
-      this.value = list_events.firstChild.textContent
-      box_event.classList.remove("open")
-      return check_event(this.value)
-    }
-  })
+  box_event.classList.add("open")
+  check_event(this.value)
+})
+event.addEventListener("input", function(){
+  box_event.classList.add("open")
+  toggle_x("box_event")
+  this.value = this.value.toLowerCase()
+  create_options(list_events, autocomplete(this.value, events))
+  if(list_events.childElementCount == 1){
+    this.value = list_events.firstChild.textContent
+    box_event.classList.remove("open")
+    return check_event(this.value)
+  }
 })
 
 event.addEventListener("focusout", function(){
@@ -159,9 +161,13 @@ event.addEventListener("focusout", function(){
     option.onclick = function(){
       event.value = this.textContent
       box_event.classList.remove("open")
+      toggle_x("box_event")
       return check_event(this.textContent)
     }
   }
+  setTimeout(function(){
+    box_event.classList.remove("open")
+  },100)
 })
 
 
