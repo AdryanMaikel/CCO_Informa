@@ -1,40 +1,5 @@
 import { activies, events, motives , problems, operators, create_options, autocomplete, toggle_x } from "./data.js"
 
-const options_informed = document.getElementsByClassName("informed")
-const who_informed = document.getElementById("who_informed")
-supervision.addEventListener("click", function(){
-  if(who_informed.classList.contains("open")){
-    supervision.blur()
-  }
-  who_informed.classList.toggle("open")
-})
-
-supervision.addEventListener("focusout", function(){
-  this.value = this.value.trim()
-  for(var option of options_informed){
-    option.onclick = function(){
-      supervision.value = this.textContent
-      who_informed.classList.remove("open")
-      toggle_x("who_informed")
-      return table.focus()
-    }
-  }
-  setTimeout(function(){
-    who_informed.classList.remove("open")
-  },100)
-})
-supervision.addEventListener("input", function(){
-  toggle_x("who_informed")
-  this.value = this.value.replace(/[^a-zA-Z ]/,"")
-  var values = this.value.split(" ")
-  if(values.length > 0){
-    this.value = values.map((value)=>{
-      return value.charAt(0).toUpperCase()+value.slice(1,value.length)
-    }).join(" ")
-  }
-})
-
-
 const operators_list = document.getElementById("operators_list")
 create_options(operators_list, operators)
 
@@ -62,12 +27,50 @@ operator.addEventListener("focusout", function(){
   }
 })
 
+const options_informed = document.getElementsByClassName("informed")
+const who_informed = document.getElementById("who_informed")
+supervision.addEventListener("click", function(){
+  if(who_informed.classList.contains("open")){
+    return supervision.blur()
+  }
+  who_informed.classList.toggle("open")
+})
+
+supervision.addEventListener("focusout", function(){
+  this.value = this.value.trim()
+  for(var option of options_informed){
+    option.onclick = function(){
+      supervision.value = this.textContent
+      who_informed.classList.remove("open")
+      toggle_x("who_informed")
+      return table.focus()
+    }
+  }
+  setTimeout(function(){
+    who_informed.classList.remove("open")
+  },100)
+})
+
+supervision.addEventListener("input", function(){
+  toggle_x("who_informed")
+  this.value = this.value.replace(/[^a-zA-Z ]/,"")
+  var values = this.value.split(" ")
+  if(values.length > 0){
+    this.value = values.map((value)=>{
+      return value.charAt(0).toUpperCase()+value.slice(1,value.length)
+    }).join(" ")
+  }
+})
+
 const directions = document.getElementById('directions')
 create_options(directions, activies)
 
 const box_direction = document.getElementById("box_direction")
 const direction = document.getElementById("direction")
 direction.addEventListener("click", function(){
+  if(box_direction.classList.contains("open")){
+    return direction.blur()
+  }
   box_direction.classList.add("open")
 })
 
@@ -140,10 +143,20 @@ create_options(list_events, events)
 
 const box_event = document.getElementById("box_event")
 const event = document.getElementById("event")
-event.addEventListener("focus", function(){
-  box_event.classList.add("open")
-  check_event(this.value)
+
+event.addEventListener("click", function(){
+  if(box_event.classList.contains("open")){
+    return event.blur()
+  }
+  setTimeout(()=>{
+    box_event.classList.add("open")
+  }, 100)
 })
+
+event.addEventListener("focus", function(){
+  return check_event(this.value)
+})
+
 event.addEventListener("input", function(){
   box_event.classList.add("open")
   toggle_x("box_event")
@@ -166,11 +179,10 @@ event.addEventListener("focusout", function(){
       return check_event(this.textContent)
     }
   }
-  setTimeout(function(){
+  setTimeout(()=>{
     box_event.classList.remove("open")
-  },100)
+  }, 50)
 })
-
 
 const row_problems = document.getElementById("row_problems")
 const box_problems = document.getElementById("box_problems")
