@@ -68,10 +68,10 @@ const box_direction = document.getElementById("box_direction")
 const direction = document.getElementById("direction")
 direction.addEventListener("click", function(){
   box_direction.classList.add("open")
-  
 })
 
 direction.addEventListener('input', function(){
+  toggle_x("box_direction")
   this.value = this.value.replace(/[^a-zA-Z]/, "").toUpperCase()
   create_options(directions, autocomplete(this.value, activies))
   if(directions.childElementCount == 1){
@@ -87,6 +87,7 @@ direction.addEventListener("focusout", function(){
     option.onclick = function() {
       direction.value = this.textContent
       box_direction.classList.remove("open")
+      toggle_x("box_direction")
       return event.focus()
     }
   }
