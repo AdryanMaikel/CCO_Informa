@@ -35,8 +35,10 @@ continued.addEventListener("click", function(){
   continued.classList.toggle("active")
   box_continued.classList.toggle("open")
   if(!box_continued.classList.contains("open")){
+    input_continued.toggleAttribute("disabled")
     return local.focus()
   }
+  input_continued.toggleAttribute("disabled")
   return input_continued.focus()
 })
 
