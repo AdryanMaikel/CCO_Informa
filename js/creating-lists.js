@@ -1,4 +1,38 @@
-import { activies, events, motives , problems, operators, create_options, autocomplete } from "./data.js"
+import { activies, events, motives , problems, operators, create_options, autocomplete, toggle_x } from "./data.js"
+
+const options_informed = document.getElementsByClassName("informed")
+const who_informed = document.getElementById("who_informed")
+supervision.addEventListener("click", function(){
+  if(who_informed.classList.contains("open")){
+    supervision.blur()
+  }
+  who_informed.classList.toggle("open")
+})
+
+supervision.addEventListener("focusout", function(){
+  for(var option of options_informed){
+    option.onclick = function(){
+      supervision.value = this.textContent
+      who_informed.classList.remove("open")
+      toggle_x("who_informed")
+      return table.focus()
+    }
+  }
+  setTimeout(function(){
+    who_informed.classList.remove("open")
+  },100)
+})
+supervision.addEventListener("input", function(){
+  toggle_x("who_informed")
+  this.value = this.value.replace(/[^a-zA-Z ]/,"")
+  var values = this.value.split(" ")
+  if(values.length > 0){
+    this.value = values.map((value)=>{
+      return value.charAt(0).toUpperCase()+value.slice(1,value.length)
+    }).join(" ")
+  }
+})
+
 
 const operators_list = document.getElementById("operators_list")
 create_options(operators_list, operators)

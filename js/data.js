@@ -74,16 +74,33 @@ const operators = [
   "Leandro"
 ]
 
-function create_options(list, array){
+const create_options = (list, array) => {
   return list.innerHTML = `${array.map((index)=>{
     return `<li class="option">${index}</li>`
   }).join("")}`
 }
 
-function autocomplete(input, array) {
+const autocomplete = (input, array) => {
   return array.filter((value)=>{
     return value.toLowerCase().includes(input.toLowerCase())
   })
 }
 
-export{ activies, events, motives, problems, operators, create_options, autocomplete }
+const toggle_x = (pai) => {
+  const open = document.querySelector(`#${pai} ~ .box.mini.x`)
+  const input = document.querySelector(`#${pai} input`)
+  if(input.value == ""){
+    return open.classList.remove("active")
+  }else{
+    open.classList.add("active")
+    open.addEventListener("click", function(){
+      input.value = ""
+      open.classList.remove("active")
+      return input.focus()
+    })
+  }
+}
+
+
+
+export{ activies, events, motives, problems, operators, create_options, autocomplete, toggle_x }

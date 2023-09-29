@@ -5,53 +5,17 @@ informed.addEventListener("click", function(){
   supervision.focus()
 })
 
-const open_remove_x = (pai) => {
-  const open = document.querySelector(`#${pai} ~ .box.mini.x`)
-  const input = document.querySelector(`#${pai} input`)
-  if(input.value == ""){
-    return open.classList.remove("active")
-  }else{
-    open.classList.add("active")
-    open.addEventListener("click", function(){
-      input.value = ""
-      open.classList.remove("active")
-      return input.focus()
-    })
-  }
-}
-const who_informed = document.getElementById("who_informed")
-supervision.addEventListener("click", function(){
-  who_informed.classList.toggle("open")
-})
-supervision.addEventListener("blur", function(){
-  for(var option of options_informed){
-    option.onclick = function(){
-      supervision.value = this.textContent
-      who_informed.classList.remove("open")
-      open_remove_x("who_informed")
-      return table.focus()
-    }
-  }
-  setTimeout(function(){
-    who_informed.classList.remove("open")
-  },100)
-})
-supervision.addEventListener("input", function(){
-  open_remove_x("who_informed")
-})
-const options_informed = document.getElementsByClassName("informed")
-const box_supervisor = document.getElementById("box_supervisor")
-
-
-
 const replace = document.getElementById("replace")
 const box_car_two = document.getElementById("box_car_two")
+const car_two = document.getElementById("car_two")
 replace.addEventListener("click", function(){
   replace.classList.toggle("active")
   box_car_two.classList.toggle("active")
   if(box_car_two.classList.contains("active")){
+    car_two.toggleAttribute("disabled")
     return car_two.focus()
   }
+  car_two.toggleAttribute("disabled")
   return line.focus()
 })
 
@@ -76,20 +40,19 @@ continued.addEventListener("click", function(){
   return input_continued.focus()
 })
 
-supervision.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z] /,"")})
+supervision.addEventListener("input", function(){})
 
 table.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z0-9]/,"").toUpperCase()})
 table.addEventListener("focusout", function(){
-  if(this.value.indexOf("/")>=1 || this.value.length < 3){
-    return
-  }
-  result = this.value.split("").reverse().slice(0,3)
-  result = this.value.split("").reverse().slice(3,this.value.length+1).reverse().join("")+"/"+result.reverse().join("")
-  this.value = result
+  if(this.value.indexOf("/")>=1 || this.value.length < 3){return}//Para não ficar colocando barras 
+  var value = this.value.split("")
+  return this.value = value.slice(0,this.value.length-3).join("")+"/"+value.slice(this.value.length-3,this.value.length+1).join("")
 })
 
-input_car.addEventListener("input", function(){this.value = this.value.replace(/[^0-9]/,"")})
-car_two.addEventListener("input", function(){this.value = this.value.replace(/[^0-9]/,"")})
+const cars = document.getElementsByClassName("car")
+for(var car of cars){
+  car.addEventListener("input", function(){this.value = this.value.replace(/[^0-9]/,"")})
+}
 line.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z0-9]/,"").toUpperCase()})
 hour.addEventListener("input", function(){
   this.value = this.value.replace(/[^0-9:]/,"").toUpperCase()
