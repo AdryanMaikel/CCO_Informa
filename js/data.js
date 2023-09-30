@@ -1,3 +1,9 @@
+const supervisions = [
+  "Navegantes",
+  "Nortran",
+  "Sopal"
+]
+
 const activies = [
   "BC",
   "CB",
@@ -151,8 +157,6 @@ function check_motive(input_motive) {
     case "Validador/ Roleta":
       row_roullet_and_validator.classList.add("open")
       return validator.focus()
-    default:
-      break;
   }
 }
 
@@ -198,17 +202,24 @@ input.addEventListener("input", function(){
   toggle_x(father)
   if(father == "box_event")
     this.value = this.value.replace(/[^a-zA-Z ]/,"").toLowerCase()
-
+  else if(father == "box_motive" || father == "box_problems")
+    this.value = this.value.replace(/[^a-zA-Záçãâ ]/,"").toLowerCase()
+  else if(father == "box_direction")
+    this.value = this.value.replace(/[^a-zA-Z]/,"").toUpperCase()
+  else if(father == "who_informed")
+    {return}
   create_options(list, autocomplete(this.value, array))
   if(list.childElementCount == 1){
     this.value = list.firstChild.textContent
     box.classList.remove("open")
-    if(father == "box_event")
+    if(father == "box_direction")
+      window.document.getElementById("event").focus()
+    else if(father == "box_event")
       check_event(this.value)
     else if(father == "box_motive")
       check_motive(this.value)
-    else
-      return input.blur()
+    else if(father == "box_problems")
+      check_problem(this.value)
   }
 })
 
@@ -229,9 +240,7 @@ input.addEventListener("focusout", function(){
   }
   setTimeout(()=>{
     box.classList.remove("open")
-  }, 100)
-})
-
+  }, 100)})
 }
 
-export{ activies, events, motives, problems, operators, create_options, autocomplete, toggle_x, input }
+export{ supervisions, activies, events, motives, problems, operators, input }

@@ -35,6 +35,15 @@ header a, header i.fa-link, header .fa-chevron-down{color: var(--third);transiti
 header a:hover, header a:hover i.fa-link{color: var(--primary);transition: color .3s}
 header a .box{height: 20px;}
 header .row.header{padding: 10px 0}
+header .box.mini.trash.surge{
+  top: 52px;
+  position: absolute;
+  transform: translate(100px, 0);
+  background-color: var(--blue);
+}
+header .box.mini.trash.surge.active{
+  transform: translate(187px, 0);
+}
 figure{height: 50px}
 img{height: 100%}
 h1{display: none}
@@ -78,7 +87,8 @@ div.row{
     left: 0;
   }
 }
-#box_event,#box_direction,#box_motive{
+#box_operator{position: relative}
+#box_event,#box_direction,#box_motive,#box_problems,#box_operator{
   z-index: 2;
 }
 .box{
@@ -126,6 +136,7 @@ ul.list{
   position: absolute;
   background-color: var(--primary);
   box-shadow: none}
+#operators_list{z-index: 11}
 #who_informed ~ ul.list{left: 130px;z-index: 9}
 #box_direction ~ ul.list{left: 177px;z-index: 8;min-width: 33px;max-height: 300px;overflow: overlay}
 #box_event ~ ul.list{
@@ -135,7 +146,7 @@ ul.list{
 #box_motive ~ ul.list{
   min-width: 175px;
   transform: translate(35%, 30px)}
-#box_problems ~ ul.list{transform: translate(85px, 30px)}
+#box_problems ~ ul.list{transform: translate(66px, 30px)}
 #list_problems{min-width: 218px}
 #box_motive ~ ul.list, #box_problems ~ ul.list{
   z-index: 4;max-height: 300px;
