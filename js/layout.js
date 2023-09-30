@@ -35,8 +35,10 @@ continued.addEventListener("click", function(){
   continued.classList.toggle("active")
   box_continued.classList.toggle("open")
   if(!box_continued.classList.contains("open")){
+    input_continued.toggleAttribute("disabled")
     return local.focus()
   }
+  input_continued.toggleAttribute("disabled")
   return input_continued.focus()
 })
 
@@ -51,21 +53,37 @@ table.addEventListener("focusout", function(){
 
 const cars = document.getElementsByClassName("car")
 for(var car of cars){
-  car.addEventListener("input", function(){this.value = this.value.replace(/[^0-9]/,"")})
+  car.addEventListener("input", function(){
+    this.value = this.value.replace(/[^0-9]/,"")
+    if(this.value.length == 4){
+      if(replace.classList.contains("active"))
+        return car_two.focus()
+      else
+        return line.focus()
+    }
+  })
 }
 line.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z0-9]/,"").toUpperCase()})
 hour.addEventListener("input", function(){
-  this.value = this.value.replace(/[^0-9:]/,"").toUpperCase()
-  if(hour.value.length == 4){
-    hour.value = hour.value.slice(0, 2) + ":" + hour.value.slice(2, 4)
+  this.value = this.value.replace(/[^0-9:]/,"")
+  if(hour.value.length == 2)
+    return this.value += ":"
+  else if(hour.value.length == 5)
     return direction.focus()
-  }
+  
+  // if(!hour.value.split("").includes(":")) {
+  //   if(hour.value.length == 4){
+  //     hour.value = hour.value.slice(0, 2) + ":" + hour.value.slice(2, 4)
+  //     return direction.focus()
+  //   }
+  // }else{
+  //   if(hour.value.length == 5){
+  //     return direction.focus()
+  //   }
+  // }
 })
 // hour.addEventListener("blur", function() {
 // })
-const input_event = document.getElementById("event")
-input_event.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z ]/,"").toUpperCase()})
-
 // const box_Operador = document.getElementById("box_Operador")
 // box_Operador.addEventListener("click", function(){
 //   box_Operador.classList.add("open")

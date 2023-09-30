@@ -35,6 +35,15 @@ header a, header i.fa-link, header .fa-chevron-down{color: var(--third);transiti
 header a:hover, header a:hover i.fa-link{color: var(--primary);transition: color .3s}
 header a .box{height: 20px;}
 header .row.header{padding: 10px 0}
+header .box.mini.trash.surge{
+  top: 52px;
+  position: absolute;
+  transform: translate(100px, 0);
+  background-color: var(--blue);
+}
+header .box.mini.trash.surge.active{
+  transform: translate(187px, 0);
+}
 figure{height: 50px}
 img{height: 100%}
 h1{display: none}
@@ -77,6 +86,10 @@ div.row{
     position: relative;
     left: 0;
   }
+}
+#box_operator{position: relative}
+#box_event,#box_direction,#box_motive,#box_problems,#box_operator{
+  z-index: 2;
 }
 .box{
   width: auto;
@@ -123,6 +136,7 @@ ul.list{
   position: absolute;
   background-color: var(--primary);
   box-shadow: none}
+#operators_list{z-index: 11}
 #who_informed ~ ul.list{left: 130px;z-index: 9}
 #box_direction ~ ul.list{left: 177px;z-index: 8;min-width: 33px;max-height: 300px;overflow: overlay}
 #box_event ~ ul.list{
@@ -132,7 +146,7 @@ ul.list{
 #box_motive ~ ul.list{
   min-width: 175px;
   transform: translate(35%, 30px)}
-#box_problems ~ ul.list{transform: translate(85px, 30px)}
+#box_problems ~ ul.list{transform: translate(66px, 30px)}
 #list_problems{min-width: 218px}
 #box_motive ~ ul.list, #box_problems ~ ul.list{
   z-index: 4;max-height: 300px;
@@ -191,9 +205,12 @@ ul.list li.option:hover{background: var(--secondy);border-radius: 8px}
 #continued{width: 50px}
 #continued.open{width: 90px}
 /* div#replace, div#continued */
-.icon_x {color: #ff2424;transition: scale .3s ease-out}
-.mini.x:hover .icon_x{scale: 1.1}
-.mini.x{z-index: initial;margin-left: -5px;padding: 3px}
+.fa-trash-can {color: #ff2424;transition: scale .3s ease-out}
+.mini.trash:hover .fa-trash-can{scale: 1.1}
+.mini.trash{z-index: 1;padding: 0px;margin: 0;margin-top: 4px;width: 0;}
+.mini.trash.active{margin-left: -4px;padding: 4px;width: 15px}
+.mini.trash ~ .align .active{margin-left: -4px; transition: opacity .2s, scale .5s, transform .5s, margin-left .5s ease;}
+.mini.trash.active ~ .align .active{margin-left: 0px; transition: opacity .2s, scale .5s, transform .5s, margin-left .5s ease;}
 .mini{margin-top: 4px;height: 22px;z-index: 7}
 label#box_car_two,#box_input_local{z-index: 6}
 div#continued{z-index: 5}
@@ -205,7 +222,6 @@ div.row.revel{
   overflow: hidden}
 #row_roullet_and_validator.open{height: 42px;transition: height .5s}
 div.row.revel.open{height: 38px;transition: height .5s}
-div.row.revel.open ~ div.row.revel ~ div.row#row_roullet_and_validator,
 div.row.revel ~ div.row.revel ~ div.row#row_motive{margin-top: -8px}
 div.row.revel.open ~ div.row.revel ~ div.row#row_motive,
 div.row.revel ~ #row_congestion,div.row.revel ~ #row_tripulation,
