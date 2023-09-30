@@ -258,32 +258,34 @@ input("box_motive", motives)
 const list_problems = document.getElementById("list_problems")
 create_options(list_problems, problems)
 
-problem.addEventListener("focus", function(){
-  box_problems.classList.toggle("open")
-  problem.addEventListener("input", function(){
-    box_problems.classList.add("open")
-    this.value = this.value.replace(/[0-9]/g, "")
-    create_options(list_problems, autocomplete(this.value, problems))
-    if(list_problems.childElementCount == 1){
-      this.value = list_problems.lastChild.textContent
-      box_problems.classList.remove("open")
-      if(operator.value == ""){
-        return operator.focus()
-      }else{
-        return table.focus()
-      }
-    }
-  })
-})
-problem.addEventListener("focusout", function(){
-  const problems_options = document.querySelectorAll("#list_problems .option")
-  for(var option of problems_options){
-    option.onclick = function(){
-      problem.value = this.textContent
-      box_problems.classList.remove("open")
-    }
-  }
-})
+input("box_problems", problems)
+
+// problem.addEventListener("focus", function(){
+//   box_problems.classList.toggle("open")
+//   problem.addEventListener("input", function(){
+//     box_problems.classList.add("open")
+//     this.value = this.value.replace(/[0-9]/g, "")
+//     create_options(list_problems, autocomplete(this.value, problems))
+//     if(list_problems.childElementCount == 1){
+//       this.value = list_problems.lastChild.textContent
+//       box_problems.classList.remove("open")
+//       if(operator.value == ""){
+//         return operator.focus()
+//       }else{
+//         return table.focus()
+//       }
+//     }
+//   })
+// })
+// problem.addEventListener("focusout", function(){
+//   const problems_options = document.querySelectorAll("#list_problems .option")
+//   for(var option of problems_options){
+//     option.onclick = function(){
+//       problem.value = this.textContent
+//       box_problems.classList.remove("open")
+//     }
+//   }
+// })
 
 // const list_operadores = document.getElementById("list_operadores")
 // create_options(list_operadores, operators)

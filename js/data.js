@@ -154,7 +154,6 @@ function check_motive(input_motive) {
     default:
       break;
   }
-  return text_cco_informa.focus()
 }
 
 const toggle_x = (father) => {
@@ -171,7 +170,6 @@ const toggle_x = (father) => {
         check_event(input.value)
       else if(father == "box_motive")
         check_motive(input.value)
-
       return input.focus()
     })
   }
@@ -206,11 +204,11 @@ input.addEventListener("input", function(){
     this.value = list.firstChild.textContent
     box.classList.remove("open")
     if(father == "box_event")
-      return check_event(this.value)
+      check_event(this.value)
     else if(father == "box_motive")
-      return check_motive(this.value)
+      check_motive(this.value)
     else
-      return
+      return input.blur()
   }
 })
 
