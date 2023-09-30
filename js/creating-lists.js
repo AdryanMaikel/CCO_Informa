@@ -1,4 +1,4 @@
-import { activies, events, motives , problems, operators, create_options, autocomplete, toggle_x } from "./data.js"
+import { activies, events, motives , problems, operators, create_options, autocomplete, toggle_x, input } from "./data.js"
 
 const operators_list = document.getElementById("operators_list")
 create_options(operators_list, operators)
@@ -100,90 +100,97 @@ direction.addEventListener("focusout", function(){
   },100)
 })
 
-const box_min = document.getElementById("box_min")
-const min = document.getElementById("min")
-const box_local = document.getElementById("box_local")
-const row_local = document.getElementById("row_local")
-const interrupted_text = document.getElementById("interrupted_text")
-const continued = document.getElementById("continued")
-const box_continued = document.getElementById("box_continued")
-const local = document.getElementById("local")
-function check_event(event_is) {
-  box_min.classList.remove("active")
-  box_local.classList.remove("active")
-  box_local.classList.remove("open")
-  row_local.classList.remove("open")
-  continued.classList.remove("open")
-  continued.classList.remove("active")
-  box_continued.classList.remove("open")
-  switch (event_is) {
-    case "atrasada":
-      box_min.classList.add("active")
-      return min.focus()
-    case "interrompida":
-      box_local.classList.add("active")
-      interrupted_text.textContent = "n"
-      box_local.classList.add("open")
-      row_local.classList.add("open")
-      continued.classList.add("open")
-      return local.focus()
-    case "perdida":
-      return motive.focus()
-    case "realizada a frente":
-      box_local.classList.add("active")
-      interrupted_text.textContent = "a partir d"
-      box_local.classList.add("open")
-      row_local.classList.add("open")
-      return local.focus()
-  }
-}
+// const box_min = document.getElementById("box_min")
+// const min = document.getElementById("min")
+// const box_local = document.getElementById("box_local")
+// const row_local = document.getElementById("row_local")
+// const interrupted_text = document.getElementById("interrupted_text")
+// const continued = document.getElementById("continued")
+// const box_continued = document.getElementById("box_continued")
+// const local = document.getElementById("local")
+// function check_event(event_is) {
+//   box_min.classList.remove("active")
+//   box_local.classList.remove("active")
+//   box_local.classList.remove("open")
+//   row_local.classList.remove("open")
+//   continued.classList.remove("open")
+//   continued.classList.remove("active")
+//   box_continued.classList.remove("open")
+//   switch (event_is) {
+//     case "atrasada":
+//       box_min.classList.add("active")
+//       return min.focus()
+//     case "interrompida":
+//       box_local.classList.add("active")
+//       interrupted_text.textContent = "n"
+//       box_local.classList.add("open")
+//       row_local.classList.add("open")
+//       continued.classList.add("open")
+//       return local.focus()
+//     case "perdida":
+//       return motive.focus()
+//     case "realizada a frente":
+//       box_local.classList.add("active")
+//       interrupted_text.textContent = "a partir d"
+//       box_local.classList.add("open")
+//       row_local.classList.add("open")
+//       return local.focus()
+//   }
+// }
 
 const list_events = document.getElementById("events")
 create_options(list_events, events)
 
-const box_event = document.getElementById("box_event")
-const event = document.getElementById("event")
+input("box_event", events)
+/*
+// const box_event = document.getElementById("box_event")
+// const event = document.getElementById("event")
 
-event.addEventListener("click", function(){
-  if(box_event.classList.contains("open")){
-    return event.blur()
-  }
-  setTimeout(()=>{
-    create_options(list_events, events)
-    box_event.classList.add("open")
-  }, 100)
-})
+// event.addEventListener("click", function(){
+//   if(box_event.classList.contains("open")){
+//     return event.blur()
+//   }
+//   setTimeout(()=>{
+//     create_options(list_events, events)
+//     box_event.classList.add("open")
+//   }, 150)
+// })
 
-event.addEventListener("focus", function(){
-  return check_event(this.value)
-})
+// event.addEventListener("focus", function(){
+//   return check_event(this.value)
+// })
 
-event.addEventListener("input", function(){
-  box_event.classList.add("open")
-  toggle_x("box_event")
-  this.value = this.value.replace(/[^a-zA-Z ]/,"").toLowerCase()
-  create_options(list_events, autocomplete(this.value, events))
-  if(list_events.childElementCount == 1){
-    this.value = list_events.firstChild.textContent
-    box_event.classList.remove("open")
-    return check_event(this.value)
-  }
-})
+// event.addEventListener("input", function(){
+//   box_event.classList.add("open")
+//   toggle_x("box_event")
+//   this.value = this.value.replace(/[^a-zA-Z ]/,"").toLowerCase()
+//   create_options(list_events, autocomplete(this.value, events))
+//   if(list_events.childElementCount == 1){
+//     this.value = list_events.firstChild.textContent
+//     box_event.classList.remove("open")
+//     return check_event(this.value)
+//   }
+// })
 
-event.addEventListener("focusout", function(){
-  const events_options = document.querySelectorAll("#events .option")
-  for(var option of events_options){
-    option.onclick = function(){
-      event.value = this.textContent
-      box_event.classList.remove("open")
-      toggle_x("box_event")
-      return check_event(this.textContent)
-    }
-  }
-  setTimeout(()=>{
-    box_event.classList.remove("open")
-  }, 50)
-})
+// event.addEventListener("focusout", function(){
+//   const events_options = document.querySelectorAll("#events .option")
+//   for(var option of events_options){
+//     option.onclick = function(){
+//       event.value = this.textContent
+//       box_event.classList.remove("open")
+//       toggle_x("box_event")
+//       return check_event(this.textContent)
+//     }
+//   }
+//   setTimeout(()=>{
+//     box_event.classList.remove("open")
+//   }, 100)
+// })
+*/
+
+const list_motives = document.getElementById("list_motives")
+create_options(list_motives, motives)
+
 
 const row_problems = document.getElementById("row_problems")
 const box_problems = document.getElementById("box_problems")
@@ -217,8 +224,7 @@ function check_motive(input_motive) {
   return text_cco_informa.focus()
 }
 
-const list_motives = document.getElementById("list_motives")
-create_options(list_motives, motives)
+
 const box_motive = document.getElementById("box_motive")
 const motive = document.getElementById("motive")
 motive.addEventListener("focus", function(){
