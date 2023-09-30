@@ -74,6 +74,8 @@ direction.addEventListener("click", function(){
   box_direction.classList.add("open")
 })
 
+const event = document.getElementById("event")
+
 direction.addEventListener('input', function(){
   toggle_x("box_direction")
   this.value = this.value.replace(/[^a-zA-Z]/, "").toUpperCase()
@@ -192,65 +194,66 @@ const list_motives = document.getElementById("list_motives")
 create_options(list_motives, motives)
 
 
-const row_problems = document.getElementById("row_problems")
-const box_problems = document.getElementById("box_problems")
-const problem = document.getElementById("problem")
-const row_congestion = document.getElementById("row_congestion")
-const congestion_locale = document.getElementById("congestion_locale")
-const row_tripulation = document.getElementById("row_tripulation")
-const row_roullet_and_validator = document.getElementById("row_roullet_and_validator")
-function check_motive(input_motive) {
-  row_problems.classList.remove("open")
-  box_problems.classList.remove("open")
-  row_congestion.classList.remove("open")
-  row_tripulation.classList.remove("open")
-  row_roullet_and_validator.classList.remove("open")
-  switch (input_motive) {
-    case "Problemas mecânicos":
-      row_problems.classList.add("open")
-      return problem.focus()
-    case "Congestionamento":
-      row_congestion.classList.add("open")
-      return congestion_locale.focus()
-    case "Falta de Tripulação":
-      row_tripulation.classList.add("open")
-      return motorista.focus()
-    case "Validador/ Roleta":
-      row_roullet_and_validator.classList.add("open")
-      return validator.focus()
-    default:
-      break;
-  }
-  return text_cco_informa.focus()
-}
+// const row_problems = document.getElementById("row_problems")
+// const box_problems = document.getElementById("box_problems")
+// const problem = document.getElementById("problem")
+// const row_congestion = document.getElementById("row_congestion")
+// const congestion_locale = document.getElementById("congestion_locale")
+// const row_tripulation = document.getElementById("row_tripulation")
+// const row_roullet_and_validator = document.getElementById("row_roullet_and_validator")
+// function check_motive(input_motive) {
+//   row_problems.classList.remove("open")
+//   box_problems.classList.remove("open")
+//   row_congestion.classList.remove("open")
+//   row_tripulation.classList.remove("open")
+//   row_roullet_and_validator.classList.remove("open")
+//   switch (input_motive) {
+//     case "Problemas mecânicos":
+//       row_problems.classList.add("open")
+//       return problem.focus()
+//     case "Congestionamento":
+//       row_congestion.classList.add("open")
+//       return congestion_locale.focus()
+//     case "Falta de Tripulação":
+//       row_tripulation.classList.add("open")
+//       return motorista.focus()
+//     case "Validador/ Roleta":
+//       row_roullet_and_validator.classList.add("open")
+//       return validator.focus()
+//     default:
+//       break;
+//   }
+//   return text_cco_informa.focus()
+// }
 
+input("box_motive", motives)
 
-const box_motive = document.getElementById("box_motive")
-const motive = document.getElementById("motive")
-motive.addEventListener("focus", function(){
-  box_motive.classList.toggle("open")
-  motive.addEventListener("input", function(){
-    box_motive.classList.add("open")
-    this.value = this.value.replace(/[0-9]/g, "")
-    create_options(list_motives, autocomplete(this.value, motives))
-    if(list_motives.childElementCount == 1){
-      this.value = list_motives.lastChild.textContent
-      box_motive.classList.remove("open")
-      return check_motive(this.value)
-    }
-  })
-})
+// const box_motive = document.getElementById("box_motive")
+// const motive = document.getElementById("motive")
+// motive.addEventListener("focus", function(){
+//   box_motive.classList.toggle("open")
+//   motive.addEventListener("input", function(){
+//     box_motive.classList.add("open")
+//     this.value = this.value.replace(/[0-9]/g, "")
+//     create_options(list_motives, autocomplete(this.value, motives))
+//     if(list_motives.childElementCount == 1){
+//       this.value = list_motives.lastChild.textContent
+//       box_motive.classList.remove("open")
+//       return check_motive(this.value)
+//     }
+//   })
+// })
 
-motive.addEventListener("focusout", function(){
-  const motives_options = document.querySelectorAll("#list_motives .option")
-  for(var option of motives_options){
-    option.onclick = function(){
-      motive.value = this.textContent
-      box_motive.classList.remove("open")
-      check_motive(this.textContent)
-    }
-  }
-})
+// motive.addEventListener("focusout", function(){
+//   const motives_options = document.querySelectorAll("#list_motives .option")
+//   for(var option of motives_options){
+//     option.onclick = function(){
+//       motive.value = this.textContent
+//       box_motive.classList.remove("open")
+//       check_motive(this.textContent)
+//     }
+//   }
+// })
 
 const list_problems = document.getElementById("list_problems")
 create_options(list_problems, problems)

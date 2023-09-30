@@ -78,7 +78,7 @@ div.row{
     left: 0;
   }
 }
-#box_event,#box_direction{
+#box_event,#box_direction,#box_motive{
   z-index: 2;
 }
 .box{
@@ -211,7 +211,6 @@ div.row.revel{
   overflow: hidden}
 #row_roullet_and_validator.open{height: 42px;transition: height .5s}
 div.row.revel.open{height: 38px;transition: height .5s}
-div.row.revel.open ~ div.row.revel ~ div.row#row_roullet_and_validator,
 div.row.revel ~ div.row.revel ~ div.row#row_motive{margin-top: -8px}
 div.row.revel.open ~ div.row.revel ~ div.row#row_motive,
 div.row.revel ~ #row_congestion,div.row.revel ~ #row_tripulation,

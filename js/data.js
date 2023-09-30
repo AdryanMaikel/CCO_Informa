@@ -86,22 +86,6 @@ const autocomplete = (input, array) => {
   })
 }
 
-const toggle_x = (father) => {
-  const open = document.querySelector(`#${father} ~ .box.mini.trash`)
-  const input = document.querySelector(`#${father} input`)
-  if(input.value == ""){
-    return open.classList.remove("active")
-  }else{
-    open.classList.add("active")
-    open.addEventListener("click", function(){
-      input.value = ""
-      open.classList.remove("active")
-      return input.focus()
-    })
-  }
-}
-
-
 const box_min = document.getElementById("box_min")
 const min = document.getElementById("min")
 const box_local = document.getElementById("box_local")
@@ -141,6 +125,57 @@ function check_event(event_is) {
   }
 }
 
+const row_problems = document.getElementById("row_problems")
+const box_problems = document.getElementById("box_problems")
+const problem = document.getElementById("problem")
+const row_congestion = document.getElementById("row_congestion")
+const congestion_locale = document.getElementById("congestion_locale")
+const row_tripulation = document.getElementById("row_tripulation")
+const row_roullet_and_validator = document.getElementById("row_roullet_and_validator")
+function check_motive(input_motive) {
+  row_problems.classList.remove("open")
+  box_problems.classList.remove("open")
+  row_congestion.classList.remove("open")
+  row_tripulation.classList.remove("open")
+  row_roullet_and_validator.classList.remove("open")
+  switch (input_motive) {
+    case "Problemas mecânicos":
+      row_problems.classList.add("open")
+      return problem.focus()
+    case "Congestionamento":
+      row_congestion.classList.add("open")
+      return congestion_locale.focus()
+    case "Falta de Tripulação":
+      row_tripulation.classList.add("open")
+      return motorista.focus()
+    case "Validador/ Roleta":
+      row_roullet_and_validator.classList.add("open")
+      return validator.focus()
+    default:
+      break;
+  }
+  return text_cco_informa.focus()
+}
+
+const toggle_x = (father) => {
+  const open = document.querySelector(`#${father} ~ .box.mini.trash`)
+  const input = document.querySelector(`#${father} input`)
+  if(input.value == ""){
+    return open.classList.remove("active")
+  }else{
+    open.classList.add("active")
+    open.addEventListener("click", function(){
+      input.value = ""
+      open.classList.remove("active")
+      if(father == "box_event")
+        check_event(input.value)
+      else if(father == "box_motive")
+        check_motive(input.value)
+
+      return input.focus()
+    })
+  }
+}
 
 const input = (father, array) => {
 var box = document.querySelector(`#${father}`)
@@ -156,11 +191,8 @@ input.addEventListener("click", function(){
   }, 150)
   setTimeout(()=>{
     box.classList.add("open")
+    return input.focus()
   }, 151)
-})
-
-input.addEventListener("focus", function(){
-  return check_event(this.value)
 })
 
 input.addEventListener("input", function(){
@@ -173,7 +205,12 @@ input.addEventListener("input", function(){
   if(list.childElementCount == 1){
     this.value = list.firstChild.textContent
     box.classList.remove("open")
-    return check_event(this.value)
+    if(father == "box_event")
+      return check_event(this.value)
+    else if(father == "box_motive")
+      return check_motive(this.value)
+    else
+      return
   }
 })
 
@@ -184,7 +221,12 @@ input.addEventListener("focusout", function(){
       input.value = this.textContent
       box.classList.remove("open")
       toggle_x(father)
-      return check_event(this.textContent)
+      if(father == "box_event")
+        return check_event(this.textContent)
+      else if(father == "box_motive")
+        return check_motive(this.textContent)
+      else
+        return
     }
   }
   setTimeout(()=>{
