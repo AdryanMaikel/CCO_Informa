@@ -133,7 +133,12 @@ function generate_cco_inform(){
           result_motive += ""
         break;
         case "Carroceria - Limpador / Espelho":
-          result_motive += "Problemas no limpador/espelho do carro "+input_car
+          result_motive += "Problemas no "
+          if(document.getElementById("Espelho").checked())
+            result_motive += "limpador" 
+          else
+            result_motive += "espelho"
+          result_motive += " do carro "+input_car
         break;
         case "Carroceria - Outros":
           result_motive += ""
@@ -187,7 +192,12 @@ function generate_cco_inform(){
           result_motive += "Carro "+input_car+" estar atravessado"
         break;
         case "Suspensão - Embreagem / Caixa":
-          result_motive += "Problemas na embreagem do carro "+input_car
+          result_motive += "Problemas na "
+          if(document.getElementById("Embreagem").checked())
+            result_motive += "embreagem"
+          else
+            result_event += "caixa das marchas"
+          result_motive += " do carro "+input_car
         break;
         case "Suspensão - Freio":
           result_motive += "Problemas nos freios do carro "+input_car
