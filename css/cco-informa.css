@@ -66,8 +66,10 @@ header .fa-chevron-down,.fa-chevron-down, #box_problems .fa-chevron-down, .fa-ar
 #box_problems.open i{rotate: 180deg; transition: rotate .7s ease-in-out} */
 main{
   width: 80%;
+  min-height: 723px;
   position: relative;
   left: 40px;
+  padding: 0 0 45px 0;
 }
 section{width: 330px;padding: 5px}
 section#form{background: var(--secondy);font-size: 13px;font-family: 'Lora', serif}
@@ -225,8 +227,10 @@ div.row.revel.open{height: 38px;transition: height .5s}
 div.row.revel ~ div.row.revel ~ div.row#row_motive{margin-top: -8px}
 div.row.revel.open ~ div.row.revel ~ div.row#row_motive,
 div.row.revel ~ #row_congestion,div.row.revel ~ #row_tripulation,
-div.row.revel ~ #row_roullet_and_validator{margin-top: -4px}
-div.row.revel.open ~ div.row.revel.open ~ div.row#row_motive{margin-top: 0}
+div.row.revel ~ #row_roullet_and_validator,
+div.row.revel#row_limpador_espelho{margin-top: -4px}
+div.row.revel.open ~ div.row.revel.open ~ div.row#row_motive,
+div.row.revel.open#row_limpador_espelho{margin-top: 0}
 #form_cco_informa div.row.footer{height: 60px;padding:0}
 div.row.footer{
   height: 25px;padding-bottom: 8px;color: var(--primary);
@@ -274,4 +278,6 @@ textarea#Observação{width: 292px; height: 80px}
 .close{font-size: 22px}
 .fa-paper-plane{color: var(--primary);}
 #form_send_sheets{color: #000000;}
-footer{width: 100%;/* height: 150px; */}
+
+address{font-style: italic;font-weight: bold;text-align: center;height: 20px;color: #fff;padding-top: 20px;}
+footer{width: 100%;position: relative;top: 0;height: 60px;background-color: var(--blue)}
