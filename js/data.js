@@ -138,15 +138,23 @@ const row_congestion = document.getElementById("row_congestion")
 const congestion_locale = document.getElementById("congestion_locale")
 const row_tripulation = document.getElementById("row_tripulation")
 const row_roullet_and_validator = document.getElementById("row_roullet_and_validator")
+const row_limpador_espelho = document.getElementById("row_limpador_espelho")
+const row_embreagem_caixa = document.getElementById("row_embreagem_caixa")  
 function check_motive(input_motive) {
   row_problems.classList.remove("open")
   box_problems.classList.remove("open")
   row_congestion.classList.remove("open")
   row_tripulation.classList.remove("open")
   row_roullet_and_validator.classList.remove("open")
+  row_limpador_espelho.classList.remove("open")
+  row_embreagem_caixa.classList.remove("open")
   switch (input_motive) {
     case "Problemas mecânicos":
       row_problems.classList.add("open")
+      if(problem.value == "Carroceria - Limpador / Espelho")
+        row_limpador_espelho.classList.add("open")
+      else if(problem.value == "Suspensão - Embreagem / Caixa")
+        row_embreagem_caixa.classList.add("open")
       return problem.focus()
     case "Congestionamento":
       row_congestion.classList.add("open")
@@ -160,16 +168,14 @@ function check_motive(input_motive) {
   }
 }
 const check_problem = (value) => {
-  const row_limpador_espelho = document.getElementById("row_limpador_espelho")
-  
   row_limpador_espelho.classList.remove("open")
-  
+  row_embreagem_caixa.classList.remove("open")
   switch (value) {
     case "Carroceria - Limpador / Espelho":
       row_limpador_espelho.classList.add("open")
       break
     case "Suspensão - Embreagem / Caixa":
-      //.classList.add("open")
+      row_embreagem_caixa.classList.add("open")
       break
   }
   return document.getElementById("problem").blur()
