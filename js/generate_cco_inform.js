@@ -134,7 +134,7 @@ function generate_cco_inform(){
         break;
         case "Carroceria - Limpador / Espelho":
           result_motive += "Problemas no "
-          if(document.getElementById("Espelho").checked())
+          if(document.getElementById("Limpador").checked)
             result_motive += "limpador" 
           else
             result_motive += "espelho"
@@ -193,7 +193,7 @@ function generate_cco_inform(){
         break;
         case "Suspensão - Embreagem / Caixa":
           result_motive += "Problemas na "
-          if(document.getElementById("Embreagem").checked())
+          if(document.getElementById("Embreagem").checked)
             result_motive += "embreagem"
           else
             result_event += "caixa das marchas"
