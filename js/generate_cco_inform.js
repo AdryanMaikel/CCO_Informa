@@ -196,7 +196,7 @@ function generate_cco_inform(){
           if(document.getElementById("Embreagem").checked)
             result_motive += "embreagem"
           else
-            result_event += "caixa das marchas"
+            result_motive += "caixa das marchas"
           result_motive += " do carro "+input_car
         break;
         case "Suspensão - Freio":
