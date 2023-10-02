@@ -54,22 +54,13 @@
           </div>
           <label id="who_informed" class="box" for="supervision">
             <i class="fa-solid fa-user icon"></i>
-            <!-- <span id="text_informed">Fiscal</span> -->
             <input type="text" name="supervision" id="supervision" placeholder="Qual?">
             <i class="fa-solid fa-chevron-down icon"></i>
           </label>
-          <ul class="list">
-            <!-- <li class="option informed">Navegantes</li>
-            <li class="option informed">Nortran</li>
-            <li class="option informed">Sopal</li> -->
-          </ul>
+          <ul class="list"></ul>
           <div class="box mini trash surge">
             <i class="fa-regular fa-trash-can icon"></i>
           </div>
-          <!-- <label id="box_supervisor" class="box supervision surge active" for="supervision">
-            <i class="fa-solid fa-user icon"></i>
-            <input type="text" name="supervision" id="supervision" placeholder="Qual?">
-          </label> -->
         </div>
         <div class="row">
           <label id="box_table" class="box" for="table">
@@ -131,7 +122,7 @@
           </div>
         </div>
         <div id="row_local" class="row revel">
-          <label id="box_input_local" class="box surge active" for="local">
+          <label id="box_input_local" class="box" for="local">
             <i class="fa-solid fa-location-dot icon"></i>
             <span id="interrupted_text">A partir d</span>
             <input type="text" name="local" id="local" maxlength="100" placeholder="a Av. Assis Brasil">
@@ -142,7 +133,7 @@
           </div>
         </div>
         <div id="box_continued" class="row revel">
-          <label id="box_input_continued" class="box surge active" for="input_continued">
+          <label id="box_input_continued" class="box" for="input_continued">
             <i class="fa-solid fa-location-dot icon"></i>
             <span>a partir d</span>
             <input type="text" name="input_continued" id="input_continued" placeholder="o terminal Triângulo" disabled>
@@ -160,7 +151,7 @@
           </div>
         </div>
         <div id="row_problems" class="row revel">
-          <label id="box_problems" for="problem" class="box surge active">
+          <label id="box_problems" for="problem" class="box">
             <span>Problema:</span>
             <input type="text" name="problem" id="problem">
             <i class="fa-solid fa-chevron-down icon"></i>
@@ -171,7 +162,7 @@
           </div>
         </div>
         <div id="row_congestion" class="row revel">
-          <label id="box_congestion" for="congestion_locale" class="box surge active">
+          <label id="box_congestion" for="congestion_locale" class="box">
             <i class="fa-solid fa-location-dot icon"></i>
             <span>Onde? n</span>
             <input type="text" name="congestion_locale" id="congestion_locale" placeholder="a Av. Assis Brasil">
@@ -180,13 +171,13 @@
         <div id="row_tripulation" class="row revel">
           <div class="box">
             <span>Qual?</span>
-            <label for="motorista" class="box surge active">
+            <label for="motorista" class="box">
               <i class="fa-solid fa-user icon"></i>
               <input type="radio" name="tripulation" id="motorista" checked>
               <span>Motorista</span>
               <i class="fa-solid fa-check icon"></i>
             </label>
-            <label for="cobrador" class="box surge active">
+            <label for="cobrador" class="box">
               <i class="fa-solid fa-user icon"></i>
               <input type="radio" name="tripulation" id="cobrador">
               <span>Cobrador</span>
@@ -197,14 +188,30 @@
         <div id="row_roullet_and_validator" class="row revel">
           <div class="box">
             <span>Qual?</span>
-            <label for="roullet" class="box surge active">
+            <label for="roullet" class="box">
               <input type="radio" name="roullet_and_validator" id="roullet" checked>
               <span>Roleta</span>
               <i class="fa-solid fa-check icon"></i>
             </label>
-            <label for="validator" class="box surge active">
+            <label for="validator" class="box">
               <input type="radio" name="roullet_and_validator" id="validator">
               <span>Validador</span>
+              <i class="fa-solid fa-check icon"></i>
+            </label>
+          </div>
+        </div>
+        <!-- Carroceria - Limpador / Espelho -->
+        <div id="row_limpador_espelho" class="row revel">
+          <div class="box">
+            <span>Qual?</span>
+            <label for="Limpador" class="box">
+              <input type="radio" name="limpador_espelho" id="Limpador" checked>
+              <span>Limpador</span>
+              <i class="fa-solid fa-check icon"></i>
+            </label>
+            <label for="Espelho" class="box">
+              <input type="radio" name="limpador_espelho" id="Espelho">
+              <span>Espelho</span>
               <i class="fa-solid fa-check icon"></i>
             </label>
           </div>
@@ -308,7 +315,7 @@
     </section>
   </main>
   <footer>
-
+    <address>Feito com <i class="fa-solid fa-heart text_decoration icon"></i> por Adryan do CCO</address>
   </footer>
 </body>
 </html>

@@ -159,6 +159,21 @@ function check_motive(input_motive) {
       return validator.focus()
   }
 }
+const check_problem = (value) => {
+  const row_limpador_espelho = document.getElementById("row_limpador_espelho")
+  
+  row_limpador_espelho.classList.remove("open")
+  
+  switch (value) {
+    case "Carroceria - Limpador / Espelho":
+      row_limpador_espelho.classList.add("open")
+      break
+    case "Suspensão - Embreagem / Caixa":
+      //.classList.add("open")
+      break
+  }
+  return document.getElementById("problem").blur()
+}
 
 const toggle_x = (father) => {
   const open = document.querySelector(`#${father} ~ .box.mini.trash`)
@@ -174,6 +189,8 @@ const toggle_x = (father) => {
         check_event(input.value)
       else if(father == "box_motive")
         check_motive(input.value)
+      else if(father == "box_problems")
+        return check_problem(input.value)
       return input.focus()
     })
   }
@@ -203,7 +220,7 @@ input.addEventListener("input", function(){
   if(father == "box_event")
     this.value = this.value.replace(/[^a-zA-Z ]/,"").toLowerCase()
   else if(father == "box_motive" || father == "box_problems")
-    this.value = this.value.replace(/[^a-zA-Záçãâ ]/,"").toLowerCase()
+    this.value = this.value.replace(/[^a-zA-Záçãâ ]/,"")
   else if(father == "box_direction")
     this.value = this.value.replace(/[^a-zA-Z]/,"").toUpperCase()
   else if(father == "who_informed")
@@ -234,8 +251,9 @@ input.addEventListener("focusout", function(){
         return check_event(this.textContent)
       else if(father == "box_motive")
         return check_motive(this.textContent)
-      else
-        return
+      else if(father == "box_problems")
+        return check_problem(this.textContent)
+      
     }
   }
   setTimeout(()=>{
