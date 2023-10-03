@@ -267,4 +267,22 @@ input.addEventListener("focusout", function(){
   }, 100)})
 }
 
+const cleaning_all = () => {
+  const inputs = document.querySelectorAll("input")
+  for(var input of inputs){
+    input.value = ""
+  }
+  toggle_x("box_operator")
+  toggle_x("who_informed")
+  toggle_x("box_direction")
+  toggle_x("box_event")
+  check_event("")
+  toggle_x("box_motive")
+  check_motive("")
+  toggle_x("box_problems")
+}
+
+const reset_cco_informa = document.getElementById("reset_cco_informa")
+reset_cco_informa.addEventListener("click", cleaning_all)
+
 export{ supervisions, activies, events, motives, problems, operators, input }
