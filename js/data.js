@@ -295,4 +295,4 @@ const cleaning_all = () => {
 const reset_cco_informa = document.getElementById("reset_cco_informa")
 reset_cco_informa.addEventListener("click", cleaning_all)
 
-export{ supervisions, activies, events, motives, problems, operators, input }
+export{ supervisions, activies, events, motives, problems, operators, input, toggle_x }
