@@ -24,7 +24,7 @@ function generate_cco_inform(){
   }else{
     cco_informa += "fiscal "
     if(supervision.value.length > 0){
-      cco_informa += supervision.value[0].toUpperCase()+supervision.value.substring(1)
+      cco_informa += supervision.value
     }
   }
   cco_informa += "\n"

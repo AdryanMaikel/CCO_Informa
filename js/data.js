@@ -229,8 +229,16 @@ input.addEventListener("input", function(){
     this.value = this.value.replace(/[^a-zA-Záçãâ ]/,"")
   else if(father == "box_direction")
     this.value = this.value.replace(/[^a-zA-Z]/,"").toUpperCase()
-  else if(father == "who_informed")
-    {return}
+  else if(father == "who_informed"){
+    this.value = this.value.replace(/[^a-zA-Z ]/,"")
+    var values = this.value.split(" ")
+    if(values.length > 0){
+      this.value = values.map((value)=>{
+        return value.charAt(0).toUpperCase()+value.slice(1,value.length)
+      }).join(" ")
+    }
+    return
+  }
   create_options(list, autocomplete(this.value, array))
   if(list.childElementCount == 1){
     this.value = list.firstChild.textContent
@@ -247,6 +255,9 @@ input.addEventListener("input", function(){
 })
 
 input.addEventListener("focusout", function(){
+  if(father == "who_informed"){
+    input.value = input.value.trim()
+  }
   const options = document.querySelectorAll(`#${father} ~ .list .option`)
   for(var option of options){
     option.onclick = function(){
@@ -259,7 +270,6 @@ input.addEventListener("focusout", function(){
         return check_motive(this.textContent)
       else if(father == "box_problems")
         return check_problem(this.textContent)
-      
     }
   }
   setTimeout(()=>{

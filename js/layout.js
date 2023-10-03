@@ -42,8 +42,6 @@ continued.addEventListener("click", function(){
   return input_continued.focus()
 })
 
-supervision.addEventListener("input", function(){})
-
 table.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z0-9]/,"").toUpperCase()})
 table.addEventListener("focusout", function(){
   if(this.value.indexOf("/")>=1 || this.value.length < 3){return}//Para não ficar colocando barras 
