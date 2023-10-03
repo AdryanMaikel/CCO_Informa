@@ -42,11 +42,22 @@ continued.addEventListener("click", function(){
   return input_continued.focus()
 })
 
-table.addEventListener("input", function(){this.value = this.value.replace(/[^a-zA-Z0-9]/,"").toUpperCase()})
+table.addEventListener("input", function(){
+  this.value = this.value.replace(/[^a-zA-Z0-9]/,"").toUpperCase()
+})
 table.addEventListener("focusout", function(){
   if(this.value.indexOf("/")>=1 || this.value.length < 3){return}//Para não ficar colocando barras 
   var value = this.value.split("")
-  return this.value = value.slice(0,this.value.length-3).join("")+"/"+value.slice(this.value.length-3,this.value.length+1).join("")
+  value = value.slice(0,this.value.length-3).join("")+"/"+value.slice(this.value.length-3,this.value.length+1).join("")
+  var input_line = value.split("/")[0]
+  if(input_line == "661"){
+    line.value = "761"
+  }else if(input_line == "662"){
+    line.value = "762"
+  }else{
+    line.value = input_line
+  }
+  return this.value = value
 })
 
 const cars = document.getElementsByClassName("car")
