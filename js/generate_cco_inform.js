@@ -186,7 +186,7 @@ function generate_cco_inform(){
           result_motive += ""
         break;
         case "Suspensão - Arriada":
-          result_motive += "Problemas na suspenção do carro "+input_car
+          result_motive += "Problemas na suspensão do carro "+input_car
         break;
         case "Suspensão - Carro atravessado":
           result_motive += "Carro "+input_car+" estar atravessado"
