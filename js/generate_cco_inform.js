@@ -278,7 +278,6 @@ const send_sheets = document.getElementById("send_sheets").addEventListener("cli
   }else if(CCO_SHEETS.Sentido == "CB"){
     Sentido.value = "2"
   }else{
-    // console.log(CCO_SHEETS.Sentido)
     Sentido.value = CCO_SHEETS.Sentido
   }
   Ocorrência.value = CCO_SHEETS.Ocorrência
