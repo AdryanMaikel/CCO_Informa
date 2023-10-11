@@ -133,11 +133,10 @@ function generate_cco_inform(){
           result_motive += ""
         break;
         case "Carroceria - Limpador / Espelho":
-          result_motive += "Problemas no "
           if(document.getElementById("Limpador").checked)
-            result_motive += "limpador" 
+            result_motive += "Problemas no limpador" 
           else
-            result_motive += "espelho"
+            result_motive += "Queda do espelho"
           result_motive += " do carro "+input_car
         break;
         case "Carroceria - Outros":
@@ -241,7 +240,8 @@ function generate_cco_inform(){
       input_continued.focus()
     }
   }
-  CCO_SHEETS.Observação = `${result_event}, devido a ${result_motive.toLowerCase()}${replace_car}${continued_journey_text}.`
+  result_motive = result_motive[0].toLowerCase() + result_motive.slice(1)
+  CCO_SHEETS.Observação = `${result_event}, devido a ${result_motive}${replace_car}${continued_journey_text}.`
   
   cco_informa += "\n\n"
   return cco_informa
@@ -278,7 +278,6 @@ const send_sheets = document.getElementById("send_sheets").addEventListener("cli
   }else if(CCO_SHEETS.Sentido == "CB"){
     Sentido.value = "2"
   }else{
-    console.log(CCO_SHEETS.Sentido)
     Sentido.value = CCO_SHEETS.Sentido
   }
   Ocorrência.value = CCO_SHEETS.Ocorrência
