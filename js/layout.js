@@ -130,3 +130,9 @@ hour.addEventListener("input", function(){
   else if(hour.value.length == 5)
     return direction.focus()
 })
+min.addEventListener("input", function(){
+  this.value = this.value.replace(/[^0-9]/, "")
+  if(this.value.length == 2){
+    return motive.focus()
+  }
+})
