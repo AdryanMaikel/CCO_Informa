@@ -129,21 +129,4 @@ hour.addEventListener("input", function(){
     return this.value += ":"
   else if(hour.value.length == 5)
     return direction.focus()
-  
-  // if(!hour.value.split("").includes(":")) {
-  //   if(hour.value.length == 4){
-  //     hour.value = hour.value.slice(0, 2) + ":" + hour.value.slice(2, 4)
-  //     return direction.focus()
-  //   }
-  // }else{
-  //   if(hour.value.length == 5){
-  //     return direction.focus()
-  //   }
-  // }
 })
-// hour.addEventListener("blur", function() {
-// })
-// const box_Operador = document.getElementById("box_Operador")
-// box_Operador.addEventListener("click", function(){
-//   box_Operador.classList.add("open")
-// })
