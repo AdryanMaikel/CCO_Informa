@@ -20,7 +20,6 @@ body{
   background: var(--primary);
   overflow-x: hidden !important;
   font-family: 'Lora', sans-serif}
-/* body.dark{background: var(--blue)} */
 header{
   width: 100%; z-index: 10;
   position: relative; font-size: 15px;
@@ -62,24 +61,24 @@ h1{display: none}
 .active .text_decoration{color: #007c00}.text_decoration{color: #ff2424}
 header .fa-chevron-down,.fa-chevron-down, #box_problems .fa-chevron-down, .fa-arrows-rotate, #Operador ~ i{rotate: 0deg; transition: rotate .7s ease-in-out}
 .active .fa-arrows-rotate,.open .fa-chevron-down, #box_Operador.open #Operador ~ i,.open label#box_problems.open .icon{rotate: 180deg;transition: rotate .7s ease-in-out}
-/* #box_problems i{rotate: 0; transition: rotate .7s ease-in-out}
-#box_problems.open i{rotate: 180deg; transition: rotate .7s ease-in-out} */
 main{
   width: 80%;
-  min-height: 755px;
+  min-height: 747px;
   position: relative;
   left: 40px;
   padding: 0 0 10px 0;
 }
 section{width: 330px;padding: 5px}
-section#form{background: var(--secondy);font-size: 13px;font-family: 'Lora', serif}
+section#form{background: var(--secondy);font-size: 13px;font-family: 'Lora', serif;}
 div.row{
   width: 100%;display: flex;
   flex-direction: row;
   gap: 4px;margin: 4px 0}
 .blue{background: var(--blue) !important}
 @media only screen and (max-width: 500px){
-  section{width: 96%;padding: 1%}
+  /* section{width: 96%;padding: 1%} */
+  section#form{width: 97%;}
+  section#box_cco_informa{width: 94%; margin-left: 1%;}
   #container_send_sheets.open{min-width:100%;margin:0;padding:0;}
   #container_send_sheets .row{margin: 4px 0; padding: 0;}
   #form_cco_informa .row:first-child{margin: 0;}
@@ -254,7 +253,7 @@ div.row.footer{
   transition: background .3s ease-in-out, transform .6s ease}
 .row.footer .box .icons .icon{color: var(--primary)}
 .buttons{margin-top: 5px;width: 22px;height: 22px;justify-content: center}
-#box_cco_informa{font-size: 12px;display: flex;border: 2px solid var(--blue);border-radius: 5px; max-height: 350px; overflow: hidden}
+#box_cco_informa{font-size: 12px;padding: 3px;display: flex;justify-content: space-between;border: 2px solid var(--blue);border-radius: 5px; max-height: 350px;transform: translate(0px, 10px);overflow: hidden}
 textarea{border: none;resize:none;outline: none}
 #text_cco_informa{width: 300px;height: 350px}
 .fa-copy{font-size: 23px}
