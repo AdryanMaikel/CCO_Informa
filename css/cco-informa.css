@@ -75,16 +75,11 @@ div.row{
   flex-direction: row;
   gap: 4px;margin: 4px 0}
 .blue{background: var(--blue) !important}
-
 #box_cco_informa{
   position: relative;
   z-index: 0;
-  font-size: 12px;padding: 3px;display: flex;justify-content: space-between;border: 2px solid var(--blue);border-radius: 5px; max-height: 350px;overflow: hidden;transition: transform .5s ease}
-@media only screen and (min-width: 800px){
-  #box_cco_informa{transform: translate(350px, -324px);}
-}
+  font-size: 12px;padding: 3px;display: flex;transform: translateY(10px); justify-content: space-between;border: 2px solid var(--blue);border-radius: 5px;margin-bottom: 10px;max-height: 350px;overflow: hidden}
 @media only screen and (max-width: 410px){
-  /* section{width: 96%;padding: 1%} */
   section#form{width: 98%;}
   section#box_cco_informa{width: 96%; margin-left: 1%;}
   #container_send_sheets.open{min-width:100%;margin:0;padding:0;}
@@ -96,7 +91,6 @@ div.row{
     left: 0;
   }
 }
-
 #box_operator{position: relative}
 #box_event,#box_direction,#box_motive,#box_problems,#box_operator{
   z-index: 2;
@@ -130,7 +124,7 @@ input#line{width: 44px}
 input#hour{width: 33px}
 input#direction{width: 20px}
 input#event{width: 105px}
-input#min{width: 22px}
+input#min{width: 22px; margin-left: 1px;}
 input#problem{width: 200px}
 input#operator{color: var(--primary); font-size: 15px;width: 80px;}
 input[type=radio]{scale: 0;position: absolute}
@@ -223,6 +217,7 @@ ul.list li.option:hover{background: var(--secondy);border-radius: 8px}
 .mini{margin-top: 4px;height: 22px;z-index: 7}
 label#box_car_two,#box_input_local{z-index: 6}
 div#continued{z-index: 5}
+#box_min span{margin-left: -5px;}
 #box_min,#continued_journey{position: absolute}
 #box_input_local,#box_min,#box_input_continued,#box_congestion{gap:0}
 div.row.revel{
