@@ -37,10 +37,10 @@ continued.addEventListener("click", function(){
   continued.classList.toggle("active")
   box_continued.classList.toggle("open")
   if(!box_continued.classList.contains("open")){
-    input_continued.toggleAttribute("disabled")
+    input_continued.disabled = true
     return local.focus()
   }
-  input_continued.toggleAttribute("disabled")
+  input_continued.disabled = false
   return input_continued.focus()
 })
 
@@ -79,7 +79,7 @@ const autocomplete_direction = () => {
   if(line.value == "A632"){
     direction.value = "TB"
   }else{
-    direction.value = ""
+    // direction.value = ""
   }
   return toggle_x("box_direction")
 }
