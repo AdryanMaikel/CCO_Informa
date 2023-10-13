@@ -153,6 +153,7 @@ function check_motive(input_motive) {
   row_roullet_and_validator.classList.remove("open")
   row_limpador_espelho.classList.remove("open")
   row_embreagem_caixa.classList.remove("open")
+  congestion_locale.disabled = true
   switch (input_motive) {
     case "Problemas mecânicos":
       row_problems.classList.add("open")
@@ -163,6 +164,7 @@ function check_motive(input_motive) {
       return problem.focus()
     case "Congestionamento":
       row_congestion.classList.add("open")
+      congestion_locale.disabled = false
       return congestion_locale.focus()
     case "Falta de Tripulação":
       row_tripulation.classList.add("open")
@@ -287,6 +289,9 @@ const cleaning_all = () => {
   for(var input of inputs){
     input.value = ""
   }
+  document.getElementById("informed").classList.remove("active")
+  document.getElementById("replace").classList.remove("active")
+  document.getElementById("box_car_two").classList.remove("active")
   toggle_x("box_operator")
   toggle_x("who_informed")
   toggle_x("box_direction")
