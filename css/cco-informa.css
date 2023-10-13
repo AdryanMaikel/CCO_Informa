@@ -63,7 +63,7 @@ header .fa-chevron-down,.fa-chevron-down, #box_problems .fa-chevron-down, .fa-ar
 .active .fa-arrows-rotate,.open .fa-chevron-down, #box_Operador.open #Operador ~ i,.open label#box_problems.open .icon{rotate: 180deg;transition: rotate .7s ease-in-out}
 main{
   width: 80%;
-  min-height: 747px;
+  min-height: 752px;
   position: relative;
   left: 40px;
   padding: 0 0 10px 0;
@@ -233,7 +233,7 @@ div.row.revel ~ #row_roullet_and_validator,
 div.row.revel#row_limpador_espelho{margin-top: -4px}
 div.row.revel.open ~ div.row.revel.open ~ div.row#row_motive,
 div.row.revel.open#row_limpador_espelho{margin-top: 0}
-#form_cco_informa div.row.footer{height: 60px;padding:0}
+#form_cco_informa div.row.footer{height: 38px;padding:0}
 div.row.footer{
   height: 25px;padding-bottom: 8px;color: var(--primary);
   display: flex;gap: 10px;flex-wrap: wrap;
