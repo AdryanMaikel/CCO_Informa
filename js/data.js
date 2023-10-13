@@ -109,12 +109,16 @@ function check_event(event_is) {
   continued.classList.remove("open")
   continued.classList.remove("active")
   box_continued.classList.remove("open")
+  min.disabled = true
+  local.disabled = true
   switch (event_is) {
     case "atrasada":
       box_min.classList.add("active")
+      min.disabled = false
       return min.focus()
     case "interrompida":
       box_local.classList.add("active")
+      local.disabled = false
       interrupted_text.textContent = "n"
       box_local.classList.add("open")
       row_local.classList.add("open")
@@ -124,6 +128,7 @@ function check_event(event_is) {
       return motive.focus()
     case "realizada a frente":
       box_local.classList.add("active")
+      local.disabled = false
       interrupted_text.textContent = "a partir d"
       box_local.classList.add("open")
       row_local.classList.add("open")

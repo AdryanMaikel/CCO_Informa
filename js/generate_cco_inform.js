@@ -240,7 +240,10 @@ function generate_cco_inform(){
       input_continued.focus()
     }
   }
-  result_motive = result_motive[0].toLowerCase() + result_motive.slice(1)
+  if(result_motive != "" ) 
+    result_motive = result_motive[0].toLowerCase() + result_motive.slice(1) 
+  else 
+    result_motive = ""
   CCO_SHEETS.Observação = `${result_event}, devido a ${result_motive}${replace_car}${continued_journey_text}.`
   
   cco_informa += "\n\n"
