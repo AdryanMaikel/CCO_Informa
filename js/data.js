@@ -301,7 +301,6 @@ const cleaning_all = () => {
   toggle_x("box_motive")
   check_motive("")
   toggle_x("box_problems")
-  document.getElementById("text_cco_informa").value = "*CCO INFORMA*"
 }
 
 const reset_cco_informa = document.getElementById("reset_cco_informa")
