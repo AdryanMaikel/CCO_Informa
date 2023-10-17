@@ -138,7 +138,22 @@ for(const input_hour of inputs_hour){
         return input_hour.blur()
   })
 }
-
+const box_hours = document.getElementById("box_hours")
+const box_gps = document.getElementById("box_gps")
+const hour_return = document.getElementById("hour_return")
+const hour_stop = document.getElementById("hour_stop")
+box_gps.addEventListener("click", () => {
+  if(document.getElementById("parou").checked == true){
+    box_hours.classList.add("active")
+    hour_return.disabled = false
+    hour_stop.disabled = false
+  }else{
+    box_hours.classList.remove("active")
+    hour_return.disabled = true
+    hour_stop.disabled = true
+  }
+  return hour_stop.focus()
+})
 min.addEventListener("input", function(){
   this.value = this.value.replace(/[^0-9]/, "")
   if(this.value.length == 2){

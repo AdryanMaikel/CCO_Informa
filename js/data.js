@@ -148,6 +148,8 @@ const row_roullet_and_validator = document.getElementById("row_roullet_and_valid
 const row_limpador_espelho = document.getElementById("row_limpador_espelho")
 const row_embreagem_caixa = document.getElementById("row_embreagem_caixa")
 const row_gps = document.getElementById("row_gps")
+const hour_return = document.getElementById("hour_return")
+const hour_stop = document.getElementById("hour_stop")
 function check_motive(input_motive) {
   row_problems.classList.remove("open")
   box_problems.classList.remove("open")
@@ -158,6 +160,8 @@ function check_motive(input_motive) {
   row_embreagem_caixa.classList.remove("open")
   congestion_locale.disabled = true
   row_gps.classList.remove("open")
+  hour_return.disabled = true
+  hour_stop.disabled = true
   switch (input_motive) {
     case "Problemas mecânicos":
       row_problems.classList.add("open")
@@ -178,6 +182,10 @@ function check_motive(input_motive) {
       return validator.focus()
     case "GPS com problemas de Comunicação":
       row_gps.classList.add("open")
+      if(document.getElementById("parou").checked == true){
+        hour_return.disabled = false
+        hour_stop.disabled = false
+      }
       return hour_stop.focus()
   }
 }
