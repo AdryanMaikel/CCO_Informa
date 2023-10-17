@@ -147,12 +147,15 @@ box_gps.addEventListener("click", () => {
     box_hours.classList.add("active")
     hour_return.disabled = false
     hour_stop.disabled = false
+    if(hour_stop.value == "")
+      return hour_stop.focus()
+    else
+      return hour_return.focus()
   }else{
     box_hours.classList.remove("active")
     hour_return.disabled = true
     hour_stop.disabled = true
   }
-  return hour_stop.focus()
 })
 min.addEventListener("input", function(){
   this.value = this.value.replace(/[^0-9]/, "")
