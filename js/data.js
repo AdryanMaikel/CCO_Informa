@@ -94,6 +94,20 @@ const autocomplete = (input, array) => {
   })
 }
 
+const toggle_replace_car = () => {
+  const replace = document.getElementById("replace")
+  const box_car_two = document.getElementById("box_car_two")
+  const car_two = document.getElementById("car_two")
+  replace.classList.toggle("active")
+  box_car_two.classList.toggle("active")
+  if(box_car_two.classList.contains("active")){
+    car_two.toggleAttribute("disabled")
+    return car_two.focus()
+  }
+  car_two.toggleAttribute("disabled")
+  return line.focus()
+}
+
 const box_min = document.getElementById("box_min")
 const min = document.getElementById("min")
 const box_local = document.getElementById("box_local")
@@ -198,6 +212,12 @@ const check_problem = (value) => {
       break
     case "Suspensão - Embreagem / Caixa":
       row_embreagem_caixa.classList.add("open")
+      break
+    case "Problemas na viagem anterior":
+      input_car.value = car_two.value
+      car_two.value = ""
+      toggle_replace_car()
+      problem.blur()
       break
   }
   return document.getElementById("problem").blur()
@@ -320,4 +340,4 @@ const cleaning_all = () => {
 const reset_cco_informa = document.getElementById("reset_cco_informa")
 reset_cco_informa.addEventListener("click", cleaning_all)
 
-export{ supervisions, activies, events, motives, problems, operators, input, toggle_x }
+export{ supervisions, activies, events, motives, problems, operators, input, toggle_x, toggle_replace_car }
