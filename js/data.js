@@ -94,8 +94,8 @@ const autocomplete = (input, array) => {
   })
 }
 
+const replace = document.getElementById("replace")
 const toggle_replace_car = () => {
-  const replace = document.getElementById("replace")
   const box_car_two = document.getElementById("box_car_two")
   const car_two = document.getElementById("car_two")
   replace.classList.toggle("active")
@@ -216,8 +216,10 @@ const check_problem = (value) => {
     case "Problemas na viagem anterior":
       input_car.value = car_two.value
       car_two.value = ""
-      toggle_replace_car()
       problem.blur()
+      if(replace.classList.contains("active")){
+        toggle_replace_car()
+      }
       break
   }
   return document.getElementById("problem").blur()
