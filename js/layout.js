@@ -123,16 +123,26 @@ line.addEventListener("input", function(){
 line.addEventListener("focusout", function(){
   return autocomplete_direction()
 })
-hour.addEventListener("input", function(){
-  this.value = this.value.replace(/[^0-9:]/,"")
-  if(hour.value.length == 2)
-    return this.value += ":"
-  else if(hour.value.length == 5)
-    return direction.focus()
-})
+const inputs_hour = document.querySelectorAll("input.hour")
+for(const input_hour of inputs_hour){
+  input_hour.addEventListener("input", function(){
+    this.value = this.value.replace(/[^0-9:]/,"")
+    if(input_hour.value.length == 2)
+      return this.value += ":"
+    else if(input_hour.value.length == 5)
+      if(input_hour.id == "hour")
+        return direction.focus()
+      else if(input_hour.id == "hour_stop")
+        return hour_return.focus()
+      else
+        return input_hour.blur()
+  })
+}
+
 min.addEventListener("input", function(){
   this.value = this.value.replace(/[^0-9]/, "")
   if(this.value.length == 2){
     return motive.focus()
   }
 })
+

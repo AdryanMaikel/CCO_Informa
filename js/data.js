@@ -35,6 +35,7 @@ const motives = [
   "Congestionamento",
   "Falta de Carro",
   "Falta de Tripulação",
+  "GPS com problemas de Comunicação",
   "Pneu Furado",
   "Problema com passageiro",
   "Problemas mecânicos",
@@ -145,7 +146,8 @@ const congestion_locale = document.getElementById("congestion_locale")
 const row_tripulation = document.getElementById("row_tripulation")
 const row_roullet_and_validator = document.getElementById("row_roullet_and_validator")
 const row_limpador_espelho = document.getElementById("row_limpador_espelho")
-const row_embreagem_caixa = document.getElementById("row_embreagem_caixa")  
+const row_embreagem_caixa = document.getElementById("row_embreagem_caixa")
+const row_gps = document.getElementById("row_gps")
 function check_motive(input_motive) {
   row_problems.classList.remove("open")
   box_problems.classList.remove("open")
@@ -155,6 +157,7 @@ function check_motive(input_motive) {
   row_limpador_espelho.classList.remove("open")
   row_embreagem_caixa.classList.remove("open")
   congestion_locale.disabled = true
+  row_gps.classList.remove("open")
   switch (input_motive) {
     case "Problemas mecânicos":
       row_problems.classList.add("open")
@@ -173,6 +176,9 @@ function check_motive(input_motive) {
     case "Validador/ Roleta":
       row_roullet_and_validator.classList.add("open")
       return validator.focus()
+    case "GPS com problemas de Comunicação":
+      row_gps.classList.add("open")
+      return hour_stop.focus()
   }
 }
 const check_problem = (value) => {
