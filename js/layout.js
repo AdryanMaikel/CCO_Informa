@@ -1,4 +1,4 @@
-import{ toggle_x } from "./data.js"
+import{ toggle_x, toggle_replace_car } from "./data.js"
 
 const informed = document.getElementById("informed")
 const supervision = document.getElementById("supervision")
@@ -7,18 +7,8 @@ informed.addEventListener("click", function(){
   supervision.focus()
 })
 
-const replace = document.getElementById("replace")
-const box_car_two = document.getElementById("box_car_two")
-const car_two = document.getElementById("car_two")
 replace.addEventListener("click", function(){
-  replace.classList.toggle("active")
-  box_car_two.classList.toggle("active")
-  if(box_car_two.classList.contains("active")){
-    car_two.toggleAttribute("disabled")
-    return car_two.focus()
-  }
-  car_two.toggleAttribute("disabled")
-  return line.focus()
+  toggle_replace_car()
 })
 
 const box_local = document.getElementById("box_local")
@@ -123,12 +113,39 @@ line.addEventListener("input", function(){
 line.addEventListener("focusout", function(){
   return autocomplete_direction()
 })
-hour.addEventListener("input", function(){
-  this.value = this.value.replace(/[^0-9:]/,"")
-  if(hour.value.length == 2)
-    return this.value += ":"
-  else if(hour.value.length == 5)
-    return direction.focus()
+const inputs_hour = document.querySelectorAll("input.hour")
+for(const input_hour of inputs_hour){
+  input_hour.addEventListener("input", function(){
+    this.value = this.value.replace(/[^0-9:]/,"")
+    if(input_hour.value.length == 2)
+      return this.value += ":"
+    else if(input_hour.value.length == 5)
+      if(input_hour.id == "hour")
+        return direction.focus()
+      else if(input_hour.id == "hour_stop")
+        return hour_return.focus()
+      else
+        return input_hour.blur()
+  })
+}
+const box_hours = document.getElementById("box_hours")
+const box_gps = document.getElementById("box_gps")
+const hour_return = document.getElementById("hour_return")
+const hour_stop = document.getElementById("hour_stop")
+box_gps.addEventListener("click", () => {
+  if(document.getElementById("parou").checked == true){
+    box_hours.classList.add("active")
+    hour_return.disabled = false
+    hour_stop.disabled = false
+    if(hour_stop.value == "")
+      return hour_stop.focus()
+    else
+      return hour_return.focus()
+  }else{
+    box_hours.classList.remove("active")
+    hour_return.disabled = true
+    hour_stop.disabled = true
+  }
 })
 min.addEventListener("input", function(){
   this.value = this.value.replace(/[^0-9]/, "")
@@ -136,3 +153,4 @@ min.addEventListener("input", function(){
     return motive.focus()
   }
 })
+

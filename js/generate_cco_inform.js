@@ -6,6 +6,9 @@ const month = String(date.getMonth() + 1).padStart(2, "0")
 const year = date.getFullYear()
 const date_actual = `${day}/${month}/${year}`
 
+
+problema_viagem_anterior = ""
+
 CCO_SHEETS.Data = date_actual
 
 function generate_cco_inform(){
@@ -43,7 +46,6 @@ function generate_cco_inform(){
   ocorrencia_CCO_SHEETS = ""
   const event = document.getElementById("event")
   result_event = "Viagem "
-  result_motive = ""
   switch (event.value) {
     case "":
       // return event.focus()
@@ -67,6 +69,8 @@ function generate_cco_inform(){
   }
   CCO_SHEETS.Problema = problem.value
   cco_informa +="- "+result_event+"\n- Motivo: "
+
+  result_motive = ""
   switch (motive.value) {
     case "Acidente":
       result_motive += "Carro "+input_car+" ter se envolvido em um acidente"
@@ -182,7 +186,7 @@ function generate_cco_inform(){
           result_motive += "Vazamento de óleo do motor no carro "+input_car
         break;
         case "Problemas na viagem anterior":
-          result_motive += ""
+          result_motive = problema_viagem_anterior
         break;
         case "Suspensão - Arriada":
           result_motive += "Problemas na suspensão do carro "+input_car
@@ -210,8 +214,8 @@ function generate_cco_inform(){
       }
     break;
   }
-
-
+ 
+  problema_viagem_anterior = result_motive
 
   cco_informa += result_motive
 

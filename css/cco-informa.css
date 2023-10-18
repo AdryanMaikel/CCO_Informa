@@ -121,11 +121,11 @@ input#supervision{max-width: 74px}
 input#table{max-width: 75px}
 input.car{max-width: 34px}
 input#line{width: 44px}
-input#hour{width: 33px}
+input.hour{width: 33px}
 input#direction{width: 20px}
 input#event{width: 105px}
 input#min{width: 22px; margin-left: 1px;}
-input#problem{width: 200px}
+input#problem, input#motive{width: 200px}
 input#operator{color: var(--primary); font-size: 15px;width: 80px;}
 input[type=radio]{scale: 0;position: absolute}
 input[type=radio] ~ .fa-check{scale: 0; transition: scale .5s}
@@ -149,7 +149,7 @@ ul.list{
   z-index: 7}
 #box_motive ~ ul.list{
   min-width: 175px;
-  transform: translate(35%, 30px)}
+  transform: translate(5px, 30px)}
 #box_problems ~ ul.list{transform: translate(66px, 30px)}
 #list_problems{min-width: 218px}
 #box_motive ~ ul.list, #box_problems ~ ul.list{
@@ -280,3 +280,22 @@ textarea#Observação{width: 292px; height: 80px}
 #form_send_sheets{color: #000000;}
 address{font-style: italic;font-weight: bold;text-align: center;height: 20px;color: #fff;padding-top: 20px;}
 footer{width: 100%;position: relative;top: 0;height: 60px;background-color: var(--blue)}
+#row_gps.revel{
+  margin-top: -4px;
+}
+#row_gps.revel.open{
+  height: 87px;
+  margin: 0;
+}
+#row_gps text{
+  padding: 4px 0 0 4px;
+}
+.collumn {
+  display: flex;
+  height: 80px;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.hours{
+  height: 55px;
+}
