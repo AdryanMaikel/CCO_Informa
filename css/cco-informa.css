@@ -299,3 +299,10 @@ footer{width: 100%;position: relative;top: 0;height: 60px;background-color: var(
 .hours{
   height: 55px;
 }
+.collumn.cco{
+  height: 70px;
+}
+.trash{
+  scale: 1.2;
+  margin-left: 2px;
+}
