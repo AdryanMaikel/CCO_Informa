@@ -274,7 +274,7 @@ input.addEventListener("input", function(){
   else if(father == "box_direction")
     this.value = this.value.replace(/[^a-zA-Z]/,"").toUpperCase()
   else if(father == "who_informed"){
-    this.value = this.value.replace(/[^a-zA-Z ]/,"")
+    this.value = this.value.replace(/[^a-zA-Zá ]/,"")
     var values = this.value.split(" ")
     if(values.length > 0){
       this.value = values.map((value)=>{
