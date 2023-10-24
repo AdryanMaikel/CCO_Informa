@@ -155,5 +155,5 @@ min.addEventListener("input", function(){
 })
 const trash_cco_informa = document.getElementById('btn_trash')
 trash_cco_informa.addEventListener('click', () => {
-  document.getElementById('text_cco_informa').value = '*CCO-INFORMA*'
+  document.getElementById('text_cco_informa').value = '*CCO INFORMA*'
 })

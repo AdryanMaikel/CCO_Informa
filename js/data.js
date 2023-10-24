@@ -101,10 +101,10 @@ const toggle_replace_car = () => {
   replace.classList.toggle("active")
   box_car_two.classList.toggle("active")
   if(box_car_two.classList.contains("active")){
-    car_two.toggleAttribute("disabled")
+    car_two.disabled = false
     return car_two.focus()
   }
-  car_two.toggleAttribute("disabled")
+  car_two.disabled = true
   return line.focus()
 }
 
