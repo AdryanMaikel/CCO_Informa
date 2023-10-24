@@ -66,7 +66,7 @@ main{
   min-height: 752px;
   position: relative;
   left: 40px;
-  padding: 0 0 10px 0;
+  padding: 0 0 13px 0;
 }
 section{width: 330px;padding: 5px}
 section#form{background: var(--secondy);font-size: 13px;font-family: 'Lora', serif;position: relative;z-index: 1;}
