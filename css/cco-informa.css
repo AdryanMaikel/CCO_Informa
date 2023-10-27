@@ -63,7 +63,7 @@ header .fa-chevron-down,.fa-chevron-down, #box_problems .fa-chevron-down, .fa-ar
 .active .fa-arrows-rotate,.open .fa-chevron-down, #box_Operador.open #Operador ~ i,.open label#box_problems.open .icon{rotate: 180deg;transition: rotate .7s ease-in-out}
 main{
   width: 80%;
-  min-height: 752px;
+  min-height: 628px;
   position: relative;
   left: 40px;
   padding: 0 0 10px 0;
@@ -80,7 +80,7 @@ div.row{
   z-index: 0;
   font-size: 12px;padding: 3px;display: flex;transform: translateY(10px); justify-content: space-between;border: 2px solid var(--blue);border-radius: 5px;margin-bottom: 10px;max-height: 350px;overflow: hidden}
 @media only screen and (max-width: 410px){
-  section#form{width: 98%;}
+  section#form{width: 97%;}
   section#box_cco_informa{width: 96%; margin-left: 1%;}
   #container_send_sheets.open{min-width:100%;margin:0;padding:0;}
   #container_send_sheets .row{margin: 4px 0; padding: 0;}
@@ -279,7 +279,10 @@ textarea#Observação{width: 292px; height: 80px}
 .fa-paper-plane{color: var(--primary);}
 #form_send_sheets{color: #000000;}
 address{font-style: italic;font-weight: bold;text-align: center;height: 20px;color: #fff;padding-top: 20px;}
-footer{width: 100%;position: relative;top: 0;height: 60px;background-color: var(--blue)}
+footer{width: 100%;height: calc(100% - 752px);
+  /* position: relative;top: 0;height: 60px; */
+  background-color: var(--blue)
+}
 #row_gps.revel{
   margin-top: -4px;
 }
