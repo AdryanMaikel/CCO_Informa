@@ -1,4 +1,5 @@
-import{ toggle_x, toggle_replace_car } from "./data.js"
+import{ toggle_x } from "./data.js"
+import{ toggle_replace_car } from "./replace.js"
 
 const informed = document.getElementById("informed")
 const supervision = document.getElementById("supervision")
