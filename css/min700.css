@@ -1,0 +1,14 @@
+@media only screen and (min-width: 700px) {
+
+  #container_send_sheets {
+    left: 340px;
+  }
+
+  #container_send_sheets.open {
+    left: 340px
+  }
+
+  address {
+    left: 40%;
+  }
+}

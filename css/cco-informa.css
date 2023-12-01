@@ -216,10 +216,6 @@ div.row {
 }
 
 @media only screen and (max-width: 410px) {
-  section#box_cco_informa {
-    /* width: 90%; */
-    margin-left: 1%;
-  }
 
   #container_send_sheets,
   #container_send_sheets.open {
@@ -227,13 +223,13 @@ div.row {
   }
 
   #container_send_sheets .row {
-    margin: 4px 20px;
     padding: 0;
+    margin: 4px 20px;
   }
-  
+
   #container_send_sheets.open {
-    z-index: 9;
-    width: 90%;
+    left: 0px;
+    transition: left .5s ease
   }
 
   #form_cco_informa .row:first-child {
@@ -656,6 +652,12 @@ textarea {
   outline: none
 }
 
+textarea#Problema,
+textarea#Ocorrência,
+textarea#Observação {
+  width: 260px;
+}
+
 #text_cco_informa {
   width: 300px;
   height: 300px
@@ -668,16 +670,15 @@ textarea {
 #container_send_sheets {
   position: absolute;
   top: 0px;
+  width: 268px;
   left: -350px;
   z-index: 9;
-  width: 300px;
   background-color: var(--blue);
   transition: left .5s ease
 }
 
 #container_send_sheets.open {
-  left: 0px;
-  transition: left .5s ease
+  left: 0;
 }
 
 #container_send_sheets span {
@@ -693,10 +694,7 @@ textarea {
   justify-content: space-between
 }
 
-input#Data {
-  width: 67px
-}
-
+input#Data,
 input#Tabela {
   width: 67px
 }
@@ -721,21 +719,12 @@ input#Operador {
   width: 100px
 }
 
-textarea#Ocorrência {
-  width: 292px
-}
-
 textarea#Problema {
-  width: 292px;
   height: 16px
 }
 
-#box_observação {
-  height: 80px
-}
-
+#box_observação,
 textarea#Observação {
-  width: 292px;
   height: 80px
 }
 
@@ -772,16 +761,16 @@ footer {
   background-color: var(--blue)
 }
 
-#bug {
+#send_bug {
   position: absolute;
   left: 10px;
 }
 
-#bug:hover ~ text {
+#send_bug:hover~text {
   visibility: visible;
 }
 
-#bug ~ text {
+#send_bug~text {
   visibility: hidden;
   position: absolute;
   background-color: var(--blue);
@@ -794,7 +783,7 @@ footer {
 
 }
 
-#bug ~ text::before {
+#send_bug~text::before {
   content: '';
   position: absolute;
   top: 30px;
@@ -808,7 +797,6 @@ address {
   font-style: italic;
   font-weight: bold;
   position: absolute;
-  width: 100%;
   left: 25%;
   padding-top: 10px;
   color: var(--primary);
