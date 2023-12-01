@@ -36,11 +36,14 @@ const submit_form_send_sheets = (events) => {
     },
     body: JSON.stringify(DATA)
   }).then(()=>{
-    if(confirm("Enviado com Sucesso! Deseja abrir a planilha?")){window.open("https://docs.google.com/spreadsheets/d/1voKCp0MJOelI0-qv9s_m3VF5GUvkS4lbKyArA6NbmTs/edit#gid=1247343348")}
     container_send_sheets.classList.remove("open")
+    container_send_sheets.classList.add("enviado")
   })
 }
 const form_send_sheets = document.getElementById("form_send_sheets").addEventListener("submit", submit_form_send_sheets)
 
-const exit = () => {container_send_sheets.classList.remove("open")}
+const exit = () => {
+  container_send_sheets.classList.remove("open")
+  container_send_sheets.classList.remove("enviado")
+}
 const close = document.getElementById("close").addEventListener("click", exit)

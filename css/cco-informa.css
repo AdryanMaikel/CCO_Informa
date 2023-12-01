@@ -744,7 +744,8 @@ textarea#Observação {
   font-size: 22px
 }
 
-.fa-paper-plane {
+.fa-paper-plane,
+.fa-thumbs-up {
   color: var(--primary);
 }
 
@@ -779,18 +780,48 @@ footer {
   left: 5px;
   padding: 5px;
   top: -40px;
-  color: var(--primary);
+  color: var(--primary)
+}
 
+#row_buttons_sheets text {
+  position: absolute;
+  background-color: var(--primary);
+  color: var(--blue);
+  padding: 4px;
+  border-radius: 7px;
+
+}
+#row_buttons_sheets text::before {
+  content: '';
+  position: absolute;
+  border-width: 8px;
+  border-style: solid;
 }
 
 #send_bug~text::before {
-  content: '';
-  position: absolute;
   top: 30px;
   left: 12px;
-  border-width: 8px;
-  border-style: solid;
-  border-color: var(--blue) transparent transparent;
+}
+
+#container_send_sheets.enviado #row_buttons_sheets text {
+  visibility: visible;
+}
+
+#container_send_sheets #row_buttons_sheets text {
+  visibility: hidden;
+  top: 12px;
+  left: 2px;
+}
+
+#row_buttons_sheets text::before {
+  top: 7px;
+  left: 173px;
+  background-color: transparent;
+  border-color: transparent transparent transparent var(--primary) 
+}
+
+#send_bug~text::before {
+  border-color: var(--blue) transparent transparent
 }
 
 address {
@@ -824,4 +855,12 @@ address {
 
 .hours {
   height: 55px;
+}
+
+#like {
+  display: none
+}
+
+#container_send_sheets.enviado #like {
+  display: block;
 }
