@@ -791,6 +791,8 @@ footer {
   border-radius: 7px;
 
 }
+
+#send_bug~text::before,
 #row_buttons_sheets text::before {
   content: '';
   position: absolute;
