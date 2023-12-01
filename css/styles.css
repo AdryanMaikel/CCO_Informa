@@ -1,0 +1,16 @@
+@media only screen and (min-width: 700px) {
+  #container_send_sheets {
+    width: 274px;
+    left: 340px;
+  }
+
+  textarea#Problema,
+  textarea#Ocorrência,
+  textarea#Observação {
+    width: 260px;
+  }
+
+  address {
+    left: 40%;
+  }
+}
