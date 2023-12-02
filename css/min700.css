@@ -1,11 +1,13 @@
 @media only screen and (min-width: 700px) {
 
-  #container_send_sheets {
+  #container_send_sheets,
+  #container_send_sheets.open {
     left: 340px;
   }
 
-  #container_send_sheets.open {
-    left: 340px
+  #container_send_sheet_2,
+  #container_send_sheet_2.open  {
+    left: 640px;
   }
 
   address {

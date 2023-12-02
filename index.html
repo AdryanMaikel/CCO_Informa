@@ -7,9 +7,10 @@
   <title>*CCO INFORMA*</title>
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="css/cco-informa.css">
+  <link rel="stylesheet" href="css/send-sheet.css">
   <link rel="stylesheet" href="css/max410.css">
   <link rel="stylesheet" href="css/min700.css">
-  <script nomodule src="js/lists.js" defer></script> 
+  <script nomodule src="js/lists.js" defer></script>
   <script nomodule src="js/replace.js" defer></script>
   <script nomodule src="js/checks.js" defer></script>
   <script nomodule src="js/data.js" defer></script>
@@ -308,92 +309,99 @@
     </section>
     <section id="container_send_sheets" class="">
       <form id="form_send_sheets" autocomplete="off">
-        <div id="row_buttons_sheets" class="row footer">
-          <h3>Enviar planilha </h3>
-          <button type="submit" class="box buttons">
+        <div id="row_buttons_sheets" class="row_buttons_sheets row footer">
+          <h3>Enviar para a planilha </h3>
+          <button type="submit" id="button_form_send_sheet" class="box buttons">
             <i class="fa-solid fa-paper-plane icon"></i>
           </button>
-          <button type="button" id="like" class="box buttons active">
+          <text>Enviado com Sucesso!</text>
+          <button type="button" id="like" class="box buttons active btn-like">
             <i class="fa-solid fa-thumbs-up icon like"></i>
           </button>
           <button type="reset" id="close" class="box buttons">
             <i class="fa-solid fa-xmark icon close"></i>
           </button>
-          <text>Enviado com Sucesso!</text>
         </div>
-        <div class="row">
-          <label for="Data" class="box" id="box_data">
-            <i class="fa-solid fa-calendar-days icon"></i>
-            <input type="text" name="Data" id="Data" placeholder="25/05/2000">
-          </label>
-          <label for="Tabela" class="box">
-            <i class="fa-solid fa-clipboard icon"></i>
-            <input type="text" name="Tabela" id="Tabela" placeholder="SD735/003">
-          </label>
-          <label for="Linha" class="box">
-            <i class="fa-solid fa-route icon"></i>
-            <input type="text" name="Linha" id="Linha" placeholder="SD735">
-          </label>
-        </div>
-        <div class="row">
-          <label for="Carro" class="box">
-            <i class="fa-solid fa-bus icon"></i>
-            <input type="text" class="car" name="Carro" id="Carro" placeholder="6630">
-          </label>
-          <label for="other_car" class="box">
-            <i class="fa-solid fa-arrows-rotate fa-rotate-90 icon"></i>
-            <i class="fa-solid fa-bus icon"></i>
-            <input type="text" class="car" name="Carro Substituto" id="other_car" placeholder="6631">
-          </label>
-          <label for="Hora" class="box">
-            <i class="fa-solid fa-clock icon"></i>
-            <input type="text" name="Hora" id="Hora" placeholder="14:00">
-          </label>
-          <label for="Sentido" class="box">
-            <i class="fa-solid fa-compass icon"></i>
-            <input type="text" name="Sentido" id="Sentido" placeholder="BC">
-          </label>
-        </div>
-        <div class="row">
-          <div class="box"><span>Ocorrência:</span></div>
-        </div>
-        <div class="row">
-          <label for="Ocorrência" class="box">
-            <textarea name="Ocorrência" id="Ocorrência"></textarea>
-          </label>
-        </div>
-        <div class="row">
-          <div class="box"><span>Problema:</span></div>
-        </div>
-        <div class="row">
-          <label for="Problema" class="box">
-            <textarea name="Problema" id="Problema"></textarea>
-          </label>
-        </div>
-        <div class="row">
-          <div class="box"><span>Observação:</span></div>
-        </div>
-        <div class="row">
-          <label for="Observação" class="box" id="box_observação">
-            <textarea name="Observação" id="Observação"></textarea>
-          </label>
-        </div>
-        <div class="row">
-          <label id="box_Operador" for="Operador" class="box">
-            <span>Operador:</span>
-            <input type="text" name="Operador" id="Operador">
-          </label>
+
+        <div>
+          <div class="row">
+            <label for="Data" class="box" id="box_data">
+              <i class="fa-solid fa-calendar-days icon"></i>
+              <input type="text" name="Data" id="Data" placeholder="25/05/2000">
+            </label>
+            <label for="Tabela" class="box">
+              <i class="fa-solid fa-clipboard icon"></i>
+              <input type="text" name="Tabela" id="Tabela" placeholder="SD735/003">
+            </label>
+            <label for="Linha" class="box">
+              <i class="fa-solid fa-route icon"></i>
+              <input type="text" name="Linha" id="Linha" placeholder="SD735">
+            </label>
+          </div>
+          <div class="row">
+            <label for="Carro" class="box">
+              <i class="fa-solid fa-bus icon"></i>
+              <input type="text" class="car" name="Carro" id="Carro" placeholder="6630">
+            </label>
+            <label for="other_car" class="box">
+              <i class="fa-solid fa-arrows-rotate fa-rotate-90 icon"></i>
+              <i class="fa-solid fa-bus icon"></i>
+              <input type="text" class="car" name="Carro Substituto" id="other_car" placeholder="6631">
+            </label>
+            <label for="Hora" class="box">
+              <i class="fa-solid fa-clock icon"></i>
+              <input type="text" name="Hora" id="Hora" placeholder="14:00">
+            </label>
+            <label for="Sentido" class="box">
+              <i class="fa-solid fa-compass icon"></i>
+              <input type="text" name="Sentido" id="Sentido" placeholder="BC">
+            </label>
+          </div>
+          <div class="row">
+            <div class="box"><span>Ocorrência:</span></div>
+          </div>
+          <div class="row">
+            <label for="Ocorrência" class="box">
+              <textarea name="Ocorrência" id="Ocorrência"></textarea>
+            </label>
+          </div>
+          <div class="row">
+            <div class="box"><span>Problema:</span></div>
+          </div>
+          <div class="row">
+            <label for="Problema" class="box">
+              <textarea name="Problema" id="Problema"></textarea>
+            </label>
+          </div>
+          <div class="row">
+            <div class="box"><span>Observação:</span></div>
+          </div>
+          <div class="row">
+            <label for="Observação" class="box" id="box_observação">
+              <textarea name="Observação" id="Observação"></textarea>
+            </label>
+          </div>
+          <div class="row">
+            <label id="box_Operador" for="Operador" class="box">
+              <span>Operador:</span>
+              <input type="text" name="Operador" id="Operador">
+            </label>
+          </div>
         </div>
       </form>
     </section>
+    <section id="container_send_sheets_2">
+
+    </section>
   </main>
+
   <footer>
-    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=adryanmaikel@gmail.com" target="_blank" class="box buttons" id="send_bug">
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=adryanmaikel@gmail.com" target="_blank" class="box buttons"id="send_bug">
       <div class="icons">
         <i class="fa-solid fa-bug icon"></i>
       </div>
     </a>
-    <text>Encontrou um bug? Tem alguma melhoria?</text>
+    <text>Envie-me alguma melhoria ou um bug...</text>
     <address>Feito de <i class="fa-solid fa-heart text_decoration icon"></i> por Adryan do<!--ex--> CCO!</address>
   </footer>
 </body>
