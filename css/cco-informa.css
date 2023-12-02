@@ -820,11 +820,20 @@ address {
   padding: 4px 0 0 4px;
 }
 
+.collumn.cco {
+  height: 70px;
+}
+
 .collumn {
   display: flex;
   height: 80px;
   align-items: flex-start;
   flex-direction: column;
+}
+
+.trash {
+  scale: 1.2;
+  margin-left: 2px;
 }
 
 .hours {
