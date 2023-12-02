@@ -47,3 +47,6 @@ const exit = () => {
   container_send_sheets.classList.remove("enviado")
 }
 const close = document.getElementById("close").addEventListener("click", exit)
+const like = document.getElementById('like').addEventListener('click', ()=>{
+  container_send_sheets.classList.remove("enviado")
+})
