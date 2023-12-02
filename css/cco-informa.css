@@ -215,34 +215,6 @@ div.row {
   overflow: hidden
 }
 
-@media only screen and (max-width: 410px) {
-
-  #container_send_sheets,
-  #container_send_sheets.open {
-    top: 34px;
-  }
-
-  #container_send_sheets .row {
-    padding: 0;
-    margin: 4px 20px;
-  }
-
-  #container_send_sheets.open {
-    left: 0px;
-    transition: left .5s ease
-  }
-
-  #form_cco_informa .row:first-child {
-    margin: 0;
-  }
-
-  main {
-    width: 100%;
-    position: relative;
-    left: 0;
-  }
-}
-
 #box_operator {
   position: relative
 }
@@ -819,7 +791,7 @@ footer {
   top: 7px;
   left: 173px;
   background-color: transparent;
-  border-color: transparent transparent transparent var(--primary) 
+  border-color: transparent transparent transparent var(--primary)
 }
 
 #send_bug~text::before {

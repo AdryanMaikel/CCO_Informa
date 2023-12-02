@@ -1,0 +1,33 @@
+@media only screen and (max-width: 410px) {
+
+  #container_send_sheets,
+  #container_send_sheets.open {
+    top: 34px;
+  }
+
+  #container_send_sheets .row {
+    padding: 0;
+    margin: 4px 20px;
+  }
+
+  #container_send_sheets.open {
+    left: 0px;
+    transition: left .5s ease
+  }
+
+  #form_cco_informa .row:first-child {
+    margin: 0;
+  }
+
+  main {
+    position: relative;
+    left: 0;
+    width: 100%;
+    min-height: 640px;
+  }
+
+  footer{
+    position: relative;
+    top: 0;
+  }
+}
