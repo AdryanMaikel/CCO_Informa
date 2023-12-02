@@ -1,4 +1,4 @@
-const exit = () => {document.getElementById("container_send_sheets").classList.remove("open")}
+const container_send_sheets = document.getElementById("container_send_sheets")
 
 const submit_form_send_sheets = (events) => {
   events.preventDefault()
@@ -28,7 +28,6 @@ const submit_form_send_sheets = (events) => {
     Observação,
     Operador,
   }
-
   fetch("https://api.sheetmonkey.io/form/86GJCNpeUFhhfFHBZKyE4n",{
     method: 'POST',
     headers: {
@@ -51,10 +50,3 @@ const close = document.getElementById("close").addEventListener("click", exit)
 const like = document.getElementById('like').addEventListener('click', ()=>{
   container_send_sheets.classList.remove("enviado")
 })
-    // if(confirm("Enviado com Sucesso! Deseja abrir a planilha?")){window.open("https://docs.google.com/spreadsheets/d/1voKCp0MJOelI0-qv9s_m3VF5GUvkS4lbKyArA6NbmTs/edit#gid=1247343348")}
-    exit()
-  })
-}
-const form_send_sheets = document.getElementById("form_send_sheets").addEventListener("submit", submit_form_send_sheets)
-const close = document.getElementById("close").addEventListener("click", exit)
-

@@ -172,7 +172,7 @@ main {
   min-height: 628px;
   position: relative;
   left: 40px;
-  padding: 0 0 13px 0;
+  padding: 0 0 10px 0;
 }
 
 section {
@@ -846,12 +846,4 @@ address {
 
 #container_send_sheets.enviado #like {
   display: block;
-}
-
-.collumn.cco{
-  height: 70px;
-}
-.trash{
-  scale: 1.2;
-  margin-left: 2px;
 }
