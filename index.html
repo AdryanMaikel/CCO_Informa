@@ -16,7 +16,7 @@
   <script nomodule src="js/data.js" defer></script>
   <script src="https://kit.fontawesome.com/f9a0d51bc2.js" crossorigin="anonymous" defer></script>
   <script type="module" src="js/creating-lists.js" defer></script>
-  <script src="js/generate_cco_inform.js" defer></script>
+  <script src="js/generate_cco_informa.js" defer></script>
   <script type="module" src="js/layout.js" defer></script>
   <script src="js/send_sheet.js" defer></script>
 </head>
@@ -275,18 +275,18 @@
           </div>
         </div>
         <div id="row_button" class="row footer">
-          <label for="generate_cco_inform" class="box">
+          <label for="generate_cco_informa" class="box">
             <span>GERAR *CCO INFORMA*</span>
-            <input type="submit" value="" id="generate_cco_inform">
+            <input type="submit" value="" id="generate_cco_informa">
           </label>
           <div id="generate_other" class="box buttons">
             <div class="icons"><i class="fa-solid fa-plus icon"></i></div>
           </div>
-          <div id="send_sheets" class="box buttons">
+          <!-- <div id="send_sheets" class="box buttons">
             <div class="icons">
               <i class="fa-solid fa-paper-plane icon"></i>
             </div>
-          </div>
+          </div> -->
           <div id="reset_cco_informa" class="box buttons">
             <div class="icons">
               <i class="fa-solid fa-skull icon"></i>
@@ -366,7 +366,7 @@
           </div>
           <div class="row">
             <label for="Ocorrência" class="box">
-              <textarea name="Ocorrência" id="Ocorrência" placeholder="Problemas mecânicos - Viagem perdida"></textarea>
+              <textarea name="Ocorrência" id="Ocorrência" placeholder=""></textarea>
             </label>
           </div>
           <div class="row">
@@ -374,7 +374,7 @@
           </div>
           <div class="row">
             <label for="Problema" class="box">
-              <textarea name="Problema" id="Problema" placeholder="Carroceria - Ar Condicionado"></textarea>
+              <textarea name="Problema" id="Problema" placeholder=""></textarea>
             </label>
           </div>
           <div class="row">
@@ -382,20 +382,20 @@
           </div>
           <div class="row">
             <label for="Observação" class="box" id="box_observação">
-              <textarea name="Observação" id="Observação" placeholder="Viagem não realizada, devido a problemas no ar-condicionado do carro 6630, trocado pelo carro 6631."></textarea>
+              <textarea name="Observação" id="Observação" placeholder=""></textarea>
             </label>
           </div>
           <div class="row">
             <label id="box_Operador" for="Operador" class="box">
               <span>Operador:</span>
-              <input type="text" name="Operador" id="Operador" placeholder="Adryan">
+              <input type="text" name="Operador" id="Operador" placeholder="">
             </label>
           </div>
         </div>
       </form>
       <div id="box_cco_informa" class="box_cco_informa">
         <h3 style="display: none;">cco-informa</h3>
-        <textarea id="text_cco_informa" class="text_cco_informa">*CCO INFORMA*</textarea>
+        <textarea id="text_cco_informa" class="text_cco_informa" placeholder="*CCO INFORMA*"></textarea>
         <div class="collumn cco">
           <div id="copy" class="box">
             <i class="fa-solid fa-copy icon"></i>
