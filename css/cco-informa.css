@@ -349,7 +349,7 @@ ul.list {
 
 #box_motive~ul.list {
   min-width: 175px;
-  transform: translate(5px, 30px)
+  transform: translate(50px, 30px)
 }
 
 #box_problems~ul.list {
