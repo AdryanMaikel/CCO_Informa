@@ -1,4 +1,5 @@
-import { supervisions, activies, events, motives , problems, operators, input } from "./data.js"
+import { supervisions, activies, events, motives, problems, operators } from "./lists.js"
+import { input } from "./data.js"
 
 input("who_informed", supervisions)
 input("box_operator", operators)

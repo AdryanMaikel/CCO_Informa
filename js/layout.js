@@ -1,4 +1,5 @@
-import{ toggle_x, toggle_replace_car } from "./data.js"
+import{ toggle_x } from "./data.js"
+import{ toggle_replace_car } from "./replace.js"
 
 const informed = document.getElementById("informed")
 const supervision = document.getElementById("supervision")
@@ -153,7 +154,9 @@ min.addEventListener("input", function(){
     return motive.focus()
   }
 })
+
 const trash_cco_informa = document.getElementById('btn_trash')
 trash_cco_informa.addEventListener('click', () => {
   document.getElementById('text_cco_informa').value = '*CCO INFORMA*'
 })
+

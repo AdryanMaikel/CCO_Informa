@@ -1,3 +1,5 @@
+import { autocomplete, create_options} from "./lists.js"
+import { check_event, check_motive, check_problem } from "./checks.js"
 const supervisions = [
   "Navegantes",
   "Nortran",
@@ -247,22 +249,41 @@ const toggle_x = (father) => {
 }
 
 const input = (father, array) => {
-var box = document.querySelector(`#${father}`)
-var input = document.querySelector(`#${father} input`)
-var list = document.querySelector(`#${father} ~ .list`)
+  var box = document.querySelector(`#${father}`)
+  var input = document.querySelector(`#${father} input`)
+  var list = document.querySelector(`#${father} ~ .list`)
 
-input.addEventListener("click", function(){
-  if(box.classList.contains("open")){
-    return input.blur()
-  }
-  setTimeout(()=>{
-    create_options(list, array)
-  }, 150)
-  setTimeout(()=>{
+  input.addEventListener("click", function(){
+    if(box.classList.contains("open")){
+      return input.blur()
+    }
+    setTimeout(()=>{
+      create_options(list, array)
+    }, 150)
+    setTimeout(()=>{
+      box.classList.add("open")
+      return input.focus()
+    }, 151)
+  })
+
+  input.addEventListener("input", function(){
     box.classList.add("open")
-    return input.focus()
-  }, 151)
-})
+    toggle_x(father)
+    if(father == "box_event")
+      this.value = this.value.replace(/[^a-zA-Z ]/,"").toLowerCase()
+    else if(father == "box_motive" || father == "box_problems")
+      this.value = this.value.replace(/[^a-zA-Záçãâ ]/,"")
+    else if(father == "box_direction")
+      this.value = this.value.replace(/[^a-zA-Z]/,"").toUpperCase()
+    else if(father == "who_informed"){
+      this.value = this.value.replace(/[^a-zA-Z ]/,"")
+      var values = this.value.split(" ")
+      if(values.length > 0){
+        this.value = values.map((value)=>{
+          return value.charAt(0).toUpperCase()+value.slice(1,value.length)
+        }).join(" ")
+      }
+      return
 
 input.addEventListener("input", function(){
   box.classList.add("open")
@@ -281,44 +302,44 @@ input.addEventListener("input", function(){
         return value.charAt(0).toUpperCase()+value.slice(1,value.length)
       }).join(" ")
     }
-    return
-  }
-  create_options(list, autocomplete(this.value, array))
-  if(list.childElementCount == 1){
-    this.value = list.firstChild.textContent
-    box.classList.remove("open")
-    if(father == "box_direction")
-      window.document.getElementById("event").focus()
-    else if(father == "box_event")
-      check_event(this.value)
-    else if(father == "box_motive")
-      check_motive(this.value)
-    else if(father == "box_problems")
-      check_problem(this.value)
-  }
-})
 
-input.addEventListener("focusout", function(){
-  if(father == "who_informed"){
-    input.value = input.value.trim()
-  }
-  const options = document.querySelectorAll(`#${father} ~ .list .option`)
-  for(var option of options){
-    option.onclick = function(){
-      input.value = this.textContent
+    create_options(list, autocomplete(this.value, array))
+    if(list.childElementCount == 1){
+      this.value = list.firstChild.textContent
       box.classList.remove("open")
-      toggle_x(father)
-      if(father == "box_event")
-        return check_event(this.textContent)
+      if(father == "box_direction")
+        window.document.getElementById("event").focus()
+      else if(father == "box_event")
+        check_event(this.value)
       else if(father == "box_motive")
-        return check_motive(this.textContent)
+        check_motive(this.value)
       else if(father == "box_problems")
-        return check_problem(this.textContent)
+        check_problem(this.value)
     }
-  }
-  setTimeout(()=>{
-    box.classList.remove("open")
-  }, 100)})
+  })
+
+  input.addEventListener("focusout", function(){
+    if(father == "who_informed"){
+      input.value = input.value.trim()
+    }
+    const options = document.querySelectorAll(`#${father} ~ .list .option`)
+    for(var option of options){
+      option.onclick = function(){
+        input.value = this.textContent
+        box.classList.remove("open")
+        toggle_x(father)
+        if(father == "box_event")
+          return check_event(this.textContent)
+        else if(father == "box_motive")
+          return check_motive(this.textContent)
+        else if(father == "box_problems")
+          return check_problem(this.textContent)
+      }
+    }
+    setTimeout(()=>{
+      box.classList.remove("open")
+    }, 100)
+  })
 }
 
 const cleaning_all = () => {
@@ -339,7 +360,6 @@ const cleaning_all = () => {
   toggle_x("box_problems")
 }
 
-const reset_cco_informa = document.getElementById("reset_cco_informa")
-reset_cco_informa.addEventListener("click", cleaning_all)
+document.getElementById("reset_cco_informa").addEventListener("click", cleaning_all)
 
-export{ supervisions, activies, events, motives, problems, operators, input, toggle_x, toggle_replace_car }
+export{ input, toggle_x }

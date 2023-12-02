@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>*CCO INFORMA*</title>
   <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="css/cco-informa.css">
+  <link rel="stylesheet" href="css/max410.css">
+  <link rel="stylesheet" href="css/min700.css">
+  <script nomodule src="js/lists.js" defer></script> 
+  <script nomodule src="js/replace.js" defer></script>
+  <script nomodule src="js/checks.js" defer></script>
   <script nomodule src="js/data.js" defer></script>
   <script src="https://kit.fontawesome.com/f9a0d51bc2.js" crossorigin="anonymous" defer></script>
   <script type="module" src="js/creating-lists.js" defer></script>
@@ -13,18 +19,22 @@
   <script type="module" src="js/layout.js" defer></script>
   <script src="js/send_sheet.js" defer></script>
 </head>
+
 <body>
   <header>
     <div class="row blue">
-      <a href="https://docs.google.com/spreadsheets/d/1voKCp0MJOelI0-qv9s_m3VF5GUvkS4lbKyArA6NbmTs/edit#gid=1247343348" target="_blank">
-        <div class="box blue">    
-          <span>Planilha</span><div class="icons"><i class="fa-solid fa-link icon"></i></div>
+      <a href="https://docs.google.com/spreadsheets/d/1voKCp0MJOelI0-qv9s_m3VF5GUvkS4lbKyArA6NbmTs/edit#gid=1247343348"
+        target="_blank">
+        <div class="box blue">
+          <span>Planilha</span>
+          <div class="icons"><i class="fa-solid fa-link icon"></i></div>
         </div>
       </a>
     </div>
     <div class="row header">
       <figure>
-        <img src="img/mob.png" alt="Image contendo o logo da empresa que esta escrito em azul marinho MOB Mobilidade em Transporte">
+        <img src="img/mob.png"
+          alt="Image contendo o logo da empresa que esta escrito em azul marinho MOB Mobilidade em Transporte">
       </figure>
       <div class="align">
         <label id="box_operator" for="operator" class="box blue">
@@ -43,6 +53,9 @@
   <main>
     <section id="form">
       <form id="form_cco_informa" autocomplete="off">
+        <div class="row">
+          <h2>*CCO INFORMA*</h2>
+        </div>
         <div class="row"><h2>*CCO INFORMA*</h2></div>
         <div class="row">
           <div id="informed" class="box">
@@ -172,7 +185,8 @@
             </label>
             <label for="hour_return" class="box">
               <i class="fa-solid fa-clock icon"></i>
-              <input type="text" name="hour_return" id="hour_return" class="hour" placeholder="Hora" maxlength="5" disabled>
+              <input type="text" name="hour_return" id="hour_return" class="hour" placeholder="Hora" maxlength="5"
+                disabled>
               <span>voltou</span>
             </label>
           </div>
@@ -192,7 +206,8 @@
           <label id="box_congestion" for="congestion_locale" class="box">
             <i class="fa-solid fa-location-dot icon"></i>
             <span>Onde? n</span>
-            <input type="text" name="congestion_locale" id="congestion_locale" placeholder="a Av. Assis Brasil" disabled>
+            <input type="text" name="congestion_locale" id="congestion_locale" placeholder="a Av. Assis Brasil"
+              disabled>
           </label>
         </div>
         <div id="row_tripulation" class="row revel">
@@ -274,7 +289,7 @@
           </div>
           <div id="reset_cco_informa" class="box buttons">
             <div class="icons">
-              <i class="fa-solid fa-broom icon"></i>
+              <i class="fa-solid fa-skull icon"></i>
             </div>
           </div>
         </div>
@@ -288,6 +303,7 @@
           <i class="fa-solid fa-copy icon"></i>
         </div>
         <div id="btn_trash" class="box">
+          <i class="fa-solid fa-trash-can icon trash" aria-hidden="true"></i>
           <i class="fa-solid fa-trash-can icon trash"></i>
         </div>
       </div>
@@ -296,8 +312,16 @@
       <form id="form_send_sheets" autocomplete="off">
         <div id="row_buttons_sheets" class="row footer">
           <h3>Enviar planilha </h3>
-          <button type="submit" class="box buttons"><i class="fa-solid fa-paper-plane icon"></i></button>
-          <button type="reset" id="close" class="box buttons"><i class="fa-solid fa-xmark icon close"></i></button>
+          <button type="submit" class="box buttons">
+            <i class="fa-solid fa-paper-plane icon"></i>
+          </button>
+          <button type="button" id="like" class="box buttons active">
+            <i class="fa-solid fa-thumbs-up icon like"></i>
+          </button>
+          <button type="reset" id="close" class="box buttons">
+            <i class="fa-solid fa-xmark icon close"></i>
+          </button>
+          <text>Enviado com Sucesso!</text>
         </div>
         <div class="row">
           <label for="Data" class="box" id="box_data">
@@ -366,7 +390,14 @@
     </section>
   </main>
   <footer>
-    <address>Feito com <i class="fa-solid fa-heart text_decoration icon"></i> por Adryan do CCO</address>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=adryanmaikel@gmail.com" target="_blank" class="box buttons" id="send_bug">
+      <div class="icons">
+        <i class="fa-solid fa-bug icon"></i>
+      </div>
+    </a>
+    <text>Encontrou um bug? Tem alguma melhoria?</text>
+    <address>Feito de <i class="fa-solid fa-heart text_decoration icon"></i> por Adryan do<!--ex--> CCO!</address>
   </footer>
 </body>
+
 </html>
