@@ -1,9 +1,7 @@
 @media only screen and (max-width: 410px) {
 
   #container_send_sheets,
-  #container_send_sheets_2 {
-    top: 34px;
-  }
+  #container_send_sheets_2 {}
 
   #container_send_sheets .row
   #container_send_sheet_2 .row {
@@ -25,7 +23,7 @@
     position: relative;
     left: 0;
     width: 100%;
-    min-height: 640px;
+    min-height: 675px;
   }
 
   footer{

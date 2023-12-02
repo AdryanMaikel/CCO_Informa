@@ -11,7 +11,7 @@ problema_viagem_anterior = ""
 
 CCO_SHEETS.Data = date_actual
 
-function generate_cco_inform(){
+function generate_cco_informa(){
   cco_informa = "*CCO INFORMA*\n"
   const informed = document.getElementById("informed")
   if(informed.classList.contains("active")){
@@ -253,15 +253,12 @@ function generate_cco_inform(){
   cco_informa += "\n\n"
   return cco_informa
 }
-const text_cco_informa = document.getElementById("text_cco_informa")
-const form = document.getElementById("form").addEventListener("submit", function(events){events.preventDefault()})
-const generate_cco = document.getElementById("generate_cco_inform").addEventListener("click", function(){
-  text_cco_informa.value = generate_cco_inform()
-})
-const send_sheets = document.getElementById("send_sheets").addEventListener("click", function(){
+
+const function_send_sheet = function () {
+  // const send_sheets = document.getElementById("send_sheets").addEventListener("click", function(){})
   const container_send_sheets = document.getElementById("container_send_sheets")
   container_send_sheets.classList.add("open")
-
+  
   const Data = document.getElementById("Data")
   const Tabela = document.getElementById("Tabela")
   const Linha = document.getElementById("Linha")
@@ -272,7 +269,7 @@ const send_sheets = document.getElementById("send_sheets").addEventListener("cli
   const Ocorrência = document.getElementById("Ocorrência")
   const Problema = document.getElementById("Problema")
   const Observação = document.getElementById("Observação")
-
+  
   Data.value = CCO_SHEETS.Data
   Tabela.value = CCO_SHEETS.Tabela
   Linha.value = CCO_SHEETS.Linha
@@ -291,14 +288,24 @@ const send_sheets = document.getElementById("send_sheets").addEventListener("cli
   Problema.value = CCO_SHEETS.Problema
   Observação.value = CCO_SHEETS.Observação
   Operador.value = operator.value
+}
+
+const text_cco_informa = document.getElementById("text_cco_informa")
+const form = document.getElementById("form_cco_informa").addEventListener("submit", function(events){events.preventDefault()})
+const generate_cco = document.getElementById("generate_cco_informa").addEventListener("click", function(){
+  text_cco_informa.value = generate_cco_informa()
+  function_send_sheet()
 })
+
 const generate_other = document.getElementById("generate_other").addEventListener("click", function(){
-  text_cco_informa.value += generate_cco_inform()
+  text_cco_informa.value += generate_cco_informa()
+  function_send_sheet()
 })
 const copy = document.getElementById("copy").addEventListener("click", function(){
   text_cco_informa.select()
   document.execCommand("copy")
 })
+
 // MOLDE
 /*
 *CCO INFORMA:*
