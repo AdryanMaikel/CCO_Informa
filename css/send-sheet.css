@@ -30,6 +30,12 @@
   color: #ff2424
 }
 
+#container_send_sheets input::placeholder,
+#container_send_sheets textarea::placeholder {
+  color: var(--blue);
+  opacity: 0.3;
+}
+
 #container_send_sheets input.car {
   width: 29px
 }
@@ -86,7 +92,22 @@
   background-color: transparent;
   border-color: transparent transparent transparent var(--primary)
 }
-#container_send_sheets.enviado #button_form_send_sheet,
-#like {
+
+#container_send_sheets.enviado #button_for_send_sheet,
+.btn-like {
   display: none
+}
+
+.box_cco_informa {
+  font-size: 12px;
+  display: flex;
+  background-color: var(--primary);
+  padding: 3px;
+  border-radius: 7px;
+  height: auto;
+}
+
+.text_cco_informa {
+  width: 300px;
+  height: 200px;
 }
