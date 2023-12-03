@@ -1,14 +1,5 @@
 @media only screen and (max-width: 410px) {
-
-  #container_send_sheets,
-  #container_send_sheets_2 {}
-
-  #container_send_sheets .row
-  #container_send_sheet_2 .row {
-    padding: 0;
-    margin: 4px 20px;
-  }
-
+  
   #container_send_sheets.open,
   #container_send_sheet_2.open {
     left: 0px;
