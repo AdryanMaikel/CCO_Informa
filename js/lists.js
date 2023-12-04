@@ -79,7 +79,8 @@ const operators = [
   "Felipe",
   "Hellen",
   "Leandro",
-  "Oliver"
+  "Oliver",
+  "Thaina"
 ]
 
 const create_options = (list, array) => {
