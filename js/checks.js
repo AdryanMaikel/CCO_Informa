@@ -20,6 +20,11 @@ function check_event(event_is) {
   min.disabled = true
   local.disabled = true
   switch (event_is) {
+    case "adiantada":
+      box_min.classList.add("active")
+      min.disabled = false
+      document.getElementById('motive').value = "Adiantado com autorização"
+      return min.focus()
     case "atrasada":
       box_min.classList.add("active")
       min.disabled = false
@@ -109,10 +114,10 @@ const check_problem = (value) => {
     case "Problemas na viagem anterior":
       input_car.value = car_two.value
       car_two.value = ""
-      problem.blur()
       if(document.getElementById("replace").classList.contains("active")){
         toggle_replace_car()
       }
+      document.getElementById("line").blur()
       break
   }
   return document.getElementById("problem").blur()

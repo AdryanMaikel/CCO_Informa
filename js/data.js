@@ -107,6 +107,7 @@ const cleaning_all = () => {
   document.getElementById("informed").classList.remove("active")
   document.getElementById("replace").classList.remove("active")
   document.getElementById("box_car_two").classList.remove("active")
+  document.getElementById('car_two').disabled = true
   toggle_x("box_operator")
   toggle_x("who_informed")
   toggle_x("box_direction")

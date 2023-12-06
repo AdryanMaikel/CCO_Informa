@@ -20,17 +20,18 @@ function generate_cco_informa(){
     cco_informa += "Conforme contato feito pelo CCO ao "
   }
 
+  var why_informed = ''
   if(supervision.value == "Navegantes"
   || supervision.value == "Nortran"
   || supervision.value == "Sopal"){
-    cco_informa += "largador da "+supervision.value
+    why_informed += "largador da "+supervision.value
   }else{
-    cco_informa += "fiscal "
+    why_informed += "fiscal "
     if(supervision.value.length > 0){
-      cco_informa += supervision.value
+      why_informed += supervision.value
     }
   }
-  cco_informa += "\n"
+  cco_informa += `${why_informed}\n`
 
   const input_car = document.getElementById("input_car").value
 
@@ -50,6 +51,9 @@ function generate_cco_informa(){
     case "":
       // return event.focus()
       break
+    case "adiantada":
+      result_event += `realizada com ${min.value} minutos antes do horário previsto,`
+      break
     case "atrasada":
       result_event += `realizada com ${min.value} minutos de atraso`
       ocorrencia_CCO_SHEETS = "Problemas mecânicos - Atrasado"
@@ -67,6 +71,7 @@ function generate_cco_informa(){
       ocorrencia_CCO_SHEETS = "Problemas mecânicos - Viagem interrompida"
       break
   }
+
   CCO_SHEETS.Problema = problem.value
   cco_informa +="- "+result_event+"\n- Motivo: "
 
@@ -75,6 +80,12 @@ function generate_cco_informa(){
     case "Acidente":
       result_motive += "Carro "+input_car+" ter se envolvido em um acidente"
     break;
+    case "Adiantado com autorização":
+      result_event += ` autorizado pelo ${why_informed}.`
+    break
+    case "Adiantado sem autorização":
+      result_event += ` sem autorização da fiscalização.`
+    break
     case "Assalto":
       result_motive += "Carro "+input_car+" ter sido assaltado"
     break;
@@ -123,8 +134,9 @@ function generate_cco_informa(){
       result_motive += "Carro "+input_car+" ter sofrido vandalismo"
     break;
     case "Vistoria EPTC":
-      result_motive += "Carro "+input_car+" ter sido recolhido pela EPTC"
-    break;
+      //result_motive += "Carro "+input_car+" ter sido recolhido pela EPTC"
+      result_motive += "Vistoria da EPTC"
+      break;
     case "Problemas mecânicos":
       switch (problem.value) {
         case "Carroceria - Ar Condicionado":
@@ -248,7 +260,11 @@ function generate_cco_informa(){
     result_motive = result_motive[0].toLowerCase() + result_motive.slice(1) 
   else 
     result_motive = ""
-  CCO_SHEETS.Observação = `${result_event}, devido a ${result_motive}${replace_car}${continued_journey_text}.`
+  
+  if (event.value == "adiantada")
+    CCO_SHEETS.Observação = `${result_event}`
+  else
+    CCO_SHEETS.Observação = `${result_event}, devido a ${result_motive}${replace_car}${continued_journey_text}.`
   
   cco_informa += "\n\n"
   return cco_informa

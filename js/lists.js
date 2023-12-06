@@ -21,6 +21,7 @@ const activies = [
 ]
 
 const events = [
+  "adiantada",
   "atrasada",
   "interrompida",
   "perdida",
@@ -29,6 +30,8 @@ const events = [
 
 const motives = [
   "Acidente",
+  "Adiantado com autorização",
+  "Adiantado sem autorização",
   "Assalto",
   "Atrasado",
   "Avaria",
@@ -44,6 +47,7 @@ const motives = [
   "Vandalismo",
   "Vistoria EPTC"
 ]
+
 const problems = [
   "Carroceria - Ar Condicionado",
   "Carroceria - Elevador APD",
