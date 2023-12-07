@@ -1,3 +1,4 @@
+import { toggle_x } from "./data.js"
 import { toggle_replace_car } from "./replace.js"
 
 const box_min = document.getElementById("box_min")
@@ -23,7 +24,7 @@ function check_event(event_is) {
     case "adiantada":
       box_min.classList.add("active")
       min.disabled = false
-      document.getElementById('motive').value = "Adiantado com autorização"
+      toggle_x('box_motive')
       return min.focus()
     case "atrasada":
       box_min.classList.add("active")
@@ -73,7 +74,16 @@ function check_motive(input_motive) {
   row_gps.classList.remove("open")
   hour_return.disabled = true
   hour_stop.disabled = true
+  const events = document.getElementById('event')
   switch (input_motive) {
+    case "Adiantado com autorização":
+      events.value = 'adiantada'
+      toggle_x('box_event')
+      return check_event('adiantada')
+    case "Adiantado sem autorização":
+      events.value = 'adiantada'
+      toggle_x('box_event')
+      return check_event('adiantada')
     case "Problemas mecânicos":
       row_problems.classList.add("open")
       if(problem.value == "Carroceria - Limpador / Espelho")
