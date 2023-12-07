@@ -79,6 +79,7 @@ const input = (father, array) => {
     if(father == "who_informed"){
       input.value = input.value.trim()
     }
+
     const options = document.querySelectorAll(`#${father} ~ .list .option`)
     for(var option of options){
       option.onclick = function(){
@@ -93,6 +94,7 @@ const input = (father, array) => {
           return check_problem(this.textContent)
       }
     }
+    
     setTimeout(()=>{
       box.classList.remove("open")
     }, 100)
