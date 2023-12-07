@@ -169,10 +169,9 @@ header .fa-chevron-down,
 
 main {
   width: 80%;
-  min-height: 628px;
+  min-height: 700px;
   position: relative;
-  left: 40px;
-  padding: 0 0 10px 0;
+  left: 40px
 }
 
 section {

@@ -1,0 +1,7 @@
+@media only screen and (max-height: 855px) {
+
+  footer{
+    position: relative;
+    top: 0;
+  }
+}
