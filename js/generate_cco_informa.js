@@ -309,12 +309,18 @@ const function_send_sheet = function () {
 const text_cco_informa = document.getElementById("text_cco_informa")
 const form = document.getElementById("form_cco_informa").addEventListener("submit", function(events){events.preventDefault()})
 const generate_cco = document.getElementById("generate_cco_informa").addEventListener("click", function(){
-  text_cco_informa.value = generate_cco_informa()
+  const generated = generate_cco_informa()
+  if(document.getElementById('event').value != 'adiantada'){
+    text_cco_informa.value = generated
+  }
   function_send_sheet()
 })
 
 const generate_other = document.getElementById("generate_other").addEventListener("click", function(){
-  text_cco_informa.value += generate_cco_informa()
+  if(document.getElementById('event').value != 'adiantada'){
+    const generated = generate_cco_informa()
+    text_cco_informa.value += generated
+  }
   function_send_sheet()
 })
 const copy = document.getElementById("copy").addEventListener("click", function(){

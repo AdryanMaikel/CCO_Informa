@@ -24,6 +24,7 @@ box_local.addEventListener("click", function(){
     box_continued.classList.toggle("open")
   }
 })
+
 continued.addEventListener("click", function(){
   continued.classList.toggle("active")
   box_continued.classList.toggle("open")
@@ -78,6 +79,7 @@ const autocomplete_direction = () => {
 table.addEventListener("input", function(){
   this.value = this.value.replace(/[^a-zA-Z0-9]/,"").toUpperCase()
 })
+
 table.addEventListener("focusout", function(){
   if(this.value.indexOf("/")>=1 || this.value.length < 3){return}//Para não ficar colocando barras 
   var value = this.value.split("")
@@ -108,12 +110,15 @@ for(var car of cars){
     }
   })
 }
+
 line.addEventListener("input", function(){
   this.value = this.value.replace(/[^a-zA-Z0-9]/,"").toUpperCase()
 })
+
 line.addEventListener("focusout", function(){
   return autocomplete_direction()
 })
+
 const inputs_hour = document.querySelectorAll("input.hour")
 for(const input_hour of inputs_hour){
   input_hour.addEventListener("input", function(){
@@ -129,6 +134,7 @@ for(const input_hour of inputs_hour){
         return input_hour.blur()
   })
 }
+
 const box_hours = document.getElementById("box_hours")
 const box_gps = document.getElementById("box_gps")
 const hour_return = document.getElementById("hour_return")
@@ -148,6 +154,7 @@ box_gps.addEventListener("click", () => {
     hour_stop.disabled = true
   }
 })
+
 min.addEventListener("input", function(){
   this.value = this.value.replace(/[^0-9]/, "")
   if(this.value.length == 2){
@@ -157,5 +164,5 @@ min.addEventListener("input", function(){
 
 const trash_cco_informa = document.getElementById('btn_trash')
 trash_cco_informa.addEventListener('click', () => {
-  document.getElementById('text_cco_informa').value = '*CCO INFORMA*'
+  document.getElementById('text_cco_informa').value = ''
 })
