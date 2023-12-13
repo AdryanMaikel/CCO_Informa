@@ -198,7 +198,7 @@ function generate_cco_informa(){
           result_motive += "Vazamento de óleo do motor no carro "+input_car
         break;
         case "Problemas na viagem anterior":
-          result_motive = problema_viagem_anterior
+          result_motive = problema_viagem_anterior += ' na viagem anterior'
         break;
         case "Suspensão - Arriada":
           result_motive += "Problemas na suspensão do carro "+input_car
