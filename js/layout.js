@@ -121,9 +121,10 @@ line.addEventListener("focusout", function(){
 
 const inputs_hour = document.querySelectorAll("input.hour")
 for(const input_hour of inputs_hour){
-  input_hour.addEventListener("input", function(){
+  input_hour.addEventListener("input", function(event){
     this.value = this.value.replace(/[^0-9:]/,"")
-    if(input_hour.value.length == 2)
+    if(input_hour.value.length == 2
+    && event.inputType != "deleteContentBackward")
       return this.value += ":"
     else if(input_hour.value.length == 5)
       if(input_hour.id == "hour")
