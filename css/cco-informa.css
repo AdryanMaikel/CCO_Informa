@@ -56,8 +56,14 @@ header .row {
   color: var(--primary)
 }
 
+header > div:first-child {
+  justify-content: center;
+  gap: 2em;
+}
+
 header a,
 header i.fa-link,
+header i.fa-skull-crossbones,
 header .fa-chevron-down {
   color: var(--third);
   transition: color .3s
