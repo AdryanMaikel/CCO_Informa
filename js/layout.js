@@ -1,4 +1,4 @@
-import{ toggle_x } from "./data.js"
+import{ toggle_x, cleaning_all } from "./data.js"
 import{ toggle_replace_car } from "./replace.js"
 
 const informed = document.getElementById("informed")
@@ -121,9 +121,10 @@ line.addEventListener("focusout", function(){
 
 const inputs_hour = document.querySelectorAll("input.hour")
 for(const input_hour of inputs_hour){
-  input_hour.addEventListener("input", function(){
+  input_hour.addEventListener("input", function(event){
     this.value = this.value.replace(/[^0-9:]/,"")
-    if(input_hour.value.length == 2)
+    if(input_hour.value.length == 2
+    && event.inputType != "deleteContentBackward")
       return this.value += ":"
     else if(input_hour.value.length == 5)
       if(input_hour.id == "hour")
@@ -165,4 +166,19 @@ min.addEventListener("input", function(){
 const trash_cco_informa = document.getElementById('btn_trash')
 trash_cco_informa.addEventListener('click', () => {
   document.getElementById('text_cco_informa').value = ''
+})
+
+
+const clear_all = document.getElementById('clear_all')
+clear_all.addEventListener('click', function(){
+  document.getElementById('text_cco_informa').value = ''
+  cleaning_all()
+  var inputs = document.querySelectorAll('#form_send_sheets input')
+  var textareas = document.querySelectorAll('#form_send_sheets textarea')
+  for(const input of inputs){
+    input.value = ''
+  }
+  for(const textarea of textareas){
+    textarea.value = ''
+  }
 })

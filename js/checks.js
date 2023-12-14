@@ -77,13 +77,19 @@ function check_motive(input_motive) {
   const events = document.getElementById('event')
   switch (input_motive) {
     case "Adiantado com autorização":
-      events.value = 'adiantada'
-      toggle_x('box_event')
-      return check_event('adiantada')
+      if(events.value == ''){
+        events.value = 'adiantada'
+        toggle_x('box_event')
+        return check_event('adiantada')
+      }
+      return
     case "Adiantado sem autorização":
-      events.value = 'adiantada'
-      toggle_x('box_event')
-      return check_event('adiantada')
+      if(events.value == ''){
+        events.value = 'adiantada'
+        toggle_x('box_event')
+        return check_event('adiantada')
+      }
+      return
     case "Problemas mecânicos":
       row_problems.classList.add("open")
       if(problem.value == "Carroceria - Limpador / Espelho")

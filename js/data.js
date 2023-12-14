@@ -122,4 +122,4 @@ const cleaning_all = () => {
 
 document.getElementById("reset_cco_informa").addEventListener("click", cleaning_all)
 
-export{ input, toggle_x }
+export{ input, toggle_x, cleaning_all }
