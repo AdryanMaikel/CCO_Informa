@@ -16,7 +16,7 @@ const toggle_x = (father) => {
       else if(father == "box_motive")
         check_motive(input.value)
       else if(father == "box_problems")
-        return check_problem(input.value)
+        check_problem(input.value)
       return input.focus()
     })
   }

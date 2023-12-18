@@ -34,6 +34,7 @@ function check_event(event_is) {
       box_local.classList.add("active")
       local.disabled = false
       interrupted_text.textContent = "n"
+      interrupted_text.style.width = "8.28px"
       box_local.classList.add("open")
       row_local.classList.add("open")
       continued.classList.add("open")
@@ -44,6 +45,7 @@ function check_event(event_is) {
       box_local.classList.add("active")
       local.disabled = false
       interrupted_text.textContent = "a partir d"
+      interrupted_text.style.width = "58.13px"
       box_local.classList.add("open")
       row_local.classList.add("open")
       return local.focus()

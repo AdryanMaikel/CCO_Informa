@@ -25,12 +25,13 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: white;
   padding: 2px
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--blue)
+  background-color: var(--blue);
+  border-radius: 25px;
 }
 
 body {
@@ -281,6 +282,10 @@ input#direction {
 
 input#event {
   width: 105px
+}
+
+input#local {
+  width: 169px;
 }
 
 input#min {
