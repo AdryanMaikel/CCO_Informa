@@ -1,10 +1,8 @@
-const TITLE = document.title
+const TITLE = document.title;
 
-if ('hidden' in document) {
-  document.addEventListener('visibilitychange', function() {
-    document.hidden ? document.title = 'Não me abandone! 😭' : document.title = TITLE;
-  })
-} else {
-  console.log('Visibility API não suportado.')
+alter_title = (event) => {
+  document.title = event === 'blur' ? 'Não me abandone! 😭' : TITLE
 }
 
+window.addEventListener('blur', () => alter_title('blur'))
+window.addEventListener('focus', () => alter_title('focus'))
