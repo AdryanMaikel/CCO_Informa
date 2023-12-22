@@ -1,4 +1,4 @@
-import { toggle_x } from "./data.js"
+import { toggle_x } from "./layout.js"
 import { toggle_replace_car } from "./replace.js"
 
 const box_min = document.getElementById("box_min")
@@ -10,6 +10,7 @@ const continued = document.getElementById("continued")
 const box_continued = document.getElementById("box_continued")
 const local = document.getElementById("local")
 const motive = document.getElementById("motive")
+const dropping_passengers = document.getElementById("dropping_passengers")
 function check_event(event_is) {
   box_min.classList.remove("active")
   box_local.classList.remove("active")
@@ -18,6 +19,7 @@ function check_event(event_is) {
   continued.classList.remove("open")
   continued.classList.remove("active")
   box_continued.classList.remove("open")
+  dropping_passengers.classList.remove("active")
   min.disabled = true
   local.disabled = true
   switch (event_is) {
@@ -45,7 +47,7 @@ function check_event(event_is) {
       box_local.classList.add("active")
       local.disabled = false
       interrupted_text.textContent = "a partir d"
-      interrupted_text.style.width = "58.13px"
+      interrupted_text.style.width = "60px"
       box_local.classList.add("open")
       row_local.classList.add("open")
       return local.focus()
