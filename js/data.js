@@ -2,24 +2,28 @@ import { autocomplete, create_options} from "./lists.js"
 import { check_event, check_motive, check_problem } from "./checks.js"
 
 const toggle_x = (father) => {
-  const open = document.querySelector(`#${father} ~ .box.mini.trash`)
+  const trash_box = document.querySelector(`#${father} ~ .box.mini.trash`)
   const input = document.querySelector(`#${father} input`)
   if(input.value == ""){
-    return open.classList.remove("active")
-  }else{
-    open.classList.add("active")
-    open.addEventListener("click", function(){
-      input.value = ""
-      open.classList.remove("active")
-      if(father == "box_event")
-        check_event(input.value)
-      else if(father == "box_motive")
-        check_motive(input.value)
-      else if(father == "box_problems")
-        check_problem(input.value)
-      return input.focus()
-    })
+    return trash_box.classList.remove("active")
   }
+  trash_box.classList.add("active")
+  trash_box.addEventListener("click", function() {
+    input.value = ""
+    trash_box.classList.remove("active")
+    switch (father) {
+      case "box_event":
+        check_event(input.value)
+        break
+      case "box_motive":
+        check_motive(input.value)
+        break
+      case "box_problems":
+        check_problem(input.value)
+        break
+    }
+    input.focus();
+  })
 }
 
 const input = (father, array) => {
