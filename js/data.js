@@ -1,30 +1,6 @@
+import { toggle_x } from "./layout.js"
 import { autocomplete, create_options} from "./lists.js"
 import { check_event, check_motive, check_problem } from "./checks.js"
-
-const toggle_x = (father) => {
-  const trash_box = document.querySelector(`#${father} ~ .box.mini.trash`)
-  const input = document.querySelector(`#${father} input`)
-  if(input.value == ""){
-    return trash_box.classList.remove("active")
-  }
-  trash_box.classList.add("active")
-  trash_box.addEventListener("click", function() {
-    input.value = ""
-    trash_box.classList.remove("active")
-    switch (father) {
-      case "box_event":
-        check_event(input.value)
-        break
-      case "box_motive":
-        check_motive(input.value)
-        break
-      case "box_problems":
-        check_problem(input.value)
-        break
-    }
-    input.focus();
-  })
-}
 
 const input = (father, array) => {
   var box = document.querySelector(`#${father}`)
@@ -126,4 +102,4 @@ const cleaning_all = () => {
 
 document.getElementById("reset_cco_informa").addEventListener("click", cleaning_all)
 
-export{ input, toggle_x, cleaning_all }
+export{ input, cleaning_all }
