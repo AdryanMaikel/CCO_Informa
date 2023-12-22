@@ -12,15 +12,14 @@
   <link rel="stylesheet" href="css/min700.css">
   <link rel="stylesheet" href="css/maxHeight855.css">
   <script src="js/events_document.js" defer></script>
+  <script src="https://kit.fontawesome.com/f9a0d51bc2.js" crossorigin="anonymous" defer></script>
   <script nomodule src="js/lists.js" defer></script>
   <script nomodule src="js/replace.js" defer></script>
   <script nomodule src="js/checks.js" defer></script>
   <script nomodule src="js/data.js" defer></script>
-  <script src="https://kit.fontawesome.com/f9a0d51bc2.js" crossorigin="anonymous" defer></script>
   <script type="module" src="js/creating-lists.js" defer></script>
   <script src="js/generate_cco_informa.js" defer></script>
   <script type="module" src="js/layout.js" defer></script>
-  <script src="js/send_sheet.js" defer></script>
 </head>
 <body>
   <header>
@@ -49,11 +48,11 @@
       <div class="align">
         <label id="box_operator" for="operator" class="box blue">
           <span>Operador:</span>
-          <input type="text" name="operator" id="operator" minlength="3" required>
+          <input type="text" name="operator" id="operator" minlength="3" value="Adryan" required>
           <i class="fa-solid fa-chevron-down icon"></i>
         </label>
         <ul class="list" id="operators_list"></ul>
-        <div class="box mini trash surge">
+        <div class="box mini trash surge active">
           <i class="fa-regular fa-trash-can icon"></i>
         </div>
       </div>
@@ -154,12 +153,15 @@
             <i class="fa-solid fa-arrows-rotate icon text_decoration"></i>
           </div>
         </div>
-        <div id="box_continued" class="row revel">
+        <div id="box_continued" class="row revel open">
           <label id="box_input_continued" class="box" for="input_continued">
             <i class="fa-solid fa-location-dot icon"></i>
             <span>a partir d</span>
             <input type="text" name="input_continued" id="input_continued" placeholder="o terminal Triângulo" disabled>
           </label>
+          <div class="box mini" id="dropping_passengers">
+            <i class="fa-solid fa-person-running icon text_decoration"></i>
+          </div>
         </div>
         <div id="row_motive" class="row">
           <label id="box_motive" class="box" for="motive">
