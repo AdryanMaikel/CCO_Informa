@@ -40,14 +40,20 @@
   width: 29px
 }
 
+#container_send_sheets #row_buttons_sheets {
+  gap: 7px;
+}
+
 #container_send_sheets.enviado #row_buttons_sheets text {
   visibility: visible;
 }
 
 #container_send_sheets #row_buttons_sheets text {
   visibility: hidden;
-  top: 12px;
-  left: 28px;
+  top: 7px;
+  left: 13px;
+  width: 181px;
+  left: 20px;
 }
 #container_send_sheets #button_form_send_sheet,
 #container_send_sheets.enviado #like {
@@ -87,8 +93,8 @@
 }
 
 #row_buttons_sheets text::before {
-  top: 7px;
-  left: 173px;
+  top: 10px;
+  left: 189px;
   background-color: transparent;
   border-color: transparent transparent transparent var(--primary)
 }

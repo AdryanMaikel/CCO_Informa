@@ -39,7 +39,9 @@ body {
   height: 100vh;
   background: var(--primary);
   overflow-x: hidden !important;
-  font-family: 'Lora', sans-serif
+  font-family: Poppins;
+  font-weight: 900
+  /* font-family: 'Lora', sans-serif */
 }
 
 header {
@@ -189,9 +191,11 @@ section {
 section#form {
   background: var(--secondy);
   font-size: 13px;
-  font-family: 'Lora', serif;
   position: relative;
   z-index: 1;
+  /* font-family: 'Lora', serif; */
+  font-family: Poppins;
+  font-weight: 900
 }
 
 div.row {
@@ -353,7 +357,7 @@ ul.list {
 
 #box_event~ul.list {
   left: 64px;
-  width: 117px;
+  width: 123px;
   z-index: 7
 }
 
@@ -504,6 +508,14 @@ ul.list li.option:hover {
   margin-top: 4px;
   height: 22px;
   z-index: 7
+}
+
+#interrupted_text,
+#box_event > span,
+#box_motive > span,
+#box_input_continued > span,
+#box_congestion > span {
+  height: 18px;
 }
 
 label#box_car_two,
