@@ -325,7 +325,12 @@ const generate_other = document.getElementById("generate_other").addEventListene
 })
 const copy = document.getElementById("copy").addEventListener("click", function(){
   text_cco_informa.select()
-  document.execCommand("copy")
+  try{
+    document.execCommand("copy")
+  } catch (error) {
+    console.error("Erro ao copiar o texto: ", error)
+  }
+  // window.getSelection().removeAllRanges()
 })
 
 // MOLDE
