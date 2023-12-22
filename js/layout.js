@@ -1,5 +1,30 @@
-import{ toggle_x, cleaning_all } from "./data.js"
 import{ toggle_replace_car } from "./replace.js"
+import { check_event, check_motive, check_problem } from "./checks.js"
+
+const toggle_x = (father) => {
+  const trash_box = document.querySelector(`#${father} ~ .box.mini.trash`)
+  const input = document.querySelector(`#${father} input`)
+  if(input.value == ""){
+    return trash_box.classList.remove("active")
+  }
+  trash_box.classList.add("active")
+  trash_box.addEventListener("click", function() {
+    input.value = ""
+    trash_box.classList.remove("active")
+    switch (father) {
+      case "box_event":
+        check_event(input.value)
+        break
+      case "box_motive":
+        check_motive(input.value)
+        break
+      case "box_problems":
+        check_problem(input.value)
+        break
+    }
+    input.focus();
+  })
+}
 
 const informed = document.getElementById("informed")
 const supervision = document.getElementById("supervision")
@@ -182,3 +207,10 @@ clear_all.addEventListener('click', function(){
     textarea.value = ''
   }
 })
+
+const dropping_passengers = document.getElementById("dropping_passengers")
+dropping_passengers.addEventListener('click', () => {
+  dropping_passengers.classList.toggle('active')
+})
+
+export { toggle_x }
