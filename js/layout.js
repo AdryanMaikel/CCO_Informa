@@ -1,5 +1,6 @@
 import{ toggle_replace_car } from "./replace.js"
 import { check_event, check_motive, check_problem } from "./checks.js"
+import { calculateHourExit } from "./calculate_hour_exit.js"
 
 const toggle_x = (father) => {
   const trash_box = document.querySelector(`#${father} ~ .box.mini.trash`)
@@ -50,7 +51,7 @@ box_local.addEventListener("click", function(){
   }
 })
 
-continued.addEventListener("click", function(){
+continued.addEventListener("click", function() {
   continued.classList.toggle("active")
   box_continued.classList.toggle("open")
   if(!box_continued.classList.contains("open")){
@@ -212,5 +213,27 @@ const dropping_passengers = document.getElementById("dropping_passengers")
 dropping_passengers.addEventListener('click', () => {
   dropping_passengers.classList.toggle('active')
 })
+
+const calculate_hour_exit = document.getElementById('calculate_hour_exit')
+calculate_hour_exit.addEventListener('click', () => {
+  document.getElementById('box_calculate_hour_exit').classList.toggle('open')
+})
+
+const inputs_hours = document.querySelectorAll('#box_calculate_hour_exit .row .collumn .box .hour')
+for(var input_hour of inputs_hours) {
+  input_hour.addEventListener('blur', () => {
+    const start_journey = document.getElementById('start_journey').value
+    const start_interval = document.getElementById('start_interval').value
+    const end_interval = document.getElementById('end_interval').value
+    const end_journey = document.getElementById('end_journey')
+    if(start_journey  == ''
+    || start_interval == ''
+    || end_interval   == '') {
+      return
+    }
+    
+    end_journey.value = calculateHourExit('07:10', start_journey, start_interval, end_interval)
+  })
+}
 
 export { toggle_x }
