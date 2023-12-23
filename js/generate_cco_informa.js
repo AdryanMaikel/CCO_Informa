@@ -250,7 +250,15 @@ function generate_cco_informa(){
   continued_journey_text = ""
   if(continued.classList.contains("active")){
     if(input_continued.value.length > 0){
-      continued_journey_text = `, que continuou puxando viagem a partir d${input_continued.value}`
+      if(car_two.disabled == false){
+        continued_journey_text = ' que '
+      }else{
+        continued_journey_text = ' e '
+      }
+      continued_journey_text += `continuou puxando viagem a partir d${input_continued.value}`
+      if(dropping_passengers.classList.contains("active")){
+        continued_journey_text += ` somente largando os passageiros`
+      }
       cco_informa += continued_journey_text
     }else{
       input_continued.focus()
