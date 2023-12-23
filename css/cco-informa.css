@@ -836,7 +836,7 @@ address {
 }
 
 #box_calculate_hour_exit .row #calculate_hour_exit span {
-  width: 188px;
+  width: 170px;
 }
 
 #box_calculate_hour_exit {
@@ -861,4 +861,8 @@ address {
 #box_calculate_hour_exit .row span {
   width: 62px;
   text-align: center;
+}
+
+#calculate_hour_exit {
+  padding: 0 4px;
 }
