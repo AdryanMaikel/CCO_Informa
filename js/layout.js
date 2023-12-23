@@ -1,6 +1,7 @@
 import{ toggle_replace_car } from "./replace.js"
 import { check_event, check_motive, check_problem } from "./checks.js"
 import { calculateHourExit } from "./calculate_hour_exit.js"
+import { cleaning_all } from "./data.js"
 
 const toggle_x = (father) => {
   const trash_box = document.querySelector(`#${father} ~ .box.mini.trash`)
@@ -199,8 +200,8 @@ const clear_all = document.getElementById('clear_all')
 clear_all.addEventListener('click', function(){
   document.getElementById('text_cco_informa').value = ''
   cleaning_all()
-  var inputs = document.querySelectorAll('#form_send_sheets input')
-  var textareas = document.querySelectorAll('#form_send_sheets textarea')
+  const inputs = document.querySelectorAll('#form_send_sheets input')
+  const textareas = document.querySelectorAll('#form_send_sheets textarea')
   for(const input of inputs){
     input.value = ''
   }
