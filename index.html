@@ -20,6 +20,7 @@
   <script type="module" src="js/creating-lists.js" defer></script>
   <script src="js/generate_cco_informa.js" defer></script>
   <script type="module" src="js/layout.js" defer></script>
+  <script type="module" src="js/calculate_hour_exit.js" defer></script>
 </head>
 <body>
   <header>
@@ -161,6 +162,9 @@
           </label>
           <div class="box mini" id="dropping_passengers">
             <i class="fa-solid fa-person-running icon text_decoration"></i>
+          </div>
+          <div id="info_drop" class="box">
+            <text>Somente largando os passageiros</text>
           </div>
         </div>
         <div id="row_motive" class="row">
@@ -307,6 +311,48 @@
       <div class="anotations">
         <text>* ANOTAÇÕES *</text>
         <textarea name="anotations" id="anotations"></textarea>
+      </div>
+      <div id="box_calculate_hour_exit" class="collumn open">
+        <div class="row">
+          <div id="calculate_hour_exit" class="box">
+            <span>Calcular horário de soltar</span>
+            <i class="fa-solid fa-chevron-down icon" aria-hidden="true"></i>
+          </div>
+        </div>
+          
+        <div class="row">
+          <div class="collumn">
+            <span>Ini. Jorn.</span>
+            <label for="start_journey" class="box">
+              <i class="fa-solid fa-clock icon"></i>
+              <input type="text" name="start_journey" id="start_journey" class="hour" placeholder="Hora" maxlength="5">
+            </label>
+          </div>
+  
+          <div class="collumn">
+            <span>Ini. Int.</span>
+            <label for="start_interval" class="box">
+              <i class="fa-solid fa-clock icon"></i>
+              <input type="text" name="start_interval" id="start_interval" class="hour" placeholder="Hora" maxlength="5">
+            </label>
+          </div>
+          
+          <div class="collumn">
+            <span>Fim Int.</span>
+            <label for="end_interval" class="box">
+              <i class="fa-solid fa-clock icon"></i>
+              <input type="text" name="end_interval" id="end_interval" class="hour" placeholder="Hora" maxlength="5">
+            </label>
+          </div>
+
+          <div class="collumn">
+            <span>Fim Jorn.</span>
+            <label for="end_journey" class="box">
+              <i class="fa-solid fa-clock icon"></i>
+              <input type="text" name="end_journey" id="end_journey" class="hour" placeholder="Hora" maxlength="5" disabled>
+            </label>
+          </div>
+        </div>
       </div>
     </section>
     <!-- <section id="box_cco_informa">
