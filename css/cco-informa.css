@@ -180,7 +180,8 @@ main {
   width: 80%;
   min-height: 700px;
   position: relative;
-  left: 40px
+  left: 40px;
+
 }
 
 section {
@@ -194,6 +195,8 @@ section#form {
   position: relative;
   z-index: 1;
   /* font-family: 'Lora', serif; */
+  max-height: 670px;
+  overflow-x: overlay;
   font-family: Poppins;
   font-weight: 900
 }
@@ -468,7 +471,7 @@ ul.list li.option:hover {
 }
 
 #continued.open {
-  width: 90px
+  width: 93px
 }
 
 .fa-trash-can {
@@ -727,11 +730,12 @@ footer {
   z-index: 10;
   left: 5px;
   padding: 5px;
-  top: -40px;
+  top: -45px;
   color: var(--primary)
 }
 
-#send_bug~text::before {
+#send_bug~text::before,
+#box_continued #info_drop text::before {
   content: '';
   position: absolute;
   border-width: 8px;
@@ -739,12 +743,54 @@ footer {
 }
 
 #send_bug~text::before {
-  top: 30px;
+  top: 35px;
   left: 12px;
 }
 
 #send_bug~text::before {
   border-color: var(--blue) transparent transparent
+}
+
+i.fa-person-running {
+  scale: 1.2;
+}
+
+#dropping_passengers {
+  padding: 5px;
+}
+
+#dropping_passengers {
+  z-index: 9;
+}
+
+#box_input_continued {
+  z-index: 6;
+}
+
+#box_continued #info_drop {
+  scale: 0;
+  position: absolute;
+  margin-top: 0px;
+  background-color: var(--blue);
+  color: var(--primary);
+  padding: 0 4px;
+  left: 70px;
+  z-index: 6;
+  transform-origin: right;
+  transition: scale .2s, margin-top .4s, left .2s;
+}
+
+#dropping_passengers:hover ~ #info_drop {
+  scale: 1;
+  left: 85px;
+  margin-top: 45px;
+  transition: scale .2s, margin-top .4s;
+}
+
+#box_continued #info_drop text::before {
+  border-color: transparent transparent var(--blue) transparent;
+  top: -15px;
+  left: 205px;
 }
 
 address {
@@ -787,4 +833,32 @@ address {
 
 .hours {
   height: 55px;
+}
+
+#box_calculate_hour_exit .row #calculate_hour_exit span {
+  width: 188px;
+}
+
+#box_calculate_hour_exit {
+  height: 45px;
+  overflow: hidden;
+  transition: height .5s ease-in-out;
+}
+
+#box_calculate_hour_exit.open {
+  height: 110px;
+  transition: height .5s ease-in-out;
+}
+
+#box_calculate_hour_exit .row {
+  gap: 10px;
+}
+
+#box_calculate_hour_exit .collumn {
+  height: auto;
+}
+
+#box_calculate_hour_exit .row span {
+  width: 62px;
+  text-align: center;
 }
