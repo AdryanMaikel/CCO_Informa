@@ -233,7 +233,11 @@ for(var input_hour of inputs_hours) {
       return
     }
     
-    end_journey.value = calculateHourExit('07:10', start_journey, start_interval, end_interval)
+    end_journey.value = calculateHourExit({
+      startJourney: start_journey,
+      startInterval: start_interval,
+      endInterval: end_interval
+    })
   })
 }
 
