@@ -4,42 +4,44 @@ function transformInTimeDelta(time) {
   return { hours, minutes }
 }
 
-function calculateHourExit(schedules = {}) {
+function calculate_hour_exit(schedules = {}) {
   const {
     journey = '07:10',
-    startJourney = '17:00',
-    startInterval = '17:00',
-    endInterval = '17:30'
+    start_journey = '17:00',
+    start_interval = '17:00',
+    end_interval = '17:30'
   } = schedules
 
-  const journeyDelta = transformInTimeDelta(journey)
-  const startJourneyDelta = transformInTimeDelta(startJourney)
-  const startIntervalDelta = transformInTimeDelta(startInterval)
-  const endIntervalDelta = transformInTimeDelta(endInterval)
+  const journey_delta = transformInTimeDelta(journey)
+  const start_journey_delta = transformInTimeDelta(start_journey)
+  const start_interval_delta = transformInTimeDelta(start_interval)
+  const end_interval_delta = transformInTimeDelta(end_interval)
 
-  const totalInterval =
-    (endIntervalDelta.hours * 60 + endIntervalDelta.minutes) -
-    (startIntervalDelta.hours * 60 + startIntervalDelta.minutes)
+  const total_interval =
+    (end_interval_delta.hours * 60 + end_interval_delta.minutes) -
+    (start_interval_delta.hours * 60 + start_interval_delta.minutes)
 
-  const totalJourney = {
-    hours: journeyDelta.hours + Math.floor(totalInterval / 60),
-    minutes: journeyDelta.minutes + totalInterval % 60,
+  const total_journey = {
+    hours: journey_delta.hours + Math.floor(total_interval / 60),
+    minutes: journey_delta.minutes + total_interval % 60,
   }
 
-  const endJourney = {
-    hours: startJourneyDelta.hours + totalJourney.hours,
-    minutes: startJourneyDelta.minutes + totalJourney.minutes,
+  const end_journey = {
+    hours: start_journey_delta.hours + total_journey.hours,
+    minutes: start_journey_delta.minutes + total_journey.minutes,
   }
 
-  if (endJourney.hours >= 24){
-    endJourney.hours -= 24
+  if (end_journey.hours >= 24){
+    end_journey.hours -= 24
   }
-  if (endJourney.minutes >= 60){
-    endJourney.hours += 1
-    endJourney.minutes -= 60
+  if (end_journey.minutes >= 60){
+    end_journey.hours += 1
+    end_journey.minutes -= 60
   }
   
-  return `${String(endJourney.hours).padStart(2, '0')}:${String(endJourney.minutes).padStart(2, '0')}`
+  const hours = String(end_journey.hours).padStart(2, '0')
+  const minutes = String(end_journey.minutes).padStart(2, '0')
+  return `${hours}:${minutes}`
 }
 
 /* testes
@@ -47,12 +49,12 @@ var start_journey = '14:00'
 var start_interval = '17:00'
 var end_interval = '17:30'
 
-const hour_exit = calculateHourExit( {
-  startJourney: start_journey,
-  startInterval: start_interval,
-  endInterval: end_interval
+const hour_exit = calculate_hour_exit( {
+  start_journey: start_journey,
+  start_interval: start_interval,
+  end_interval: end_interval
 })
 console.log(hour_exit)
 */
 
-export { calculateHourExit }
+export { calculate_hour_exit }
