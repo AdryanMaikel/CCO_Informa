@@ -1,9 +1,9 @@
 import { supervisions, activies, events, motives, problems, operators } from "./lists.js"
-import { input } from "./data.js"
+import { createInteractiveInput } from "./data.js"
 
-input("who_informed", supervisions)
-input("box_operator", operators)
-input("box_direction", activies)
-input("box_event", events)
-input("box_motive", motives)
-input("box_problems", problems)
+createInteractiveInput("who_informed", supervisions)
+createInteractiveInput("box_operator", operators)
+createInteractiveInput("box_direction", activies)
+createInteractiveInput("box_event", events)
+createInteractiveInput("box_motive", motives)
+createInteractiveInput("box_problems", problems)

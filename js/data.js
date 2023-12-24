@@ -2,7 +2,7 @@ import { toggle_x } from "./layout.js"
 import { autocomplete, create_options} from "./lists.js"
 import { check_event, check_motive, check_problem } from "./checks.js"
 
-const input = (father, array) => {
+const createInteractiveInput = (father, array) => {
   var box = document.querySelector(`#${father}`)
   var input = document.querySelector(`#${father} input`)
   var list = document.querySelector(`#${father} ~ .list`)
@@ -102,4 +102,4 @@ const cleaning_all = () => {
 
 document.getElementById("reset_cco_informa").addEventListener("click", cleaning_all)
 
-export{ input, cleaning_all }
+export{ createInteractiveInput, cleaning_all }
