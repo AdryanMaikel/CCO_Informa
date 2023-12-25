@@ -1,4 +1,4 @@
-function transformInTimeDelta(time) {
+function transform_in_time_delta(time) {
   time = String(time)
   const [hours, minutes] = time.split(':').map(Number)
   return { hours, minutes }
@@ -12,10 +12,10 @@ function calculate_hour_exit(schedules = {}) {
     end_interval = '17:30'
   } = schedules
 
-  const journey_delta = transformInTimeDelta(journey)
-  const start_journey_delta = transformInTimeDelta(start_journey)
-  const start_interval_delta = transformInTimeDelta(start_interval)
-  const end_interval_delta = transformInTimeDelta(end_interval)
+  const journey_delta = transform_in_time_delta(journey)
+  const start_journey_delta = transform_in_time_delta(start_journey)
+  const start_interval_delta = transform_in_time_delta(start_interval)
+  const end_interval_delta = transform_in_time_delta(end_interval)
 
   const total_interval =
     (end_interval_delta.hours * 60 + end_interval_delta.minutes) -
@@ -56,5 +56,6 @@ const hour_exit = calculate_hour_exit( {
 })
 console.log(hour_exit)
 */
+transform_in_time_delta('10:05')
 
 export { calculate_hour_exit }
