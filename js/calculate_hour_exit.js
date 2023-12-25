@@ -7,7 +7,7 @@ function transform_in_time_delta(time) {
 function calculate_hour_exit(schedules = {}) {
   const {
     journey = '07:10',
-    start_journey = '17:00',
+    start_journey = '13:00',
     start_interval = '17:00',
     end_interval = '17:30'
   } = schedules
@@ -56,6 +56,5 @@ const hour_exit = calculate_hour_exit( {
 })
 console.log(hour_exit)
 */
-transform_in_time_delta('10:05')
 
 export { calculate_hour_exit }
