@@ -81,12 +81,6 @@ function check_motive(input_motive) {
   const events = document.getElementById('event')
   switch (input_motive) {
     case "Adiantado com autorização":
-      if(events.value == ''){
-        events.value = 'adiantada'
-        toggle_x('box_event')
-        return check_event('adiantada')
-      }
-      return
     case "Adiantado sem autorização":
       if(events.value == ''){
         events.value = 'adiantada'
