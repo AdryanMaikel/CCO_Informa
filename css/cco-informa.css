@@ -800,6 +800,7 @@ address {
   left: 25%;
   padding-top: 10px;
   color: var(--primary);
+  font-family: 'Lora'
 }
 
 #row_gps.revel {
@@ -807,7 +808,7 @@ address {
 }
 
 #row_gps.revel.open {
-  height: 87px;
+  height: 95px;
   margin: 0;
 }
 
@@ -821,7 +822,7 @@ address {
 
 .collumn {
   display: flex;
-  height: 80px;
+  height: 86px;
   align-items: flex-start;
   flex-direction: column;
 }
