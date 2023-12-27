@@ -31,12 +31,12 @@ function calculate_hour_exit(schedules = {}) {
     minutes: start_journey_delta.minutes + total_journey.minutes,
   }
 
-  while (end_journey.minutes >= 60) {
+  while (end_journey.minutes >= 60){
     end_journey.hours += 1
     end_journey.minutes -= 60
   }
 
-  if (end_journey.hours >= 24) {
+  if (end_journey.hours >= 24){
     end_journey.hours -= 24
   }
 
