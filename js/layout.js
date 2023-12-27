@@ -1,6 +1,17 @@
-import{ toggle_replace_car } from "./replace.js"
-import { check_event, check_motive, check_problem } from "./checks.js"
+import { check_event, check_motive, check_problem } from "./checks_events.js"
 import { calculate_hour_exit } from "./calculate_hour_exit.js"
+
+const replace = document.getElementById('replace')
+const box_car_two = document.getElementById('box_car_two')
+const car_two = document.getElementById('car_two')
+const line = document.getElementById('line')
+function toggle_replace_car () {
+  replace.classList.toggle('active')
+  box_car_two.classList.toggle('active')
+  car_two.toggleAttribute('disabled')
+  const input = box_car_two.classList.contains('active') ? car_two : line
+  input.focus()
+}
 
 const toggle_x = (father) => {
   const trash_box = document.querySelector(`#${father} ~ .box.mini.trash`)
@@ -234,9 +245,9 @@ for(const input_hour of inputs_hours) {
     }
     
     end_journey.value = calculate_hour_exit({
-      startJourney: start_journey,
-      startInterval: start_interval,
-      endInterval: end_interval
+      start_journey: start_journey,
+      start_interval: start_interval,
+      end_interval: end_interval
     })
   })
 }
@@ -262,4 +273,4 @@ const cleaning_all = () => {
 
 document.getElementById("reset_cco_informa").addEventListener("click", cleaning_all)
 
-export { toggle_x }
+export { toggle_replace_car, toggle_x }
