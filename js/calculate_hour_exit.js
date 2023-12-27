@@ -31,14 +31,15 @@ function calculate_hour_exit(schedules = {}) {
     minutes: start_journey_delta.minutes + total_journey.minutes,
   }
 
-  if (end_journey.hours >= 24){
-    end_journey.hours -= 24
-  }
-  if (end_journey.minutes >= 60){
+  while (end_journey.minutes >= 60){
     end_journey.hours += 1
     end_journey.minutes -= 60
   }
-  
+
+  if (end_journey.hours >= 24){
+    end_journey.hours -= 24
+  }
+
   const hours = String(end_journey.hours).padStart(2, '0')
   const minutes = String(end_journey.minutes).padStart(2, '0')
   return `${hours}:${minutes}`
