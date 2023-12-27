@@ -1,6 +1,5 @@
 import { toggle_x } from "./layout.js"
-import { check_event, check_motive, check_problem } from "./checks.js"
-import { BOX_CLASS, LISTS } from "./lists_data.js"
+import { check_event, check_motive, check_problem } from "./checks_events.js"
 
 class ListCreator {
   constructor(father, array) {
@@ -98,5 +97,7 @@ class ListCreator {
   }
 }
 
+import { BOX_CLASS, LISTS } from "./lists_data.js"
+
 const REGEX_LETTERS = /[^a-zA-Z`´áéíóú^âêîôû`àèìòù~ãõçÁÉÍÓÚÂÊÎÔÛÀÈÌÒÙÃÕÇ ]/g
-BOX_CLASS.map((boxClass, index) => new ListCreator(boxClass, LISTS[index]))
+BOX_CLASS.map((box_class, index) => new ListCreator(box_class, LISTS[index]))
