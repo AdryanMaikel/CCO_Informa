@@ -80,6 +80,7 @@ const PROBLEMS = [
 const OPERATORS = [
   'Adryan',
   'Ana',
+  'Daniel',
   'Felipe',
   'Hellen',
   'Leandro',
