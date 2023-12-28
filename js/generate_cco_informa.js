@@ -316,9 +316,9 @@ const Sentido = document.getElementById('Sentido')
 const Ocorrência = document.getElementById('Ocorrência')
 const Problema = document.getElementById('Problema')
 const Observação = document.getElementById('Observação')
-const container_send_sheets = document.getElementById('container_send_sheets')
 
 const function_send_sheet = function () {
+  const container_send_sheets = document.getElementById('container_send_sheets')
   container_send_sheets.classList.add('open')
   
   Data.value = CCO_SHEETS.Data
