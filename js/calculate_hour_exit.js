@@ -1,68 +1,61 @@
-function transformInTimeDelta(time) {
-  time = typeof time === 'string' ? time : String(time);
-  time = time.length === 3 && time.indexOf(':') === -1 ? `0${time[0]}:${time.slice(1)}` : time;
-  time = time.length === 4 && time.indexOf(':') === -1 ? `${time.slice(0, 2)}:${time.slice(2)}` : time;
-
-  const [hours, minutes] = time.split(':').map(Number);
-  return { hours, minutes };
+function transform_in_time_delta(time) {
+  time = String(time)
+  const [hours, minutes] = time.split(':').map(Number)
+  return { hours, minutes }
 }
 
-function formatTime(time) {
-  return `${String(time.hours).padStart(2, '0')}:${String(time.minutes).padStart(2, '0')}`;
-}
+function calculate_hour_exit(schedules = {}) {
+  const {
+    journey = '07:10',
+    start_journey = '13:00',
+    start_interval = '17:00',
+    end_interval = '17:30'
+  } = schedules
 
-function calculateHourExit(
-  journey = '07:10',
-  startJourney = '17:00',
-  startInterval = '17:00',
-  endInterval = '17:30'
-) {
-  const journeyDelta = transformInTimeDelta(journey);
-  const startJourneyDelta = transformInTimeDelta(startJourney);
-  const startIntervalDelta = transformInTimeDelta(startInterval);
-  const endIntervalDelta = transformInTimeDelta(endInterval);
+  const journey_delta = transform_in_time_delta(journey)
+  const start_journey_delta = transform_in_time_delta(start_journey)
+  const start_interval_delta = transform_in_time_delta(start_interval)
+  const end_interval_delta = transform_in_time_delta(end_interval)
 
-  const totalInterval =
-    (endIntervalDelta.hours * 60 + endIntervalDelta.minutes) -
-    (startIntervalDelta.hours * 60 + startIntervalDelta.minutes);
+  const total_interval =
+    (end_interval_delta.hours * 60 + end_interval_delta.minutes) -
+    (start_interval_delta.hours * 60 + start_interval_delta.minutes)
 
-  const totalJourney = {
-    hours: journeyDelta.hours + Math.floor(totalInterval / 60),
-    minutes: journeyDelta.minutes + totalInterval % 60,
-  };
-
-  const endJourney = {
-    hours: startJourneyDelta.hours + totalJourney.hours,
-    minutes: startJourneyDelta.minutes + totalJourney.minutes,
-  };
-
-  if (endJourney.hours >= 24){
-    endJourney.hours -= 24
-  }
-  if (endJourney.minutes >= 60){
-    endJourney.hours += 1
-    endJourney.minutes -= 60
+  const total_journey = {
+    hours: journey_delta.hours + Math.floor(total_interval / 60),
+    minutes: journey_delta.minutes + total_interval % 60,
   }
 
-  return (
-    // `Duração do Intervalo: ${formatTime({ hours: Math.floor(totalInterval / 60), minutes: totalInterval % 60 })}\n` +
-    formatTime(endJourney)
-  );
+  const end_journey = {
+    hours: start_journey_delta.hours + total_journey.hours,
+    minutes: start_journey_delta.minutes + total_journey.minutes,
+  }
+  
+  while (end_journey.minutes >= 60) {
+    end_journey.hours += 1
+    end_journey.minutes -= 60
+  }
+
+  if (end_journey.hours >= 24) {
+    end_journey.hours -= 24
+  }
+
+  const hours = String(end_journey.hours).padStart(2, '0')
+  const minutes = String(end_journey.minutes).padStart(2, '0')
+  return `${hours}:${minutes}`
 }
 
-// Example usage:
-// calculateHourExit({
-//   startJourney: prompt('Início da jornada: '),
-//   startInterval: prompt('Início do intervalo: '),
-//   endInterval: prompt('Fim do intervalo: '),
-// });
-
+/* testes
 var start_journey = '14:00'
 var start_interval = '17:00'
-var end_interval = '17:55'
+var end_interval = '17:30'
 
-
-const hour_exit = calculateHourExit('07:10', start_journey, start_interval, end_interval)
+const hour_exit = calculate_hour_exit( {
+  start_journey: start_journey,
+  start_interval: start_interval,
+  end_interval: end_interval
+})
 console.log(hour_exit)
+*/
 
-export { calculateHourExit }
+export { calculate_hour_exit }

@@ -1,7 +1,17 @@
-import{ toggle_replace_car } from "./replace.js"
-import { check_event, check_motive, check_problem } from "./checks.js"
-import { calculateHourExit } from "./calculate_hour_exit.js"
-import { cleaning_all } from "./data.js"
+import { check_event, check_motive, check_problem } from "./checks_events.js"
+import { calculate_hour_exit } from "./calculate_hour_exit.js"
+
+const replace = document.getElementById('replace')
+const box_car_two = document.getElementById('box_car_two')
+const car_two = document.getElementById('car_two')
+const line = document.getElementById('line')
+function toggle_replace_car () {
+  replace.classList.toggle('active')
+  box_car_two.classList.toggle('active')
+  car_two.toggleAttribute('disabled')
+  const input = box_car_two.classList.contains('active') ? car_two : line
+  input.focus()
+}
 
 const toggle_x = (father) => {
   const trash_box = document.querySelector(`#${father} ~ .box.mini.trash`)
@@ -215,13 +225,14 @@ dropping_passengers.addEventListener('click', () => {
   dropping_passengers.classList.toggle('active')
 })
 
-const calculate_hour_exit = document.getElementById('calculate_hour_exit')
-calculate_hour_exit.addEventListener('click', () => {
-  document.getElementById('box_calculate_hour_exit').classList.toggle('open')
+const button_calculate_hour_exit = document.getElementById('calculate_hour_exit')
+const box_calculate_hour_exit = document.getElementById('box_calculate_hour_exit')
+button_calculate_hour_exit.addEventListener('click', () => {
+  box_calculate_hour_exit.classList.toggle('open')
 })
 
 const inputs_hours = document.querySelectorAll('#box_calculate_hour_exit .row .collumn .box .hour')
-for(var input_hour of inputs_hours) {
+for(const input_hour of inputs_hours) {
   input_hour.addEventListener('blur', () => {
     const start_journey = document.getElementById('start_journey').value
     const start_interval = document.getElementById('start_interval').value
@@ -233,8 +244,33 @@ for(var input_hour of inputs_hours) {
       return
     }
     
-    end_journey.value = calculateHourExit('07:10', start_journey, start_interval, end_interval)
+    end_journey.value = calculate_hour_exit({
+      start_journey: start_journey,
+      start_interval: start_interval,
+      end_interval: end_interval
+    })
   })
 }
 
-export { toggle_x }
+const cleaning_all = () => {
+  const inputs = document.querySelectorAll("#form_cco_informa input")
+  for(const input of inputs){
+    input.value = ""
+  }
+  document.getElementById("informed").classList.remove("active")
+  document.getElementById("replace").classList.remove("active")
+  document.getElementById("box_car_two").classList.remove("active")
+  document.getElementById('car_two').disabled = true
+  toggle_x("box_operator")
+  toggle_x("who_informed")
+  toggle_x("box_direction")
+  toggle_x("box_event")
+  check_event("")
+  toggle_x("box_motive")
+  check_motive("")
+  toggle_x("box_problems")
+}
+
+document.getElementById("reset_cco_informa").addEventListener("click", cleaning_all)
+
+export { toggle_replace_car, toggle_x }
