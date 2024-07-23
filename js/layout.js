@@ -273,4 +273,13 @@ const cleaning_all = () => {
 
 document.getElementById("reset_cco_informa").addEventListener("click", cleaning_all)
 
+const div_cco_informa_20 = document.getElementById("cco-informa-v2")
+document.getElementById("open-cco-v2").onclick = function(){
+  div_cco_informa_20.classList.add("open");
+}
+document.getElementById("close-cco-v2").onclick = function(){
+  div_cco_informa_20.classList.remove("open");
+}
+
+
 export { toggle_replace_car, toggle_x }
