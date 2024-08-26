@@ -8,7 +8,7 @@ window.addEventListener('blur', () => alter_title('blur'))
 window.addEventListener('focus', () => alter_title('focus'))
 
 const container_send_sheets = document.getElementById("container_send_sheets")
-const submit_form_send_sheets = async (events) => {
+const submit_form_send_sheets = (events) => {
   events.preventDefault()
 
   const Data = document.getElementById("Data").value
@@ -23,47 +23,21 @@ const submit_form_send_sheets = async (events) => {
   const Observação = document.getElementById("Observação").value
   const Operador = document.getElementById("Operador").value
 
-  // const DATA = {
-  //   Data,
-  //   Tabela,
-  //   Linha,
-  //   Carro,
-  //   "Carro Substituto": Substituto,
-  //   Hora,
-  //   Sentido,
-  //   Ocorrência,
-  //   Problema,
-  //   Observação,
-  //   Operador,
-  // }
   const DATA = {
-    A: Data,
-    B: Tabela,
-    C: Linha,
-    D: Carro,
-    E: Substituto,
-    F: Hora,
-    G: Sentido,
-    H: Ocorrência,
-    I: Problema,
-    J: Observação,
-    K: Operador
+    Data,
+    Tabela,
+    Linha,
+    Carro,
+    "Carro Substituto": Substituto,
+    Hora,
+    Sentido,
+    Ocorrência,
+    Problema,
+    Observação,
+    Operador,
   }
-  const response = await fetch(
-    "https://ccoinforma.pythonanywhere.com/table/ccoinforma/BILABILABILA",
-    {
-      method: "get"
-    } 
-  )
-  if(response.status == 200){
-    const text = await response.text();
-    const cco = document.querySelector("#cco-informa-v2");
-    cco.innerHTML = text;
-    DATA.row = cco.querySelector(".last-row").getAttribute("row");
-    console.log(DATA);
-  }
-  return
-  fetch("https://ccoinforma.pythonanywhere.com/table/ccoinforma/BILABILABILA",{
+
+  fetch("https://api.sheetmonkey.io/form/86GJCNpeUFhhfFHBZKyE4n",{
     method: 'POST',
     headers: {
       'Accept': 'application/json',
